@@ -923,6 +923,14 @@
             </div>
           </div>
           <div class="control-group">
+            <label class="control-label" for="textarea">{{_i}}Uneditable textarea{{/i}}</label>
+            <div class="controls">
+<div class="input-xlarge uneditable-textarea" rows="3">Some text here
+on multiple lines
+</div>
+            </div>
+          </div>
+          <div class="control-group">
             <label class="control-label" for="disabledInput">{{_i}}Disabled input{{/i}}</label>
             <div class="controls">
               <input class="input-xlarge disabled" id="disabledInput" type="text" placeholder="{{_i}}Disabled input here…{{/i}}" disabled>
@@ -981,6 +989,14 @@
     <div class="span4">
       <h3>{{_i}}Redesigned browser states{{/i}}</h3>
       <p>{{_i}}Bootstrap features styles for browser-supported focused and <code>disabled</code> states. We remove the default Webkit <code>outline</code> and apply a <code>box-shadow</code> in it's place for <code>:focus</code>.{{/i}}</p>
+      <hr>
+      <h3>{{_i}}Uneditable forms{{/i}}</h3>
+      <p>{{_i}}To create an element that looks like a form but doesn't behave like one, you can use <code>.uneditable-form</code>. This should be used in combination with uneditable and disabled input fields.{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;div class="uneditable-form"&gt;
+  …
+&lt;/div&gt;
+</pre>
       <hr>
       <h3>{{_i}}Form validation{{/i}}</h3>
       <p>{{_i}}It also includes validation styles for errors, warnings, and success. To use, add the error class to the surrounding <code>.control-group</code>.{{/i}}</p>
