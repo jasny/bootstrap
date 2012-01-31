@@ -16,10 +16,11 @@ docs: bootstrap
 	lessc ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
 	lessc ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
 	node docs/build
+	mkdir -p docs/assets/fonts
 	cp img/* docs/assets/img/
 	cp js/*.js docs/assets/js/
 	cp js/tests/vendor/jquery.js docs/assets/js/
-	cp js/tests/vendor/jquery.js docs/assets/js/
+	cp fonts/* docs/assets/fonts/
 
 #
 # BUILD SIMPLE BOOTSTRAP DIRECTORY
@@ -30,7 +31,9 @@ bootstrap:
 	mkdir -p bootstrap/img
 	mkdir -p bootstrap/css
 	mkdir -p bootstrap/js
+	mkdir -p bootstrap/fonts
 	cp img/* bootstrap/img/
+	cp fonts/* bootstrap/fonts/
 	lessc ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.css
 	lessc --compress ${BOOTSTRAP_LESS} > bootstrap/css/bootstrap.min.css
 	lessc ${BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.css
