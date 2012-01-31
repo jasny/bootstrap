@@ -10,6 +10,7 @@
       <li><a href="#tables">{{_i}}Tables{{/i}}</a></li>
       <li><a href="#forms">{{_i}}Forms{{/i}}</a></li>
       <li><a href="#buttons">{{_i}}Buttons{{/i}}</a></li>
+      <li><a href="#action-links">{{_i}}Action links{{/i}}</a></li>
       <li><a href="#icons">{{_i}}Icons by Glyphicons{{/i}}</a></li>
     </ul>
   </div>
@@ -1215,11 +1216,89 @@
     </div>
   </div>
 
-  <br>
-
 </section>
 
 
+<!-- Action links
+================================================== -->
+<section id="action-links">
+  <div class="page-header">
+    <h1>{{_i}}Action links{{/i}}</h1>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>{{_i}}Action link{{/i}}</th>
+        <th>{{_i}}Class{{/i}}</th>
+        <th>{{_i}}Description{{/i}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="act" href="#">{{_i}}Default{{/i}}</a></td>
+        <td><code>.act</code></td>
+        <td>{{_i}}Standard gray text{{/i}}</td>
+      </tr>
+      <tr>
+        <td><a class="act act-primary" href="#">{{_i}}Primary{{/i}}</a></td>
+        <td><code>.act-primary</code></td>
+        <td>{{_i}}Provides extra visual weight{{/i}}</td>
+      </tr>
+      <tr>
+        <td><a class="act act-info" href="#">{{_i}}Info{{/i}}</a></td>
+        <td><code>.act-info</code></td>
+        <td>{{_i}}Used as an alternate to the default styles{{/i}}</td>
+      </tr>
+      <tr>
+        <td><a class="act act-success" href="#">{{_i}}Success{{/i}}</a></td>
+        <td><code>.act-success</code></td>
+        <td>{{_i}}Indicates a successful or positive action{{/i}}</td>
+      </tr>
+      <tr>
+        <td><a class="act act-warning" href="#">{{_i}}Warning{{/i}}</a></td>
+        <td><code>.act-warning</code></td>
+        <td>{{_i}}Indicates caution should be taken with this action{{/i}}</td>
+      </tr>
+      <tr>
+        <td><a class="act act-danger" href="#">{{_i}}Danger{{/i}}</a></td>
+        <td><code>.act-danger</code></td>
+        <td>{{_i}}Indicates a dangerous or potentially negative action{{/i}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="span4">
+      <h3>{{_i}}Alternative style for actions{{/i}}</h3>
+      <p>{{_i}}Sometimes a button will pull to much attention to an action. In those cases, you can use action links instead.{{/i}}</p>
+      <p>{{_i}}Action links can be used just like buttons, simply use <code>.act</code> instead.{{/i}}</p>
+    </div>
+    <div class="span8">
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Save changes</button>
+        <button class="btn" type="reset">Cancel</button>
+        <a href="#" class="act act-danger pull-right">Delete account</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h3>{{_i}}Disabled state{{/i}}</h3>
+      <p>{{_i}}For disabled action links, use <code>.act-disabled</code> for links and <code>:disabled</code> for <code>&lt;button&gt;</code> elements.{{/i}}</p>
+    </div>
+    <div class="span8">
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Save changes</button>
+        <button class="btn" type="reset">Cancel</button>
+        <button class="act pull-right" disabled="disabled">Disabled action</a>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+</section>
 
 <!-- Icons
 ================================================== -->
