@@ -249,6 +249,13 @@
   .clearfix();
 }
 
+// Make the tab content grow correctly
+.tab-content {
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 0px;
+}
+
 // Remove border on bottom, left, right
 .tabs-below .nav-tabs,
 .tabs-right .nav-tabs,
@@ -289,10 +296,21 @@
   border-color: transparent #ddd #ddd #ddd;
 }
 
+
 // LEFT & RIGHT
 // ------------
 
 // Common styles
+.tabs-left,
+.tabs-right {
+  margin-bottom: 20px;
+}
+.tabs-left .nav-tabs,
+.tabs-right .nav-tabs {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
 .tabs-left .nav-tabs > li,
 .tabs-right .nav-tabs > li {
   float: none;
@@ -303,11 +321,15 @@
   margin-right: 0;
   margin-bottom: 3px;
 }
+.tabs-left > .tab-content,
+.tabs-right > .tab-content {
+  display: table;
+}
 
 // Tabs on the left
 .tabs-left .nav-tabs {
   float: left;
-  margin-right: 19px;
+  left: 1px;
   border-right: 1px solid #ddd;
 }
 .tabs-left .nav-tabs > li > a {
@@ -322,11 +344,14 @@
   border-color: #ddd transparent #ddd #ddd;
   *border-right-color: @white;
 }
+.tabs-left > .tab-content {
+  padding-left: 19px;
+  border-left-width: 1px;
+}
 
 // Tabs on the right
 .tabs-right .nav-tabs {
   float: right;
-  margin-left: 19px;
   border-left: 1px solid #ddd;
 }
 .tabs-right .nav-tabs > li > a {
@@ -340,4 +365,7 @@
 .tabs-right .nav-tabs .active > a:hover {
   border-color: #ddd #ddd #ddd transparent;
   *border-left-color: @white;
+}
+.tabs-right > .tab-content {
+  padding-right: 20px;
 }
