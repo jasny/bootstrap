@@ -249,13 +249,20 @@
 // Clear any floats
 .tabbable {
   .clearfix();
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 0px;
 }
 
 // Make the tab content grow correctly
+.tabbable > .nav-tabs {
+  margin: 0;
+}
 .tab-content {
   border-style: solid;
   border-color: #ddd;
   border-width: 0px;
+  padding: 18px 0 0 0;
 }
 
 // Remove border on bottom, left, right
@@ -273,6 +280,16 @@
 .tab-content > .active,
 .pill-content > .active {
   display: block;
+}
+
+// Tabs on top
+.tabbable-bordered {
+  .border-radius(4px);
+  > .tab-content {
+    border-width: 0 1px 1px 1px;
+    padding: 20px 20px 10px 20px;
+    .border-radius(0 0 4px 4px);
+  }
 }
 
 
@@ -297,6 +314,17 @@
 .tabs-below > .nav-tabs .active > a:hover {
   border-color: transparent #ddd #ddd #ddd;
 }
+.tabs-below > .tab-content {
+  padding: 0 0 10px 0;
+}
+.tabs-below.tabbable-bordered {
+  > .tab-content {
+    border-width: 1px 1px 0 1px;
+    padding: 20px 20px 10px 20px;
+    .border-radius(4px 4px 0 0);
+  }
+}
+
 
 
 // LEFT & RIGHT
@@ -347,8 +375,16 @@
   *border-right-color: @white;
 }
 .tabs-left > .tab-content {
-  padding-left: 19px;
+  padding: 0 0 0 19px;
   border-left-width: 1px;
+}
+.tabs-left.tabbable-bordered {
+  border-width: 0 1px 0 0;
+  > .tab-content {
+    border-width: 1px 0 1px 1px;
+    padding: 20px 20px 10px 20px;
+    .border-radius(0 4px 4px 0);
+  }
 }
 
 // Tabs on the right
@@ -369,5 +405,16 @@
   *border-left-color: @white;
 }
 .tabs-right > .tab-content {
-  padding-right: 20px;
+  padding: 0 20px 0 0;
+}
+.tabs-right.tabbable-bordered {
+  border-width: 0 0 0 1px;
+  > .nav-tabs {
+    right: 1px;
+  }
+  > .tab-content {
+    border-width: 1px 1px 1px 0;
+    padding: 20px 20px 10px 20px;
+    .border-radius(4px 0 0 4px);
+  }
 }
