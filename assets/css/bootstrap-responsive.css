@@ -377,6 +377,21 @@
     overflow: hidden;
     height: 0;
   }
+  .page-alert {
+    position: static;
+    width: auto;
+  }
+  .page-alert .alert {
+    width: auto;
+    margin-left: 0;
+    border-top-width: 1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  }
+  body > .page-alert {
+    position: static;
+  }
 }
 @media (min-width: 980px) {
   .nav-collapse.collapse {
@@ -563,5 +578,9 @@
   }
   .thumbnails > li {
     margin-left: 30px;
+  }
+  .page-alert .alert {
+    width: 700px;
+    margin-left: -375px;
   }
 }

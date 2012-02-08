@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Bootstrap CSS and Javascript library</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -597,7 +597,7 @@
             <p>Howdy, I'm in Section 2.</p>
           </div>
           <div class="tab-pane" id="3">
-            <p>What up girl, this is Section 3.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros. </p>
           </div>
         </div>
       </div> <!-- /tabbable -->
@@ -605,7 +605,7 @@
     <div class="span4">
       <h3>Custom jQuery plugin</h3>
       <p>All tabbable tabs are powered by our lightweight jQuery plugin. Read more about how to bring tabbable tabs to life on the javascript docs page.</p>
-      <p><a class="btn" href="./javascript.html#tabs">Get the javascript &rarr;</a></p>
+      <p><a class="btn" href="./javascript.html/#tabs">Get the javascript &rarr;</a></p>
     </div>
   </div>
 
@@ -642,7 +642,7 @@
             <p>Howdy, I'm in Section B.</p>
           </div>
           <div class="tab-pane" id="C">
-            <p>What up girl, this is Section C.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros. </p>
           </div>
         </div>
         <ul class="nav nav-tabs">
@@ -679,7 +679,7 @@
             <p>Howdy, I'm in Section B.</p>
           </div>
           <div class="tab-pane" id="lC">
-            <p>What up girl, this is Section C.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros.</p>
           </div>
         </div>
       </div> <!-- /tabbable -->
@@ -711,7 +711,7 @@
             <p>Howdy, I'm in Section B.</p>
           </div>
           <div class="tab-pane" id="rC">
-            <p>What up girl, this is Section C.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros.</p>
           </div>
         </div>
       </div> <!-- /tabbable -->
@@ -727,6 +727,46 @@
 </pre>
     </div>
   </div>
+
+  <h3>Bordered tabbable</h3>
+  <div class="row">
+    <div class="span4">
+      <p>You can place a border around the tab content by adding <code>.tabbable-bordered</code> to the <code>.tabbable</code>.</p>
+      <div class="alert"><b>Warning!</b> A bordered tabbable with the tabs on the left or right side, will not look well if the height of <code>.tab-content</code> is less than the height of <code>.nav-tabs</code>.</div>
+    </div>
+    <div class="span4">
+      <div class="tabbable tabbable-bordered">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#bA" data-toggle="tab">Section 1</a></li>
+          <li><a href="#bB" data-toggle="tab">Section 2</a></li>
+          <li><a href="#bC" data-toggle="tab">Section 3</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="bA">
+            <p>I'm in Section A.</p>
+          </div>
+          <div class="tab-pane" id="bB">
+            <p>Howdy, I'm in Section B.</p>
+          </div>
+          <div class="tab-pane" id="bC">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros.</p>
+          </div>
+        </div>
+      </div> <!-- /tabbable -->
+    </div>
+    <div class="span4">
+<pre class="prettyprint linenums">
+&lt;div class="tabbable tabbable-bordered"&gt;
+  &lt;ul class="nav nav-tabs"&gt;
+    ...
+  &lt;/ul&gt;
+  &lt;div class="tab-content"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+  </div>  
 
 </section>
 
@@ -865,7 +905,7 @@
 &lt;/ul&gt;
 </pre>
       <h3>Adding dropdowns</h3>
-      <p>Adding dropdowns to the nav is super simple, but does require the use of <a href="./javascript.html#dropdown">our javascript plugin</a>.</p>
+      <p>Adding dropdowns to the nav is super simple, but does require the use of <a href="./javascript.html/#dropdown">our javascript plugin</a>.</p>
 <pre class="prettyprint linenums">
 &lt;ul class="nav"&gt;
   &lt;li class="dropdown"&gt;
@@ -881,7 +921,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-      <p><a class="btn" href="./javascript.html#dropdown">Get the javascript &rarr;</a></p>
+      <p><a class="btn" href="./javascript.html/#dropdown">Get the javascript &rarr;</a></p>
     </div><!-- /.span -->
   </div><!-- /.row -->
 
@@ -1088,7 +1128,7 @@
       </tr>
       <tr>
         <td>
-          <span class="label label-success">Success</span>
+          <span class="label label-success">New</span>
         </td>
         <td>
           <code>&lt;span class="label label-success"&gt;New&lt;/span&gt;</code>
@@ -1295,25 +1335,25 @@
       <p>Wrap your message and an optional close icon in a div with simple class.</p>
       <div class="alert">
         <a class="close">&times;</a>
-        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+        <strong>Warning!</strong> Best check yo self, you’re not looking too good.
       </div>
 <pre class="prettyprint linenums">
 &lt;div class="alert"&gt;
   &lt;a class="close"&gt;&times;&lt;/a&gt;
-  &lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you're not looking too good.
+  &lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you’re not looking too good.
 &lt;/div&gt;
 </pre>
       <p>Easily extend the standard alert message with two optional classes: <code>.alert-block</code> for more padding and text controls and <code>.alert-heading</code> for a matching heading.</p>
       <div class="alert alert-block">
         <a class="close">&times;</a>
         <h4 class="alert-heading">Warning!</h4>
-        <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        <p>Best check yo self, you’re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
       </div>
 <pre class="prettyprint linenums">
 &lt;div class="alert alert-block"&gt;
   &lt;a class="close"&gt;&times;&lt;/a&gt;
   &lt;h4 class="alert-heading"&gt;Warning!&lt;/h4&gt;
-  Best check yo self, you're not...
+  Best check yo self, you’re not...
 &lt;/div&gt;
 </pre>
     </div>
@@ -1349,7 +1389,7 @@
       <h3>Information</h3>
       <div class="alert alert-info">
         <a class="close">&times;</a>
-        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+        <strong>Heads up!</strong> This alert needs your attention, but it’s not super important.
       </div>
 <pre class="prettyprint linenums">
 &lt;div class="alert alert-info"&gt;
@@ -1359,6 +1399,33 @@
     </div>
   </div>
 
+  <h2>Page alerts <small>Show an alert on top of your page.</small></h2>
+  <div class="row">
+    <div class="span4">
+        <p>Know those nice little alerts after you save your profile? With <code>.page-alert</code> the alert will be shown on top op your page.</p>
+<pre class="prettyprint linenums">
+&lt;body&gt;
+  &lt;div class="navbar"&gt; ... &lt;/div&gt;
+  &lt;div class="page-alert"&gt;
+    &lt;div class="alert"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+    </div>
+    <div class="span8">
+      <div id="page-alert-container">
+        <div class="page-alert">
+          <div class="alert alert-success">
+            <a class="close">×</a>
+            <strong>Success!</strong> Your profile information has been saved.
+          </div>
+        </div>
+        <h5>Ultricies vehicula</h5>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -1486,6 +1553,7 @@
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
       </footer>
 
     </div><!-- /container -->
@@ -1511,22 +1579,5 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/application.js"></script>
-
-    <!-- Analytics
-    ================================================== -->
-    <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
-    </script>
-
   </body>
 </html>

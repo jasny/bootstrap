@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 var hogan = require('hogan.js')
   , fs    = require('fs')
-  , prod  = process.argv[2] == 'production'
 
 var layout, pages
 
@@ -22,7 +21,6 @@ pages.forEach(function (name) {
 
   context[name.replace(/\.mustache$/, '')] = 'active'
   context._i = true
-  context.production = prod
 
   page = hogan.compile(page, { sectionTags: [{o:'_i', c:'i'}] })
   page = layout.render(context, {
