@@ -10,46 +10,36 @@
   font-weight: bold;
   .transition(text-shadow .1s linear);
   &:hover {
-    color: #000000;
+    color: #333333;
     text-decoration: none;
-    text-shadow: 1px 1px 6px #555555;
+    text-shadow: 1px 1px 3px rgba(85, 85, 85, 0.5);
   }
 }
 
-.act-primary {
-  color: #006DCC;
+// Mixin for alternative styles
+.act-style(@normal, @hover) {
+  color: @normal;
   &:hover {
-    color: #0044CC;
-    text-shadow: 1px 1px 6px #006DCC;
+    color: @hover;
+    text-shadow: 1px 1px 3px hsla(hue(@normal), saturation(@normal), lightness(@normal), 0.5);
   }
+}
+
+// Alternative styles
+.act-primary {
+  .act-style(#006DCC, #0044CC);
 }
 .act-info {
-  color: #49AFCD;
-  &:hover {
-    color: #2F96B4;
-    text-shadow: 1px 1px 6px #49AFCD;
-  }
+  .act-style(#49AFCD, #2F96B4);
 }
 .act-success {
-  color: #468847;
-  &:hover {
-    color: #51A351;
-    text-shadow: 1px 1px 6px #468847;
-  }
+  .act-style(#51A351, #468847);
 }
 .act-warning {
-  color: #C09853;
-  &:hover {
-    color: #F89406;
-    text-shadow: 1px 1px 6px #C09853;
-  }
+  .act-style(#C09853, #F89406);
 }
 .act-danger {
-  color: #B94A48;
-  &:hover {
-    color: #BD362F;
-    text-shadow: 1px 1px 6px #B94A48;
-  }
+  .act-style(#B94A48, #BD362F);
 }
 
 .act-disabled, 
