@@ -354,7 +354,7 @@
 }
 .tabs-left > .tab-content,
 .tabs-right > .tab-content {
-  display: table;
+  overflow: hidden;
 }
 
 // Tabs on the left
@@ -391,6 +391,7 @@
 // Tabs on the right
 .tabs-right > .nav-tabs {
   float: right;
+  right: 1px;
   border-left: 1px solid #ddd;
 }
 .tabs-right > .nav-tabs > li > a {
@@ -406,13 +407,11 @@
   *border-left-color: @white;
 }
 .tabs-right > .tab-content {
-  padding: 0 20px 0 0;
+  padding: 0 19px 0 0;
+  border-right-width: 1px;
 }
 .tabs-right.tabbable-bordered {
   border-width: 0 0 0 1px;
-  > .nav-tabs {
-    right: 1px;
-  }
   > .tab-content {
     border-width: 1px 1px 1px 0;
     padding: 20px 20px 10px 20px;
