@@ -17,6 +17,7 @@
             <li><a href="#collapse">{{_i}}Collapse{{/i}}</a></li>
             <li><a href="#carousel">{{_i}}Carousel{{/i}}</a></li>
             <li><a href="#typeahead">{{_i}}Typeahead{{/i}}</a></li>
+            <li><a href="#placeholder">{{_i}}Placeholder{{/i}}</a></li>
           </ul>
         </div>
       </header>
@@ -100,6 +101,14 @@
             <p>{{_i}}A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input.{{/i}}</p>
           </label>
         </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#placeholder">Placeholder</a></h3>
+            <p>{{_i}}Support for the placeholder attribute in older browsers.{{/i}}</p>
+          </label>
+        </div>
+      </div> <!-- /row -->
+      <div class="row" style="margin-bottom: 9px;">
         <div class="span3">
           <label>
             <h3>{{_i}}Transitions{{/i}} <small class="muted">*</small></h3>
@@ -1353,6 +1362,38 @@ $('.myCarousel').carousel({
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>.typeahead({{_i}}options{{/i}})</h4>
           <p>{{_i}}Initializes an input with a typahead.{{/i}}</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Placeholder
+    ================================================== -->
+    <section id="placeholder">
+      <div class="page-header">
+        <h1>{{_i}}Placeholder{{/i}} <small>bootstrap-placeholder.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>{{_i}}About{{/i}}</h3>
+          <p>{{_i}}The placeholder plugin will add support for the <code>placeholder</code> attribute for older browsers.{{/i}}</p>
+          <div class="alert alert-info">{{_i}}For newer browsers that support placeholders natively, this plugin does nothing.{{/i}}</div>
+          <a href="assets/js/bootstrap-placeholder.js" target="_blank" class="btn">{{_i}}Download file{{/i}}</a>
+        </div>
+        <div class="span9 columns">
+          <h2>{{_i}}Example{{/i}}</h2>
+          <div class="well">
+            <input type="text" class="span2" placeholder="Username"> <input type="password" class="span2" placeholder="Password">
+          </div>
+          <h3>{{_i}}Markup{{/i}}</h3>
+          <p>{{_i}}Use the HTML5 <code>placeholder</code> attribute.{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;input type="text" placeholder="Username"&gt;
+</pre>
+          <h3>{{_i}}Methods{{/i}}</h3>
+          <h4>.placeholder()</h4>
+          <p>{{_i}}Initializes an input with a placeholder.{{/i}}</p>
         </div>
       </div>
     </section>
