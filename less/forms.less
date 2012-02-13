@@ -9,6 +9,9 @@
 // Make all forms have space below them
 form {
   margin: 0 0 @baseLineHeight;
+  > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 fieldset {
@@ -72,6 +75,11 @@ label input,
 label textarea,
 label select {
   display: block;
+}
+label input[type="image"],
+label input[type="checkbox"],
+label input[type="radio"] {
+  vertical-align: middle;
 }
 
 // Mini reset for unique input types
@@ -511,5 +519,54 @@ select:focus:required:invalid {
   // Move over buttons in .form-actions to align with .controls
   .form-actions {
     padding-left: 160px;
+  }
+}
+
+// Smaller labels
+// --------------
+.small-labels {
+  .control-group > label {
+    width: 80px;
+  }
+  .controls {
+    margin-left: 100px;
+  }
+}
+
+// Combining horizonal and vertical forms
+// --------------------------------------
+
+.form-vertical .form-horizontal {
+  .control-group > label {
+    text-align: left;
+  }
+}
+.form-horizontal .form-vertical {
+  .control-group > label {
+    float: none;
+    padding-top: 0;
+    text-align: left;
+  }
+  .controls {
+    margin-left: 0;
+  }
+  &.form-actions, .form-actions {
+    padding-left: 20px;
+  }
+}
+
+.control-group .control-group {
+  margin-bottom: 0;
+}
+
+// Wells in forms
+// --------------
+
+.horizontal-form .well {
+  .control-group > label {
+    width: 120px;
+  }
+  .controls {
+    margin-left: 140px;
   }
 }
