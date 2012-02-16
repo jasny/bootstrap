@@ -18,6 +18,7 @@
             <li><a href="#carousel">{{_i}}Carousel{{/i}}</a></li>
             <li><a href="#typeahead">{{_i}}Typeahead{{/i}}</a></li>
             <li><a href="#placeholder">{{_i}}Placeholder{{/i}}</a></li>
+            <li><a href="#inputmask">{{_i}}Input mask{{/i}}</a></li>
           </ul>
         </div>
       </header>
@@ -109,6 +110,12 @@
         </div>
       </div> <!-- /row -->
       <div class="row" style="margin-bottom: 9px;">
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#inputmask">Input mask</a></h3>
+            <p>{{_i}}Make sure the user types in the data that you want, by using an input mask.{{/i}}</p>
+          </label>
+        </div>
         <div class="span3">
           <label>
             <h3>{{_i}}Transitions{{/i}} <small class="muted">*</small></h3>
@@ -1394,6 +1401,43 @@ $('.myCarousel').carousel({
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>.placeholder()</h4>
           <p>{{_i}}Initializes an input with a placeholder.{{/i}}</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Input mask
+    ================================================== -->
+    <section id="inputmask">
+      <div class="page-header">
+        <h1>{{_i}}Input mask{{/i}} <small>bootstrap-inputmask.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>{{_i}}About{{/i}}</h3>
+          <p>{{_i}}Input masks can be used to force the user to enter data conform a specific format.{{/i}}</p>
+        </div>
+        <div class="span9 columns">
+          <h2>{{_i}}Example{{/i}}</h2>
+          <div class="well">
+            <label>ISBN <input type="text" class="span2" data-inputmask="999-99-999-9999-9"></label>
+          </div>
+          <h3>{{_i}}Format{{/i}}</h3>
+          <table class="table table-striped">
+            <tr><th>Character</td><th>Description</td></tr>
+            <tr><td>9</td><td>Number</td></tr>
+            <tr><td>a</td><td>Letter</td></tr>
+            <tr><td>*</td><td>Alphanumeric</td></tr>
+          </table>
+          <h3>{{_i}}Markup{{/i}}</h3>
+          <p>{{_i}}Add <code>data-inputmask</code> attribute to register an element with an input mask.{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;input type="text" data-inputmask="999-99-999-9999-9"&gt;
+</pre>
+          <h3>{{_i}}Methods{{/i}}</h3>
+          <h4>.inputmask({{_i}}mask, options{{/i}})</h4>
+          <p>{{_i}}Initializes an input with an input mask.{{/i}}</p>
         </div>
       </div>
     </section>
