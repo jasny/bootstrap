@@ -602,7 +602,7 @@ For example, &lt;code&gt;section&lt;/code&gt; should be wrapped as inline.
   <div class="row">
     <div class="span4">
       <p>Get a little fancy with your tables by adding zebra-striping&mdash;just add the <code>.table-striped</code> class.</p>
-      <p class="muted"><strong>Note:</strong> Sprited tables use the <code>:nth-child</code> CSS selector and is not available in IE7-IE8.</p>
+      <p class="muted"><strong>Note:</strong> Striped tables use the <code>:nth-child</code> CSS selector and is not available in IE7-IE8.</p>
 <pre class="prettyprint linenums" style="margin-bottom: 18px;">
 &lt;table class="table table-striped"&gt;
   …
@@ -916,7 +916,7 @@ For example, &lt;code&gt;section&lt;/code&gt; should be wrapped as inline.
             <div class="controls">
               <label class="checkbox">
                 <input type="checkbox" id="optionsCheckbox" value="option1">
-                Option one is this and that&mdash;be sure to include why it’s great
+                Option one is this and that&mdash;be sure to include why it's great
               </label>
             </div>
           </div>
@@ -1024,9 +1024,9 @@ on multiple lines
             </div>
           </div>
           <div class="control-group warning">
-            <label class="control-label" for="inputError">Input with warning</label>
+            <label class="control-label" for="inputWarning">Input with warning</label>
             <div class="controls">
-              <input type="text" id="inputError">
+              <input type="text" id="inputWarning">
               <span class="help-inline">Something may have gone wrong</span>
             </div>
           </div>
@@ -1038,9 +1038,9 @@ on multiple lines
             </div>
           </div>
           <div class="control-group success">
-            <label class="control-label" for="inputError">Input with success</label>
+            <label class="control-label" for="inputSuccess">Input with success</label>
             <div class="controls">
-              <input type="text" id="inputError">
+              <input type="text" id="inputSuccess">
               <span class="help-inline">Woohoo!</span>
             </div>
           </div>
@@ -1163,7 +1163,7 @@ on multiple lines
             <div class="controls">
               <label class="checkbox">
                 <input type="checkbox" name="optionsCheckboxList1" value="option1">
-                Option one is this and that&mdash;be sure to include why it’s great
+                Option one is this and that&mdash;be sure to include why it's great
               </label>
               <label class="checkbox">
                 <input type="checkbox" name="optionsCheckboxList2" value="option2">
@@ -1181,7 +1181,7 @@ on multiple lines
             <div class="controls">
               <label class="radio">
                 <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Option one is this and that&mdash;be sure to include why it’s great
+                Option one is this and that&mdash;be sure to include why it's great
               </label>
               <label class="radio">
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
@@ -1270,7 +1270,7 @@ on multiple lines
     </div>
     <div class="span4">
       <h3>For anchors and forms</h3>
-      <p>Button styles can be applied to anything with the <code>.btn</code> applied. However, typically you’ll want to apply these to only <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements.</p>
+      <p>Button styles can be applied to anything with the <code>.btn</code> applied. However, typically you'll want to apply these to only <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements.</p>
     </div>
     <div class="span4">
       <p><strong>Note:</strong> All buttons must include the <code>.btn</code> class. Button styles should be applied to <code>&lt;button&gt;</code> and <code>&lt;a&gt;</code> elements for consistency.</p>
@@ -1626,11 +1626,11 @@ on multiple lines
     <div class="span4">
       <form>
         <div class="control-group">
-          <label class="control-label" for="prependedInput">Email address</label>
+          <label class="control-label" for="inputIcon">Email address</label>
           <div class="controls">
             <div class="input-prepend">
               <span class="add-on"><i class="icon-envelope"></i></span>
-              <input class="span2" id="iconInput" type="text">
+              <input class="span2" id="inputIcon" type="text">
             </div>
           </div>
         </div>
@@ -1895,6 +1895,25 @@ on multiple lines
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-inputmask.js"></script>
+    <script src="assets/js/bootstrap-placeholder.js"></script>
     <script src="assets/js/application.js"></script>
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
   </body>
 </html>

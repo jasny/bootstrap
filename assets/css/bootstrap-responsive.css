@@ -55,7 +55,7 @@
     padding-top: 0;
     text-align: left;
   }
-  .form-horizontal .controls {
+  .form-horizontal .controls, .form-horizontal .well .controls, .small-labels .controls {
     margin-left: 0;
   }
   .form-horizontal .control-list {

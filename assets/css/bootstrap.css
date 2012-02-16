@@ -503,6 +503,9 @@ pre code {
 form, .uneditable-form {
   margin: 0 0 18px;
 }
+form > *:last-child, .uneditable-form > *:last-child {
+  margin-bottom: 0;
+}
 fieldset {
   padding: 0;
   margin: 0;
@@ -559,6 +562,9 @@ select,
 label input, label textarea, label select {
   display: block;
 }
+label input[type="image"], label input[type="checkbox"], label input[type="radio"] {
+  vertical-align: middle;
+}
 input[type="image"], input[type="checkbox"], input[type="radio"] {
   width: auto;
   height: auto;
@@ -570,7 +576,9 @@ input[type="image"], input[type="checkbox"], input[type="radio"] {
   line-height: normal;
   border: 0;
   cursor: pointer;
-  border-radius: 0 \0/;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 input[type="file"] {
   padding: initial;
@@ -1067,6 +1075,12 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
   -moz-border-radius: 14px;
   border-radius: 14px;
 }
+.uneditable-form .uneditable-input, .uneditable-form .uneditable-textarea {
+  cursor: text;
+}
+.uneditable-form .form-actions {
+  background-color: transparent;
+}
 .form-search input,
 .form-inline input,
 .form-horizontal input,
@@ -1129,11 +1143,34 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 .form-horizontal .form-actions {
   padding-left: 160px;
 }
-.uneditable-form .uneditable-input, .uneditable-form .uneditable-textarea {
-  cursor: text;
+.small-labels .control-group > label {
+  width: 80px;
 }
-.uneditable-form .form-actions {
-  background-color: transparent;
+.small-labels .controls {
+  margin-left: 100px;
+}
+.form-vertical .form-horizontal .control-group > label {
+  text-align: left;
+}
+.form-horizontal .form-vertical .control-group > label {
+  float: none;
+  padding-top: 0;
+  text-align: left;
+}
+.form-horizontal .form-vertical .controls {
+  margin-left: 0;
+}
+.form-horizontal .form-vertical.form-actions, .form-horizontal .form-vertical .form-actions {
+  padding-left: 20px;
+}
+.control-group .control-group {
+  margin-bottom: 0;
+}
+.horizontal-form .well .control-group > label {
+  width: 120px;
+}
+.horizontal-form .well .controls {
+  margin-left: 140px;
 }
 table {
   max-width: 100%;
@@ -1265,6 +1302,9 @@ table .span12 {
   float: none;
   width: 924px;
   margin-left: 0;
+}
+section + section {
+  margin-top: 40px;
 }
 [class^="icon-"] {
   display: inline-block;
@@ -2904,12 +2944,12 @@ body > .page-alert {
 .nav-list > li + .nav-header {
   margin-top: 9px;
 }
-.nav-list .active > a {
+.nav-list .active > a, .nav-list .active > a:hover {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   background-color: #0088cc;
 }
-.nav-list .icon {
+.nav-list [class^="icon-"] {
   margin-right: 2px;
 }
 .nav-tabs, .nav-pills {
