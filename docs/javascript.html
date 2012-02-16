@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Bootstrap CSS and Javascript library</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -78,7 +78,7 @@
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
         <h1>Javascript for Bootstrap</h1>
-        <p class="lead">Bring Bootstrap's components to life&mdash;now with 12 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.
+        <p class="lead">Bring Bootstrap's components to life&mdash;now with 14 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.
         <div class="subnav">
           <ul class="nav nav-pills">
             <li><a href="#javascript">All plugins</a></li>
@@ -93,6 +93,8 @@
             <li><a href="#collapse">Collapse</a></li>
             <li><a href="#carousel">Carousel</a></li>
             <li><a href="#typeahead">Typeahead</a></li>
+            <li><a href="#placeholder">Placeholder</a></li>
+            <li><a href="#inputmask">Input mask</a></li>
           </ul>
         </div>
       </header>
@@ -174,6 +176,20 @@
           <label>
             <h3><a href="./javascript.html#typeahead">Typeahead</a></h3>
             <p>A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input.</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#placeholder">Placeholder</a></h3>
+            <p>Support for the placeholder attribute in older browsers.</p>
+          </label>
+        </div>
+      </div> <!-- /row -->
+      <div class="row" style="margin-bottom: 9px;">
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#inputmask">Input mask</a></h3>
+            <p>Make sure the user types in the data that you want, by using an input mask.</p>
           </label>
         </div>
         <div class="span3">
@@ -1433,6 +1449,75 @@ $('.myCarousel').carousel({
       </div>
     </section>
 
+
+
+    <!-- Placeholder
+    ================================================== -->
+    <section id="placeholder">
+      <div class="page-header">
+        <h1>Placeholder <small>bootstrap-placeholder.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About</h3>
+          <p>The placeholder plugin will add support for the <code>placeholder</code> attribute for older browsers.</p>
+          <div class="alert alert-info">For newer browsers that support placeholders natively, this plugin does nothing.</div>
+          <a href="assets/js/bootstrap-placeholder.js" target="_blank" class="btn">Download file</a>
+        </div>
+        <div class="span9 columns">
+          <h2>Example</h2>
+          <div class="well">
+            <input type="text" class="span2" placeholder="Username"> <input type="password" class="span2" placeholder="Password">
+          </div>
+          <h3>Markup</h3>
+          <p>Use the HTML5 <code>placeholder</code> attribute.</p>
+<pre class="prettyprint linenums">
+&lt;input type="text" placeholder="Username"&gt;
+</pre>
+          <h3>Methods</h3>
+          <h4>.placeholder()</h4>
+          <p>Initializes an input with a placeholder.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Input mask
+    ================================================== -->
+    <section id="inputmask">
+      <div class="page-header">
+        <h1>Input mask <small>bootstrap-inputmask.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About</h3>
+          <p>Input masks can be used to force the user to enter data conform a specific format.</p>
+        </div>
+        <div class="span9 columns">
+          <h2>Example</h2>
+          <div class="well">
+            <label>ISBN <input type="text" class="span2" data-inputmask="999-99-999-9999-9"></label>
+          </div>
+          <h3>Format</h3>
+          <table class="table table-striped">
+            <tr><th>Character</td><th>Description</td></tr>
+            <tr><td>9</td><td>Number</td></tr>
+            <tr><td>a</td><td>Letter</td></tr>
+            <tr><td>*</td><td>Alphanumeric</td></tr>
+          </table>
+          <h3>Markup</h3>
+          <p>Add <code>data-inputmask</code> attribute to register an element with an input mask.</p>
+<pre class="prettyprint linenums">
+&lt;input type="text" data-inputmask="999-99-999-9999-9"&gt;
+</pre>
+          <h3>Methods</h3>
+          <h4>.inputmask(mask, options)</h4>
+          <p>Initializes an input with an input mask.</p>
+        </div>
+      </div>
+    </section>
+
      <!-- Footer
       ================================================== -->
       <footer class="footer">
@@ -1440,6 +1525,7 @@ $('.myCarousel').carousel({
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
       </footer>
 
     </div><!-- /container -->
@@ -1464,6 +1550,8 @@ $('.myCarousel').carousel({
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-inputmask.js"></script>
+    <script src="assets/js/bootstrap-placeholder.js"></script>
     <script src="assets/js/application.js"></script>
 
 
