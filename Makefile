@@ -59,7 +59,7 @@ release: bootstrap
 	cp -a bootstrap/* .
 	rm -rf bootstrap
 	git add .
-	if [ "$(git status --short)" != "" ]; then git commit && git push origin release; fi
+	if [ "`git status --short`" != "" ]; then git commit && git push origin release; fi
 	git checkout -
 
 #
