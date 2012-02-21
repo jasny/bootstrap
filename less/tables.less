@@ -113,6 +113,20 @@ table {
 }
 
 
+// TABLE HREF
+// ----------
+tr[data-href] {
+  td {
+    cursor: pointer;
+    &.nohref {
+      cursor: auto;
+    }
+  }
+  &:hover td, &:nth-child(odd):hover td {
+    background-color: #eee;
+  }
+}
+
 
 // TABLE CELL SIZING
 // -----------------

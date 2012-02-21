@@ -19,6 +19,7 @@
             <li><a href="#typeahead">{{_i}}Typeahead{{/i}}</a></li>
             <li><a href="#placeholder">{{_i}}Placeholder{{/i}}</a></li>
             <li><a href="#inputmask">{{_i}}Input mask{{/i}}</a></li>
+            <li><a href="#table-href">{{_i}}Table href{{/i}}</a></li>
           </ul>
         </div>
       </header>
@@ -114,6 +115,12 @@
           <label>
             <h3><a href="./javascript.html#inputmask">Input mask</a></h3>
             <p>{{_i}}Make sure the user types in the data that you want, by using an input mask.{{/i}}</p>
+          </label>
+        </div>
+        <div class="span3">
+          <label>
+            <h3><a href="./javascript.html#table-href">Table href</a></h3>
+            <p>{{_i}}A simple plugin, to turn table rows into a links.{{/i}}</p>
           </label>
         </div>
         <div class="span3">
@@ -1373,6 +1380,7 @@ $('.myCarousel').carousel({
       </div>
     </section>
 
+<<<<<<< HEAD
 
 
     <!-- Placeholder
@@ -1438,6 +1446,41 @@ $('.myCarousel').carousel({
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>.inputmask({{_i}}mask, options{{/i}})</h4>
           <p>{{_i}}Initializes an input with an input mask.{{/i}}</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Table-href
+    ================================================== -->
+    <section id="table-href">
+      <div class="page-header">
+        <h1>{{_i}}Table href{{/i}} <small>bootstrap-table-href.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>{{_i}}About{{/i}}</h3>
+          <p>{{_i}}A plugin to turn a table row into a clickable link.{{/i}}</p>
+          <a href="assets/js/bootstrap-table-href.js" target="_blank" class="btn">{{_i}}Download file{{/i}}</a>
+        </div>
+        <div class="span9 columns">
+          <h2>{{_i}}Example{{/i}}</h2>
+          <table class="table table-striped table-bordered">
+            <tr><th>{{_i}}Name{{/i}}</th><th>{{_i}}Description{{/i}}</th><th>Actions</th></tr>
+            <tr data-href="./javascript.html#modals"><td>{{_i}}Modals{{/i}}</td><td>{{_i}}A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr data-href="./javascript.html#dropdowns"><td>{{_i}}Dropdowns{{/i}}</td><td>{{_i}}Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr data-href="./javascript.html#scrollspy"><td>{{_i}}Scrollspy{{/i}}</td><td>{{_i}}Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr data-href="./javascript.html#tabs"><td>{{_i}}Togglable tabs{{/i}}</td><td>{{_i}}Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr data-href="./javascript.html#tooltips"><td>{{_i}}Tooltips{{/i}}</td><td>{{_i}}A new take on the jQuery Tipsy plugin, Tooltips don't rely on images, uss CSS3 for animations, and data-attributes for local title storage.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+          </table>
+          <h3>{{_i}}Markup{{/i}}</h3>
+          <p>{{_i}}Add the <code>data-href</code> attribute to a tr element. A column can be excluded by adding the <code>.nohref</code> class.{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;table&gt;
+  &lt;tr data-href="javascript.html#modals"&gt;&lt;td&gt;Modals&lt;/td&gt;&lt;td class="nohref"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
         </div>
       </div>
     </section>
