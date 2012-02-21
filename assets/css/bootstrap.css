@@ -1243,6 +1243,15 @@ table {
 .table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
+tr[data-href] td {
+  cursor: pointer;
+}
+tr[data-href] td.nohref {
+  cursor: auto;
+}
+tr[data-href]:hover td, tr[data-href]:nth-child(odd):hover td {
+  background-color: #eee;
+}
 table .span1 {
   float: none;
   width: 44px;

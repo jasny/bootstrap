@@ -6,7 +6,7 @@
 
     @todo: rewrite to proper bootstrap plugin
 */
-(function($) {
+;(function($) {
 	var pasteEventName = ($.browser.msie ? 'paste' : 'input') + ".mask";
 	var iPhone = (window.orientation != undefined);
 
