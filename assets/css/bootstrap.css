@@ -555,10 +555,6 @@ select,
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-.uneditable-textarea {
-  width: auto;
-  height: auto;
-}
 label input, label textarea, label select {
   display: block;
 }
@@ -1092,11 +1088,16 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 .form-horizontal select,
 .form-search .help-inline,
 .form-inline .help-inline,
-.form-horizontal .help-inline,
+.form-horizontal .help-inline {
+  display: inline-block;
+  margin-bottom: 0;
+}
 .form-search .uneditable-input,
 .form-inline .uneditable-input,
-.form-horizontal .uneditable-input {
-  display: inline-block;
+.form-horizontal .uneditable-input,
+.form-search .uneditable-textarea,
+.form-inline .uneditable-textarea,
+.form-horizontal .uneditable-textarea {
   margin-bottom: 0;
 }
 .form-search label,
@@ -1311,6 +1312,17 @@ table .span12 {
   float: none;
   width: 924px;
   margin-left: 0;
+}
+.table-actions {
+  *zoom: 1;
+  padding-bottom: 20px;
+}
+.table-actions:before, .table-actions:after {
+  display: table;
+  content: "";
+}
+.table-actions:after {
+  clear: both;
 }
 section + section {
   margin-top: 40px;
