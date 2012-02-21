@@ -3767,6 +3767,9 @@ body > .page-alert {
   margin-left: 5px;
   margin-bottom: 0;
 }
+.modal form {
+  margin-bottom: 0;
+}
 .tooltip {
   position: absolute;
   z-index: 1020;
