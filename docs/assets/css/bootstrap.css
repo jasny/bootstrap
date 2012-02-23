@@ -966,6 +966,24 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 ::-webkit-input-placeholder {
   color: #999999;
 }
+.editor {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100px;
+  width: 100%;
+  padding: 5px;
+}
+.editor-ckeditor {
+  height: 277px;
+}
+.uneditable-textarea.editor-ckeditor {
+  white-space: normal;
+  padding: 5px 3px 5px 5px;
+}
+textarea.editor-ckeditor {
+  visibility: hidden;
+}
 .help-block {
   margin-top: 5px;
   margin-bottom: 0;
@@ -3765,6 +3783,9 @@ body > .page-alert {
 .modal-footer .btn {
   float: right;
   margin-left: 5px;
+  margin-bottom: 0;
+}
+.modal form {
   margin-bottom: 0;
 }
 .tooltip {
