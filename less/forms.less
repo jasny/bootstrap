@@ -261,7 +261,6 @@ textarea[readonly] {
 
 
 
-
 // FORM FIELD FEEDBACK STATES
 // --------------------------
 
@@ -404,6 +403,28 @@ select:focus:required:invalid {
 
 // Placeholder text gets special styles; can't be bundled together though for some reason
 .placeholder(@grayLight);
+
+
+
+// EDITOR INPUT
+// ------------
+
+.editor {
+  .box-sizing(border-box);
+  height: 100px;
+  width: 100%;
+  padding: 5px;
+}
+.editor-ckeditor {
+  height: 277px;
+}
+.uneditable-textarea.editor-ckeditor {
+  white-space: normal;
+  padding: 5px 3px 5px 5px;
+}
+textarea.editor-ckeditor {
+  visibility: hidden; // Assume it will be replaced
+}
 
 
 
