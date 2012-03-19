@@ -1342,6 +1342,10 @@ table .span12 {
 .table-actions:after {
   clear: both;
 }
+th.row-actions, td.row-actions {
+  width: 1px;
+  white-space: nowrap;
+}
 section + section {
   margin-top: 40px;
 }
@@ -3165,6 +3169,9 @@ body > .page-alert {
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
+}
+body > .container.tabbable > .nav-tabs {
+  padding-top: 15px;
 }
 .tabs-below > .nav-tabs {
   border-top: 1px solid #ddd;
