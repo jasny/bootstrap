@@ -687,7 +687,8 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
 input[class*="span"],
 select[class*="span"],
 textarea[class*="span"],
-.uneditable-input {
+.uneditable-input,
+.uneditable-textarea {
   float: none;
   margin-left: 0;
 }
@@ -1000,7 +1001,7 @@ textarea.editor-ckeditor {
   padding-left: 5px;
 }
 .input-prepend, .input-append {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   *zoom: 1;
 }
 .input-prepend:before,
