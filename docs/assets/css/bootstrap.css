@@ -829,136 +829,136 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
   height: 54px;
   white-space: pre-wrap;
 }
-.uneditable-textarea[rows=1] {
+.uneditable-textarea[rows="1"] {
   height: 36px;
 }
-.uneditable-textarea[rows=2] {
+.uneditable-textarea[rows="2"] {
   height: 54px;
 }
-.uneditable-textarea[rows=3] {
+.uneditable-textarea[rows="3"] {
   height: 72px;
 }
-.uneditable-textarea[rows=4] {
+.uneditable-textarea[rows="4"] {
   height: 90px;
 }
-.uneditable-textarea[rows=5] {
+.uneditable-textarea[rows="5"] {
   height: 108px;
 }
-.uneditable-textarea[rows=6] {
+.uneditable-textarea[rows="6"] {
   height: 126px;
 }
-.uneditable-textarea[rows=7] {
+.uneditable-textarea[rows="7"] {
   height: 144px;
 }
-.uneditable-textarea[rows=8] {
+.uneditable-textarea[rows="8"] {
   height: 162px;
 }
-.uneditable-textarea[rows=9] {
+.uneditable-textarea[rows="9"] {
   height: 180px;
 }
-.uneditable-textarea[rows=10] {
+.uneditable-textarea[rows="10"] {
   height: 198px;
 }
-.uneditable-textarea[rows=11] {
+.uneditable-textarea[rows="11"] {
   height: 216px;
 }
-.uneditable-textarea[rows=12] {
+.uneditable-textarea[rows="12"] {
   height: 234px;
 }
-.uneditable-textarea[rows=13] {
+.uneditable-textarea[rows="13"] {
   height: 252px;
 }
-.uneditable-textarea[rows=14] {
+.uneditable-textarea[rows="14"] {
   height: 270px;
 }
-.uneditable-textarea[rows=15] {
+.uneditable-textarea[rows="15"] {
   height: 288px;
 }
-.uneditable-textarea[rows=16] {
+.uneditable-textarea[rows="16"] {
   height: 306px;
 }
-.uneditable-textarea[rows=17] {
+.uneditable-textarea[rows="17"] {
   height: 324px;
 }
-.uneditable-textarea[rows=18] {
+.uneditable-textarea[rows="18"] {
   height: 342px;
 }
-.uneditable-textarea[rows=19] {
+.uneditable-textarea[rows="19"] {
   height: 360px;
 }
-.uneditable-textarea[rows=20] {
+.uneditable-textarea[rows="20"] {
   height: 378px;
 }
-.uneditable-textarea[rows=21] {
+.uneditable-textarea[rows="21"] {
   height: 396px;
 }
-.uneditable-textarea[rows=22] {
+.uneditable-textarea[rows="22"] {
   height: 414px;
 }
-.uneditable-textarea[rows=23] {
+.uneditable-textarea[rows="23"] {
   height: 432px;
 }
-.uneditable-textarea[rows=24] {
+.uneditable-textarea[rows="24"] {
   height: 450px;
 }
-.uneditable-textarea[rows=25] {
+.uneditable-textarea[rows="25"] {
   height: 468px;
 }
-.uneditable-textarea[rows=26] {
+.uneditable-textarea[rows="26"] {
   height: 486px;
 }
-.uneditable-textarea[rows=27] {
+.uneditable-textarea[rows="27"] {
   height: 504px;
 }
-.uneditable-textarea[rows=28] {
+.uneditable-textarea[rows="28"] {
   height: 522px;
 }
-.uneditable-textarea[rows=29] {
+.uneditable-textarea[rows="29"] {
   height: 540px;
 }
-.uneditable-textarea[rows=30] {
+.uneditable-textarea[rows="30"] {
   height: 558px;
 }
-.uneditable-textarea[rows=35] {
+.uneditable-textarea[rows="35"] {
   height: 648px;
 }
-.uneditable-textarea[rows=40] {
+.uneditable-textarea[rows="40"] {
   height: 738px;
 }
-.uneditable-textarea[rows=45] {
+.uneditable-textarea[rows="45"] {
   height: 828px;
 }
-.uneditable-textarea[rows=50] {
+.uneditable-textarea[rows="50"] {
   height: 918px;
 }
-.uneditable-textarea[rows=55] {
+.uneditable-textarea[rows="55"] {
   height: 1008px;
 }
-.uneditable-textarea[rows=60] {
+.uneditable-textarea[rows="60"] {
   height: 1098px;
 }
-.uneditable-textarea[rows=65] {
+.uneditable-textarea[rows="65"] {
   height: 1188px;
 }
-.uneditable-textarea[rows=70] {
+.uneditable-textarea[rows="70"] {
   height: 1278px;
 }
-.uneditable-textarea[rows=75] {
+.uneditable-textarea[rows="75"] {
   height: 1368px;
 }
-.uneditable-textarea[rows=80] {
+.uneditable-textarea[rows="80"] {
   height: 1458px;
 }
-.uneditable-textarea[rows=85] {
+.uneditable-textarea[rows="85"] {
   height: 1548px;
 }
-.uneditable-textarea[rows=90] {
+.uneditable-textarea[rows="90"] {
   height: 1638px;
 }
-.uneditable-textarea[rows=95] {
+.uneditable-textarea[rows="95"] {
   height: 1728px;
 }
-.uneditable-textarea[rows=100] {
+.uneditable-textarea[rows="100"] {
   height: 1818px;
 }
 :-moz-placeholder {
