@@ -687,8 +687,8 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
 input[class*="span"],
 select[class*="span"],
 textarea[class*="span"],
-.uneditable-input,
-.uneditable-textarea {
+.uneditable-input[class*="span"],
+.uneditable-textarea[class*="span"] {
   float: none;
   margin-left: 0;
 }
