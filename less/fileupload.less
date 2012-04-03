@@ -1,0 +1,47 @@
+// Fileupload.less
+// CSS for file upload and image upload widgets
+// --------------------------------------------
+
+.btn.btn-file {
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  > input[type="file"] {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.fileupload {
+  margin-bottom: 9px;
+  .uneditable-input {
+    display: inline-block;
+    margin-bottom: 0px;
+    vertical-align: middle;
+  }
+  .thumbnail {
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    > img {
+      display: inline-block;
+      vertical-align: middle;
+      max-height: 100%;
+    }
+  }
+  .btn {
+    vertical-align: middle;
+  }
+}
+
+.fileupload-exists .fileupload-new,
+.fileupload-new .fileupload-exists {
+  display: none;
+}
