@@ -2,15 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap CSS and Javascript library</title>
+    <title>Less · Twitter Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -18,11 +13,16 @@
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
 
   <body data-spy="scroll" data-target=".subnav" data-offset="50">
@@ -60,9 +60,9 @@
                 <a href="./less.html">Using LESS</a>
               </li>
               <li class="divider-vertical"></li>
-              <li class="">
+              <!--<li class="">
                 <a href="./download.html">Customize</a>
-              </li>
+              </li>-->
               <li class="">
                 <a href="./examples.html">Examples</a>
               </li>
@@ -123,7 +123,7 @@
     </div>
     <div class="span4">
       <h3>Operations</h3>
-      <p>Make your grid, leading, and more super flexible by doing the math on the fly with operations. Multiple, divide, add, and subtract your way to CSS sanity.</p>
+      <p>Make your grid, leading, and more super flexible by doing the math on the fly with operations. Multiply, divide, add, and subtract your way to CSS sanity.</p>
     </div>
   </div>
 </section>
@@ -348,13 +348,13 @@
         <tbody>
           <tr>
             <td class="span3"><code>@warningText</code></td>
-            <td>#f3edd2</td>
-            <td class="swatch-col"><span class="swatch" style="background-color: #f3edd2;"></span></td>
+            <td>#c09853</td>
+            <td><span class="swatch" style="background-color: #c09853;"></span></td>
           </tr>
           <tr>
             <td><code>@warningBackground</code></td>
-            <td>#c09853</td>
-            <td><span class="swatch" style="background-color: #c09853;"></span></td>
+            <td>#f3edd2</td>
+            <td class="swatch-col"><span class="swatch" style="background-color: #f3edd2;"></span></td>
           </tr>
           <tr>
             <td><code>@errorText</code></td>
@@ -552,22 +552,17 @@
       <tr>
         <td><code>.container-fixed()</code></td>
         <td><em class="muted">none</em></td>
-        <td>Provide a fixed-width (set with <code>@siteWidth</code>) container for holding your content</td>
+        <td>Create a horizontally centered container for holding your content</td>
       </tr>
       <tr>
-        <td><code>.columns()</code></td>
-        <td><code>@columns: 1</code></td>
-        <td>Build a grid column that spans any number of columns (defaults to 1 column)</td>
+        <td><code>#grid > .core()</code></td>
+        <td><code>@gridColumnWidth, @gridGutterWidth</code></td>
+        <td>Generate a pixel grid system (container, row, and columns) with <em>n</em> columns and <em>x</em> pixel wide gutter</td>
       </tr>
       <tr>
-        <td><code>.offset()</code></td>
-        <td><code>@columns: 1</code></td>
-        <td>Offset a grid column with left margin that spans any number of columns</td>
-      </tr>
-      <tr>
-        <td><code>.gridColumn()</code></td>
-        <td><em class="muted">none</em></td>
-        <td>Make an element float like a grid column</td>
+        <td><code>#grid > .fluid()</code></td>
+        <td><code>@fluidGridColumnWidth, @fluidGridGutterWidth</code></td>
+        <td>Generate a precent grid system with <em>n</em> columns and <em>x</em> % wide gutter</td>
       </tr>
     </tbody>
   </table>
@@ -604,7 +599,7 @@
       <tr>
         <td><code>.scale()</code></td>
         <td><code>@ratio</code></td>
-        <td>Scale an element to <em>n</em> times it's original size</td>
+        <td>Scale an element to <em>n</em> times its original size</td>
       </tr>
       <tr>
         <td><code>.translate()</code></td>
@@ -614,7 +609,7 @@
       <tr>
         <td><code>.background-clip()</code></td>
         <td><code>@clip</code></td>
-        <td>Crop the backgroud of an element (useful for <code>border-radius</code>)</td>
+        <td>Crop the background of an element (useful for <code>border-radius</code>)</td>
       </tr>
       <tr>
         <td><code>.background-size()</code></td>
@@ -654,47 +649,47 @@
     </thead>
     <tbody>
       <tr>
-        <td><code>.#translucent > .background()</code></td>
+        <td><code>#translucent > .background()</code></td>
         <td><code>@color: @white, @alpha: 1</code></td>
         <td>Give an element a translucent background color</td>
       </tr>
       <tr>
-        <td><code>.#translucent > .border()</code></td>
+        <td><code>#translucent > .border()</code></td>
         <td><code>@color: @white, @alpha: 1</code></td>
         <td>Give an element a translucent border color</td>
       </tr>
       <tr>
-        <td><code>.#gradient > .vertical()</code></td>
+        <td><code>#gradient > .vertical()</code></td>
         <td><code>@startColor, @endColor</code></td>
         <td>Create a cross-browser vertical background gradient</td>
       </tr>
       <tr>
-        <td><code>.#gradient > .horizontal()</code></td>
+        <td><code>#gradient > .horizontal()</code></td>
         <td><code>@startColor, @endColor</code></td>
         <td>Create a cross-browser horizontal background gradient</td>
       </tr>
       <tr>
-        <td><code>.#gradient > .directional()</code></td>
+        <td><code>#gradient > .directional()</code></td>
         <td><code>@startColor, @endColor, @deg</code></td>
         <td>Create a cross-browser directional background gradient</td>
       </tr>
       <tr>
-        <td><code>.#gradient > .vertical-three-colors()</code></td>
+        <td><code>#gradient > .vertical-three-colors()</code></td>
         <td><code>@startColor, @midColor, @colorStop, @endColor</code></td>
         <td>Create a cross-browser three-color background gradient</td>
       </tr>
       <tr>
-        <td><code>.#gradient > .radial()</code></td>
+        <td><code>#gradient > .radial()</code></td>
         <td><code>@innerColor, @outerColor</code></td>
         <td>Create a cross-browser radial background gradient</td>
       </tr>
       <tr>
-        <td><code>.#gradient > .striped()</code></td>
+        <td><code>#gradient > .striped()</code></td>
         <td><code>@color, @angle</code></td>
         <td>Create a cross-browser striped background gradient</td>
       </tr>
       <tr>
-        <td><code>.#gradientBar()</code></td>
+        <td><code>#gradientBar()</code></td>
         <td><code>@primaryColor, @secondaryColor</code></td>
         <td>Used for buttons to assign a gradient and slightly darker border</td>
       </tr>
@@ -717,8 +712,8 @@
   <div class="row">
     <div class="span4">
       <h3>Node with makefile</h3>
-      <p>Install the LESS command line compiler with npm by running the following command:</p>
-      <pre>$ npm install less</pre>
+      <p>Install the LESS command line compiler and uglify-js globally with npm by running the following command:</p>
+      <pre>$ npm install -g less uglify-js</pre>
       <p>Once installed just run <code>make</code> from the root of your bootstrap directory and you're all set.</p>
       <p>Additionally, if you have <a href="https://github.com/mynyml/watchr">watchr</a> installed, you may run <code>make watch</code> to have bootstrap automatically rebuilt every time you edit a file in the bootstrap lib (this isn't required, just a convenience method).</p>
     </div><!-- /span4 -->
@@ -792,6 +787,7 @@
     <script src="assets/js/bootstrap-inputmask.js"></script>
     <script src="assets/js/bootstrap-placeholder.js"></script>
     <script src="assets/js/bootstrap-table-href.js"></script>
+    <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
 
     <!-- Analytics
