@@ -3,9 +3,8 @@
       <header class="jumbotron subhead" id="overview">
         <h1>{{_i}}Javascript for Bootstrap{{/i}}</h1>
         <p class="lead">{{_i}}Bring Bootstrap's components to life&mdash;now with 16 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.{{/i}}
-        <div class="subnav">
+        <div class="subnav visible-desktop">
           <ul class="nav nav-pills">
-            <li><a href="#javascript">{{_i}}All plugins{{/i}}</a></li>
             <li><a href="#modals">{{_i}}Modal{{/i}}</a></li>
             <li><a href="#dropdowns">{{_i}}Dropdown{{/i}}</a></li>
             <li><a href="#scrollspy">{{_i}}Scrollspy{{/i}}</a></li>
@@ -24,7 +23,7 @@
                 <li><a href="#inputmask">{{_i}}Inputmask{{/i}}</a></li>
               </ul>
             </li>
-            <li><a href="#table-href">{{_i}}Table href{{/i}}</a></li>
+            <li><a href="#rowlink">{{_i}}Rowlink{{/i}}</a></li>
             <li><a href="#fileupload">{{_i}}Fileupload{{/i}}</a></li>
           </ul>
         </div>
@@ -125,7 +124,7 @@
         </div>
         <div class="span3">
           <label>
-            <h3><a href="./javascript.html#table-href">Table href</a></h3>
+            <h3><a href="./javascript.html#rowlink">Rowlink</a></h3>
             <p>{{_i}}A simple plugin, to turn table rows into a links.{{/i}}</p>
           </label>
         </div>
@@ -166,7 +165,7 @@
           <div class="well modal-example" style="background-color: #888; border: none;">
             <div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1">
               <div class="modal-header">
-                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <button class="close" data-dismiss="modal">&times;</button>
                 <h3>{{_i}}Modal header{{/i}}</h3>
               </div>
               <div class="modal-body">
@@ -184,7 +183,7 @@
           <!-- sample modal content -->
           <div id="myModal" class="modal hide fade">
             <div class="modal-header">
-              <a class="close" data-dismiss="modal" >&times;</a>
+              <button class="close" data-dismiss="modal">&times;</button>
               <h3>{{_i}}Modal Heading{{/i}}</h3>
             </div>
             <div class="modal-body">
@@ -261,7 +260,7 @@
 <pre class="prettyprint linenums">
 &lt;div class="modal" id="myModal"&gt;
   &lt;div class="modal-header"&gt;
-    &lt;a class="close" data-dismiss="modal"&gt;&times;&lt;/a&gt;
+    &lt;button class="close" data-dismiss="modal"&gt;&times;&lt;/button&gt;
     &lt;h3&gt;Modal header&lt;/h3&gt;
   &lt;/div&gt;
   &lt;div class="modal-body"&gt;
@@ -451,6 +450,20 @@ $('#myModal').on('hidden', function () {
   &lt;/li&gt;
   ...
 &lt;/ul&gt;</pre>
+          <p>{{_i}}To keep URLs intact, use the <code>data-target</code> attribute instead of <code>href="#"</code>.{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;ul class="nav nav-pills"&gt;
+  &lt;li class="dropdown"&gt;
+    &lt;a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="path/to/page.html"&gt;
+      {{_i}}Dropdown{{/i}}
+      &lt;b class="caret"&gt;&lt;/b&gt;
+    &lt;/a&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>$().dropdown()</h4>
           <p>{{_i}}A programatic api for activating menus for a given navbar or tabbed navigation.{{/i}}</p>
@@ -529,6 +542,14 @@ $('#myModal').on('hidden', function () {
             <strong>{{_i}}Heads up!{{/i}}</strong>
             {{_i}}Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#home"&gt;home&lt;/a&gt;</code> must correspond to something in the dom like <code>&lt;div id="home"&gt;&lt;/div&gt;</code>.{{/i}}
           </div>
+          <h3>{{_i}}Methods{{/i}}</h3>
+          <h4>.scrollspy('refresh')</h4>
+          <p>{{_i}}When using scrollspy in conjunction with adding or removing of elements from the DOM, you'll need to call the refresh method like so:{{/i}}</p>
+<pre class="prettyprint linenums">
+$('[data-spy="scroll"]').each(function () {
+  var $spy = $(this).scrollspy('refresh')
+});
+</pre>
           <h3>{{_i}}Options{{/i}}</h3>
           <table class="table table-bordered table-striped">
             <thead>
@@ -546,6 +567,21 @@ $('#myModal').on('hidden', function () {
                <td>{{_i}}10{{/i}}</td>
                <td>{{_i}}Pixels to offset from top when calculating position of scroll.{{/i}}</td>
              </tr>
+            </tbody>
+          </table>
+           <h3>{{_i}}Events{{/i}}</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">{{_i}}Event{{/i}}</th>
+               <th>{{_i}}Description{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>{{_i}}activate{{/i}}</td>
+               <td>{{_i}}This event fires whenever a new item becomes activated by the scrollspy.{{/i}}</td>
+            </tr>
             </tbody>
           </table>
         </div>
@@ -568,7 +604,7 @@ $('#myModal').on('hidden', function () {
         <div class="span9 columns">
           <h2>{{_i}}Example tabs{{/i}}</h2>
           <p>{{_i}}Click the tabs below to toggle between hidden panes, even via dropdown menus.{{/i}}</p>
-          <ul id="tab" class="nav nav-tabs">
+          <ul id="myTab" class="nav nav-tabs">
             <li class="active"><a href="#home" data-toggle="tab">{{_i}}Home{{/i}}</a></li>
             <li><a href="#profile" data-toggle="tab">{{_i}}Profile{{/i}}</a></li>
             <li class="dropdown">
@@ -595,10 +631,21 @@ $('#myModal').on('hidden', function () {
           </div>
           <hr>
           <h2>{{_i}}Using bootstrap-tab.js{{/i}}</h2>
-          <p>{{_i}}Enable tabbable tabs via javascript:{{/i}}</p>
-          <pre class="prettyprint linenums">$('#myTab').tab('show')</pre>
+          <p>{{_i}}Enable tabbable tabs via javascript (each tab needs to be activated individually):{{/i}}</p>
+          <pre class="prettyprint linenums">
+$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})</pre>
+          <p>{{_i}}You can activate individual tabs in several ways:{{/i}}</p>
+<pre class="prettyprint linenums">
+$('#myTab a[href="#profile"]').tab('show'); // Select tab by name
+$('#myTab a:first').tab('show'); // Select first tab
+$('#myTab a:last').tab('show'); // Select last tab
+$('#myTab li:eq(2) a').tab('show'); // Select third tab (0-indexed)
+</pre>
           <h3>{{_i}}Markup{{/i}}</h3>
-          <p>{{_i}}You can activate a tab or pill navigation without writing any javascript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element.{{/i}}</p>
+          <p>{{_i}}You can activate a tab or pill navigation without writing any javascript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the bootstrap tab styling.{{/i}}</p>
 <pre class="prettyprint linenums">
 &lt;ul class="nav nav-tabs"&gt;
   &lt;li&gt;&lt;a href="#home" data-toggle="tab"&gt;{{_i}}Home{{/i}}&lt;/a&gt;&lt;/li&gt;
@@ -609,10 +656,10 @@ $('#myModal').on('hidden', function () {
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>$().tab</h4>
           <p>
-            {{_i}}Activates a tab element and content container. Tab should have either a `data-target` or an `href` targeting a container node in the dom.{{/i}}
+            {{_i}}Activates a tab element and content container. Tab should have either a <code>data-target</code> or an <code>href</code> targeting a container node in the DOM.{{/i}}
           </p>
 <pre class="prettyprint linenums">
-&lt;ul class="nav nav-tabs"&gt;
+&lt;ul class="nav nav-tabs" id="myTab"&gt;
   &lt;li class="active"&gt;&lt;a href="#home"&gt;{{_i}}Home{{/i}}&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#profile"&gt;{{_i}}Profile{{/i}}&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#messages"&gt;{{_i}}Messages{{/i}}&lt;/a&gt;&lt;/li&gt;
@@ -628,7 +675,7 @@ $('#myModal').on('hidden', function () {
 
 &lt;script&gt;
   $(function () {
-    $('.tabs a:last').tab('show')
+    $('#myTab a:last').tab('show');
   })
 &lt;/script&gt;</pre>
           <h3>{{_i}}Events{{/i}}</h3>
@@ -730,7 +777,7 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
                <td>{{_i}}number | object{{/i}}</td>
                <td>0</td>
                <td>
-                <p>{{_i}}delay showing and hiding the tooltip (ms){{/i}}</p>
+                <p>{{_i}}delay showing and hiding the tooltip (ms) - does not apply to manual trigger type{{/i}}</p>
                 <p>{{_i}}If a number is supplied, delay is applied to both hide/show{{/i}}</p>
                 <p>{{_i}}Object structure is: <code>delay: { show: 500, hide: 100 }</code>{{/i}}</p>
                </td>
@@ -839,7 +886,7 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
                <td>{{_i}}number | object{{/i}}</td>
                <td>0</td>
                <td>
-                <p>{{_i}}delay showing and hiding the popover (ms){{/i}}</p>
+                <p>{{_i}}delay showing and hiding the popover (ms) - does not apply to manual trigger type{{/i}}</p>
                 <p>{{_i}}If a number is supplied, delay is applied to both hide/show{{/i}}</p>
                 <p>{{_i}}Object structure is: <code>delay: { show: 500, hide: 100 }</code>{{/i}}</p>
                </td>
@@ -852,7 +899,7 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
           </div>
           <h3>{{_i}}Markup{{/i}}</h3>
           <p>
-          {{_i}}For performance reasons, the Tooltip and Popover data-apis are opt in. If you would like to use them just specify a the selector option.{{/i}}
+          {{_i}}For performance reasons, the Tooltip and Popover data-apis are opt in. If you would like to use them just specify a selector option.{{/i}}
           </p>
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>$().popover({{_i}}options{{/i}})</h4>
@@ -888,11 +935,11 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
           <h2>{{_i}}Example alerts{{/i}}</h2>
           <p>{{_i}}The alerts plugin works on regular alert messages, and block messages.{{/i}}</p>
           <div class="alert fade in">
-            <a class="close" data-dismiss="alert" href="#">&times;</a>
+            <button class="close" data-dismiss="alert">&times;</button>
             <strong>{{_i}}Holy guacamole!{{/i}}</strong> {{_i}}Best check yo self, you're not looking too good.{{/i}}
           </div>
           <div class="alert alert-block alert-error fade in">
-            <a class="close" data-dismiss="alert" href="#">&times;</a>
+            <button class="close" data-dismiss="alert">&times;</button>
             <h4 class="alert-heading">{{_i}}Oh snap! You got an error!{{/i}}</h4>
             <p>{{_i}}Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.{{/i}}</p>
             <p>
@@ -1060,7 +1107,8 @@ $('#my-alert').bind('closed', function () {
           <h3>{{_i}}About{{/i}}</h3>
           <p>{{_i}}Get base styles and flexible support for collapsible components like accordions and navigation.{{/i}}</p>
           <a href="assets/js/bootstrap-collapse.js" target="_blank" class="btn">{{_i}}Download file{{/i}}</a>
-        </div>
+          <p class="muted"><strong>*</strong> {{_i}}Requires the Transitions plugin to be included.{{/i}}</p>
+       </div>
         <div class="span9 columns">
           <h2>{{_i}}Example accordion{{/i}}</h2>
           <p>{{_i}}Using the collapse plugin, we built a simple accordion style widget:{{/i}}</p>
@@ -1267,7 +1315,7 @@ $('#myCollapsible').on('hidden', function () {
                <td>{{_i}}interval{{/i}}</td>
                <td>{{_i}}number{{/i}}</td>
                <td>5000</td>
-               <td>{{_i}}The amount of time to delay between automatically cycling an item.{{/i}}</td>
+               <td>{{_i}}The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.{{/i}}</td>
              </tr>
              <tr>
                <td>{{_i}}pause{{/i}}</td>
@@ -1485,33 +1533,35 @@ $('.carousel').carousel({
 
 
 
-    <!-- Table-href
+    <!-- Rowlink
     ================================================== -->
-    <section id="table-href">
+    <section id="rowlink">
       <div class="page-header">
-        <h1>{{_i}}Table href{{/i}} <small>bootstrap-table-href.js</small></h1>
+        <h1>{{_i}}Rowlink{{/i}} <small>bootstrap-rowlink.js</small></h1>
       </div>
       <div class="row">
         <div class="span3 columns">
           <h3>{{_i}}About{{/i}}</h3>
-          <p>{{_i}}A plugin to turn a table row into a clickable link.{{/i}}</p>
-          <a href="assets/js/bootstrap-table-href.js" target="_blank" class="btn">{{_i}}Download file{{/i}}</a>
+          <p>{{_i}}This plugin turns a table row into a clickable link.{{/i}}</p>
+          <a href="assets/js/bootstrap-rowlink.js" target="_blank" class="btn">{{_i}}Download file{{/i}}</a>
         </div>
         <div class="span9 columns">
           <h2>{{_i}}Example{{/i}}</h2>
-          <table class="table table-striped table-bordered">
+          <table class="table table-striped table-bordered" data-rowlink="a">
             <tr><th>{{_i}}Name{{/i}}</th><th>{{_i}}Description{{/i}}</th><th>Actions</th></tr>
-            <tr data-href="./javascript.html#modals"><td>{{_i}}Modals{{/i}}</td><td>{{_i}}A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
-            <tr data-href="./javascript.html#dropdowns"><td>{{_i}}Dropdowns{{/i}}</td><td>{{_i}}Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
-            <tr data-href="./javascript.html#scrollspy"><td>{{_i}}Scrollspy{{/i}}</td><td>{{_i}}Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
-            <tr data-href="./javascript.html#tabs"><td>{{_i}}Togglable tabs{{/i}}</td><td>{{_i}}Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
-            <tr data-href="./javascript.html#tooltips"><td>{{_i}}Tooltips{{/i}}</td><td>{{_i}}A new take on the jQuery Tipsy plugin, Tooltips don't rely on images, uss CSS3 for animations, and data-attributes for local title storage.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr><td><a href="./javascript.html#modals">{{_i}}Modals{{/i}}</a></td><td>{{_i}}A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr><td><a href="./javascript.html#dropdowns">{{_i}}Dropdowns{{/i}}</a></td><td>{{_i}}Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr><td><a href="./javascript.html#scrollspy">{{_i}}Scrollspy{{/i}}</a></td><td>{{_i}}Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr><td><a href="./javascript.html#tabs">{{_i}}Togglable tabs{{/i}}</a></td><td>{{_i}}Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
+            <tr><td><a href="./javascript.html#tooltips">{{_i}}Tooltips{{/i}}</a></td><td>{{_i}}A new take on the jQuery Tipsy plugin, Tooltips don't rely on images, uss CSS3 for animations, and data-attributes for local title storage.{{/i}}</td><td class="nohref"><a href="#">Action</a></td></tr>
           </table>
           <h3>{{_i}}Markup{{/i}}</h3>
-          <p>{{_i}}Add the <code>data-href</code> attribute to a tr element. A column can be excluded by adding the <code>.nohref</code> class.{{/i}}</p>
+          <p>{{_i}}Add the <code>data-rowlink</code> attribute to a <code>&lt;table&gt;</code>, <code>&lt;tbody&gt;</code> or <code>&lt;tr&gt;</code> element. The value should be selector to the link, which is a child of the row. Using <code>data-rowlink="a"</code>, will take the href from first <code>&lt;a&gt;</code> of the row.
+          A column can be excluded by adding the <code>.nohref</code> class.{{/i}}</p>
 <pre class="prettyprint linenums">
-&lt;table&gt;
-  &lt;tr data-href="javascript.html#modals"&gt;&lt;td&gt;Modals&lt;/td&gt;&lt;td class="nohref"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;table data-rowlink="a"&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;a href="javascript.html#modals"&gt;Modals&lt;/a&gt;&lt;/td&gt;&lt;td class="nohref"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;a href="javascript.html#dropdowns"&gt;Dropdowns&lt;/a&gt;&lt;/td&gt;&lt;td class="nohref"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 </pre>
         </div>
@@ -1536,19 +1586,19 @@ $('.carousel').carousel({
 
         <div class="span9 columns">
           <h2>{{_i}}Examples file upload elements{{/i}}</h2>
-          <div class="row">
+          <div class="row row-desktop">
             <div class="span4 columns">
               <div class="fileupload fileupload-new" data-fileupload="file">
-                <div class="fileupload-preview fileupload-exists uneditable-input"></div>
-                <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select file{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
-                <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
+                <div class="input-append">
+                    <div class="uneditable-input span2"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">{{_i}}Select file{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
+                </div>
               </div>
             </div>
             <div class="span4 columns">
               <div class="fileupload fileupload-new" data-fileupload="file">
-                <div class="uneditable-input"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
                 <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select file{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
-                <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
+                <span class="fileupload-preview"></span>
+                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">{{_i}}&times;{{/i}}</a>
               </div>
             </div>
           </div>
@@ -1556,11 +1606,11 @@ $('.carousel').carousel({
 
           <h3>{{_i}}Image upload elements{{/i}}</h2>
           <p>{{_i}}When uploading an image, it's possible to show a thumbnail instead of the filename.{{/i}}</p>
-          <div class="row">
+          <div class="row row-desktop">
             <div class="span3 columns">
               <div class="fileupload fileupload-new" data-fileupload="image">
-                <div class="fileupload-new thumbnail" style="width: 250px; height: 180px;"><img src="http://www.placehold.it/250x180/EFEFEF/AAAAAA&text=no+image" /></div>
-                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 250px; max-height: 180px;"></div>
+                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                 <div>
                     <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select image{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
                     <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
@@ -1569,7 +1619,7 @@ $('.carousel').carousel({
             </div>
             <div class="span3 columns">
               <div class="fileupload fileupload-new" data-fileupload="image">
-                <div class="fileupload-preview thumbnail" style="width: 250px; height: 180px;"></div>
+                <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
                 <div>
                     <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select image{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
                     <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
@@ -1585,7 +1635,7 @@ $('.carousel').carousel({
               </div>
               <br/>
 
-              <div class="fileupload fileupload-new" data-fileupload="image" style="text-align: right">
+              <div class="fileupload fileupload-new visible-desktop" data-fileupload="image" style="text-align: right">
                 <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select image{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
                 <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
                 <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;"><img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" /></div>

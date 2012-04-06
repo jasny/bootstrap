@@ -20,6 +20,7 @@
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
@@ -39,7 +40,7 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="./index.html">Bootstrap</a>
-          <div class="nav-collapse">
+          <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
                 <a href="./index.html">Overview</a>
@@ -172,7 +173,7 @@
   <div class="row">
     <div class="span4">
       <p>The default grid system provided as part of Bootstrap is a <strong>940px-wide, 12-column grid</strong>.</p>
-      <p>It also has four responsive variations for various devices and resolutions: phone, tablet portrait, table landscape and small desktops, and large widescreen desktops.</p>
+      <p>It also has four responsive variations for various devices and resolutions: phone, tablet portrait, tablet landscape and small desktops, and large widescreen desktops.</p>
     </div><!-- /.span -->
     <div class="span4">
 <pre class="prettyprint linenums">
@@ -183,7 +184,7 @@
 </pre>
     </div><!-- /.span -->
     <div class="span4">
-      <p>As shown here, a basic layout can be created with two "columns," each spanning a number of the 12 foundational columns we defined as part of our grid system.</p>
+      <p>As shown here, a basic layout can be created with two "columns", each spanning a number of the 12 foundational columns we defined as part of our grid system.</p>
     </div><!-- /.span -->
   </div><!-- /.row -->
 
@@ -374,11 +375,6 @@
         <td>20px</td>
         <td>Negative space between columns</td>
       </tr>
-      <tr>
-        <td><code>@siteWidth</code></td>
-        <td><em>Computed sum of all columns and gutters</em></td>
-        <td>Counts number of columns and gutters to set width of the <code>.container-fixed()</code> mixin</td>
-      </tr>
     </tbody>
   </table>
   <div class="row">
@@ -438,6 +434,32 @@
     &lt;div class="span10"&gt;
       &lt;!--Body content--&gt;
     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="span6">
+      <h2>Semi-fluid layout</h2>
+      <p>Get the best of both worlds with <code>&lt;div class="container-semifluid"&gt;</code>. It acts as a fixed layout for big screens. For smaller screens, it behaves like a fluid layout.</p>
+      <div class="row">
+          <div class="span4">
+              <div class="mini-layout small">
+                <div class="mini-layout-body"></div>
+              </div>
+          </div>
+          <div class="span2">
+              <div class="mini-layout small fluid">
+                <div class="mini-layout-body"></div>
+              </div>
+          </div>
+      </div>
+<pre class="prettyprint linenums">
+&lt;div class="container-fluid"&gt;
+  &lt;div class="row-fluid"&gt;
+    ...
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
@@ -554,7 +576,7 @@
   <div class="row">
     <div class="span4">
       <h3>What are they</h2>
-      <p>For faster mobile-friendly development, use these basic utility classes for showing and hidding content by device.</p>
+      <p>For faster mobile-friendly development, use these basic utility classes for showing and hiding content by device.</p>
       <h3>When to use</h2>
       <p>Use on a limited basis and avoid creating entirely different versions of the same site. Instead, use them to complement each device's presentation.</p>
       <p>For example, you might show a <code>&lt;select&gt;</code> element for nav on mobile layouts, but not on tablets or desktops.</p>
@@ -611,14 +633,16 @@
         </tbody>
       </table>
       <h3>Test case</h3>
-      <p>Resize your browser or load on different devices to test the above clases.</p>
+      <p>Resize your browser or load on different devices to test the above classes.</p>
       <h4>Visible on...</h4>
+      <p>Green checkmarks indicate that class is visible in your current viewport.</p>
       <ul class="responsive-utilities-test">
         <li>Phone<span class="visible-phone">&#10004; Phone</span></li>
         <li>Tablet<span class="visible-tablet">&#10004; Tablet</span></li>
         <li>Desktop<span class="visible-desktop">&#10004; Desktop</span></li>
       </ul>
       <h4>Hidden on...</h4>
+      <p>Here, green checkmarks indicate that class is hidden in your current viewport.</p>
       <ul class="responsive-utilities-test hidden-on">
         <li>Phone<span class="hidden-phone">&#10004; Phone</span></li>
         <li>Tablet<span class="hidden-tablet">&#10004; Tablet</span></li>
@@ -627,6 +651,28 @@
     </div><!-- /.span -->
   </div><!-- /.row -->
 
+  <!-- Desktop row -->
+  <h2>Desktop row</h2>
+  <div class="row">
+    <div class="span4">
+      <p>By default columns of a <code>.row</code> are show next to each other, however for phones the columns are show underneath each other. By adding the class <code>.row-desktop</code> to a row,
+      it will display the columns underneath each other for tablets as well.</p>
+    </div><!-- /.span -->
+    <div class="span8">
+      <h3>Test case</h3>
+      <p>Resize your browser to see the rows behave differently. They look the same for desktops and phones, but different for tablets.</p>
+      <div class="row show-grid">
+        <div class="span3">Normal row 1</div>
+        <div class="span3">Normal row 2</div>
+        <div class="span2">Normal row 3</div>
+      </div>
+      <div class="row show-grid row-desktop">
+        <div class="span3">Desktop row 1</div>
+        <div class="span3">Desktop row 2</div>
+        <div class="span2">Desktop row 3</div>
+      </div>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
       
   <div class="row">
     <div class="span4">
@@ -669,7 +715,7 @@
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-inputmask.js"></script>
     <script src="assets/js/bootstrap-placeholder.js"></script>
-    <script src="assets/js/bootstrap-table-href.js"></script>
+    <script src="assets/js/bootstrap-rowlink.js"></script>
     <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
 

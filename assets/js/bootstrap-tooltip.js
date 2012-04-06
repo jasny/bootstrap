@@ -18,7 +18,8 @@
  * limitations under the License.
  * ========================================================== */
 
-!function( $ ) {
+
+!function ( $ ) {
 
   "use strict"
 
@@ -73,8 +74,9 @@
       if (!self.options.delay || !self.options.delay.show) {
         self.show()
       } else {
+        clearTimeout(this.timeout)
         self.hoverState = 'in'
-        setTimeout(function() {
+        this.timeout = setTimeout(function() {
           if (self.hoverState == 'in') {
             self.show()
           }
@@ -88,8 +90,9 @@
       if (!self.options.delay || !self.options.delay.hide) {
         self.hide()
       } else {
+        clearTimeout(this.timeout)
         self.hoverState = 'out'
-        setTimeout(function() {
+        this.timeout = setTimeout(function() {
           if (self.hoverState == 'out') {
             self.hide()
           }
@@ -152,9 +155,20 @@
       }
     }
 
+  , isHTML: function( text ) {
+      // html string detection logic adapted from jQuery
+      return typeof text != 'string'
+        || ( text.charAt(0) === "<"
+          && text.charAt( text.length - 1 ) === ">"
+          && text.length >= 3
+        ) || /^(?:[^<]*<[\w\W]+>[^>]*$)/.exec(text)
+    }
+
   , setContent: function () {
       var $tip = this.tip()
-      $tip.find('.tooltip-inner').html(this.getTitle())
+        , title = this.getTitle()
+
+      $tip.find('.tooltip-inner')[this.isHTML(title) ? 'html' : 'text'](title)
       $tip.removeClass('fade in top bottom left right')
     }
 
@@ -205,8 +219,6 @@
 
       title = $e.attr('data-original-title')
         || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
-
-      title = (title || '').toString().replace(/(^\s*|\s*$)/, "")
 
       return title
     }

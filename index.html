@@ -20,6 +20,7 @@
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
@@ -39,7 +40,7 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="./index.html">Bootstrap</a>
-          <div class="nav-collapse">
+          <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active">
                 <a href="./index.html">Overview</a>
@@ -89,31 +90,35 @@
     </p>
   </div>
 
-  <ul class="quick-links">
-    <li><a href="http://twitter.github.com/bootstrap">Original project</a></li>
-    <li class="divider">&middot;</li>
-    <li><a href="./upgrading.html">Upgrading from 1.4</a></li>
-    <li><a href="https://github.com/jasny/bootstrap/issues?state=open">Issues</a></li>
-    <li><a href="https://github.com/twitter/bootstrap/wiki/Roadmap">Roadmap</a></li>
-    <li><a href="https://github.com/twitter/bootstrap/wiki/Changelog">Changelog</a></li>
-    <li class="divider">&middot;</li>
-    <li>
-      <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=jasny&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
-    </li>
-    <li>
-      <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=jasny&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
-    </li>
-    <li class="divider">&middot;</li>
-    <li class="follow-btn">
-      <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-width="155px" data-link-color="#0069D6" data-show-count="false">Follow @ArnoldDaniels</a>
-    </li>
-    <li class="follow-btn">
-      <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-width="145px" data-link-color="#0069D6" data-show-count="false">Follow @twbootstrap</a>
-    </li>
-    <li class="tweet-btn">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.com/bootstrap/" data-count="horizontal" data-via="ArnoldDaniels" data-related="twbootstrap:Original Twitter Bootstrap project">Tweet</a>
-    </li>
-  </ul>
+  <div class="bs-links">
+    <ul class="quick-links">
+      <li><a href="http://twitter.github.com/bootstrap">Original project</a></li>
+      <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
+    </ul>
+    <ul class="quick-links">
+      <li><a href="./upgrading.html">Upgrading from 1.4</a></li>
+      <li><a href="https://github.com/jasny/bootstrap/zipball/master">Download with docs</a></li>
+      <li><a href="https://github.com/jasny/bootstrap/issues?state=open">Submit issues</a></li>
+      <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
+    </ul>
+    <ul class="quick-links">
+      <li>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=jasny&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
+      </li>
+      <li>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=jasny&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+      </li>
+      <li class="follow-btn">
+        <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-width="155px" data-link-color="#0069D6" data-show-count="false">Follow @ArnoldDaniels</a>
+      </li>
+      <li class="follow-btn">
+        <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-width="145px" data-link-color="#0069D6" data-show-count="false">Follow @twbootstrap</a>
+      </li>
+      <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.com/bootstrap/" data-count="horizontal" data-via="ArnoldDaniels" data-related="twbootstrap:Original Twitter Bootstrap project">Tweet</a>
+      </li>
+    </ul>
+  </div>
 </header>
 
 <hr class="soften">
@@ -258,7 +263,7 @@
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-inputmask.js"></script>
     <script src="assets/js/bootstrap-placeholder.js"></script>
-    <script src="assets/js/bootstrap-table-href.js"></script>
+    <script src="assets/js/bootstrap-rowlink.js"></script>
     <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
 

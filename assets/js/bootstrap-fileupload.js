@@ -21,7 +21,6 @@
 
 /* TODO: turn this into a proper bootstrap plugin */
 
-;
 $(function () {
       $('*[data-fileupload]').each(function () {
           var container = $(this);
