@@ -31,6 +31,8 @@
     this.$menu = $(this.options.menu).appendTo('body')
     this.source = this.options.source
     this.shown = false
+
+    if (element.nodeName == 'SELECT') this.replaceSelect()
     this.listen()
   }
 
@@ -38,10 +40,52 @@
 
     constructor: Typeahead
 
+  , replaceSelect: function () {
+      this.$original = this.$element
+      this.$element = $('<input type="text" />')
+      
+      this.source = []
+      this.values = {}
+      
+      var options = this.$original.find('option')
+      var $option;
+      for (var i=0; i<options.length; i++) {
+        $option = $(options[i]);
+        if ($option.val() == '') {
+            this.$element.attr('placeholder', $option.html());
+            continue;
+        }
+        
+        this.source.push($option.html())
+        this.values[$option.html()] = $option.val()
+        if (this.$original.val() == $option.val()) this.$element.val($option.html())
+      }
+      
+      var attr = this.$original[0].attributes
+      for (i=0; i<attr.length; i++) {
+        if (attr[i].nodeName != 'type' && attr[i].nodeName != 'name' && attr[i].nodeName != 'id' && attr[i].nodeName != 'data-provide' && !attr[i].nodeName.match(/^on/)) {
+          this.$element.attr(attr[i].nodeName, attr[i].nodeValue)
+        }
+      }
+
+      this.$element.insertAfter(this.$original)
+      this.$original.hide()
+  }
+  
+  , destroyReplacement: function () {
+     // Detroy replacement element, so it doesn't mess up the browsers autofill on refresh
+     if (typeof this.$original != 'undefined') {
+         this.$element.replaceWith('');
+     }
+  }
+
   , select: function () {
       var val = this.$menu.find('.active').attr('data-value')
       this.$element
         .val(val)
+        .change()
+      if (typeof this.$original != 'undefined') this.$original
+        .val(this.values[val])
         .change()
       return this.hide()
     }
@@ -166,6 +210,8 @@
       this.$menu
         .on('click', $.proxy(this.click, this))
         .on('mouseenter', 'li', $.proxy(this.mouseenter, this))
+      
+      $(window).on('unload', $.proxy(this.destroyReplacement, this));
     }
 
   , keyup: function (e) {
@@ -218,6 +264,17 @@
     }
 
   , blur: function (e) {
+      if (typeof this.$original != 'undefined') {
+        if (this.$element.val() == '') {
+          this.$original.val('')
+        } else if (this.$original.val() == '') {
+          this.$element.val('')
+        } else if (this.values[this.$element.val()] != this.$original.val()) {
+          this.$original.val('')
+          this.$element.val('')
+        }
+      }
+      
       var that = this
       setTimeout(function () { that.hide() }, 150)
     }
@@ -263,10 +320,9 @@
   * ================== */
 
   $(function () {
-    $('body').on('focus.typeahead.data-api', '[data-provide="typeahead"]', function (e) {
+    $('[data-provide="typeahead"]').each(function () {
       var $this = $(this)
       if ($this.data('typeahead')) return
-      e.preventDefault()
       $this.typeahead($this.data())
     })
   })

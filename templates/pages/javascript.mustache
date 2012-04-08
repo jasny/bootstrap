@@ -1393,14 +1393,14 @@ $('.carousel').carousel({
       <div class="row">
         <div class="span3 columns">
           <h3>{{_i}}About{{/i}}</h3>
-          <p>{{_i}}A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input.{{/i}}</p>
+          <p>{{_i}}A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input or select field.{{/i}}</p>
           <a href="assets/js/bootstrap-typeahead.js" target="_blank" class="btn">{{_i}}Download file{{/i}}</a>
         </div>
         <div class="span9 columns">
           <h2>{{_i}}Example{{/i}}</h2>
           <p>{{_i}}Start typing in the field below to show the typeahead results.{{/i}}</p>
           <div class="well">
-            <input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+            <select class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4"><option value="">Please select a state</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option></select>
           </div>
           <hr>
           <h2>{{_i}}Using bootstrap-typeahead.js{{/i}}</h2>
@@ -1449,11 +1449,19 @@ $('.carousel').carousel({
              </tr>
             </tbody>
           </table>
+          <p><span class="label label-info">{{_i}}Heads up!{{/i}}</span> {{_i}}When using typeahead with a select field, the source option is ignored.{{/i}}</p>
 
           <h3>{{_i}}Markup{{/i}}</h3>
           <p>{{_i}}Add data attributes to register an element with typeahead functionality.{{/i}}</p>
 <pre class="prettyprint linenums">
-&lt;input type="text" data-provide="typeahead"&gt;
+&lt;input type="text" data-provide="typeahead" data-source='["First option", "Second option"]'&gt;
+</pre>
+<pre class="prettyprint linenums">
+&lt;select data-provide="typeahead"&gt;
+  &lt;option value=""&gt;Placeholder&lt;/option&gt;
+  &lt;option value="1"&gt;First option&lt;/option&gt;
+  &lt;option value="2"&gt;Second option&lt;/option&gt;
+&lt;/select&gt;
 </pre>
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>.typeahead({{_i}}options{{/i}})</h4>
@@ -1480,7 +1488,7 @@ $('.carousel').carousel({
         <div class="span9 columns">
           <h2>{{_i}}Example{{/i}}</h2>
           <div class="well">
-            <input type="text" class="span2" placeholder="Username"> <input type="password" class="span2" placeholder="Password">
+            <input type="text" class="span2" xplaceholder="Username"> <input type="password" class="span2" xplaceholder="Password">
           </div>
           <h3>{{_i}}Markup{{/i}}</h3>
           <p>{{_i}}Use the HTML5 <code>placeholder</code> attribute.{{/i}}</p>

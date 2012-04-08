@@ -804,7 +804,6 @@
     </tbody>
   </table>
 
-
   <h2>{{_i}}Example forms <small>using just form controls, no extra markup</small>{{/i}}</h2>
   <div class="row">
     <div class="span6">
@@ -980,14 +979,6 @@
   …
 &lt;/fieldset&gt;
 </pre>
-      <h3>{{_i}}Uneditable forms{{/i}}</h3>
-      <p>{{_i}}To create an element that looks like a form but doesn't behave like one, you can use <code>.uneditable-form</code>. This should be used in combination with uneditable and disabled input fields.{{/i}}</p>
-<pre class="prettyprint linenums">
-&lt;div class="uneditable-form"&gt;
-  …
-&lt;/div&gt;
-</pre>
-      <hr>
     </div>
     <div class="span8">
       <form class="form-horizontal">
@@ -1072,11 +1063,54 @@ on multiple lines
 
   <br>
 
+  <h2>{{_i}}Uneditable forms{{/i}}</h2>
+  <div class="row">
+    <div class="span4">
+      <p>{{_i}}To create an element that looks like a form but doesn't behave like one, you can use <code>.uneditable-form</code>. This should be used in combination with uneditable and disabled input fields. Uneditable inputs inside an uneditable form always look disabled.{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;div class="uneditable-form"&gt;
+  …
+&lt;/div&gt;
+</pre>
+      <p>{{_i}}The <code>.form-actions</code> area does not have the gray background to show distinction between editable and uneditable forms.{{/i}}</p>
+    </div>
+    <div class="span8">
+      <div class="uneditable-form form-horizontal">
+        <div class="control-group">
+          <label class="control-label">Uneditable input</label>
+          <div class="controls">
+            <span class="input-xlarge uneditable-input">Some value here</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Uneditable textarea</label>
+          <div class="controls">
+            <div class="input-xlarge uneditable-textarea">Some text here</div>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="optionsCheckbox2">{{_i}}Disabled checkbox{{/i}}</label>
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" id="optionsCheckbox2" value="option1" disabled checked>
+              {{_i}}This is a disabled checkbox{{/i}}
+            </label>
+          </div>
+        </div>
+        <div class="form-actions">
+          <a class="btn" href="#">{{_i}}Edit information{{/i}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
   <h2>{{_i}}Extending form controls{{/i}}</h2>
   <div class="row">
     <div class="span4">
       <h3>Editor textarea</h3>
-      <p>Add <code>.editor</code> to any textarea or <code>.uneditable-textarea</code> to create a larger field for content editing. If you're using <a href="http://ckeditor.com/" title="CKEditor">CKEditor</a>, also add <code>.editor-ckeditor</code>.</p>
+      <p>Add <code>.editor</code> to any textarea or <code>.uneditable-textarea</code> to create a larger field for content editing. If you're using a editor widget like <a href="http://ckeditor.com/" title="CKEditor">CKEditor</a> or <a href="http://www.tinymce.com/" title="TinyMCE">TinyMCE</a>, also add <code>.editor-html</code>.</p>
       <hr>
       <h3>{{_i}}Prepend &amp; append inputs{{/i}}</h3>
       <p>{{_i}}Input groups&mdash;with appended or prepended text&mdash;provide an easy way to give more context for your inputs. Great examples include the @ sign for Twitter usernames or $ for finances.{{/i}}</p>

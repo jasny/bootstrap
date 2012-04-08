@@ -743,6 +743,27 @@
     overflow: hidden;
     height: 0;
   }
+  .subnav-fixed {
+    position: static;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  .subnav-fixed .nav {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .subnav .nav > li:first-child > a,
+  .subnav .nav > li:first-child > a:hover {
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+  }
 }
 @media (min-width: 980px) {
   .nav-collapse.collapse {
