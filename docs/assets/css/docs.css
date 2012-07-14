@@ -22,12 +22,13 @@ body {
 -------------------------------------------------- */
 .navbar-fixed-top .brand {
   padding-right: 0;
-  padding-left: 0;
+  padding-left: 65px;
   margin-left: 20px;
   float: right;
   font-weight: bold;
   color: #000;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  background: url("../img/jasny-logo.png") no-repeat scroll -85px -200px transparent;
   -webkit-transition: all .2s linear;
      -moz-transition: all .2s linear;
           transition: all .2s linear;
@@ -67,6 +68,15 @@ hr.soften {
   letter-spacing: -1px;
   line-height: 1;
 }
+.jumbotron hgroup {
+  margin-bottom: 9px;
+}
+.jumbotron hgroup > h1 + h2 {
+  font-size: 48px;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: #666;
+}
 .jumbotron p {
   margin-bottom: 18px;
   font-weight: 300;
@@ -88,13 +98,23 @@ hr.soften {
 .masthead {
   padding-top: 36px;
   margin-bottom: 72px;
+  background: url("../img/jasny-logo.png") no-repeat scroll 0 50px transparent;
 }
 .masthead h1,
+.masthead h2,
 .masthead p {
   text-align: center;
 }
-.masthead h1 {
+.masthead h1,
+.masthead hgroup {
   margin-bottom: 18px;
+}
+.masthead hgroup > h1 {
+  margin-bottom: 9px;
+}
+.masthead hgroup > h1 + h2 {
+  color: #fff;
+  text-shadow: 1px 1px 30px #0044CC;
 }
 .masthead p {
   margin-left: 5%;
@@ -241,9 +261,11 @@ hr.soften {
 
 /* Marketing section of Overview
 -------------------------------------------------- */
+.changes .row,
 .marketing .row {
   margin-bottom: 9px;
 }
+.changes h1,
 .marketing h1 {
   margin: 36px 0 27px;
   font-size: 40px;

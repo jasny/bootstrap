@@ -2,38 +2,55 @@
 ================================================== -->
 <header class="jumbotron masthead">
   <div class="inner">
-    <h1>{{_i}}Bootstrap, from Twitter{{/i}}</h1>
-    <p>{{_i}}Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.{{/i}}</p>
+    <hgroup>
+      <h1>{{_i}}Bootstrap, from Twitter{{/i}}</h1>
+      <h2>{{_i}}Extended by Jasny{{/i}}</h2>
+    </hgroup>
+    <p>Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.</p>
     <p class="download-info">
-      <a href="https://github.com/twitter/bootstrap/" class="btn btn-primary btn-large" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'GitHub Project', 'View project on GitHub']);"{{/production}}>{{_i}}View project on GitHub{{/i}}</a>
-      <a href="assets/bootstrap.zip" class="btn btn-large" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.0.4']);"{{/production}}>{{_i}}Download Bootstrap <small>(v2.0.4)</small>{{/i}}</a>
+      <a href="https://github.com/jasny/bootstrap/" class="btn btn-primary btn-large" style="line-height: 48px" {{#production}}onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'GitHub Project', 'View project on GitHub']);"{{/production}}>{{_i}}View project on GitHub{{/i}}</a>
+      <a href="assets/bootstrap.zip" class="btn btn-large" {{#production}}onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.0.4-j1']);"{{/production}}>{{_i}}Download Bootstrap <small>(v2.0.4-j1)</small><br/><small>Includes all Jasny extensions</small>{{/i}}</a>
+      <a href="assets/jasny-bootstrap.zip" class="btn btn-large" {{#production}}onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'Download extensions', 'Download j1']);"{{/production}}>{{_i}}Extend Bootstrap <small>(j1)</small><br/><small>Download extensions only</small>{{/i}}</a>
     </p>
   </div>
 
   <div class="bs-links">
     <ul class="quick-links">
-      <li><a href="./upgrading.html">{{_i}}Upgrading from 1.4{{/i}}</a></li>
-      <li><a href="https://github.com/twitter/bootstrap/zipball/master">{{_i}}Download with docs{{/i}}</a></li>
+      <li><a href="http://twitter.github.com/bootstrap">{{_i}}Original project{{/i}}</a></li>
       <li><a href="http://blog.getbootstrap.com">{{_i}}Read the blog{{/i}}</a></li>
-      <li><a href="https://github.com/twitter/bootstrap/issues?state=open">{{_i}}Submit issues{{/i}}</a></li>
+    </ul>
+    <ul class="quick-links">
+      <li><a href="./upgrading.html">{{_i}}Upgrading from 1.4{{/i}}</a></li>
+      <li><a href="https://github.com/jasny/bootstrap/zipball/master">{{_i}}Download with docs{{/i}}</a></li>
+      <li><a href="https://github.com/jasny/bootstrap/issues?state=open">{{_i}}Submit issues{{/i}}</a></li>
       <li><a href="https://github.com/twitter/bootstrap/wiki">{{_i}}Roadmap and changelog{{/i}}</a></li>
     </ul>
     <ul class="quick-links">
       <li>
-        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=twitter&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="112px" height="20px"></iframe>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=jasny&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
       </li>
       <li>
-        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=twitter&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=jasny&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
       </li>
       <li class="follow-btn">
-        <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">{{_i}}Follow @twbootstrap{{/i}}</a>
+        <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-width="155px" data-link-color="#0069D6" data-show-count="false">{{_i}}Follow @ArnoldDaniels{{/i}}</a>
+      </li>
+      <li class="follow-btn">
+        <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-width="145px" data-link-color="#0069D6" data-show-count="false">{{_i}}Follow @twbootstrap{{/i}}</a>
       </li>
       <li class="tweet-btn">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.com/bootstrap/" data-count="horizontal" data-via="ArnoldDaniels" data-related="twbootstrap:Original Twitter Bootstrap project">Tweet</a>
       </li>
     </ul>
   </div>
 </header>
+
+<hr class="soften">
+
+<div class="changes">
+  <h1>{{_i}}What's different?{{/i}}</h1>
+  <p class="marketing-byline">{{_i}}How can a fantastic library become any better? Check it out.{{/i}}</p>
+</div>
 
 <hr class="soften">
 
