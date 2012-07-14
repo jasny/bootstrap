@@ -33,12 +33,13 @@ body > .navbar {
 /* Change the docs' brand */
 body > .navbar .brand {
   padding-right: 0;
-  padding-left: 0;
+  padding-left: 65px;
   margin-left: 20px;
   float: right;
   font-weight: bold;
   color: #000;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  background: url("../img/jasny-logo.png") no-repeat scroll -85px -200px transparent;
   -webkit-transition: all .2s linear;
      -moz-transition: all .2s linear;
           transition: all .2s linear;
@@ -48,6 +49,11 @@ body > .navbar .brand:hover {
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
 }
 
+.extended-badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
 
 /* Sections
 -------------------------------------------------- */
@@ -93,14 +99,14 @@ hr.soften {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
-  background: #020031; /* Old browsers */
-  background: -moz-linear-gradient(45deg,  #020031 0%, #6d3353 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* IE10+ */
-  background: linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: #620d0A; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #a51217 0%, #2f0800 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#a51217), color-stop(100%,#2f0800)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg,  #a51217 0%,#2f0800 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg,  #a51217 0%,#2f0800 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg,  #a51217 0%,#2f0800 100%); /* IE10+ */
+  background: linear-gradient(45deg,  #a51217 0%,#2f0800 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a51217', endColorstr='#2f0800',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
      -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
           box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
@@ -143,34 +149,38 @@ hr.soften {
   to {   box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5); }
 }
 .masthead .btn {
-  padding: 14px 24px;
+  padding: 20px 24px 14px 24px;
   font-size: 24px;
+  line-height: 20px;
   font-weight: 200;
   color: #fff; /* redeclare to override the `.jumbotron a` */
   border: 0;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
-     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
-  -webkit-animation-name: downloadButton;
-     -moz-animation-name: downloadButton;
-  -webkit-animation-duration: 1.5s;
-     -moz-animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-     -moz-animation-iteration-count: infinite;
   -webkit-transition: none;
      -moz-transition: none;
           transition: none;
 
+}
+.masthead .btn-primary {
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5);
+}
+.masthead .btn-warning {
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(248,148,6,.4);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(248,148,6,.4);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(248,148,6,.4);
 }
 .masthead .btn:active {
   -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
      -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
           box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
 }
-
+.masthead .btn small {
+  font-size: 60%;
+}
 
 /* Pattern overlay
 ------------------------- */
@@ -206,6 +216,9 @@ hr.soften {
   font-size: 40px;
   font-weight: 200;
   line-height: 1.25;
+}
+.masthead .container {
+  background: transparent url(../img/jasny-logo-emboss.png) no-repeat left bottom;
 }
 
 /* Textual links in masthead */
@@ -264,10 +277,12 @@ hr.soften {
 /* Marketing section of Overview
 -------------------------------------------------- */
 
+.changes,
 .marketing {
   text-align: center;
   color: #5a5a5a;
 }
+.changes h1,
 .marketing h1 {
   margin: 60px 0 10px;
   font-size: 60px;
@@ -275,6 +290,7 @@ hr.soften {
   line-height: 1;
   letter-spacing: -1px;
 }
+.changes h2,
 .marketing h2 {
   font-weight: 200;
   margin-bottom: 5px;
@@ -283,6 +299,10 @@ hr.soften {
   font-size: 16px;
   line-height: 1.5;
 }
+.changes .row {
+  margin-bottom: 9px;
+}
+.changes .marketing-byline,
 .marketing .marketing-byline {
   margin-bottom: 40px;
   font-size: 20px;
@@ -855,6 +875,11 @@ form.bs-docs-example {
     padding-right: 10px;
   }
 
+  .extended-badge {
+    top: 10px;
+    right: 10px;
+  }
+  
   /* Inline-block quick links for more spacing */
   .quick-links li {
     display: inline-block;
@@ -898,6 +923,10 @@ form.bs-docs-example {
     padding-top: 0;
   }
 
+  .extended-badge {
+      width: 100px;
+  }
+  
   /* Widen masthead and social buttons to fill body padding */
   .jumbotron {
     padding: 40px 20px;
@@ -955,6 +984,10 @@ form.bs-docs-example {
     padding-top: 0;
   }
 
+  .extended-badge {
+    display: none;
+  }
+  
   /* Change up some type stuff */
   h2 small {
     display: block;
@@ -970,7 +1003,7 @@ form.bs-docs-example {
   }
   .jumbotron .btn {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
   }
 
   /* center align subhead text like the masthead */

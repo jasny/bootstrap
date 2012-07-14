@@ -107,7 +107,7 @@
 
       $.ajax({
         type: 'POST'
-      , url: /\?dev/.test(window.location) ? 'http://localhost:3000' : 'http://bootstrap.herokuapp.com'
+      , url: /\?dev/.test(window.location) ? 'http://localhost:3000' : 'http://bootstrap-server.jasny.net'
       , dataType: 'jsonpi'
       , params: {
           js: js
