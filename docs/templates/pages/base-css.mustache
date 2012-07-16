@@ -1121,6 +1121,10 @@ on multiple lines
       <hr>
       <h4>{{_i}}Form help text{{/i}}</h4>
       <p>{{_i}}To add help text for your form inputs, include inline help text with <code>&lt;span class="help-inline"&gt;</code> or a help text block with <code>&lt;p class="help-block"&gt;</code> after the input element.{{/i}}</p>
+      <hr>
+      <h4>Editor textarea</h4>
+      <p>Add <code>.editor</code> to any textarea or <code>.uneditable-textarea</code> to create a larger field for content editing.</p>
+      <p>Also add <code>.editor-html</code>, if the textarea will be replaced by e.g. CKEditor or TinyMCE.</p>
     </div>
     <div class="span8">
       <form class="form-horizontal">
@@ -1249,6 +1253,12 @@ on multiple lines
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                 {{_i}}Option two can be something else and selecting it will deselect option one{{/i}}
               </label>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Editor textarea</label>
+            <div class="controls">
+              <textarea class="editor"></textarea>
             </div>
           </div>
           <div class="form-actions">
