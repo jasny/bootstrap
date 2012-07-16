@@ -1106,6 +1106,86 @@ on multiple lines
 
   <br>
 
+  <h2>{{_i}}Small labels{{/i}}</h2>
+  <div class="row">
+    <div class="span4">
+      <p>{{_i}}If you have a lot of fields in a form, you might want to use three or four columns. However labels can start taking up to much space. Simple add <code>.small-labels</code> to a horizontal form (or section within a form) to solve this.{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;form class="form-horizontal small-labels"&gt;
+  …
+&lt;/div&gt;
+</pre>
+    </div>
+    <div class="span8">
+      <form class="form-horizontal small-labels">
+        <div class="row">
+          <div class="span2">
+            <div class="control-group">
+              <label class="control-label" for="small-1">{{_i}}Input{{/i}} 1</label>
+              <div class="controls">
+                <input class="span1" id="small-1" type="number">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="small-2">{{_i}}Input{{/i}} 2</label>
+              <div class="controls">
+                <input class="span1" id="small-2" type="number">
+              </div>
+            </div>
+          </div>
+          <div class="span2">
+            <div class="control-group">
+              <label class="control-label" for="small-3">{{_i}}Input{{/i}} 3</label>
+              <div class="controls">
+                <input class="span1" id="small-3" type="number">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="small-4">{{_i}}Input{{/i}} 4</label>
+              <div class="controls">
+                <input class="span1" id="small-4" type="number">
+              </div>
+            </div>
+          </div>
+          <div class="span2">
+            <div class="control-group">
+              <label class="control-label" for="small-5">{{_i}}Input{{/i}} 5</label>
+              <div class="controls">
+                <input class="span1" id="small-5" type="number">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="small-6">{{_i}}Input{{/i}} 6</label>
+              <div class="controls">
+                <input class="span1" id="small-6" type="number">
+              </div>
+            </div>
+          </div>
+          <div class="span2">
+            <div class="control-group">
+              <label class="control-label" for="small-7">{{_i}}Input{{/i}} 7</label>
+              <div class="controls">
+                <input class="span1" id="small-7" type="number">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="small-8">{{_i}}Input{{/i}} 8</label>
+              <div class="controls">
+                <input class="span1" id="small-8" type="number">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">{{_i}}Save changes{{/i}}</button>
+          <button class="btn">{{_i}}Cancel{{/i}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <br>
+
   <h2>{{_i}}Extending form controls{{/i}}</h2>
   <div class="row">
     <div class="span4">
