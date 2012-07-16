@@ -727,7 +727,7 @@
             <p>{{_i}}Howdy, I'm in Section 2.{{/i}}</p>
           </div>
           <div class="tab-pane" id="tab3">
-            <p>{{_i}}What up girl, this is Section 3.{{/i}}</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros. </p>
           </div>
         </div>
       </div> <!-- /tabbable -->
@@ -769,7 +769,7 @@
             <p>{{_i}}Howdy, I'm in Section B.{{/i}}</p>
           </div>
           <div class="tab-pane" id="C">
-            <p>{{_i}}What up girl, this is Section C.{{/i}}</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros. </p>
           </div>
         </div>
         <ul class="nav nav-tabs">
@@ -806,7 +806,7 @@
             <p>{{_i}}Howdy, I'm in Section B.{{/i}}</p>
           </div>
           <div class="tab-pane" id="lC">
-            <p>{{_i}}What up girl, this is Section C.{{/i}}</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros.</p>
           </div>
         </div>
       </div> <!-- /tabbable -->
@@ -838,7 +838,7 @@
             <p>{{_i}}Howdy, I'm in Section B.{{/i}}</p>
           </div>
           <div class="tab-pane" id="rC">
-            <p>{{_i}}What up girl, this is Section C.{{/i}}</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros.</p>
           </div>
         </div>
       </div> <!-- /tabbable -->
@@ -854,6 +854,46 @@
 </pre>
     </div>
   </div>
+
+  <h3>{{_i}}Bordered tabbable{{/i}}</h3>
+  <div class="row">
+    <div class="span4">
+      <p>{{_i}}You can place a border around the tab content by adding <code>.tabbable-bordered</code> to the <code>.tabbable</code>.{{/i}}</p>
+      <div class="alert">{{_i}}<b>Warning!</b> A bordered tabbable with the tabs on the left or right side, will not look well if the height of <code>.tab-content</code> is less than the height of <code>.nav-tabs</code>.{{/i}}</div>
+    </div>
+    <div class="span4">
+      <div class="tabbable tabbable-bordered">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#bA" data-toggle="tab">{{_i}}Section 1{{/i}}</a></li>
+          <li><a href="#bB" data-toggle="tab">{{_i}}Section 2{{/i}}</a></li>
+          <li><a href="#bC" data-toggle="tab">{{_i}}Section 3{{/i}}</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="bA">
+            <p>{{_i}}I'm in Section A.{{/i}}</p>
+          </div>
+          <div class="tab-pane" id="bB">
+            <p>{{_i}}Howdy, I'm in Section B.{{/i}}</p>
+          </div>
+          <div class="tab-pane" id="bC">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis sapien lorem. Nullam justo leo, rhoncus et convallis id, tincidunt non lacus. Curabitur cursus dignissim ipsum, id ultricies est rhoncus sed. Proin vel dapibus lacus. Sed vulputate iaculis turpis vel egestas. Curabitur in accumsan nunc. In et urna ligula. Sed lorem neque, suscipit sed consequat at, laoreet vitae sapien. Curabitur congue dapibus dolor et eleifend. Curabitur vel lacinia eros.</p>
+          </div>
+        </div>
+      </div> <!-- /tabbable -->
+    </div>
+    <div class="span4">
+<pre class="prettyprint linenums">
+&lt;div class="tabbable tabbable-bordered"&gt;
+  &lt;ul class="nav nav-tabs"&gt;
+    ...
+  &lt;/ul&gt;
+  &lt;div class="tab-content"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+  </div>  
 
 </section>
 
