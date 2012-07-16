@@ -702,6 +702,14 @@ form.bs-docs-example {
   margin: 20px;
 }
 
+/* Alerts
+-------------------------- */
+#page-alert-container {
+  position: relative;
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+}
+
 
 
 /* Responsive docs
@@ -1037,6 +1045,12 @@ form.bs-docs-example {
     white-space: normal;
     word-wrap: break-word;
     word-break: break-all;
+  }
+  
+  /* Page alert is show as normal alert */
+  #page-alert-container {
+    border-top-width: 0px;
+    padding: 0;
   }
 
   /* Modal example */
