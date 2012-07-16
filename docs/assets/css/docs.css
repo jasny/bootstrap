@@ -603,6 +603,14 @@ form.well {
   background-color: #fff;
 }
 
+/* Alerts
+-------------------------- */
+#page-alert-container {
+  position: relative;
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+}
+
 /* Responsive table
 ------------------------- */
 .responsive-utilities th small {
@@ -666,7 +674,6 @@ form.well {
   background-color: #dff0d8;
   border: 1px solid #d6e9c6;
 }
-
 
 /* Responsive Docs
 -------------------------------------------------- */
@@ -872,6 +879,11 @@ form.well {
     margin: 5px;
   }
 
+  /* Page alert is show as normal alert */
+  #page-alert-container {
+    border-top-width: 0px;
+    padding: 0;
+  }
 }
 
 
