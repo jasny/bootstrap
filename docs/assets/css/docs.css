@@ -398,6 +398,7 @@ hr.soften {
   background-color: #dceaf4;
   margin: 0 auto;
   width: 70%;
+  height: 100%;
 }
 .mini-layout.fluid .mini-layout-sidebar,
 .mini-layout.fluid .mini-layout-header,
@@ -407,12 +408,31 @@ hr.soften {
 .mini-layout.fluid .mini-layout-sidebar {
   background-color: #bbd8e9;
   width: 20%;
+  height: 100%;
 }
 .mini-layout.fluid .mini-layout-body {
   width: 77.5%;
   margin-left: 2.5%;
 }
-
+.semifluid-layouts {
+  clear: both;
+  overflow: hidden;
+}
+.semifluid-layouts .mini-layout {
+  width: auto;
+  height: 180px;
+}
+.semifluid-layouts .mini-layout.desktop {
+  width: 62%;
+  float: left;
+}
+.semifluid-layouts .mini-layout.tablet {
+  width: 25%;
+  float: right;
+}
+.mini-layout.tablet .mini-layout-body {
+  width: 100%;
+}
 
 
 /* Download page
@@ -1052,6 +1072,16 @@ form.bs-docs-example {
     border-top-width: 0px;
     padding: 0;
   }
+<<<<<<< HEAD
+=======
+  
+  /* Space out the show-grid examples */
+  .row-desktop.show-grid [class*="span"] {
+    margin-bottom: 5px;
+  }
+}
+
+>>>>>>> Added support for semifluid layouts
 
   /* Modal example */
   .modal-example .modal {
