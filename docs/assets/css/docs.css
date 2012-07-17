@@ -920,6 +920,11 @@ form.bs-docs-example {
     margin-top: 30px;
     margin-right: 0;
   }
+  
+  /* Space out the show-grid examples */
+  .row-desktop.show-grid [class*="span"] {
+    margin-bottom: 5px;
+  }
 }
 
 /* Tablet to desktop
@@ -1072,16 +1077,6 @@ form.bs-docs-example {
     border-top-width: 0px;
     padding: 0;
   }
-<<<<<<< HEAD
-=======
-  
-  /* Space out the show-grid examples */
-  .row-desktop.show-grid [class*="span"] {
-    margin-bottom: 5px;
-  }
-}
-
->>>>>>> Added support for semifluid layouts
 
   /* Modal example */
   .modal-example .modal {
