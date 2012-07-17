@@ -29,6 +29,7 @@
           <li><a href="#carousel"><i class="icon-chevron-right"></i> {{_i}}Carousel{{/i}}</a></li>
           <li><a href="#typeahead"><i class="icon-chevron-right"></i> {{_i}}Typeahead{{/i}}</a></li>
           <li><a href="#inputmask"><i class="icon-chevron-right"></i> {{_i}}Input mask{{/i}}</a></li>
+          <li><a href="#rowlink"><i class="icon-chevron-right"></i> {{_i}}Row link{{/i}}</a></li>
           <li><a href="#affix"><i class="icon-chevron-right"></i> {{_i}}Affix{{/i}}</a></li>
         </ul>
       </div>
@@ -1431,6 +1432,77 @@ $('.carousel').carousel({
                </tr>
               </tbody>
             </table>
+          </section>
+
+
+
+          <!-- Row link
+          ================================================== -->
+          <section id="rowlink">
+            <div class="page-header">
+              <h1>{{_i}}Row link{{/i}} <small>bootstrap-rowlink.js</small></h1>
+            </div>
+
+            <h2>{{_i}}Example{{/i}}</h2>
+            <p>{{_i}}This plugin turns a table row into a clickable link.{{/i}}</p>
+            <div class="bs-docs-example">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr><th>{{_i}}Name{{/i}}</th><th>{{_i}}Description{{/i}}</th><th>Actions</th></tr>
+                </thead>
+                <tbody data-provides="rowlink">
+                  <tr><td><a href="./javascript.html#modals" class="rowlink">{{_i}}Modals{{/i}}</a></td><td>{{_i}}A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.{{/i}}</td><td class="nolink"><a href="#">Action</a></td></tr>
+                  <tr><td><a href="./javascript.html#dropdowns" class="rowlink">{{_i}}Dropdowns{{/i}}</a></td><td>{{_i}}Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.{{/i}}</td><td class="nolink"><a href="#">Action</a></td></tr>
+                  <tr><td><a href="./javascript.html#scrollspy" class="rowlink">{{_i}}Scrollspy{{/i}}</a></td><td>{{_i}}Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position.{{/i}}</td><td class="nolink"><a href="#">Action</a></td></tr>
+                  <tr><td><a href="./javascript.html#tabs" class="rowlink">{{_i}}Togglable tabs{{/i}}</a></td><td>{{_i}}Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.{{/i}}</td><td class="nolink"><a href="#">Action</a></td></tr>
+                  <tr><td><a href="./javascript.html#tooltips" class="rowlink">{{_i}}Tooltips{{/i}}</a></td><td>{{_i}}A new take on the jQuery Tipsy plugin, Tooltips don't rely on images, uss CSS3 for animations, and data-attributes for local title storage.{{/i}}</td><td class="nolink"><a href="#">Action</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+<pre class="prettyprint linenums">
+&lt;table data-provides="rowlink"&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;a href="javascript.html#modals"&gt;Modals&lt;/a&gt;&lt;/td&gt;&lt;td class="nohref"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;a href="javascript.html#dropdowns"&gt;Dropdowns&lt;/a&gt;&lt;/td&gt;&lt;td class="nohref"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>{{_i}}Usage{{/i}}</h2>
+
+            <h3>{{_i}}Via data attributes{{/i}}</h3>
+            <p>{{_i}}Add <code>data-provides="rowlink"</code> to a <code>&lt;table&gt;</code>, <code>&lt;tbody&gt;</code> or <code>&lt;tr&gt;</code> element. The value should be selector to the link, which is a child of the row. A cell can be excluded by adding the <code>.nolink</code> class to the <code>&lt;td&gt;</code>.{{/i}}</p>
+            <p><span class="label label-info">Tip!</span> {{_i}}Add <code>.rowlink</code> to your <code>&lt;a&gt;</code>. This prevents the link styling during page load.{{/i}}</p>
+
+            <h3>{{_i}}Via JavaScript{{/i}}</h3>
+            <p>{{_i}}Call the input mask via javascript:{{/i}}</p>
+            <pre class="prettyprint linenums">$('tbody.rowlink').rowlink()</pre>
+            
+            <h3>{{_i}}Options{{/i}}</h3>
+            <table class="table table-bordered table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 100px;">{{_i}}Name{{/i}}</th>
+                 <th style="width: 50px;">{{_i}}type{{/i}}</th>
+                 <th style="width: 100px;">{{_i}}default{{/i}}</th>
+                 <th>{{_i}}description{{/i}}</th>
+               </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 <td>{{_i}}target{{/i}}</td>
+                 <td>{{_i}}string{{/i}}</td>
+                 <td>'a'</td>
+                 <td>{{_i}}A jquery selector string, to select the link element within each row.{{/i}}</td>
+               </tr>
+              </tbody>
+            </table>
+
+            <h3>{{_i}}Methods{{/i}}</h3>
+            <h4>.inputmask({{_i}}options{{/i}})</h4>
+            <p>{{_i}}Initializes an input with an input mask.{{/i}}</p>
           </section>
 
 
