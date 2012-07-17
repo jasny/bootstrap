@@ -3,20 +3,35 @@
       <header class="jumbotron subhead" id="overview">
         <h1>{{_i}}Javascript for Bootstrap{{/i}}</h1>
         <p class="lead">{{_i}}Bring Bootstrap's components to life&mdash;now with 12 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.{{/i}}
-        <div class="subnav">
+        <div class="subnav visible-desktop">
           <ul class="nav nav-pills">
             <li><a href="#javascript">{{_i}}All plugins{{/i}}</a></li>
             <li><a href="#modals">{{_i}}Modal{{/i}}</a></li>
-            <li><a href="#dropdowns">{{_i}}Dropdown{{/i}}</a></li>
-            <li><a href="#scrollspy">{{_i}}Scrollspy{{/i}}</a></li>
-            <li><a href="#tabs">{{_i}}Tab{{/i}}</a></li>
-            <li><a href="#tooltips">{{_i}}Tooltip{{/i}}</a></li>
-            <li><a href="#popovers">{{_i}}Popover{{/i}}</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{_i}}Navigation{{/i}} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#dropdowns">{{_i}}Dropdown{{/i}}</a></li>
+                <li><a href="#scrollspy">{{_i}}Scrollspy{{/i}}</a></li>
+                <li><a href="#tabs">{{_i}}Togglable tabs{{/i}}</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{_i}}Hover{{/i}} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#tooltips">{{_i}}Tooltip{{/i}}</a></li>
+                <li><a href="#popovers">{{_i}}Popover{{/i}}</a></li>
+              </ul>
+            </li>
             <li><a href="#alerts">{{_i}}Alert{{/i}}</a></li>
             <li><a href="#buttons">{{_i}}Button{{/i}}</a></li>
             <li><a href="#collapse">{{_i}}Collapse{{/i}}</a></li>
             <li><a href="#carousel">{{_i}}Carousel{{/i}}</a></li>
-            <li><a href="#typeahead">{{_i}}Typeahead{{/i}}</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{_i}}Forms{{/i}} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#typeahead">{{_i}}Typeahead{{/i}}</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </header>
@@ -26,7 +41,7 @@
       ================================================== -->
       <section id="javascript">
         <div class="page-header">
-          <h1>{{_i}}jQuery plugins{{/i}} <small>{{_i}}A dozen Bootstrap plugins to get you started{{/i}}</small></h1>
+          <h1>{{_i}}jQuery plugins{{/i}} <small>{{_i}}A bunch of Bootstrap plugins to get you started{{/i}}</small></h1>
         </div>
       <div class="row">
         <div class="span3">
