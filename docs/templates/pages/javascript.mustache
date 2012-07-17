@@ -28,6 +28,7 @@
           <li><a href="#collapse"><i class="icon-chevron-right"></i> {{_i}}Collapse{{/i}}</a></li>
           <li><a href="#carousel"><i class="icon-chevron-right"></i> {{_i}}Carousel{{/i}}</a></li>
           <li><a href="#typeahead"><i class="icon-chevron-right"></i> {{_i}}Typeahead{{/i}}</a></li>
+          <li><a href="#inputmask"><i class="icon-chevron-right"></i> {{_i}}Input mask{{/i}}</a></li>
           <li><a href="#affix"><i class="icon-chevron-right"></i> {{_i}}Affix{{/i}}</a></li>
         </ul>
       </div>
@@ -1516,6 +1517,82 @@ $('.carousel').carousel({
             <h3>{{_i}}Methods{{/i}}</h3>
             <h4>.typeahead({{_i}}options{{/i}})</h4>
             <p>{{_i}}Initializes an input with a typeahead.{{/i}}</p>
+          </section>
+
+
+
+          <!-- Input mask
+          ================================================== -->
+          <section id="inputmask">
+            <div class="page-header">
+              <h1>{{_i}}Input mask{{/i}} <small>bootstrap-inputmask.js</small></h1>
+            </div>
+
+            <h2>{{_i}}Example{{/i}}</h2>
+            <p>{{_i}}Input masks can be used to force the user to enter data conform a specific format.{{/i}}</p>
+            <p>{{_i}}Unlike validation, the user can't enter any other key than the ones specified by the mask.{{/i}}</p>
+            <div class="bs-docs-example">
+              <label>ISBN <input type="text" class="span2" data-mask="999-99-999-9999-9"></label>
+            </div>
+<pre class="prettyprint linenums">
+&lt;input type="text" data-mask="999-99-999-9999-9"&gt;
+</pre>
+
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>{{_i}}Usage{{/i}}</h2>
+
+            <h3>{{_i}}Via data attributes{{/i}}</h3>
+            <p>{{_i}}Add data attributes to register an element with inputmask functionality as shown in the example above.{{/i}}</p>
+
+            <h3>{{_i}}Via JavaScript{{/i}}</h3>
+            <p>{{_i}}Call the input mask via javascript:{{/i}}</p>
+            <pre class="prettyprint linenums">$('.inputmask').inputmask()</pre>
+
+            <h3>{{_i}}Options{{/i}}</h3>
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th style="width: 100px;">{{_i}}Name{{/i}}</th>
+                  <th style="width: 50px;">{{_i}}type{{/i}}</th>
+                  <th style="width: 100px;">{{_i}}default{{/i}}</th>
+                  <th>{{_i}}description{{/i}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{_i}}mask{{/i}}</td>
+                  <td>{{_i}}string{{/i}}</td>
+                  <td>''</td>
+                  <td>{{_i}}A string of formatting and literal characters, defining the input mask (see below).{{/i}}</td>
+                </tr>
+               <tr>
+                 <td>{{_i}}placeholder{{/i}}</td>
+                 <td>{{_i}}string{{/i}}</td>
+                 <td>'_'</td>
+                 <td>{{_i}}The character that is displayed where something needs to be typed.{{/i}}</td>
+               </tr>
+              </tbody>
+            </table>
+
+            <h3>{{_i}}Format{{/i}}</h3>
+            <table class="table table-striped">
+              <thead>
+                <tr><th>{{_i}}Character{{/i}}</th><th>{{_i}}Description{{/i}}</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>9</td><td>{{_i}}Number{{/i}}</td></tr>
+                <tr><td>a</td><td>{{_i}}Letter{{/i}}</td></tr>
+                <tr><td>?</td><td>{{_i}}Alphanumeric{{/i}}</td></tr>
+                <tr><td>*</td><td>{{_i}}Any character{{/i}}</td></tr>
+              </tbody>
+            </table>
+
+            <h3>{{_i}}Methods{{/i}}</h3>
+            <h4>.inputmask({{_i}}options{{/i}})</h4>
+            <p>{{_i}}Initializes an input with an input mask.{{/i}}</p>
           </section>
 
 
