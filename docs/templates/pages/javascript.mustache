@@ -2,7 +2,7 @@
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
         <h1>{{_i}}Javascript for Bootstrap{{/i}}</h1>
-        <p class="lead">{{_i}}Bring Bootstrap's components to life&mdash;now with 12 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.{{/i}}
+        <p class="lead">{{_i}}Bring Bootstrap's components to life&mdash;now with 13 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.{{/i}}
         <div class="subnav visible-desktop">
           <ul class="nav nav-pills">
             <li><a href="#javascript">{{_i}}All plugins{{/i}}</a></li>
@@ -30,6 +30,7 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{_i}}Forms{{/i}} <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#typeahead">{{_i}}Typeahead{{/i}}</a></li>
+                <li><a href="#inputmask">{{_i}}Input mask{{/i}}</a></li>
               </ul>
             </li>
           </ul>
@@ -80,7 +81,7 @@
           <p>{{_i}}Do more with buttons. Control button states or create groups of buttons for more components like toolbars.{{/i}}</p>
         </div>
       </div> <!-- /row -->
-      <div class="row" style="margin-bottom: 9px;">
+      <div class="row">
         <div class="span3">
           <h3><a href="./javascript.html#collapse">{{_i}}Collapse{{/i}}</a></h3>
           <p>{{_i}}Get base styles and flexible support for collapsible components like accordions and navigation.{{/i}}</p>
@@ -93,6 +94,12 @@
           <h3><a href="./javascript.html#typeahead">Typeahead</a></h3>
           <p>{{_i}}A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input.{{/i}}</p>
         </div>
+        <div class="span3">
+          <h3><a href="./javascript.html#inputmask">{{_i}}Input mask{{/i}}</a></h3>
+          <p>{{_i}}Make sure the user types in the data that you want, by using an input mask.{{/i}}</p>
+        </div>
+      </div> <!-- /row -->
+      <div class="row" style="margin-bottom: 9px;">
         <div class="span3">
           <h3>{{_i}}Transitions{{/i}} <small class="muted">*</small></h3>
           <p>{{_i}}For simple transition effects, include bootstrap-transition.js once to slide in modals or fade out alerts.{{/i}}</p>
@@ -1415,6 +1422,78 @@ $('.carousel').carousel({
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>.typeahead({{_i}}options{{/i}})</h4>
           <p>{{_i}}Initializes an input with a typeahead.{{/i}}</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Input mask
+    ================================================== -->
+    <section id="inputmask">
+      <div class="page-header">
+        <h1>{{_i}}Input mask{{/i}} <small>bootstrap-inputmask.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>{{_i}}About{{/i}}</h3>
+          <p>{{_i}}Input masks can be used to force the user to enter data conform a specific format.{{/i}}</p>
+          <p>{{_i}}Unlike validation, the user can't enter any other key than the ones specified by the mask.{{/i}}</p>
+        </div>
+        <div class="span9 columns">
+          <h2>{{_i}}Example{{/i}}</h2>
+          <div class="well">
+            <label>ISBN <input type="text" class="span2" data-mask="999-99-999-9999-9"></label>
+          </div>
+          <hr>
+
+          <h2>{{_i}}Using bootstrap-inputmask.js{{/i}}</h2>
+          <p>{{_i}}Call the input mask via javascript:{{/i}}</p>
+          <pre class="prettyprint linenums">$('.inputmask').inputmask()</pre>
+          <h3>{{_i}}Options{{/i}}</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">{{_i}}Name{{/i}}</th>
+               <th style="width: 50px;">{{_i}}type{{/i}}</th>
+               <th style="width: 100px;">{{_i}}default{{/i}}</th>
+               <th>{{_i}}description{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <td>{{_i}}mask{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>''</td>
+               <td>{{_i}}A string of formatting and literal characters, defining the input mask (see below).{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}placeholder{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>'_'</td>
+               <td>{{_i}}The character that is displayed where something needs to be typed.{{/i}}</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <h3>{{_i}}Format{{/i}}</h3>
+          <table class="table table-striped">
+            <tr><th>{{_i}}Character{{/i}}</th><th>{{_i}}Description{{/i}}</th></tr>
+            <tr><td>9</td><td>{{_i}}Number{{/i}}</td></tr>
+            <tr><td>a</td><td>{{_i}}Letter{{/i}}</td></tr>
+            <tr><td>?</td><td>{{_i}}Alphanumeric{{/i}}</td></tr>
+            <tr><td>*</td><td>{{_i}}Any character{{/i}}</td></tr>
+          </table>
+
+          <h3>{{_i}}Markup{{/i}}</h3>
+          <p>{{_i}}Add data attributes to register an element with an input mask.{{/i}}</p>
+<pre class="prettyprint linenums">
+&lt;input type="text" data-mask="999-99-999-9999-9"&gt;
+</pre>
+
+          <h3>{{_i}}Methods{{/i}}</h3>
+          <h4>.inputmask({{_i}}options{{/i}})</h4>
+          <p>{{_i}}Initializes an input with an input mask.{{/i}}</p>
         </div>
       </div>
     </section>

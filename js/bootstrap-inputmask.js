@@ -3,7 +3,7 @@
  * http://twitter.github.com/bootstrap/javascript.html#tooltips
  * Based on Masked Input plugin by Josh Bush (digitalbush.com)
  * ===========================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyright 2012 Jasny BV, Netherlands.
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
