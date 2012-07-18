@@ -8,8 +8,9 @@
     </hgroup>
     <p>Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.</p>
     <p class="download-info">
-      <a href="https://github.com/jasny/bootstrap/" class="btn btn-primary btn-large">{{_i}}View project on GitHub{{/i}}</a>
-      <a href="assets/bootstrap.zip" class="btn btn-large">{{_i}}Download Bootstrap <small>(v2.0.2)</small>{{/i}}</a>
+      <a href="https://github.com/jasny/bootstrap/" class="btn btn-primary btn-large" style="line-height: 48px" {{#production}}onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'GitHub Project', 'View project on GitHub']);"{{/production}}>{{_i}}View project on GitHub{{/i}}</a>
+      <a href="assets/bootstrap.zip" class="btn btn-large" {{#production}}onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.0.4-j1']);"{{/production}}>{{_i}}Download Bootstrap <small>(v2.0.4-j1)</small><br/><small>Includes all Jasny extensions</small>{{/i}}</a>
+      <a href="assets/jasny-bootstrap.zip" class="btn btn-large" {{#production}}onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'Download extensions', 'Download j1']);"{{/production}}>{{_i}}Extend Bootstrap <small>(j1)</small><br/><small>Download extensions only</small>{{/i}}</a>
     </p>
   </div>
 
@@ -43,6 +44,79 @@
     </ul>
   </div>
 </header>
+
+<hr class="soften">
+
+<div class="changes">
+  <h1>{{_i}}What's different?{{/i}}</h1>
+  <p class="marketing-byline">{{_i}}How can a fantastic library become any better? Check it out.{{/i}}</p>
+  <div class="row">
+    <div class="span3">
+      <h3><a href="./base-css.html#action-links">{{_i}}Action links{{/i}}</a></h3>
+      <p>{{_i}}Sometimes a button will pull to much attention to an action. In those cases, you can use action links instead.{{/i}}</p>
+      <p>{{_i}}Action links look distinctly different than normal links.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./javascript.html#inputmask">{{_i}}Input mask{{/i}}</a></h3>
+      <p>{{_i}}Force the user to enter data conform a specific format.{{/i}}</p>
+      <p>{{_i}}Unlike validation, the user can't enter any other key than the ones specified by the mask.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./javascript.html#rowlink">{{_i}}Row link{{/i}}</a></h3>
+      <p>{{_i}}Don't like when can only click on one column in a table?{{/i}}</p>
+      <p>{{_i}}Row link is a simple javascript plugin that makes the whole row clickable.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./javascript.html#fileupload">{{_i}}File upload{{/i}}</a></h3>
+      <p>{{_i}}With the file upload plugin you can create visually appealing file or image upload widgets.{{/i}}</p>
+      <p>{{_i}}The image upload widget shows a preview of the selected image even before it's uploaded.{{/i}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <h3><a href="./base-css.html#action-links">{{_i}}Iconic icons{{/i}}</a></h3>
+      <p>{{_i}}The iconic font set adds 170 new icons to Bootstrap. These icons can be used with buttons, menus, links, etc.{{/i}}</p>
+      <p>{{_i}}Because these icons are a font, they can be styled just like text.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./components.html#alerts">{{_i}}Page alerts{{/i}}</a></h3>
+      <p>{{_i}}Know those nice little alerts after you save your profile? With .page-alert the alert will be shown on top op your page.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./scaffolding.html#layouts">{{_i}}Semi-fluid layout{{/i}}</a></h3>
+      <p>{{_i}}Get the best of both worlds with a semi-fluid layout. It acts as a fixed layout for big screens. For smaller screens, it behaves like a fluid layout.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./scaffolding.html#responsive">{{_i}}Desktop rows{{/i}}</a></h3>
+      <p>{{_i}}By default columns of a row are show next to each other for tablets and desktops and not for phones. A desktop row displays acts like a row for desktops only and not for tablets or phones.{{/i}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <h3><a href="./base-css.html#forms">{{_i}}Form elements{{/i}}</a></h3>
+      <p>{{_i}}Go beyond uneditable input and create a full uneditable form, with disabled and uneditable elements.{{/i}}</p>
+      <p>{{_i}}Add .editor to a textarea to create a larger field for content editing.{{/i}}</p>
+      <p>{{_i}}Use a button to select a file. Giving a uniform look across browsers.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./base-css.html#forms">{{_i}}Form styles{{/i}}</a></h3>
+      <p>{{_i}}Combine horizontal and vertical forms. Using wells in horizontal forms now looks clean.{{/i}}</p>
+      <p>{{_i}}Use smaller labels to fit more input fields on one screen.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./components.html#navs">{{_i}}Tabbable{{/i}}</a></h3>
+      <p>{{_i}}Tabs work better than ever. You now have a bordered tabbable available. Also, a container can be turned into a tabbable.{{/i}}</p>
+    </div>
+    <div class="span3">
+      <h3>{{_i}}More{{/i}}</h3>
+      <ul>
+        <li>Action area for header <code>.header-actions</code></li>
+        <li>Action area for tables <code>.table-actions</code></li>
+        <li>Fixed margin for modal forms</li>
+      </ul>
+    </div>
+  </div><!--/row-->
+</div>
 
 <hr class="soften">
 

@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-carousel.js v2.0.2
+ * bootstrap-carousel.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#carousel
  * ==========================================================
  * Copyright 2012 Twitter, Inc.
@@ -18,9 +18,10 @@
  * ========================================================== */
 
 
-!function ( $ ) {
+!function ($) {
 
-  "use strict"
+  "use strict"; // jshint ;_;
+
 
  /* CAROUSEL CLASS DEFINITION
   * ========================= */
@@ -36,8 +37,10 @@
 
   Carousel.prototype = {
 
-    cycle: function () {
+    cycle: function (e) {
+      if (!e) this.paused = false
       this.options.interval
+        && !this.paused
         && (this.interval = setInterval($.proxy(this.next, this), this.options.interval))
       return this
     }
@@ -63,7 +66,8 @@
       return this.slide(pos > activePos ? 'next' : 'prev', $(children[pos]))
     }
 
-  , pause: function () {
+  , pause: function (e) {
+      if (!e) this.paused = true
       clearInterval(this.interval)
       this.interval = null
       return this
@@ -129,7 +133,7 @@
  /* CAROUSEL PLUGIN DEFINITION
   * ========================== */
 
-  $.fn.carousel = function ( option ) {
+  $.fn.carousel = function (option) {
     return this.each(function () {
       var $this = $(this)
         , data = $this.data('carousel')
@@ -162,4 +166,4 @@
     })
   })
 
-}( window.jQuery );
+}(window.jQuery);

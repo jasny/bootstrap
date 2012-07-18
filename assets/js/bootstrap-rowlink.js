@@ -1,8 +1,8 @@
 /* ============================================================
- * bootstrap-rowlink.js v2.0.2
+ * bootstrap-rowlink.js j1
  * http://jasny.github.com/bootstrap/javascript.html#rowlink
  * ============================================================
- * Copyright 2011 Jasny BV, Netherlands.
+ * Copyright 2012 Jasny BV, Netherlands.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,23 +17,55 @@
  * limitations under the License.
  * ============================================================ */
 
-/* TODO: Turn this into a proper jquery plugin */
+!function ($) {
+  
+  "use strict"; // jshint ;_;
 
-$(function () {
-    $('*[data-rowlink]').each(function () {
-        var target = $(this).attr('data-rowlink');
-        
-        (this.nodeName == 'tr' ? $(this) : $(this).find('tr:has(td)')).each(function() {
-            var link = $(this).find(target).first();
-            if (!link.length) return;
-            
-            var href = link.attr('href');
+  var Rowlink = function (element, options) {
+    options = $.extend({}, $.fn.rowlink.defaults, options)
+    var tr = element.nodeName == 'tr' ? $(element) : $(element).find('tr:has(td)')
+    
+    tr.each(function() {
+      var link = $(this).find(options.target).first()
+      if (!link.length) return
+      
+      var href = link.attr('href')
 
-            $(this).find('td').not('.nohref').click(function() {
-                window.location = href;
-            });
+      $(this).find('td').not('.nolink').click(function() {
+        window.location = href;
+      })
 
-            link.replaceWith(link.html());
-        });
-    });
-})
+      $(this).addClass('rowlink')
+      link.replaceWith(link.html())
+    })
+  }
+
+  
+ /* ROWLINK PLUGIN DEFINITION
+  * =========================== */
+
+  $.fn.rowlink = function (options) {
+    return this.each(function () {
+      var $this = $(this)
+      , data = $this.data('rowlink')
+      if (!data) $this.data('rowlink', (data = new Rowlink(this, options)))
+    })
+  }
+
+  $.fn.rowlink.defaults = {
+    target: "a"
+  }
+
+  $.fn.rowlink.Constructor = Rowlink
+
+
+ /* ROWLINK DATA-API
+  * ================== */
+
+  $(function () {
+    $('[data-provides="rowlink"]').each(function () {
+      $(this).rowlink($(this).data())
+    })
+  })
+  
+}(window.jQuery)

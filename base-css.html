@@ -24,6 +24,17 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32388850-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </head>
 
   <body data-spy="scroll" data-target=".subnav" data-offset="50">
@@ -34,11 +45,11 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </button>
           <a class="brand" href="./index.html">Bootstrap</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -61,9 +72,6 @@
                 <a href="./less.html">Using LESS</a>
               </li>
               <li class="divider-vertical"></li>
-              <!--<li class="">
-                <a href="./download.html">Customize</a>
-              </li>-->
               <li class="">
                 <a href="./examples.html">Examples</a>
               </li>
@@ -113,8 +121,10 @@
     </div>
     <div class="span4">
       <h3>Example body text</h3>
-      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
+      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+      <h3>Lead body copy</h3>
+      <p>Make a paragraph stand out by adding <code>.lead</code>.</p>
+      <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
     </div>
     <div class="span4">
       <div class="well">
@@ -1183,12 +1193,89 @@ on multiple lines
 
   <br>
 
+  <h2>Small labels</h2>
+  <div class="row">
+    <div class="span4">
+      <p>If you have a lot of fields in a form, you might want to use three or four columns. However labels can start taking up to much space. Simple add <code>.small-labels</code> to a horizontal form (or section within a form) to solve this.</p>
+<pre class="prettyprint linenums">
+&lt;form class="form-horizontal small-labels"&gt;
+  …
+&lt;/div&gt;
+</pre>
+    </div>
+    <div class="span8">
+      <form class="form-horizontal small-labels">
+        <div class="row">
+          <div class="span2">
+            <div class="control-group">
+              <label class="control-label" for="small-1">Input 1</label>
+              <div class="controls">
+                <input class="span1" id="small-1" type="number">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="small-2">Input 2</label>
+              <div class="controls">
+                <input class="span1" id="small-2" type="number">
+              </div>
+            </div>
+          </div>
+          <div class="span2">
+            <div class="control-group">
+              <label class="control-label" for="small-3">Input 3</label>
+              <div class="controls">
+                <input class="span1" id="small-3" type="number">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="small-4">Input 4</label>
+              <div class="controls">
+                <input class="span1" id="small-4" type="number">
+              </div>
+            </div>
+          </div>
+          <div class="span2">
+            <div class="control-group">
+              <label class="control-label" for="small-5">Input 5</label>
+              <div class="controls">
+                <input class="span1" id="small-5" type="number">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="small-6">Input 6</label>
+              <div class="controls">
+                <input class="span1" id="small-6" type="number">
+              </div>
+            </div>
+          </div>
+          <div class="span2">
+            <div class="control-group">
+              <label class="control-label" for="small-7">Input 7</label>
+              <div class="controls">
+                <input class="span1" id="small-7" type="number">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="small-8">Input 8</label>
+              <div class="controls">
+                <input class="span1" id="small-8" type="number">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button class="btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <br>
+
   <h2>Extending form controls</h2>
   <div class="row">
     <div class="span4">
-      <h3>Editor textarea</h3>
-      <p>Add <code>.editor</code> to any textarea or <code>.uneditable-textarea</code> to create a larger field for content editing. If you're using a editor widget like <a href="http://ckeditor.com/" title="CKEditor">CKEditor</a> or <a href="http://www.tinymce.com/" title="TinyMCE">TinyMCE</a>, also add <code>.editor-html</code>.</p>
-      <hr>
       <h3>Prepend &amp; append inputs</h3>
       <p>Input groups&mdash;with appended or prepended text&mdash;provide an easy way to give more context for your inputs. Great examples include the @ sign for Twitter usernames or $ for finances.</p>
       <hr>
@@ -1201,6 +1288,10 @@ on multiple lines
       <hr>
       <h4>Form help text</h4>
       <p>To add help text for your form inputs, include inline help text with <code>&lt;span class="help-inline"&gt;</code> or a help text block with <code>&lt;p class="help-block"&gt;</code> after the input element.</p>
+      <hr>
+      <h4>Editor textarea</h4>
+      <p>Add <code>.editor</code> to any textarea or <code>.uneditable-textarea</code> to create a larger field for content editing.</p>
+      <p>Also add <code>.editor-html</code>, if the textarea will be replaced by e.g. CKEditor or TinyMCE.</p>
     </div>
     <div class="span8">
       <form class="form-horizontal">
@@ -1245,12 +1336,6 @@ on multiple lines
             </div>
           </div>
           <div class="control-group">
-            <label class="control-label">Editor</label>
-            <div class="controls">
-              <textarea class="editor"></textarea>
-            </div>
-          </div>
-          <div class="control-group">
             <label class="control-label" for="prependedInput">Prepended text</label>
             <div class="controls">
               <div class="input-prepend">
@@ -1277,10 +1362,18 @@ on multiple lines
             </div>
           </div>
           <div class="control-group">
-            <label class="control-label" for="appendedPrependedInput">Append with button</label>
+            <label class="control-label" for="appendedInputButton">Append with button</label>
             <div class="controls">
               <div class="input-append">
-                <input class="span2" id="appendedPrependedInput" size="16" type="text"><button class="btn" type="button">Go!</button>
+                <input class="span2" id="appendedInputButton" size="16" type="text"><button class="btn" type="button">Go!</button>
+              </div>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="appendedInputButtons">Two-button append</label>
+            <div class="controls">
+              <div class="input-append">
+                <input class="span2" id="appendedInputButtons" size="16" type="text"><button class="btn" type="button">Search</button><button class="btn" type="button">Options</button>
               </div>
             </div>
           </div>
@@ -1325,8 +1418,14 @@ on multiple lines
               </label>
               <label class="radio">
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                Option two can is something else and selecting it will deselect option one
+                Option two can be something else and selecting it will deselect option one
               </label>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Editor textarea</label>
+            <div class="controls">
+              <textarea class="editor"></textarea>
             </div>
           </div>
           <div class="form-actions">
@@ -1369,7 +1468,7 @@ on multiple lines
       <tr>
         <td><button class="btn btn-info" href="#">Info</button></td>
         <td><code>btn btn-info</code></td>
-        <td>Used as an alternate to the default styles</td>
+        <td>Used as an alternative to the default styles</td>
       </tr>
       <tr>
         <td><button class="btn btn-success" href="#">Success</button></td>
@@ -1399,13 +1498,6 @@ on multiple lines
       <h3>Buttons for actions</h3>
       <p>As a convention, buttons should only be used for actions while hyperlinks are to be used for objects. For instance, "Download" should be a button while "recent activity" should be a link.</p>
       <p>Button styles can be applied to anything with the <code>.btn</code> class applied. However, typically you'll want to apply these to only <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements.</p>
-      <h3>Upload button</h3>
-      <p>It's possible to use a button to upload files instead of showing the native browser element.</p>
-      <p><span class="btn btn-file">Upload a file<input type="file" /></span></p>
-<pre class="prettyprint linenums">
-&lt;span class="btn btn-file"&gt;&lt;input type="file" /&gt;&lt;/span&gt;
-</pre>
-      <p>More interactive file and image upload elements are also possible. View <a href="./javascript.html#fileupload">the Javascript docs</a> for that.</p>
       <h3>Cross browser compatibility</h3>
       <p>IE9 doesn't crop background gradients on rounded corners, so we remove it. Related, IE9 jankifies disabled <code>button</code> elements, rendering text gray with a nasty text-shadow that we cannot fix.</p>
     </div>
@@ -1463,6 +1555,15 @@ on multiple lines
     </div>
   </div>
 
+  <div class="row">
+    <div class="span4">
+        <h3>Upload button</h3>
+        <p>It's possible to use a button to upload files, instead of showing the native browser element.</p>
+        <span class="btn btn-file">Upload a file<input type="file" /></span>
+        <p>There is also an interactive file and image upload widgets available. View <a href="./javascript.html#fileupload">the Javascript docs</a> for that.</p>
+    </div>
+  </div>
+
   <br>
 </section>
 
@@ -1476,7 +1577,7 @@ on multiple lines
     <thead>
       <tr>
         <th>Action link</th>
-        <th>class=""</th>
+        <th>Class</th>
         <th>Description</th>
       </tr>
     </thead>
@@ -1488,27 +1589,27 @@ on multiple lines
       </tr>
       <tr>
         <td><a class="act act-primary" href="#">Primary</a></td>
-        <td><code>.act .act-primary</code></td>
+        <td><code>.act-primary</code></td>
         <td>Provides extra visual weight</td>
       </tr>
       <tr>
         <td><a class="act act-info" href="#">Info</a></td>
-        <td><code>.act .act-info</code></td>
+        <td><code>.act-info</code></td>
         <td>Used as an alternate to the default styles</td>
       </tr>
       <tr>
         <td><a class="act act-success" href="#">Success</a></td>
-        <td><code>.act .act-success</code></td>
+        <td><code>.act-success</code></td>
         <td>Indicates a successful or positive action</td>
       </tr>
       <tr>
         <td><a class="act act-warning" href="#">Warning</a></td>
-        <td><code>.act .act-warning</code></td>
+        <td><code>.act-warning</code></td>
         <td>Indicates caution should be taken with this action</td>
       </tr>
       <tr>
         <td><a class="act act-danger" href="#">Danger</a></td>
-        <td><code>.act .act-danger</code></td>
+        <td><code>.act-danger</code></td>
         <td>Indicates a dangerous or potentially negative action</td>
       </tr>
     </tbody>
@@ -1584,15 +1685,15 @@ on multiple lines
         <li><i class="icon-inbox"></i> icon-inbox</li>
         <li><i class="icon-play-circle"></i> icon-play-circle</li>
         <li><i class="icon-repeat"></i> icon-repeat</li>
-      </ul>
-    </div>
-    <div class="span3">
-      <ul class="the-icons">
         <li><i class="icon-refresh"></i> icon-refresh</li>
         <li><i class="icon-list-alt"></i> icon-list-alt</li>
         <li><i class="icon-lock"></i> icon-lock</li>
         <li><i class="icon-flag"></i> icon-flag</li>
         <li><i class="icon-headphones"></i> icon-headphones</li>
+      </ul>
+    </div>
+    <div class="span3">
+      <ul class="the-icons">
         <li><i class="icon-volume-off"></i> icon-volume-off</li>
         <li><i class="icon-volume-down"></i> icon-volume-down</li>
         <li><i class="icon-volume-up"></i> icon-volume-up</li>
@@ -1618,10 +1719,6 @@ on multiple lines
         <li><i class="icon-indent-right"></i> icon-indent-right</li>
         <li><i class="icon-facetime-video"></i> icon-facetime-video</li>
         <li><i class="icon-picture"></i> icon-picture</li>
-      </ul>
-    </div>
-    <div class="span3">
-      <ul class="the-icons">
         <li><i class="icon-pencil"></i> icon-pencil</li>
         <li><i class="icon-map-marker"></i> icon-map-marker</li>
         <li><i class="icon-adjust"></i> icon-adjust</li>
@@ -1632,6 +1729,10 @@ on multiple lines
         <li><i class="icon-move"></i> icon-move</li>
         <li><i class="icon-step-backward"></i> icon-step-backward</li>
         <li><i class="icon-fast-backward"></i> icon-fast-backward</li>
+      </ul>
+    </div>
+    <div class="span3">
+      <ul class="the-icons">
         <li><i class="icon-backward"></i> icon-backward</li>
         <li><i class="icon-play"></i> icon-play</li>
         <li><i class="icon-pause"></i> icon-pause</li>
@@ -1652,10 +1753,6 @@ on multiple lines
         <li><i class="icon-remove-circle"></i> icon-remove-circle</li>
         <li><i class="icon-ok-circle"></i> icon-ok-circle</li>
         <li><i class="icon-ban-circle"></i> icon-ban-circle</li>
-      </ul>
-    </div>
-    <div class="span3">
-      <ul class="the-icons">
         <li><i class="icon-arrow-left"></i> icon-arrow-left</li>
         <li><i class="icon-arrow-right"></i> icon-arrow-right</li>
         <li><i class="icon-arrow-up"></i> icon-arrow-up</li>
@@ -1671,6 +1768,10 @@ on multiple lines
         <li><i class="icon-leaf"></i> icon-leaf</li>
         <li><i class="icon-fire"></i> icon-fire</li>
         <li><i class="icon-eye-open"></i> icon-eye-open</li>
+      </ul>
+    </div>
+    <div class="span3">
+      <ul class="the-icons">
         <li><i class="icon-eye-close"></i> icon-eye-close</li>
         <li><i class="icon-warning-sign"></i> icon-warning-sign</li>
         <li><i class="icon-plane"></i> icon-plane</li>
@@ -1686,6 +1787,26 @@ on multiple lines
         <li><i class="icon-folder-open"></i> icon-folder-open</li>
         <li><i class="icon-resize-vertical"></i> icon-resize-vertical</li>
         <li><i class="icon-resize-horizontal"></i> icon-resize-horizontal</li>
+        <li><i class="icon-hdd"></i> icon-hdd</li>
+        <li><i class="icon-bullhorn"></i> icon-bullhorn</li>
+        <li><i class="icon-bell"></i> icon-bell</li>
+        <li><i class="icon-certificate"></i> icon-certificate</li>
+        <li><i class="icon-thumbs-up"></i> icon-thumbs-up</li>
+        <li><i class="icon-thumbs-down"></i> icon-thumbs-down</li>
+        <li><i class="icon-hand-right"></i> icon-hand-right</li>
+        <li><i class="icon-hand-left"></i> icon-hand-left</li>
+        <li><i class="icon-hand-up"></i> icon-hand-up</li>
+        <li><i class="icon-hand-down"></i> icon-hand-down</li>
+        <li><i class="icon-circle-arrow-right"></i> icon-circle-arrow-right</li>
+        <li><i class="icon-circle-arrow-left"></i> icon-circle-arrow-left</li>
+        <li><i class="icon-circle-arrow-up"></i> icon-circle-arrow-up</li>
+        <li><i class="icon-circle-arrow-down"></i> icon-circle-arrow-down</li>
+        <li><i class="icon-globe"></i> icon-globe</li>
+        <li><i class="icon-wrench"></i> icon-wrench</li>
+        <li><i class="icon-tasks"></i> icon-tasks</li>
+        <li><i class="icon-filter"></i> icon-filter</li>
+        <li><i class="icon-briefcase"></i> icon-briefcase</li>
+        <li><i class="icon-fullscreen"></i> icon-fullscreen</li>
       </ul>
     </div>
   </div>
@@ -1709,7 +1830,7 @@ on multiple lines
 <pre class="prettyprint linenums">
 &lt;i class="icon-search icon-white"&gt;&lt;/i&gt;
 </pre>
-      <p>There are 120 classes to choose from for your icons. Just add an <code>&lt;i&gt;</code> tag with the right classes and you're set. You can find the full list in <strong>sprites.less</strong> or right here in this document.</p>
+      <p>There are 140 classes to choose from for your icons. Just add an <code>&lt;i&gt;</code> tag with the right classes and you're set. You can find the full list in <strong>sprites.less</strong> or right here in this document.</p>
       <p>
         <span class="label label-info">Heads up!</span>
         When using beside strings of text, as in buttons or nav links, be sure to leave a space after the <code>&lt;i&gt;</code> tag for proper spacing.
@@ -2015,9 +2136,10 @@ on multiple lines
       <footer class="footer">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny Software solutions</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
       </footer>
 
     </div><!-- /container -->
@@ -2043,26 +2165,9 @@ on multiple lines
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-inputmask.js"></script>
-    <script src="assets/js/bootstrap-placeholder.js"></script>
     <script src="assets/js/bootstrap-rowlink.js"></script>
     <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
-
-    <!-- Analytics
-    ================================================== -->
-    <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
-    </script>
 
   </body>
 </html>

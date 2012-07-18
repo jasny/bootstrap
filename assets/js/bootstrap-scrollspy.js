@@ -1,5 +1,5 @@
 /* =============================================================
- * bootstrap-scrollspy.js v2.0.2
+ * bootstrap-scrollspy.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#scrollspy
  * =============================================================
  * Copyright 2012 Twitter, Inc.
@@ -18,9 +18,10 @@
  * ============================================================== */
 
 
-!function ( $ ) {
+!function ($) {
 
-  "use strict"
+  "use strict"; // jshint ;_;
+
 
   /* SCROLLSPY CLASS DEFINITION
    * ========================== */
@@ -34,7 +35,7 @@
     this.selector = (this.options.target
       || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
       || '') + ' .nav li > a'
-    this.$body = $('body').on('click.scroll.data-api', this.selector, process)
+    this.$body = $('body')
     this.refresh()
     this.process()
   }
@@ -53,7 +54,8 @@
         $targets = this.$body
           .find(this.selector)
           .map(function () {
-            var href = $(this).attr('href')
+            var $el = $(this)
+              , href = $el.data('target') || $el.attr('href')
               , $href = /^#\w/.test(href) && $(href)
             return ( $href
               && href.length
@@ -90,19 +92,23 @@
 
     , activate: function (target) {
         var active
+          , selector
 
         this.activeTarget = target
 
-        this.$body
-          .find(this.selector).parent('.active')
+        $(this.selector)
+          .parent('.active')
           .removeClass('active')
 
-        active = this.$body
-          .find(this.selector + '[href="' + target + '"]')
+        selector = this.selector
+          + '[data-target="' + target + '"],'
+          + this.selector + '[href="' + target + '"]'
+
+        active = $(selector)
           .parent('li')
           .addClass('active')
 
-        if ( active.parent('.dropdown-menu') )  {
+        if (active.parent('.dropdown-menu'))  {
           active = active.closest('li.dropdown').addClass('active')
         }
 
@@ -142,4 +148,4 @@
     })
   })
 
-}( window.jQuery );
+}(window.jQuery);

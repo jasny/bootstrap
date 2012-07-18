@@ -24,6 +24,17 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32388850-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </head>
 
   <body data-spy="scroll" data-target=".subnav" data-offset="50">
@@ -34,11 +45,11 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </button>
           <a class="brand" href="./index.html">Bootstrap</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -61,9 +72,6 @@
                 <a href="./less.html">Using LESS</a>
               </li>
               <li class="divider-vertical"></li>
-              <!--<li class="">
-                <a href="./download.html">Customize</a>
-              </li>-->
               <li class="">
                 <a href="./examples.html">Examples</a>
               </li>
@@ -75,22 +83,22 @@
 
     <div class="container">
 
-      <!-- Masthead
-      ================================================== -->
-      <header class="jumbotron subhead" id="overview">
-        <h1>Scaffolding</h1>
-        <p class="lead">Bootstrap is built on a responsive 12-column grid. We've also included fixed- and fluid-width layouts based on that system.</p>
-        <div class="subnav">
-          <ul class="nav nav-pills">
-            <li><a href="#global">Global styles</a></li>
-            <li><a href="#gridSystem">Grid system</a></li>
-            <li><a href="#fluidGridSystem">Fluid grid system</a></li>
-            <li><a href="#gridCustomization">Customizing</a></li>
-            <li><a href="#layouts">Layouts</a></li>
-            <li><a href="#responsive">Responsive design</a></li>
-          </ul>
-        </div>
-      </header>
+<!-- Masthead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <h1>Scaffolding</h1>
+  <p class="lead">Bootstrap is built on a responsive 12-column grid. We've also included fixed- and fluid-width layouts based on that system.</p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#global">Global styles</a></li>
+      <li><a href="#gridSystem">Grid system</a></li>
+      <li><a href="#fluidGridSystem">Fluid grid system</a></li>
+      <li><a href="#gridCustomization">Customizing</a></li>
+      <li><a href="#layouts">Layouts</a></li>
+      <li><a href="#responsive">Responsive design</a></li>
+    </ul>
+  </div>
+</header>
 
 
 
@@ -172,8 +180,7 @@
   </div>
   <div class="row">
     <div class="span4">
-      <p>The default grid system provided as part of Bootstrap is a <strong>940px-wide, 12-column grid</strong>.</p>
-      <p>It also has four responsive variations for various devices and resolutions: phone, tablet portrait, tablet landscape and small desktops, and large widescreen desktops.</p>
+      <p>The default grid system provided in Bootstrap utilizes <strong>12 columns</strong> that render out at widths of 724px, 940px (default without responsive CSS included), and 1170px. Below 767px viewports, the columns become fluid and stack vertically. </p>
     </div><!-- /.span -->
     <div class="span4">
 <pre class="prettyprint linenums">
@@ -234,11 +241,11 @@
     <div class="span6">
 <pre class="prettyprint linenums">
 &lt;div class="row"&gt;
-  &lt;div class="span12"&gt;
-    Level 1 of column
+  &lt;div class="span6"&gt;
+    Level 1 column
     &lt;div class="row"&gt;
-      &lt;div class="span6"&gt;Level 2&lt;/div&gt;
-      &lt;div class="span6"&gt;Level 2&lt;/div&gt;
+      &lt;div class="span3"&gt;Level 2&lt;/div&gt;
+      &lt;div class="span3"&gt;Level 2&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -551,17 +558,17 @@
     </div><!-- /.span -->
     <div class="span8">
 <pre class="prettyprint linenums">
-  // Landscape phones and down
+  /* Landscape phones and down */
   @media (max-width: 480px) { ... }
 
-  // Landscape phone to portrait tablet
-  @media (max-width: 768px) { ... }
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 767px) { ... }
 
-  // Portrait tablet to landscape and desktop
-  @media (min-width: 768px) and (max-width: 980px) { ... }
+  /* Portrait tablet to landscape and desktop */
+  @media (min-width: 768px) and (max-width: 979px) { ... }
 
-  // Large desktop
-  @media (min-width: 1200px) { .. }
+  /* Large desktop */
+  @media (min-width: 1200px) { ... }
 </pre>
     </div><!-- /.span -->
   </div><!-- /.row -->
@@ -648,7 +655,7 @@
   </div><!-- /.row -->
 
   <!-- Desktop row -->
-  <h2>Desktop row</h2>
+  <h2>Desktop rows</h2>
   <div class="row">
     <div class="span4">
       <p>By default columns of a <code>.row</code> are show next to each other, however for phones the columns are show underneath each other. By adding the class <code>.row-desktop</code> to a row,
@@ -682,9 +689,10 @@
       <footer class="footer">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny Software solutions</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
       </footer>
 
     </div><!-- /container -->
@@ -710,26 +718,9 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-inputmask.js"></script>
-    <script src="assets/js/bootstrap-placeholder.js"></script>
     <script src="assets/js/bootstrap-rowlink.js"></script>
     <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
-
-    <!-- Analytics
-    ================================================== -->
-    <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
-    </script>
 
   </body>
 </html>

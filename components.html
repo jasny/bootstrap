@@ -24,6 +24,17 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32388850-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </head>
 
   <body data-spy="scroll" data-target=".subnav" data-offset="50">
@@ -34,11 +45,11 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </button>
           <a class="brand" href="./index.html">Bootstrap</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -61,9 +72,6 @@
                 <a href="./less.html">Using LESS</a>
               </li>
               <li class="divider-vertical"></li>
-              <!--<li class="">
-                <a href="./download.html">Customize</a>
-              </li>-->
               <li class="">
                 <a href="./examples.html">Examples</a>
               </li>
@@ -422,7 +430,7 @@
         </div><!-- /btn-group -->
       </div><!-- /btn-toolbar -->
       <h3>Sizes</h3>
-      <p>Utilize the extra button classe <code>.btn-mini</code>, <code>.btn-small</code>, or <code>.btn-large</code> for sizing.</p>
+      <p>Utilize the extra button classes <code>.btn-mini</code>, <code>.btn-small</code>, or <code>.btn-large</code> for sizing.</p>
       <div class="btn-toolbar">
         <div class="btn-group">
           <button class="btn btn-large">Large action</button>
@@ -813,7 +821,7 @@
       <h3>Straightforward markup</h3>
       <p>Using tabbable tabs requires a wrapping div, a set of tabs, and a set of tabbable panes of content.</p>
 <pre class="prettyprint linenums">
-&lt;div class="tabbable"&gt; &lt;-- Only required for left/right tabs --&gt;
+&lt;div class="tabbable"&gt; &lt;!-- Only required for left/right tabs --&gt;
   &lt;ul class="nav nav-tabs"&gt;
     &lt;li class="active"&gt;&lt;a href="#tab1" data-toggle="tab"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#tab2" data-toggle="tab"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
@@ -1113,7 +1121,7 @@
 &lt;/div&gt;
 </pre>
       <div class="alert alert-info">
-        <strong>Heads up!</strong> The responsive navbar requires the <a href="./javascript.html#collapse">collapse plugin</a>.
+        <strong>Heads up!</strong> The responsive navbar requires the <a href="./javascript.html#collapse">collapse plugin</a> and <a href="./scaffolding.html#responsive">responsive Bootstrap CSS file</a>.
       </div>
 
     </div><!-- /.span -->
@@ -1705,7 +1713,7 @@
 
 
 
-<!-- Alerts & Messages
+<!-- Alerts
 ================================================== -->
 <section id="alerts">
   <div class="page-header">
@@ -1728,7 +1736,7 @@
       <h3>Example alerts</h3>
       <p>Wrap your message and an optional close icon in a div with simple class.</p>
       <div class="alert">
-        <button class="close" data-dismiss="alert">&times;</button>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Warning!</strong> Best check yo self, you're not looking too good.
       </div>
 <pre class="prettyprint linenums">
@@ -1737,10 +1745,10 @@
   &lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you're not looking too good.
 &lt;/div&gt;
 </pre>
-      <p><span class="label label-info">Heads up!</span> iOS devices require an <code>href="#"</code> for the dismissal of alerts. Be sure to include it and the data attribute for anchor close icons. Alternatively, you may use a <code>button</code> element with the data attribute, which we have opted to do for our docs.</p>
+      <p><span class="label label-info">Heads up!</span> iOS devices require an <code>href="#"</code> for the dismissal of alerts. Be sure to include it and the data attribute for anchor close icons. Alternatively, you may use a <code>&lt;button&gt;</code> element with the data attribute, which we have opted to do for our docs. When using <code>&lt;button&gt;</code>, you must include <code>type="button"</code> or your forms may not submit.</p>
       <p>Easily extend the standard alert message with two optional classes: <code>.alert-block</code> for more padding and text controls and <code>.alert-heading</code> for a matching heading.</p>
       <div class="alert alert-block">
-        <button class="close" data-dismiss="alert">&times;</button>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
         <h4 class="alert-heading">Warning!</h4>
         <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
       </div>
@@ -1759,7 +1767,7 @@
     <div class="span4">
       <h3>Error or danger</h3>
       <div class="alert alert-error">
-        <button class="close" data-dismiss="alert">&times;</button>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Oh snap!</strong> Change a few things up and try submitting again.
       </div>
 <pre class="prettyprint linenums">
@@ -1771,7 +1779,7 @@
     <div class="span4">
       <h3>Success</h3>
       <div class="alert alert-success">
-        <button class="close" data-dismiss="alert">&times;</button>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Well done!</strong> You successfully read this important alert message.
       </div>
 <pre class="prettyprint linenums">
@@ -1783,7 +1791,7 @@
     <div class="span4">
       <h3>Information</h3>
       <div class="alert alert-info">
-        <button class="close" data-dismiss="alert">&times;</button>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
       </div>
 <pre class="prettyprint linenums">
@@ -1964,9 +1972,10 @@
       <footer class="footer">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny Software solutions</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
       </footer>
 
     </div><!-- /container -->
@@ -1992,26 +2001,9 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-inputmask.js"></script>
-    <script src="assets/js/bootstrap-placeholder.js"></script>
     <script src="assets/js/bootstrap-rowlink.js"></script>
     <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
-
-    <!-- Analytics
-    ================================================== -->
-    <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
-    </script>
 
   </body>
 </html>

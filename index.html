@@ -24,6 +24,17 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32388850-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </head>
 
   <body data-spy="scroll" data-target=".subnav" data-offset="50">
@@ -34,11 +45,11 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </button>
           <a class="brand" href="./index.html">Bootstrap</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -61,9 +72,6 @@
                 <a href="./less.html">Using LESS</a>
               </li>
               <li class="divider-vertical"></li>
-              <!--<li class="">
-                <a href="./download.html">Customize</a>
-              </li>-->
               <li class="">
                 <a href="./examples.html">Examples</a>
               </li>
@@ -85,8 +93,9 @@
     </hgroup>
     <p>Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.</p>
     <p class="download-info">
-      <a href="https://github.com/jasny/bootstrap/" class="btn btn-primary btn-large">View project on GitHub</a>
-      <a href="assets/bootstrap.zip" class="btn btn-large">Download Bootstrap <small>(v2.0.2)</small></a>
+      <a href="https://github.com/jasny/bootstrap/" class="btn btn-primary btn-large" style="line-height: 48px" onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'GitHub Project', 'View project on GitHub']);">View project on GitHub</a>
+      <a href="assets/bootstrap.zip" class="btn btn-large" onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.0.4-j1']);">Download Bootstrap <small>(v2.0.4-j1)</small><br/><small>Includes all Jasny extensions</small></a>
+      <a href="assets/jasny-bootstrap.zip" class="btn btn-large" onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'Download extensions', 'Download j1']);">Extend Bootstrap <small>(j1)</small><br/><small>Download extensions only</small></a>
     </p>
   </div>
 
@@ -120,6 +129,79 @@
     </ul>
   </div>
 </header>
+
+<hr class="soften">
+
+<div class="changes">
+  <h1>What's different?</h1>
+  <p class="marketing-byline">How can a fantastic library become any better? Check it out.</p>
+  <div class="row">
+    <div class="span3">
+      <h3><a href="./base-css.html#action-links">Action links</a></h3>
+      <p>Sometimes a button will pull to much attention to an action. In those cases, you can use action links instead.</p>
+      <p>Action links look distinctly different than normal links.</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./javascript.html#inputmask">Input mask</a></h3>
+      <p>Force the user to enter data conform a specific format.</p>
+      <p>Unlike validation, the user can't enter any other key than the ones specified by the mask.</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./javascript.html#rowlink">Row link</a></h3>
+      <p>Don't like when can only click on one column in a table?</p>
+      <p>Row link is a simple javascript plugin that makes the whole row clickable.</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./javascript.html#fileupload">File upload</a></h3>
+      <p>With the file upload plugin you can create visually appealing file or image upload widgets.</p>
+      <p>The image upload widget shows a preview of the selected image even before it's uploaded.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <h3><a href="./base-css.html#action-links">Iconic icons</a></h3>
+      <p>The iconic font set adds 170 new icons to Bootstrap. These icons can be used with buttons, menus, links, etc.</p>
+      <p>Because these icons are a font, they can be styled just like text.</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./components.html#alerts">Page alerts</a></h3>
+      <p>Know those nice little alerts after you save your profile? With .page-alert the alert will be shown on top op your page.</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./scaffolding.html#layouts">Semi-fluid layout</a></h3>
+      <p>Get the best of both worlds with a semi-fluid layout. It acts as a fixed layout for big screens. For smaller screens, it behaves like a fluid layout.</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./scaffolding.html#responsive">Desktop rows</a></h3>
+      <p>By default columns of a row are show next to each other for tablets and desktops and not for phones. A desktop row displays acts like a row for desktops only and not for tablets or phones.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3">
+      <h3><a href="./base-css.html#forms">Form elements</a></h3>
+      <p>Go beyond uneditable input and create a full uneditable form, with disabled and uneditable elements.</p>
+      <p>Add .editor to a textarea to create a larger field for content editing.</p>
+      <p>Use a button to select a file. Giving a uniform look across browsers.</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./base-css.html#forms">Form styles</a></h3>
+      <p>Combine horizontal and vertical forms. Using wells in horizontal forms now looks clean.</p>
+      <p>Use smaller labels to fit more input fields on one screen.</p>
+    </div>
+    <div class="span3">
+      <h3><a href="./components.html#navs">Tabbable</a></h3>
+      <p>Tabs work better than ever. You now have a bordered tabbable available. Also, a container can be turned into a tabbable.</p>
+    </div>
+    <div class="span3">
+      <h3>More</h3>
+      <ul>
+        <li>Action area for header <code>.header-actions</code></li>
+        <li>Action area for tables <code>.table-actions</code></li>
+        <li>Fixed margin for modal forms</li>
+      </ul>
+    </div>
+  </div><!--/row-->
+</div>
 
 <hr class="soften">
 
@@ -234,9 +316,10 @@
       <footer class="footer">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny Software solutions</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
       </footer>
 
     </div><!-- /container -->
@@ -262,26 +345,9 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-inputmask.js"></script>
-    <script src="assets/js/bootstrap-placeholder.js"></script>
     <script src="assets/js/bootstrap-rowlink.js"></script>
     <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
-
-    <!-- Analytics
-    ================================================== -->
-    <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
-    </script>
 
   </body>
 </html>

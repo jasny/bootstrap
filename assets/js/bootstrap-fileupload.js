@@ -1,12 +1,10 @@
-/* ==========================================================
- * bootstrap-placeholder.js v2.0.0
- * http://jasny.github.com/bootstrap/javascript.html#placeholder
- * 
- * Based on work by Daniel Stocks (http://webcloud.se)
- * ==========================================================
- * Copyright 2012 Jasny BV.
+/* ===========================================================
+ * bootstrap-fileupload.js j1
+ * http://jasny.github.com/bootstrap/javascript.html#fileupload
+ * ===========================================================
+ * Copyright 2012 Jasny BV, Netherlands.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -19,59 +17,108 @@
  * limitations under the License.
  * ========================================================== */
 
-/* TODO: turn this into a proper bootstrap plugin */
+!function ($) {
 
-$(function () {
-      $('*[data-fileupload]').each(function () {
-          var container = $(this);
-          var input = $(this).find(':file');
-          var name = input.attr('name');
-          if (input.length == 0) return;
-          
-          var preview = $(this).find('.fileupload-preview');
-          if (preview.css('display') != 'inline' && preview.css('height') != 'none') preview.css('line-height', preview.css('height'));
+  "use strict"; // jshint ;_
 
-          var remove = $(this).find('*[data-dismiss="fileupload"]');
-          
-          var hidden_input = $(this).find(':hidden[name="'+name+'"]');
-          if (!hidden_input.length) {
-              hidden_input = $('<input type="hidden" />');
-              container.prepend(hidden_input);
-          }
+ /* INPUTMASK PUBLIC CLASS DEFINITION
+  * ================================= */
 
-          var type = container.attr('data-fileupload') == "image" ? "image" : "file";
+  var Fileupload = function (element, options) {
+    this.$element = $(element)
+    this.type = this.$element.data('uploadtype') || (this.$element.find('.thumbnail').length > 0 ? "image" : "file")
+      
+    this.$input = this.$element.find(':file')
+    if (this.$input.length === 0) return
 
-          input.change(function(e) {
-              hidden_input.val('');
-              hidden_input.attr('name', '')
-              input.attr('name', name);
+    this.name = this.$input.attr('name') || options.name
 
-              var file = e.target.files[0];
-              
-              if (type == "image" && preview.length && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match('\\.(gif|png|jpg)$')) && typeof FileReader !== "undefined") {
-                  var reader = new FileReader();
+    this.$hidden = this.$element.find(':hidden[name="'+this.name+'"]')
+    if (this.$hidden.length === 0) {
+      this.$hidden = $('<input type="hidden" />')
+      this.$element.prepend(this.$hidden)
+    }
 
-                  reader.onload = function(e) {
-                     preview.html('<img src="' + e.target.result + '" ' + (preview.css('max-height') != 'none' ? 'style="max-height: ' + preview.css('max-height') + ';"' : '') + ' />');
-                     container.addClass('fileupload-exists').removeClass('fileupload-new');
-                  }
+    this.$preview = this.$element.find('.fileupload-preview')
+    var height = this.$preview.css('height')
+    if (this.$preview.css('display') != 'inline' && height != '0px' && height != 'none') this.$preview.css('line-height', height)
 
-                  reader.readAsDataURL(file);
-              } else {
-                  preview.html(escape(file.name));
-                  container.addClass('fileupload-exists').removeClass('fileupload-new');
-              }
-          });
+    this.$remove = this.$element.find('[data-dismiss="fileupload"]')
+    
+    this.listen()
+  }
+  
+  Fileupload.prototype = {
+    
+    listen: function() {
+      this.$input.on('change.fileupload', $.proxy(this.change, this))
+      if (this.$remove) this.$remove.on('click.fileupload', $.proxy(this.clear, this))
+    },
+    
+    change: function(e, invoked) {
+      var file = e.target.files[0]
+      if (!file || invoked === 'clear') return
+      
+      this.$hidden.val('')
+      this.$hidden.attr('name', '')
+      this.$input.attr('name', this.name)
 
-          remove.click(function() {
-              hidden_input.val('');
-              hidden_input.attr('name', name);
-              input.attr('name', '');
+      if (this.type === "image" && this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match('\\.(gif|png|jpe?g)$')) && typeof FileReader !== "undefined") {
+        var reader = new FileReader()
+        var preview = this.$preview
+        var element = this.$element
 
-              preview.html('');
-              container.addClass('fileupload-new').removeClass('fileupload-exists');
+        reader.onload = function(e) {
+          preview.html('<img src="' + e.target.result + '" ' + (preview.css('max-height') != 'none' ? 'style="max-height: ' + preview.css('max-height') + ';"' : '') + ' />')
+          element.addClass('fileupload-exists').removeClass('fileupload-new')
+        }
 
-              return false;
-          });
-      })
-});
+        reader.readAsDataURL(file)
+      } else {
+        this.$preview.html(window.escape(file.name))
+        this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
+      }
+    },
+
+    clear: function(e) {
+      this.$hidden.val('')
+      this.$hidden.attr('name', this.name)
+      this.$input.attr('name', '')
+
+      this.$preview.html('')
+      this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
+
+      this.$input.trigger('change', [ 'clear' ])
+
+      e.preventDefault()
+      return false
+    }
+  }
+
+  
+ /* INPUTMASK PLUGIN DEFINITION
+  * =========================== */
+
+  $.fn.fileupload = function (options) {
+    return this.each(function () {
+      var $this = $(this)
+      , data = $this.data('fileupload')
+      if (!data) $this.data('fileupload', (data = new Fileupload(this, options)))
+    })
+  }
+
+  $.fn.fileupload.Constructor = Fileupload
+
+
+ /* INPUTMASK DATA-API
+  * ================== */
+
+  $(function () {
+    $('body').on('click.fileupload.data-api', '[data-provides="fileupload"]', function (e) {
+      var $this = $(this)
+      if ($this.data('fileupload')) return
+      $this.fileupload($this.data())
+    })
+  })
+
+}(window.jQuery)
