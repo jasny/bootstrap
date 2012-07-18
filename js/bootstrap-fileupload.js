@@ -1,10 +1,8 @@
-/* ==========================================================
- * bootstrap-placeholder.js v2.0.0
- * http://jasny.github.com/bootstrap/javascript.html#placeholder
- * 
- * Based on work by Daniel Stocks (http://webcloud.se)
- * ==========================================================
- * Copyright 2012 Jasny BV.
+/* ===========================================================
+ * bootstrap-fileupload.js j1
+ * http://jasny.github.com/bootstrap/javascript.html#fileupload
+ * ===========================================================
+ * Copyright 2012 Jasny BV, Netherlands.
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
@@ -18,8 +16,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================== */
-
-/* TODO: turn this into a proper bootstrap plugin */
 
 !function ($) {
 

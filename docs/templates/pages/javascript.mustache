@@ -2,10 +2,9 @@
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
         <h1>{{_i}}Javascript for Bootstrap{{/i}}</h1>
-        <p class="lead">{{_i}}Bring Bootstrap's components to life&mdash;now with 14 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.{{/i}}
+        <p class="lead">{{_i}}Bring Bootstrap's components to life&mdash;now with 15 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.{{/i}}
         <div class="subnav visible-desktop">
           <ul class="nav nav-pills">
-            <li><a href="#javascript">{{_i}}All plugins{{/i}}</a></li>
             <li><a href="#modals">{{_i}}Modal{{/i}}</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{_i}}Navigation{{/i}} <b class="caret"></b></a>
@@ -37,6 +36,7 @@
               <ul class="dropdown-menu">
                 <li><a href="#typeahead">{{_i}}Typeahead{{/i}}</a></li>
                 <li><a href="#inputmask">{{_i}}Input mask{{/i}}</a></li>
+                <li><a href="#fileupload">{{_i}}File upload{{/i}}</a></li>
               </ul>
             </li>
           </ul>
@@ -109,6 +109,10 @@
         <div class="span3">
           <h3><a href="./javascript.html#inputmask">{{_i}}Input mask{{/i}}</a></h3>
           <p>{{_i}}Make sure the user types in the data that you want, by using an input mask.{{/i}}</p>
+        </div>
+        <div class="span3">
+          <h3><a href="./javascript.html#fileupload">{{_i}}File upload{{/i}}</a></h3>
+          <p>{{_i}}The file upload plugin allows you to create a visually appealing file or image upload widget.{{/i}}</p>
         </div>
         <div class="span3">
           <h3>{{_i}}Transitions{{/i}} <small class="muted">*</small></h3>
@@ -1511,7 +1515,7 @@ $('.carousel').carousel({
     ================================================== -->
     <section id="inputmask">
       <div class="page-header">
-        <h1>{{_i}}Input mask{{/i}} <small>bootstrap-inputmask.js</small></h1>
+        <h1>{{_i}}Inputmask{{/i}} <small>bootstrap-inputmask.js</small></h1>
       </div>
       <div class="row">
         <div class="span3 columns">
@@ -1573,6 +1577,146 @@ $('.carousel').carousel({
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>.inputmask({{_i}}options{{/i}})</h4>
           <p>{{_i}}Initializes an input with an input mask.{{/i}}</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- File upload
+    ================================================== -->
+    <section id="fileupload">
+      <div class="page-header">
+        <h1>{{_i}}File upload{{/i}} <small>bootstrap-fileupload.js</small></h1>
+      </div>
+
+      <div class="row">
+        <div class="span3 columns">
+          <h3>{{_i}}About{{/i}}</h3>
+          <p>{{_i}}The file upload plugin allows you to create a visually appealing file or image upload widgets.{{/i}}</p>
+          <a href="assets/js/bootstrap-fileupload.js" target="_blank" class="btn">{{_i}}Download file{{/i}}</a>
+        </div>
+
+        <div class="span9 columns">
+          <h2>{{_i}}Examples{{/i}}</h2>
+          <h3>{{_i}}File upload widgets{{/i}}</h3>
+          <div class="row row-desktop">
+            <div class="span4 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="input-append">
+                    <div class="uneditable-input span2"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">{{_i}}Select file{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
+                </div>
+              </div>
+            </div>
+            <div class="span4 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select file{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
+                <span class="fileupload-preview"></span>
+                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">{{_i}}&times;{{/i}}</a>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <h3>{{_i}}Image upload widgets{{/i}}</h3>
+          <p>{{_i}}When uploading an image, it's possible to show a thumbnail instead of the filename.{{/i}}</p>
+          <div class="row row-desktop">
+            <div class="span3 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                <div>
+                    <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select image{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
+                    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
+                </div>
+              </div>
+            </div>
+            <div class="span3 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+                <div>
+                    <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select image{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
+                    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
+                </div>
+              </div>
+            </div>
+            <div class="span3 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;"><img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+                <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select image{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
+                <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
+              </div>
+              <br/>
+
+              <div class="fileupload fileupload-new visible-desktop" data-provides="fileupload" style="text-align: right">
+                <span class="btn btn-file"><span class="fileupload-new">{{_i}}Select image{{/i}}</span><span class="fileupload-exists">{{_i}}Change{{/i}}</span><input type="file" /></span>
+                <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">{{_i}}Remove{{/i}}</a>
+                <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;"><img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-warning"><strong>{{_i}}Notice!{{/i}}</strong> {{_i}}Image preview only works in IE10+, FF3.6+, Chrome6.0+ and Opera11.1+. In older browsers and Safari, the filename is shown instead.{{/i}}</div>
+          <hr>
+
+          <h2>{{_i}}Using bootstrap-fileupload.js{{/i}}</h2>
+          <p>{{_i}}Call the typeahead via javascript:{{/i}}</p>
+          <pre class="prettyprint linenums">$('.fileupload').fileupload()</pre>
+          <h3>{{_i}}Options{{/i}}</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">{{_i}}Name{{/i}}</th>
+               <th style="width: 50px;">{{_i}}type{{/i}}</th>
+               <th>{{_i}}description{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <td>{{_i}}uploadtype{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}Choose 'file' or 'image'. If omitted, the type is automatically determined based on the presence of a <code>.thumbnail</code> element.{{/i}}</td>
+             </tr>
+              <tr>
+               <td>{{_i}}name{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}Use this option instead of setting the <code>name</code> attribute on the <code>&lt;input&gt;</code> element to prevent it from being part of the post data when not changed.{{/i}}</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <h3>{{_i}}Markup{{/i}}</h3>
+          <p>{{_i}}UAdd data attributes to register the file upload widget. The main container should either have the <code>.fileupload-new</code> class for a new record or if the record
+            does not have file or <code>.fileupload-exists</code> if an existing file is present. Elements inside the container with the <code>.fileupload-new</code> and <code>.fileupload-exists</code>
+            class will be shown or hidden based on the current state. The content of <code>.fileupload-preview</code> is replaced when a file is selected. Implement a button to clear
+            the file with <code>data-dismiss="fileupload"</code>.{{/i}}</p>
+          
+          <h4>{{_i}}File upload widget{{/i}}</h4>
+<pre class="prettyprint linenums">
+&lt;div class="fileupload fileupload-new" data-provides="fileupload"&gt;
+  &lt;div class="fileupload-preview uneditable-input"&gt;&lt;/div&gt;
+  &lt;span class="btn btn-file"&gt;&lt;span class="fileupload-new"&gt;{{_i}}Select file{{/i}}&lt;/span&gt;&lt;span class="fileupload-exists"&gt;{{_i}}Change{{/i}}&lt;/span&gt;&lt;input type="file" /&gt;&lt;/span&gt;
+  &lt;a href="#" class="btn fileupload-exists" data-dismiss="fileupload"&gt;{{_i}}Remove{{/i}}&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+
+          <h4>{{_i}}Image upload widget{{/i}}</h4>
+<pre class="prettyprint linenums">
+&lt;div class="fileupload fileupload-new" data-provides="fileupload"&gt;
+  &lt;div class="fileupload-new thumbnail"&gt;&lt;img src="" /&gt;&lt;/div&gt;
+  &lt;div class="fileupload-preview fileupload-exists thumbnail"&gt;&lt;/div&gt;
+  &lt;div&gt;
+    &lt;span class="btn btn-file"&gt;&lt;span class="fileupload-new"&gt;{{_i}}Select image{{/i}}&lt;/span&gt;&lt;span class="fileupload-exists"&gt;{{_i}}Change{{/i}}&lt;/span&gt;&lt;input type="file" /&gt;&lt;/span&gt;
+    &lt;a href="#" class="btn fileupload-exists" data-dismiss="fileupload"&gt;{{_i}}Remove{{/i}}&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+          <p>{{_i}}Using the given elements, you can layout the upload widget the way you want, either with a fixed <code>width</code> and <code>height</code> or with <code>max-width</code> and <code>max-height</code>.{{/i}}</p>
+
+          <h3>{{_i}}Methods{{/i}}</h3>
+          <h4>.fileupload({{_i}}options{{/i}})</h4>
+          <p>{{_i}}Initializes a file upload widget.{{/i}}</p>
         </div>
       </div>
     </section>
