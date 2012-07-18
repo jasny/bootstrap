@@ -63,9 +63,6 @@
               </li>
               <li class="divider-vertical"></li>
               <li class="">
-                <a href="./download.html">Customize</a>
-              </li>
-              <li class="">
                 <a href="./examples.html">Examples</a>
               </li>
             </ul>
@@ -80,21 +77,43 @@
       ================================================== -->
       <header class="jumbotron subhead" id="overview">
         <h1>Javascript for Bootstrap</h1>
-        <p class="lead">Bring Bootstrap's components to life&mdash;now with 12 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.
-        <div class="subnav">
+        <p class="lead">Bring Bootstrap's components to life&mdash;now with 15 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.
+        <div class="subnav visible-desktop">
           <ul class="nav nav-pills">
-            <li><a href="#javascript">All plugins</a></li>
             <li><a href="#modals">Modal</a></li>
-            <li><a href="#dropdowns">Dropdown</a></li>
-            <li><a href="#scrollspy">Scrollspy</a></li>
-            <li><a href="#tabs">Tab</a></li>
-            <li><a href="#tooltips">Tooltip</a></li>
-            <li><a href="#popovers">Popover</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Navigation <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#dropdowns">Dropdown</a></li>
+                <li><a href="#scrollspy">Scrollspy</a></li>
+                <li><a href="#tabs">Togglable tabs</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hover <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#tooltips">Tooltip</a></li>
+                <li><a href="#popovers">Popover</a></li>
+              </ul>
+            </li>
             <li><a href="#alerts">Alert</a></li>
             <li><a href="#buttons">Button</a></li>
             <li><a href="#collapse">Collapse</a></li>
             <li><a href="#carousel">Carousel</a></li>
-            <li><a href="#typeahead">Typeahead</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tables <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#rowlink">Row link</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Forms <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#typeahead">Typeahead</a></li>
+                <li><a href="#inputmask">Input mask</a></li>
+                <li><a href="#fileupload">File upload</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </header>
@@ -104,7 +123,7 @@
       ================================================== -->
       <section id="javascript">
         <div class="page-header">
-          <h1>jQuery plugins <small>A dozen Bootstrap plugins to get you started</small></h1>
+          <h1>jQuery plugins <small>A bunch of Bootstrap plugins to get you started</small></h1>
         </div>
       <div class="row">
         <div class="span3">
@@ -143,7 +162,7 @@
           <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
         </div>
       </div> <!-- /row -->
-      <div class="row" style="margin-bottom: 9px;">
+      <div class="row">
         <div class="span3">
           <h3><a href="./javascript.html#collapse">Collapse</a></h3>
           <p>Get base styles and flexible support for collapsible components like accordions and navigation.</p>
@@ -153,8 +172,22 @@
           <p>Create a merry-go-round of any content you wish to provide an interactive slideshow of content.</p>
         </div>
         <div class="span3">
+          <h3><a href="./javascript.html#rowlink">Row link</a></h3>
+          <p>A simple plugin, to turn table rows into clickable links.</p>
+        </div>
+        <div class="span3">
           <h3><a href="./javascript.html#typeahead">Typeahead</a></h3>
           <p>A basic, easily extended plugin for quickly creating elegant typeaheads with any form text input.</p>
+        </div>
+      </div> <!-- /row -->
+      <div class="row" style="margin-bottom: 9px;">
+        <div class="span3">
+          <h3><a href="./javascript.html#inputmask">Input mask</a></h3>
+          <p>Make sure the user types in the data that you want, by using an input mask.</p>
+        </div>
+        <div class="span3">
+          <h3><a href="./javascript.html#fileupload">File upload</a></h3>
+          <p>The file upload plugin allows you to create a visually appealing file or image upload widget.</p>
         </div>
         <div class="span3">
           <h3>Transitions <small class="muted">*</small></h3>
@@ -1404,6 +1437,75 @@ $('.carousel').carousel({
 
 
 
+    <!-- Row link
+    ================================================== -->
+    <section id="rowlink">
+      <div class="page-header">
+        <h1>Row link <small>bootstrap-rowlink.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About</h3>
+          <p>This plugin turns a table row into a clickable link.</p>
+          <a href="assets/js/bootstrap-rowlink.js" target="_blank" class="btn">Download file</a>
+        </div>
+        <div class="span9 columns">
+          <h2>Example</h2>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
+            </thead>
+            <tbody data-provides="rowlink">
+              <tr><td><a href="./javascript.html#modals" class="rowlink">Modals</a></td><td>A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.</td><td class="nolink"><a href="#">Action</a></td></tr>
+              <tr><td><a href="./javascript.html#dropdowns" class="rowlink">Dropdowns</a></td><td>Add dropdown menus to nearly anything in Bootstrap with this simple plugin. Bootstrap features full dropdown menu support on in the navbar, tabs, and pills.</td><td class="nolink"><a href="#">Action</a></td></tr>
+              <tr><td><a href="./javascript.html#scrollspy" class="rowlink">Scrollspy</a></td><td>Use scrollspy to automatically update the links in your navbar to show the current active link based on scroll position.</td><td class="nolink"><a href="#">Action</a></td></tr>
+              <tr><td><a href="./javascript.html#tabs" class="rowlink">Togglable tabs</a></td><td>Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.</td><td class="nolink"><a href="#">Action</a></td></tr>
+              <tr><td><a href="./javascript.html#tooltips" class="rowlink">Tooltips</a></td><td>A new take on the jQuery Tipsy plugin, Tooltips don't rely on images, uss CSS3 for animations, and data-attributes for local title storage.</td><td class="nolink"><a href="#">Action</a></td></tr>
+            </tbody>
+          </table>
+          <hr>
+
+          <h2>Using bootstrap-rowlink.js</h2>
+          <p>Call the input mask via javascript:</p>
+          <pre class="prettyprint linenums">$('tbody.rowlink').rowlink()</pre>
+          <h3>Options</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 100px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <td>target</td>
+               <td>string</td>
+               <td>'a'</td>
+               <td>A jquery selector string, to select the link element within each row.</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <h3>Markup</h3>
+          <p>Add <code>data-provides="rowlink"</code> to a <code>&lt;table&gt;</code>, <code>&lt;tbody&gt;</code> or <code>&lt;tr&gt;</code> element. The value should be selector to the link, which is a child of the row. A cell can be excluded by adding the <code>.nolink</code> class to the <code>&lt;td&gt;</code>.</p>
+<pre class="prettyprint linenums">
+&lt;table data-provides="rowlink"&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;a href="javascript.html#modals"&gt;Modals&lt;/a&gt;&lt;/td&gt;&lt;td class="nohref"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;a href="javascript.html#dropdowns"&gt;Dropdowns&lt;/a&gt;&lt;/td&gt;&lt;td class="nohref"&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+          <p><span class="label label-info">Tip!</span> Add <code>.rowlink</code> to your <code>&lt;a&gt;</code>. This prevents the link styling during page load.</p>
+
+          <h3>Methods</h3>
+          <h4>.inputmask(options)</h4>
+          <p>Initializes an input with an input mask.</p>
+        </div>
+      </div>
+    </section>
+
+
     <!-- Typeahead
     ================================================== -->
     <section id="typeahead">
@@ -1482,13 +1584,228 @@ $('.carousel').carousel({
       </div>
     </section>
 
+
+
+    <!-- Input mask
+    ================================================== -->
+    <section id="inputmask">
+      <div class="page-header">
+        <h1>Inputmask <small>bootstrap-inputmask.js</small></h1>
+      </div>
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About</h3>
+          <p>Input masks can be used to force the user to enter data conform a specific format.</p>
+          <p>Unlike validation, the user can't enter any other key than the ones specified by the mask.</p>
+        </div>
+        <div class="span9 columns">
+          <h2>Example</h2>
+          <div class="well">
+            <label>ISBN <input type="text" class="span2" data-mask="999-99-999-9999-9"></label>
+          </div>
+          <hr>
+
+          <h2>Using bootstrap-inputmask.js</h2>
+          <p>Call the input mask via javascript:</p>
+          <pre class="prettyprint linenums">$('.inputmask').inputmask()</pre>
+          <h3>Options</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th style="width: 100px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <td>mask</td>
+               <td>string</td>
+               <td>''</td>
+               <td>A string of formatting and literal characters, defining the input mask (see below).</td>
+             </tr>
+             <tr>
+               <td>placeholder</td>
+               <td>string</td>
+               <td>'_'</td>
+               <td>The character that is displayed where something needs to be typed.</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <h3>Format</h3>
+          <table class="table table-striped">
+            <tr><th>Character</th><th>Description</th></tr>
+            <tr><td>9</td><td>Number</td></tr>
+            <tr><td>a</td><td>Letter</td></tr>
+            <tr><td>?</td><td>Alphanumeric</td></tr>
+            <tr><td>*</td><td>Any character</td></tr>
+          </table>
+
+          <h3>Markup</h3>
+          <p>Add data attributes to register an element with an input mask.</p>
+<pre class="prettyprint linenums">
+&lt;input type="text" data-mask="999-99-999-9999-9"&gt;
+</pre>
+
+          <h3>Methods</h3>
+          <h4>.inputmask(options)</h4>
+          <p>Initializes an input with an input mask.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- File upload
+    ================================================== -->
+    <section id="fileupload">
+      <div class="page-header">
+        <h1>File upload <small>bootstrap-fileupload.js</small></h1>
+      </div>
+
+      <div class="row">
+        <div class="span3 columns">
+          <h3>About</h3>
+          <p>The file upload plugin allows you to create a visually appealing file or image upload widgets.</p>
+          <a href="assets/js/bootstrap-fileupload.js" target="_blank" class="btn">Download file</a>
+        </div>
+
+        <div class="span9 columns">
+          <h2>Examples</h2>
+          <h3>File upload widgets</h3>
+          <div class="row row-desktop">
+            <div class="span4 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="input-append">
+                    <div class="uneditable-input span2"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+              </div>
+            </div>
+            <div class="span4 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                <span class="fileupload-preview"></span>
+                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">&times;</a>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <h3>Image upload widgets</h3>
+          <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
+          <div class="row row-desktop">
+            <div class="span3 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                <div>
+                    <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+              </div>
+            </div>
+            <div class="span3 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+                <div>
+                    <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+              </div>
+            </div>
+            <div class="span3 columns">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;"><img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+                <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+              </div>
+              <br/>
+
+              <div class="fileupload fileupload-new visible-desktop" data-provides="fileupload" style="text-align: right">
+                <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;"><img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-warning"><strong>Notice!</strong> Image preview only works in IE10+, FF3.6+, Chrome6.0+ and Opera11.1+. In older browsers and Safari, the filename is shown instead.</div>
+          <hr>
+
+          <h2>Using bootstrap-fileupload.js</h2>
+          <p>Call the typeahead via javascript:</p>
+          <pre class="prettyprint linenums">$('.fileupload').fileupload()</pre>
+          <h3>Options</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 50px;">type</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <td>uploadtype</td>
+               <td>string</td>
+               <td>Choose 'file' or 'image'. If omitted, the type is automatically determined based on the presence of a <code>.thumbnail</code> element.</td>
+             </tr>
+              <tr>
+               <td>name</td>
+               <td>string</td>
+               <td>Use this option instead of setting the <code>name</code> attribute on the <code>&lt;input&gt;</code> element to prevent it from being part of the post data when not changed.</td>
+             </tr>
+            </tbody>
+          </table>
+
+          <h3>Markup</h3>
+          <p>UAdd data attributes to register the file upload widget. The main container should either have the <code>.fileupload-new</code> class for a new record or if the record
+            does not have file or <code>.fileupload-exists</code> if an existing file is present. Elements inside the container with the <code>.fileupload-new</code> and <code>.fileupload-exists</code>
+            class will be shown or hidden based on the current state. The content of <code>.fileupload-preview</code> is replaced when a file is selected. Implement a button to clear
+            the file with <code>data-dismiss="fileupload"</code>.</p>
+          
+          <h4>File upload widget</h4>
+<pre class="prettyprint linenums">
+&lt;div class="fileupload fileupload-new" data-provides="fileupload"&gt;
+  &lt;div class="fileupload-preview uneditable-input"&gt;&lt;/div&gt;
+  &lt;span class="btn btn-file"&gt;&lt;span class="fileupload-new"&gt;Select file&lt;/span&gt;&lt;span class="fileupload-exists"&gt;Change&lt;/span&gt;&lt;input type="file" /&gt;&lt;/span&gt;
+  &lt;a href="#" class="btn fileupload-exists" data-dismiss="fileupload"&gt;Remove&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+
+          <h4>Image upload widget</h4>
+<pre class="prettyprint linenums">
+&lt;div class="fileupload fileupload-new" data-provides="fileupload"&gt;
+  &lt;div class="fileupload-new thumbnail"&gt;&lt;img src="" /&gt;&lt;/div&gt;
+  &lt;div class="fileupload-preview fileupload-exists thumbnail"&gt;&lt;/div&gt;
+  &lt;div&gt;
+    &lt;span class="btn btn-file"&gt;&lt;span class="fileupload-new"&gt;Select image&lt;/span&gt;&lt;span class="fileupload-exists"&gt;Change&lt;/span&gt;&lt;input type="file" /&gt;&lt;/span&gt;
+    &lt;a href="#" class="btn fileupload-exists" data-dismiss="fileupload"&gt;Remove&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+          <p>Using the given elements, you can layout the upload widget the way you want, either with a fixed <code>width</code> and <code>height</code> or with <code>max-width</code> and <code>max-height</code>.</p>
+
+          <h3>Methods</h3>
+          <h4>.fileupload(options)</h4>
+          <p>Initializes a file upload widget.</p>
+        </div>
+      </div>
+    </section>
+
+
      <!-- Footer
       ================================================== -->
       <footer class="footer">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny Software solutions</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
       </footer>
 
     </div><!-- /container -->
@@ -1513,8 +1830,10 @@ $('.carousel').carousel({
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-inputmask.js"></script>
+    <script src="assets/js/bootstrap-rowlink.js"></script>
+    <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
-
 
   </body>
 </html>
