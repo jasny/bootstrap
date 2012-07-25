@@ -2254,7 +2254,7 @@
   
 }(window.jQuery)
 /* ===========================================================
- * bootstrap-fileupload.js j1
+ * bootstrap-fileupload.js j1a
  * http://jasny.github.com/bootstrap/javascript.html#fileupload
  * ===========================================================
  * Copyright 2012 Jasny BV, Netherlands.
