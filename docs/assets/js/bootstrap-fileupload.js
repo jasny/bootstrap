@@ -56,7 +56,7 @@
     },
     
     change: function(e, invoked) {
-      var file = e.target.files[0]
+      var file = e.target.files !== undefined ? e.target.files[0] : { name: e.target.value.replace(/^.+\\/, '') }
       if (!file || invoked === 'clear') return
       
       this.$hidden.val('')
@@ -75,7 +75,7 @@
 
         reader.readAsDataURL(file)
       } else {
-        this.$preview.html(window.escape(file.name))
+        this.$preview.text(file.name)
         this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
       }
     },
@@ -118,6 +118,8 @@
       var $this = $(this)
       if ($this.data('fileupload')) return
       $this.fileupload($this.data())
+      
+      if ($(e.target).data('dismiss') == 'fileupload') $(e.target).trigger('click.fileupload')
     })
   })
 
