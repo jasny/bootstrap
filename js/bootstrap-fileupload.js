@@ -1,5 +1,5 @@
 /* ===========================================================
- * bootstrap-fileupload.js j1a
+ * bootstrap-fileupload.js j2
  * http://jasny.github.com/bootstrap/javascript.html#fileupload
  * ===========================================================
  * Copyright 2012 Jasny BV, Netherlands.
@@ -44,7 +44,9 @@
     if (this.$preview.css('display') != 'inline' && height != '0px' && height != 'none') this.$preview.css('line-height', height)
 
     this.$remove = this.$element.find('[data-dismiss="fileupload"]')
-    
+
+    this.$element.find('[data-trigger="fileupload"]').on('click.fileupload', $.proxy(this.trigger, this))
+
     this.listen()
   }
   
@@ -56,7 +58,7 @@
     },
     
     change: function(e, invoked) {
-      var file = e.target.files !== undefined ? e.target.files[0] : { name: e.target.value.replace(/^.+\\/, '') }
+      var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
       if (!file || invoked === 'clear') return
       
       this.$hidden.val('')
@@ -84,6 +86,7 @@
       this.$hidden.val('')
       this.$hidden.attr('name', this.name)
       this.$input.attr('name', '')
+      this.$input.val('') // Doesn't work in IE, which causes issues when selecting the same file twice
 
       this.$preview.html('')
       this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
@@ -91,7 +94,11 @@
       this.$input.trigger('change', [ 'clear' ])
 
       e.preventDefault()
-      return false
+    },
+    
+    trigger: function(e) {
+      this.$input.trigger('click')
+      e.preventDefault()
     }
   }
 
@@ -119,7 +126,11 @@
       if ($this.data('fileupload')) return
       $this.fileupload($this.data())
       
-      if ($(e.target).data('dismiss') == 'fileupload') $(e.target).trigger('click.fileupload')
+      var $target = $(e.target).parents('[data-dismiss=fileupload],[data-trigger=fileupload]').first()
+      if ($target.length > 0) {
+          $target.trigger('click.fileupload')
+          e.preventDefault()
+      }
     })
   })
 
