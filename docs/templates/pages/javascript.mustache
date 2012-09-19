@@ -1,4 +1,3 @@
-
 <!-- Subhead
 ================================================== -->
 <header class="jumbotron subhead">
@@ -100,12 +99,14 @@ $('#myModal').on('show', function (e) {
         </section>
 
 
+
         <!-- Modal
         ================================================== -->
         <section id="modals">
           <div class="page-header">
             <h1>{{_i}}Modals{{/i}} <small>bootstrap-modal.js</small></h1>
           </div>
+
 
           <h2>{{_i}}Examples{{/i}}</h2>
           <p>{{_i}}Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.{{/i}}</p>
@@ -867,6 +868,7 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
           </ul>
         </div>{{! /example }}
 
+
         <hr class="bs-docs-separator">
 
 
@@ -1483,7 +1485,6 @@ $('.carousel').carousel({
           <p>{{_i}}This plugin turns a table row into a clickable link.{{/i}}</p>
           <a href="assets/js/bootstrap-rowlink.js" target="_blank" class="btn" {{#production}}onclick="_gaq.push(['_trackEvent', 'Javascript download', 'bootstrap-rowlink.js', 'Download 2.0.4-j1a']);"{{/production}}>{{_i}}Download file{{/i}}</a>
           <p class="muted"><strong>*</strong> {{_i}}Requires the <a href="./">Jasny extended CSS</a> to be included.{{/i}}</p>
-
           <h2>{{_i}}Example{{/i}}</h2>
           <table class="table table-striped table-bordered">
             <thead>
@@ -1498,7 +1499,6 @@ $('.carousel').carousel({
             </tbody>
           </table>
           <hr>
-
           <h2>{{_i}}Using bootstrap-rowlink.js{{/i}}</h2>
           <p>{{_i}}Call the input mask via javascript:{{/i}}</p>
           <pre class="prettyprint linenums">$('tbody.rowlink').rowlink()</pre>
@@ -1521,7 +1521,6 @@ $('.carousel').carousel({
              </tr>
             </tbody>
           </table>
-
           <h3>{{_i}}Markup{{/i}}</h3>
           <p>{{_i}}Add <code>data-provides="rowlink"</code> to a <code>&lt;table&gt;</code>, <code>&lt;tbody&gt;</code> or <code>&lt;tr&gt;</code> element. The value should be selector to the link, which is a child of the row. A cell can be excluded by adding the <code>.nolink</code> class to the <code>&lt;td&gt;</code>.{{/i}}</p>
 <pre class="prettyprint linenums">
@@ -1531,7 +1530,6 @@ $('.carousel').carousel({
 &lt;/table&gt;
 </pre>
           <p><span class="label label-info">Tip!</span> {{_i}}Add <code>.rowlink</code> to your <code>&lt;a&gt;</code>. This prevents the link styling during page load.{{/i}}</p>
-
           <h3>{{_i}}Methods{{/i}}</h3>
           <h4>.rowlink({{_i}}options{{/i}})</h4>
           <p>{{_i}}Initializes an rowlink on a table.{{/i}}</p>
