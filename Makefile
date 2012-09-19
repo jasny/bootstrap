@@ -71,7 +71,7 @@ bootstrap:
 	mkdir -p bootstrap/js
 	mkdir -p bootstrap/fonts
 	cp img/* bootstrap/img/
-	cp css/* bootstrap/css/
+	cp fonts/* bootstrap/fonts/
 	recess --compile ${BOOTSTRAP_LESS} ${JASNY_BOOTSTRAP_LESS} > bootstrap/css/bootstrap.css
 	recess --compress ${BOOTSTRAP_LESS} ${JASNY_BOOTSTRAP_LESS} > bootstrap/css/bootstrap.min.css
 	recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} ${JASNY_BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.css
