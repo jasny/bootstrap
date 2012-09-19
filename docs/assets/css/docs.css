@@ -195,6 +195,10 @@ hr.soften {
 
 /* Pattern overlay
 ------------------------- */
+.jumbotron  {
+  padding-bottom: 0;
+  min-height: 216px;
+}
 .jumbotron .container {
   position: relative;
   z-index: 2;
@@ -327,7 +331,10 @@ hr.soften {
   margin: 0 auto 30px;
 }
 
-
+.changes .media {
+  height: 245px;
+  margin-bottom: 15px;
+}
 
 /* Footer
 -------------------------------------------------- */
