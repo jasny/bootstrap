@@ -168,7 +168,6 @@ hr.soften {
 .masthead {
   padding-top: 36px;
   margin-bottom: 72px;
-  background: url("../img/jasny-logo.png") no-repeat scroll 0 50px transparent;
 }
 .masthead h1,
 .masthead h2,
@@ -199,6 +198,7 @@ hr.soften {
 .jumbotron .container {
   position: relative;
   z-index: 2;
+  background: url("../img/jasny-logo.png") no-repeat scroll 0 0 transparent;
 }
 .jumbotron:after {
   content: '';
@@ -294,6 +294,7 @@ hr.soften {
   margin: 36px 0 27px;
   font-size: 40px;
   font-weight: 300;
+}
 
 .marketing {
   text-align: center;
@@ -592,14 +593,6 @@ h2 + .row {
 }
 .the-icons i:hover {
   background-color: rgba(255,0,0,.25);
-}
-.the-icons i[class*="iconic-"] {
-  display: block;
-}
-.the-icons i[class*="iconic-"]:after {
-  margin-left: 6px;
-  content: attr(class);
-  font-style: normal;
 }
 #javascript input[type=checkbox] {
   position: relative;
