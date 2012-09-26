@@ -86,6 +86,7 @@ input[type="color"],
   line-height: @baseLineHeight;
   color: @gray;
   .border-radius(@inputBorderRadius);
+  vertical-align: middle;
 }
 
 // Reset appearance properties for textual inputs and textarea
@@ -154,9 +155,9 @@ input[type="checkbox"] {
 // Set the height of select and file controls to match text inputs
 select,
 input[type="file"] {
-  height: 30px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+  height: @inputHeight; /* In IE7, the height of the select element cannot be changed by height, only font-size */
   *margin-top: 4px; /* For IE7, add top margin to align select with labels */
-  line-height: 30px;
+  line-height: @inputHeight;
 }
 
 // Make select elements obey height by applying a border
@@ -223,13 +224,13 @@ textarea {
 // Indent the labels to position radios/checkboxes as hanging
 .radio,
 .checkbox {
-  min-height: 18px; // clear the floating input if there is no label text
-  padding-left: 18px;
+  min-height: @baseLineHeight; // clear the floating input if there is no label text
+  padding-left: 20px;
 }
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
   float: left;
-  margin-left: -18px;
+  margin-left: -20px;
 }
 
 // Move the options list down to align with labels
@@ -466,6 +467,7 @@ select:focus:required:invalid {
     border-color: @green;
   }
 }
+
 .input-prepend {
   .add-on,
   .btn {
@@ -473,17 +475,23 @@ select:focus:required:invalid {
   }
   .add-on:first-child,
   .btn:first-child {
+    // FYI, `.btn:first-child` accounts for a button group that's prepended
     .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
   }
 }
+
 .input-append {
   input,
   select,
   .uneditable-input {
     .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
+    + .btn-group .btn {
+      .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+    }
   }
   .add-on,
-  .btn {
+  .btn,
+  .btn-group {
     margin-left: -1px;
   }
   .add-on:last-child,
@@ -491,12 +499,16 @@ select:focus:required:invalid {
     .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
   }
 }
+
 // Remove all border-radius for inputs with both prepend and append
 .input-prepend.input-append {
   input,
   select,
   .uneditable-input {
     .border-radius(0);
+    + .btn-group .btn {
+      .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+    }
   }
   .add-on:first-child,
   .btn:first-child {
@@ -508,7 +520,11 @@ select:focus:required:invalid {
     margin-left: -1px;
     .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
   }
+  .btn-group:first-child {
+    margin-left: 0;
+  }
 }
+
 
 
 
