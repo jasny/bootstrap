@@ -13,14 +13,9 @@ $(function () {
       test("should listen to an input", function () {
         var $input = $('<input />')
         $input.typeahead()
-        ok($input.data('events').blur, 'has a blur event')
-        ok($input.data('events').keypress, 'has a keypress event')
-        ok($input.data('events').keyup, 'has a keyup event')
-        if ($.browser.webkit || $.browser.msie) {
-          ok($input.data('events').keydown, 'has a keydown event')
-        } else {
-          ok($input.data('events').keydown, 'does not have a keydown event')
-        }
+        ok($._data($input[0], 'events').blur, 'has a blur event')
+        ok($._data($input[0], 'events').keypress, 'has a keypress event')
+        ok($._data($input[0], 'events').keyup, 'has a keyup event')
       })
 
       test("should create a menu", function () {
@@ -32,13 +27,49 @@ $(function () {
         var $input = $('<input />')
           , $menu = $input.typeahead().data('typeahead').$menu
 
-        ok($menu.data('events').mouseover, 'has a mouseover(pseudo: mouseenter)')
-        ok($menu.data('events').click, 'has a click')
+        ok($._data($menu[0], 'events').mouseover, 'has a mouseover(pseudo: mouseenter)')
+        ok($._data($menu[0], 'events').click, 'has a click')
       })
 
       test("should show menu when query entered", function () {
         var $input = $('<input />').typeahead({
               source: ['aa', 'ab', 'ac']
+            })
+          , typeahead = $input.data('typeahead')
+
+        $input.val('a')
+        typeahead.lookup()
+
+        ok(typeahead.$menu.is(":visible"), 'typeahead is visible')
+        equals(typeahead.$menu.find('li').length, 3, 'has 3 items in menu')
+        equals(typeahead.$menu.find('.active').length, 1, 'one item is active')
+
+        typeahead.$menu.remove()
+      })
+
+      test("should accept data source via synchronous function", function () {
+        var $input = $('<input />').typeahead({
+              source: function () {
+                return ['aa', 'ab', 'ac']
+              }
+            })
+          , typeahead = $input.data('typeahead')
+
+        $input.val('a')
+        typeahead.lookup()
+
+        ok(typeahead.$menu.is(":visible"), 'typeahead is visible')
+        equals(typeahead.$menu.find('li').length, 3, 'has 3 items in menu')
+        equals(typeahead.$menu.find('.active').length, 1, 'one item is active')
+
+        typeahead.$menu.remove()
+      })
+
+      test("should accept data source via asynchronous function", function () {
+        var $input = $('<input />').typeahead({
+              source: function (query, process) {
+                process(['aa', 'ab', 'ac'])
+              }
             })
           , typeahead = $input.data('typeahead')
 
@@ -142,6 +173,26 @@ $(function () {
         equals($input.val(), 'ac', 'input value was correctly set')
         ok(!typeahead.$menu.is(':visible'), 'the menu was hidden')
         ok(changed, 'a change event was fired')
+
+        typeahead.$menu.remove()
+      })
+
+      test("should start querying when minLength is met", function () {
+        var $input = $('<input />').typeahead({
+              source: ['aaaa', 'aaab', 'aaac'],
+              minLength: 3
+            })
+          , typeahead = $input.data('typeahead')
+
+        $input.val('aa')
+        typeahead.lookup()
+
+        equals(typeahead.$menu.find('li').length, 0, 'has 0 items in menu')
+
+        $input.val('aaa')
+        typeahead.lookup()
+
+        equals(typeahead.$menu.find('li').length, 3, 'has 3 items in menu')
 
         typeahead.$menu.remove()
       })

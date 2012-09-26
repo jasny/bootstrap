@@ -1,38 +1,34 @@
 <!-- Masthead
 ================================================== -->
-<header class="jumbotron masthead">
-  <div class="inner">
+<div class="jumbotron masthead">
+  <div class="container">
     <hgroup>
       <h1>{{_i}}Bootstrap, from Twitter{{/i}}</h1>
       <h2>{{_i}}Extended by Jasny{{/i}}</h2>
     </hgroup>
-    <p>Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.</p>
-    <p class="download-info">
-      <a href="https://github.com/jasny/bootstrap/" class="btn btn-primary btn-large" style="line-height: 48px" {{#production}}onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'GitHub Project', 'View project on GitHub']);"{{/production}}>{{_i}}View project on GitHub{{/i}}</a>
-      <a href="assets/bootstrap.zip" class="btn btn-large" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.0.4-j1a']);"{{/production}}>{{_i}}Download Bootstrap <small>(v2.0.4-j1a)</small><br/><small>Includes all Jasny extensions</small>{{/i}}</a>
-      <a href="assets/jasny-bootstrap.zip" class="btn btn-large" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download extensions', 'Download j1a']);"{{/production}}>{{_i}}Extend Bootstrap <small>(j1a)</small><br/><small>Download extensions only</small>{{/i}}</a>
-    </p>
+    <p>{{_i}}Sleek, intuitive, and powerful front-end framework for faster and easier web development.{{/i}}</p>
+    <ul class="masthead-links">
+      <li><a href="https://github.com/jasny/bootstrap/" class="btn btn-primary btn-large" style="line-height: 48px" {{#production}}onclick="_ga.push(['_trackEvent', 'Jumbotron actions', 'GitHub Project', 'View project on GitHub']);"{{/production}}>{{_i}}View project on GitHub{{/i}}</a></li>
+      <li><a href="./extend.html" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Extend']);"{{/production}}>{{_i}}Extend{{/i}}</a></li>
+      <li>{{_i}}Version 2.1.2{{/i}}</li>
+    </ul>
   </div>
+</div>
 
-  <div class="bs-links">
-    <ul class="quick-links">
+<div class="bs-docs-social">
+  <div class="container">
+    <ul class="bs-docs-social-buttons">
       <li><a href="http://twitter.github.com/bootstrap">{{_i}}Original project{{/i}}</a></li>
       <li><a href="http://blog.getbootstrap.com">{{_i}}Read the blog{{/i}}</a></li>
     </ul>
-    <ul class="quick-links">
+    <ul class="bs-docs-social-buttons">
       <li><a href="./upgrading.html">{{_i}}Upgrading from 1.4{{/i}}</a></li>
       <li><a href="https://github.com/jasny/bootstrap/zipball/master">{{_i}}Download with docs{{/i}}</a></li>
       <li><a href="https://github.com/jasny/bootstrap/issues?state=open">{{_i}}Submit issues{{/i}}</a></li>
       <li><a href="https://github.com/twitter/bootstrap/wiki">{{_i}}Roadmap and changelog{{/i}}</a></li>
     </ul>
-    <ul class="quick-links">
-      <li>
-        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=jasny&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
-      </li>
-      <li>
-        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=jasny&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
-      </li>
-      <li class="follow-btn">
+    <ul class="bs-docs-social-buttons">
+     <li class="follow-btn">
         <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-width="155px" data-link-color="#0069D6" data-show-count="false">{{_i}}Follow @ArnoldDaniels{{/i}}</a>
       </li>
       <li class="follow-btn">
@@ -43,185 +39,220 @@
       </li>
     </ul>
   </div>
-</header>
-
-<hr class="soften">
-
-<div class="changes">
-  <h1>{{_i}}What's different?{{/i}}</h1>
-  <p class="marketing-byline">{{_i}}How can a fantastic library become any better? Check it out.{{/i}}</p>
-  <div class="row">
-    <div class="span3">
-      <h3><a href="./base-css.html#action-links">{{_i}}Action links{{/i}}</a></h3>
-      <p>{{_i}}Sometimes a button will pull to much attention to an action. In those cases, you can use action links instead.{{/i}}</p>
-      <p>{{_i}}Action links look distinctly different than normal links.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3><a href="./javascript.html#inputmask">{{_i}}Input mask{{/i}}</a></h3>
-      <p>{{_i}}Force the user to enter data conform a specific format.{{/i}}</p>
-      <p>{{_i}}Unlike validation, the user can't enter any other key than the ones specified by the mask.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3><a href="./javascript.html#rowlink">{{_i}}Row link{{/i}}</a></h3>
-      <p>{{_i}}Don't like when can only click on one column in a table?{{/i}}</p>
-      <p>{{_i}}Row link is a simple javascript plugin that makes the whole row clickable.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3><a href="./javascript.html#fileupload">{{_i}}File upload{{/i}}</a></h3>
-      <p>{{_i}}With the file upload plugin you can create visually appealing file or image upload widgets.{{/i}}</p>
-      <p>{{_i}}The image upload widget shows a preview of the selected image even before it's uploaded.{{/i}}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span3">
-      <h3><a href="./base-css.html#iconic">{{_i}}Iconic icons{{/i}}</a></h3>
-      <p>{{_i}}The iconic font set adds 170 new icons to Bootstrap. These icons can be used with buttons, menus, links, etc.{{/i}}</p>
-      <p>{{_i}}Because these icons are a font, they can be styled just like text.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3><a href="./components.html#alerts">{{_i}}Page alerts{{/i}}</a></h3>
-      <p>{{_i}}Know those nice little alerts after you save your profile? With .page-alert the alert will be shown on top op your page.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3><a href="./scaffolding.html#layouts">{{_i}}Semi-fluid layout{{/i}}</a></h3>
-      <p>{{_i}}Get the best of both worlds with a semi-fluid layout. It acts as a fixed layout for big screens. For smaller screens, it behaves like a fluid layout.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3><a href="./scaffolding.html#responsive">{{_i}}Desktop rows{{/i}}</a></h3>
-      <p>{{_i}}By default columns of a row are show next to each other for tablets and desktops and not for phones. A desktop row displays acts like a row for desktops only and not for tablets or phones.{{/i}}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span3">
-      <h3><a href="./base-css.html#forms">{{_i}}Form elements{{/i}}</a></h3>
-      <p>{{_i}}Go beyond uneditable input and create a full uneditable form, with disabled and uneditable elements.{{/i}}</p>
-      <p>{{_i}}Add .editor to a textarea to create a larger field for content editing.{{/i}}</p>
-      <p>{{_i}}Use a button to select a file. Giving a uniform look across browsers.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3><a href="./base-css.html#forms">{{_i}}Form styles{{/i}}</a></h3>
-      <p>{{_i}}Combine horizontal and vertical forms. Using wells in horizontal forms now looks clean.{{/i}}</p>
-      <p>{{_i}}Use smaller labels to fit more input fields on one screen.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3><a href="./components.html#navs">{{_i}}Tabbable{{/i}}</a></h3>
-      <p>{{_i}}Tabs work better than ever. You now have a bordered tabbable available. Also, a container can be turned into a tabbable.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <h3>{{_i}}More{{/i}}</h3>
-      <ul>
-        <li>Action area for header <code>.header-actions</code></li>
-        <li>Action area for tables <code>.table-actions</code></li>
-        <li>Fixed margin for modal forms</li>
-      </ul>
-    </div>
-  </div><!--/row-->
 </div>
 
-<hr class="soften">
+<div class="container">
 
-<div class="marketing">
-  <h1>{{_i}}Designed for everyone, everywhere.{{/i}}</h1>
-  <p class="marketing-byline">{{_i}}Need reasons to love Bootstrap? Look no further.{{/i}}</p>
-  <div class="row">
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_042_group.png">
-      <h2>{{_i}}Built for and by nerds{{/i}}</h2>
-      <p>{{_i}}Like you, we love building awesome products on the web. We love it so much, we decided to help people just like us do it easier, better, and faster. Bootstrap is built for you.{{/i}}</p>
-    </div>
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_079_podium.png">
-      <h2>{{_i}}For all skill levels{{/i}}</h2>
-      <p>{{_i}}Bootstrap is designed to help people of all skill levels&mdash;designer or developer, huge nerd or early beginner. Use it as a complete kit or use to start something more complex.{{/i}}</p>
-    </div>
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_163_iphone.png">
-      <h2>{{_i}}Cross-everything{{/i}}</h2>
-      <p>{{_i}}Originally built with only modern browsers in mind, Bootstrap has evolved to include support for all major browsers (even IE7!) and, with Bootstrap 2, tablets and smartphones, too.{{/i}}</p>
-    </div>
-  </div><!--/row-->
-  <div class="row">
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_155_show_thumbnails.png">
-      <h2>{{_i}}12-column grid{{/i}}</h2>
-      <p>{{_i}}Grid systems aren't everything, but having a durable and flexible one at the core of your work can make development much simpler. Use our built-in grid classes or roll your own.{{/i}}</p>
-    </div>
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_214_resize_small.png">
-      <h2>{{_i}}Responsive design{{/i}}</h2>
-      <p>{{_i}}With Bootstrap 2, we've gone fully responsive. Our components are scaled according to a range of resolutions and devices to provide a consistent experience, no matter what.{{/i}}</p>
-    </div>
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_266_book_open.png">
-      <h2>{{_i}}Styleguide docs{{/i}}</h2>
-      <p>{{_i}}Unlike other front-end toolkits, Bootstrap was designed first and foremost as a styleguide to document not only our features, but best practices and living, coded examples.{{/i}}</p>
-    </div>
-  </div><!--/row-->
-  <div class="row">
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_082_roundabout.png">
-      <h2>{{_i}}Growing library{{/i}}</h2>
-      <p>{{_i}}Despite being only 10kb (gzipped), Bootstrap is one of the most complete front-end toolkits out there with dozens of fully functional components ready to be put to use.{{/i}}</p>
-    </div>
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/glyphicons/glyphicons_009_magic.png">
-      <h2>{{_i}}Custom jQuery plugins{{/i}}</h2>
-      <p>{{_i}}What good is an awesome design component without easy-to-use, proper, and extensible interactions? With Bootstrap, you get custom-built jQuery plugins to bring your projects to life.{{/i}}</p>
-    </div>
-    <div class="span4">
-      <img class="bs-icon" src="assets/img/less-small.png">
-      <h2>{{_i}}Built on LESS{{/i}}</h2>
-      <p>{{_i}}Where vanilla CSS falters, LESS excels. Variables, nesting, operations, and mixins in LESS makes coding CSS faster and more efficient with minimal overhead.{{/i}}</p>
-    </div>
-  </div><!--/row-->
-  <div class="row">
-    <div class="span3">
-      <img class="small-bs-icon" src="assets/img/icon-html5.png">
-      <h3>HTML5</h3>
-      <p>{{_i}}Built to support new HTML5 elements and syntax.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <img class="small-bs-icon" src="assets/img/icon-css3.png">
-      <h3>CSS3</h3>
-      <p>{{_i}}Progressively enhanced components for ultimate style.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <img class="small-bs-icon" src="assets/img/icon-github.png">
-      <h3>{{_i}}Open-source{{/i}}</h3>
-      <p>{{_i}}Built for and maintained by the community via <a href="https://github.com">GitHub</a>.{{/i}}</p>
-    </div>
-    <div class="span3">
-      <img class="small-bs-icon" src="assets/img/icon-twitter.png">
-      <h3>{{_i}}Made at Twitter{{/i}}</h3>
-      <p>{{_i}}Brought to you by an experienced <a href="http://twitter.com/fat">engineer</a> and <a href="http://twitter.com/mdo">designer</a>.{{/i}}</p>
-    </div>
-  </div><!--/row-->
+<div class="changes">
+      <div class="page-header">
+        <h1>{{_i}}What's different?{{/i}}</h1>
+        <p class="marketing-byline">{{_i}}How can a fantastic library become any better? Check it out.{{/i}}</p>
+      </div>
+      
+      
+      <div class="row">
+        <div class="span6">
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./base-css.html#action-links">{{_i}}Action links{{/i}}</a></h3>
+              <p>{{_i}}Sometimes a button will pull to much attention to an action. In those cases, you can use action links instead.{{/i}}</p>
+              <p>{{_i}}Action links look distinctly different than normal links.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./javascript.html#inputmask">{{_i}}Input mask{{/i}}</a></h3>
+              <p>{{_i}}Force the user to enter data conform a specific format.{{/i}}</p>
+              <p>{{_i}}Unlike validation, the user can't enter any other key than the ones specified by the mask.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./javascript.html#rowlink">{{_i}}Row link{{/i}}</a></h3>
+              <p>{{_i}}Don't like when can only click on one column in a table?{{/i}}</p>
+              <p>{{_i}}Row link is a simple javascript plugin that makes the whole row clickable.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./components.html#alerts">{{_i}}Page alerts{{/i}}</a></h3>
+              <p>{{_i}}Know those nice little alerts after you save your profile? With .page-alert the alert will be shown on top op your page.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./scaffolding.html#layouts">{{_i}}Semi-fluid layout{{/i}}</a></h3>
+              <p>{{_i}}Get the best of both worlds with a semi-fluid layout. It acts as a fixed layout for big screens. For smaller screens, it behaves like a fluid layout.{{/i}}</p>
+            </div>
+          </div>
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./scaffolding.html#responsive">{{_i}}Desktop rows{{/i}}</a></h3>
+              <p>{{_i}}By default columns of a row are show next to each other for tablets and desktops and not for phones. A desktop row displays acts like a row for desktops only and not for tablets or phones.{{/i}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="span6">
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./base-css.html#forms">{{_i}}Form elements{{/i}}</a></h3>
+              <p>{{_i}}Go beyond uneditable input and create a full uneditable form, with disabled and uneditable elements.{{/i}}</p>
+              <p>{{_i}}Add .editor to a textarea to create a larger field for content editing.{{/i}}</p>
+              <p>{{_i}}Use a button to select a file. Giving a uniform look across browsers.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./base-css.html#forms">{{_i}}Form styles{{/i}}</a></h3>
+              <p>{{_i}}Combine horizontal and vertical forms. Using wells in horizontal forms now looks clean.{{/i}}</p>
+              <p>{{_i}}Use smaller labels to fit more input fields on one screen.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./components.html#navs">{{_i}}Tabbable{{/i}}</a></h3>
+              <p>{{_i}}Tabs work better than ever. You now have a bordered tabbable available. Also, a container can be turned into a tabbable.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./javascript.html#fileupload">{{_i}}File upload{{/i}}</a></h3>
+              <p>{{_i}}With the file upload plugin you can create visually appealing file or image upload widgets.{{/i}}</p>
+              <p>{{_i}}The image upload widget shows a preview of the selected image even before it's uploaded.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h3><a href="./base-css.html#iconic">{{_i}}Iconic icons{{/i}}</a></h3>
+              <p>{{_i}}The iconic font set adds 170 new icons to Bootstrap. These icons can be used with buttons, menus, links, etc.{{/i}}</p>
+              <p>{{_i}}Because these icons are a font, they can be styled just like text.{{/i}}</p>
+            </div>
+          </div>
+          
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://placehold.it/216x196">
+            </a>
+            <div class="media-body">
+              <h4>{{_i}}More{{/i}}</h4>
+              <ul>
+                <li>Action area for header <code>.header-actions</code></li>
+                <li>Action area for tables <code>.table-actions</code></li>
+                <li>Fixed margin for modal forms</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <hr class="soften">
 
-  <h1>{{_i}}Built with Bootstrap.{{/i}}</h1>
-  <p class="marketing-byline">{{_i}}For even more sites built with Bootstrap, <a href="http://builtwithbootstrap.tumblr.com/" target="_blank">visit the unofficial Tumblr</a> or <a href="./examples.html">browse the examples</a>.{{/i}}</p>
-  <ul class="thumbnails example-sites">
-    <li class="span3">
-      <a class="thumbnail" href="http://soundready.fm/" target="_blank">
-        <img src="assets/img/example-sites/soundready.png" alt="SoundReady.fm">
-      </a>
-    </li>
-    <li class="span3">
-      <a class="thumbnail" href="http://kippt.com/" target="_blank">
-        <img src="assets/img/example-sites/kippt.png" alt="Kippt">
-      </a>
-    </li>
-    <li class="span3">
-      <a class="thumbnail" href="http://www.fleetio.com/" target="_blank">
-        <img src="assets/img/example-sites/fleetio.png" alt="Fleetio">
-      </a>
-    </li>
-    <li class="span3">
-      <a class="thumbnail" href="http://www.jshint.com/" target="_blank">
-        <img src="assets/img/example-sites/jshint.png" alt="JS Hint">
-      </a>
-    </li>
-  </ul>
 
-</div><!-- /.marketing -->
+
+
+
+
+
+
+
+
+
+</div>
+
+    <hr class="soften">
+
+  <div class="marketing">
+
+    <h1>{{_i}}Introducing Bootstrap.{{/i}}</h1>
+    <p class="marketing-byline">{{_i}}Need reasons to love Bootstrap? Look no further.{{/i}}</p>
+
+    <div class="row-fluid">
+      <div class="span4">
+        <img src="assets/img/bs-docs-twitter-github.png">
+        <h2>{{_i}}By nerds, for nerds.{{/i}}</h2>
+        <p>{{_i}}Built at Twitter by <a href="http://twitter.com/mdo">@mdo</a> and <a href="http://twitter.com/fat">@fat</a>, Bootstrap utilizes <a href="http://lesscss.org">LESS CSS</a>, is compiled via <a href="http://nodejs.org">Node</a>, and is managed through <a href="http://github.com">GitHub</a> to help nerds do awesome stuff on the web.{{/i}}</p>
+      </div>
+      <div class="span4">
+        <img src="assets/img/bs-docs-responsive-illustrations.png">
+        <h2>{{_i}}Made for everyone.{{/i}}</h2>
+        <p>{{_i}}Bootstrap was made to not only look and behave great in the latest desktop browsers (as well as IE7!), but in tablet and smartphone browsers via <a href="./scaffolding.html#responsive">responsive CSS</a> as well.{{/i}}</p>
+      </div>
+      <div class="span4">
+        <img src="assets/img/bs-docs-bootstrap-features.png">
+        <h2>{{_i}}Packed with features.{{/i}}</h2>
+        <p>{{_i}}A 12-column responsive <a href="./scaffolding.html#grid">grid</a>, dozens of components, <a href="./javascript.html">JavaScript plugins</a>, typography, form controls, and even a <a href="./customize.html">web-based Customizer</a> to make Bootstrap your own.{{/i}}</p>
+      </div>
+    </div>
+
+    <hr class="soften">
+
+    <h1>{{_i}}Built with Bootstrap.{{/i}}</h1>
+    <p class="marketing-byline">{{_i}}For even more sites built with Bootstrap, <a href="http://builtwithbootstrap.tumblr.com/" target="_blank">visit the unofficial Tumblr</a> or <a href="./getting-started.html#examples">browse the examples</a>.{{/i}}</p>
+    <div class="row-fluid">
+      <ul class="thumbnails example-sites">
+        <li class="span3">
+          <a class="thumbnail" href="http://soundready.fm/" target="_blank">
+            <img src="assets/img/example-sites/soundready.png" alt="SoundReady.fm">
+          </a>
+        </li>
+        <li class="span3">
+          <a class="thumbnail" href="http://kippt.com/" target="_blank">
+            <img src="assets/img/example-sites/kippt.png" alt="Kippt">
+          </a>
+        </li>
+        <li class="span3">
+          <a class="thumbnail" href="http://www.gathercontent.com/" target="_blank">
+            <img src="assets/img/example-sites/gathercontent.png" alt="Gather Content">
+          </a>
+        </li>
+        <li class="span3">
+          <a class="thumbnail" href="http://www.jshint.com/" target="_blank">
+            <img src="assets/img/example-sites/jshint.png" alt="JS Hint">
+          </a>
+        </li>
+      </ul>
+     </div>
+
+  </div>{{! /.marketing }}
+
+</div>{{! /.container }}
