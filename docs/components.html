@@ -76,6 +76,7 @@
     <h1>Components</h1>
     <p class="lead">Dozens of reusable components built to provide navigation, alerts, popovers, and more.</p>
   </div>
+  <img class="extended-badge" src="assets/img/extended-by-jasny.png">
 </header>
 
 
@@ -987,6 +988,72 @@
           </div>
 <pre class="prettyprint linenums">
 &lt;div class="tabbable tabs-right"&gt;
+  &lt;ul class="nav nav-tabs"&gt;
+    ...
+  &lt;/ul&gt;
+  &lt;div class="tab-content"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h4>Tabs on the right</h4>
+          <p>Swap the class to put tabs on the right.</p>
+          <div class="bs-docs-example">
+            <div class="tabbable tabs-right">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#rA" data-toggle="tab">Section 1</a></li>
+                <li><a href="#rB" data-toggle="tab">Section 2</a></li>
+                <li><a href="#rC" data-toggle="tab">Section 3</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="rA">
+                  <p>I'm in Section A.</p>
+                </div>
+                <div class="tab-pane" id="rB">
+                  <p>Howdy, I'm in Section B.</p>
+                </div>
+                <div class="tab-pane" id="rC">
+                  <p>What up girl, this is Section C.</p>
+                </div>
+              </div>
+            </div> <!-- /tabbable -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="tabbable tabs-right"&gt;
+  &lt;ul class="nav nav-tabs"&gt;
+    ...
+  &lt;/ul&gt;
+  &lt;div class="tab-content"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h4>Bordered tabbable</h4>
+          <p>You can place a border around the tab content by adding <code>.tabbable-bordered</code> to the <code>.tabbable.</code></p>
+          <div class="bs-docs-example">
+            <div class="tabbable tabbable-bordered">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#rA" data-toggle="tab">Section 1</a></li>
+                <li><a href="#rB" data-toggle="tab">Section 2</a></li>
+                <li><a href="#rC" data-toggle="tab">Section 3</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="rA">
+                  <p>I'm in Section A.</p>
+                </div>
+                <div class="tab-pane" id="rB">
+                  <p>Howdy, I'm in Section B.</p>
+                </div>
+                <div class="tab-pane" id="rC">
+                  <p>What up girl, this is Section C.</p>
+                </div>
+              </div>
+            </div> <!-- /tabbable -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="tabbable tabbable-bordered"&gt;
   &lt;ul class="nav nav-tabs"&gt;
     ...
   &lt;/ul&gt;
@@ -2015,6 +2082,26 @@
 &lt;/div&gt;
 </pre>
 
+          <h3>Page alerts</h3>
+          <p>Know those nice little alerts after you save your profile? With <code>.page-alert</code> the alert will be shown on top op your page.</p>
+          <div id="page-alert-container" class="bs-docs-example">
+            <div class="page-alert">
+              <div class="alert alert-success">
+                <a class="close">×</a>
+                <strong>Success!</strong> Your profile information has been saved.
+              </div>
+            </div>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          </div>
+<pre class="prettyprint linenums">
+&lt;body&gt;
+  &lt;div class="navbar"&gt; ... &lt;/div&gt;
+  &lt;div class="page-alert"&gt;
+    &lt;div class="alert"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
         </section>
 
 
@@ -2289,8 +2376,10 @@ class="clearfix"
       <div class="container">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny Software solutions</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
         <ul class="footer-links">
           <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
           <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
@@ -2320,9 +2409,10 @@ class="clearfix"
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-affix.js"></script>
+    <script src="assets/js/bootstrap-inputmask.js"></script>
+    <script src="assets/js/bootstrap-rowlink.js"></script>
+    <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
-
-
 
   </body>
 </html>

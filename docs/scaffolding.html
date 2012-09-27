@@ -76,6 +76,7 @@
     <h1>Scaffolding</h1>
     <p class="lead">Bootstrap is built on responsive 12-column grids, layouts, and components.</p>
   </div>
+  <img class="extended-badge" src="assets/img/extended-by-jasny.png">
 </header>
 
   <div class="container">
@@ -372,6 +373,24 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
+
+          <h2>Semi-fluid layout</h2>
+          <p>Get the best of both worlds with <code>&lt;div class="container-semifluid"&gt;</code>. It acts as a fixed layout for big screens. For smaller screens, it behaves like a fluid layout.</p>
+          <div class="semifluid-layouts">
+            <div class="mini-layout desktop">
+              <div class="mini-layout-body"></div>
+            </div>
+            <div class="mini-layout tablet">
+              <div class="mini-layout-body"></div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="container-fluid"&gt;
+  &lt;div class="row-fluid"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
         </section>
 
 
@@ -530,6 +549,22 @@
             <li>Desktop<span class="hidden-desktop">&#10004; Desktop</span></li>
           </ul>
 
+          <!-- Desktop row -->
+          <h2>Desktop rows</h2>
+          <p>By default columns of a <code>.row</code> are show next to each other, however for phones the columns are show underneath each other. By adding the class <code>.row-desktop</code> to a row,
+          it will display the columns underneath each other for tablets as well.</p>
+          <h4>Test case</h4>
+          <p>Resize your browser to see the rows behave differently. They look the same for desktops and phones, but different for tablets.</p>
+          <div class="row show-grid">
+            <div class="span3">Normal row 1</div>
+            <div class="span3">Normal row 2</div>
+            <div class="span3">Normal row 3</div>
+          </div>
+          <div class="row show-grid row-desktop">
+            <div class="span3">Desktop row 1</div>
+            <div class="span3">Desktop row 2</div>
+            <div class="span3">Desktop row 3</div>
+          </div>
         </section>
 
 
@@ -547,8 +582,10 @@
       <div class="container">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny Software solutions</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
         <ul class="footer-links">
           <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
           <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
@@ -578,9 +615,10 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-affix.js"></script>
+    <script src="assets/js/bootstrap-inputmask.js"></script>
+    <script src="assets/js/bootstrap-rowlink.js"></script>
+    <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/application.js"></script>
-
-
 
   </body>
 </html>
