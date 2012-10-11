@@ -143,6 +143,7 @@ hr.soften {
   font-size: 24px;
   line-height: 20px;
   font-weight: 200;
+  white-space: pre;
   color: #fff; /* redeclare to override the `.jumbotron a` */
   border: 0;
   -webkit-border-radius: 6px;
@@ -435,8 +436,9 @@ hr.soften {
 .download .page-header {
   margin-top: 36px;
 }
-.page-header .toggle-all {
+.page-header .toggle-all, .page-header .toggle-jasny {
   margin-top: 5px;
+  margin-left: 5px;
 }
 
 /* Space out h3s when following a section */
@@ -541,6 +543,14 @@ h2 + .row {
   height: 200px;
   overflow: auto;
   position: relative;
+}
+
+.note {
+  color: #888;
+}
+
+.note i {
+  color: #000;
 }
 
 
