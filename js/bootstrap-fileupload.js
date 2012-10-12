@@ -59,7 +59,12 @@
     
     change: function(e, invoked) {
       var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
-      if (!file || invoked === 'clear') return
+      if (invoked === 'clear') return
+      
+      if (!file) {
+        this.clear()
+        return
+      }
       
       this.$hidden.val('')
       this.$hidden.attr('name', '')
@@ -91,9 +96,10 @@
       this.$preview.html('')
       this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
 
-      this.$input.trigger('change', [ 'clear' ])
-
-      e.preventDefault()
+      if (e) {
+        this.$input.trigger('change', [ 'clear' ])
+        e.preventDefault()
+      }
     },
     
     trigger: function(e) {
