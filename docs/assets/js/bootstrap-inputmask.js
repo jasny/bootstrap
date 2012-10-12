@@ -1,5 +1,5 @@
 /* ===========================================================
- * bootstrap-inputmask.js j1
+ * bootstrap-inputmask.js j2
  * http://twitter.github.com/bootstrap/javascript.html#tooltips
  * Based on Masked Input plugin by Josh Bush (digitalbush.com)
  * ===========================================================
@@ -44,7 +44,7 @@
     if (isAndroid) return // No support because caret positioning doesn't work on Android
     
     this.$element = $(element)
-    this.mask = options.mask
+    this.mask = String(options.mask)
     this.options = $.extend({}, $.fn.inputmask.defaults, options)
     
     this.init()

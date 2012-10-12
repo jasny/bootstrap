@@ -5773,7 +5773,7 @@ a.badge:hover {
   position: fixed;
 }
 /*!
- * Jasny Bootstrap Extensions j1
+ * Jasny Bootstrap Extensions j2
  *
  * Copyright 2012 Jasny BV
  * Licensed under the Apache License v2.0
@@ -5889,6 +5889,24 @@ label input[type="radio"] {
 
 form .well > *:last-child {
   margin-bottom: 0;
+}
+
+.editor {
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.uneditable-textarea.editor-html {
+  padding: 5px 3px 5px 5px;
+  white-space: normal;
+}
+
+textarea.editor-html {
+  visibility: hidden;
 }
 
 .uneditable-input,
@@ -6211,24 +6229,6 @@ textarea[rows="100"],
 
 .uneditable-form .form-actions {
   background-color: transparent;
-}
-
-.editor {
-  width: 100%;
-  height: 100px;
-  padding: 5px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.uneditable-textarea.editor-html {
-  padding: 5px 3px 5px 5px;
-  white-space: normal;
-}
-
-textarea.editor-html {
-  visibility: hidden;
 }
 
 .header-actions {
@@ -7016,6 +7016,45 @@ body > .page-alert {
 
 .fileupload-new.thumbnail-borderless .thumbnail {
   border: 1px solid #ddd;
+}
+
+.control-group.warning .fileupload .uneditable-input {
+  color: #a47e3c;
+  border-color: #a47e3c;
+}
+
+.control-group.warning .fileupload .fileupload-preview {
+  color: #a47e3c;
+}
+
+.control-group.warning .fileupload .thumbnail {
+  border-color: #a47e3c;
+}
+
+.control-group.error .fileupload .uneditable-input {
+  color: #b94a48;
+  border-color: #b94a48;
+}
+
+.control-group.error .fileupload .fileupload-preview {
+  color: #b94a48;
+}
+
+.control-group.error .fileupload .thumbnail {
+  border-color: #b94a48;
+}
+
+.control-group.success .fileupload .uneditable-input {
+  color: #468847;
+  border-color: #468847;
+}
+
+.control-group.success .fileupload .fileupload-preview {
+  color: #468847;
+}
+
+.control-group.success .fileupload .thumbnail {
+  border-color: #468847;
 }
 
 .nav-tabs > li > a,

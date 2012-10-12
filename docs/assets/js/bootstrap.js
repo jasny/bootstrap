@@ -1922,7 +1922,7 @@
 
 }(window.jQuery);
 /* ===========================================================
- * bootstrap-inputmask.js j1
+ * bootstrap-inputmask.js j2
  * http://twitter.github.com/bootstrap/javascript.html#tooltips
  * Based on Masked Input plugin by Josh Bush (digitalbush.com)
  * ===========================================================
@@ -1967,7 +1967,7 @@
     if (isAndroid) return // No support because caret positioning doesn't work on Android
     
     this.$element = $(element)
-    this.mask = options.mask
+    this.mask = String(options.mask)
     this.options = $.extend({}, $.fn.inputmask.defaults, options)
     
     this.init()
@@ -2413,7 +2413,12 @@
     
     change: function(e, invoked) {
       var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
-      if (!file || invoked === 'clear') return
+      if (invoked === 'clear') return
+      
+      if (!file) {
+        this.clear()
+        return
+      }
       
       this.$hidden.val('')
       this.$hidden.attr('name', '')
@@ -2445,9 +2450,10 @@
       this.$preview.html('')
       this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
 
-      this.$input.trigger('change', [ 'clear' ])
-
-      e.preventDefault()
+      if (e) {
+        this.$input.trigger('change', [ 'clear' ])
+        e.preventDefault()
+      }
     },
     
     trigger: function(e) {
