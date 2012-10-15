@@ -1,16 +1,18 @@
-[Twitter Bootstrap](http://twitter.github.com/bootstrap) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](http://travis-ci.org/twitter/bootstrap)
+[Jasny Bootstrap](http://jasny.github.com/bootstrap)
 =================
 
 Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat) at Twitter.
 
-To get started, checkout http://getbootstrap.com!
+This version is extended by [Arnold Daniels](http://twitter.com/ArnoldDaniels) of [Jasny](http://www.jasny.net) and contains a number of extra features.
+
+To get started, checkout http://jasny.github.com/bootstrap!
 
 
 
 Quick start
 -----------
 
-Clone the repo, `git clone git://github.com/twitter/bootstrap.git`, or [download the latest release](https://github.com/twitter/bootstrap/zipball/master).
+Clone the repo, `git clone git://github.com/jasny/bootstrap.git`, or [download the latest release](https://github.com/jasny/bootstrap/zipball/master).
 
 
 
@@ -31,6 +33,7 @@ And constructed with the following guidelines:
 
 For more information on SemVer, please visit http://semver.org/.
 
+Additionally the version for the Jasny extensions will simply be incremented with each release and is prefixed with a 'j'.
 
 
 Bug tracker
@@ -38,14 +41,15 @@ Bug tracker
 
 Have a bug? Please create an issue here on GitHub that conforms with [necolas's guidelines](https://github.com/necolas/issue-guidelines).
 
-https://github.com/twitter/bootstrap/issues
+https://github.com/jasny/bootstrap/issues
 
 
 
 Twitter account
 ---------------
 
-Keep up to date on announcements and more by following Bootstrap on Twitter, [@TwBootstrap](http://twitter.com/TwBootstrap).
+Keep up to date on announcements and more by following Arnold Daniels on Twitter, [@ArnoldDaniels](http://twitter.com/ArnoldDaniels).
+Also follow Bootstrap on Twitter, [@TwBootstrap](http://twitter.com/TwBootstrap).
 
 
 
@@ -53,26 +57,6 @@ Blog
 ----
 
 Read more detailed announcements, discussions, and more on [The Official Twitter Bootstrap Blog](http://blog.getbootstrap.com).
-
-
-
-Mailing list
-------------
-
-Have a question? Ask on our mailing list!
-
-twitter-bootstrap@googlegroups.com
-
-http://groups.google.com/group/twitter-bootstrap
-
-
-
-IRC
----
-
-Server: irc.freenode.net
-
-Channel: ##twitter-bootstrap (the double ## is not a typo)
 
 
 
@@ -89,7 +73,7 @@ $ npm install recess connect uglify-js jshint -g
 ```
 
 + **build** - `make`
-Runs the recess compiler to rebuild the `/less` files and compiles the docs pages. Requires recess and uglify-js. <a href="http://twitter.github.com/bootstrap/less.html#compiling">Read more in our docs &raquo;</a>
+Runs the recess compiler to rebuild the `/less` files and compiles the docs pages. Requires recess and uglify-js. <a href="http://jasny.github.com/bootstrap/less.html#compiling">Read more in our docs &raquo;</a>
 
 + **test** - `make test`
 Runs jshint and qunit tests headlessly in [phantomjs](http://code.google.com/p/phantomjs/) (used for ci). Depends on having phantomjs installed.
@@ -119,7 +103,10 @@ Authors
 + http://twitter.com/fat
 + http://github.com/fat
 
+**Arnold Daniels**
 
++ http://twitter.com/ArnoldDaniels
++ http://github.com/jasny
 
 Copyright and license
 ---------------------

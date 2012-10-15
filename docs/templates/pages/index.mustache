@@ -3,14 +3,14 @@
     <h1>Bootstrap</h1>
     <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development.</p>
     <p>
-      <a href="assets/bootstrap.zip" class="btn btn-primary btn-large" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.1.0-j1']);"{{/production}}>{{_i}}Download Bootstrap{{/i}}<small><br/>{{_i}}Includes all Jasny extensions{{/i}}</small></a>
-      <a href="assets/jasny-bootstrap.zip" class="btn btn-warning btn-large" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download extensions', 'Download j1']);"{{/production}}>{{_i}}Extend Bootstrap{{/i}}<small><br/>{{_i}}Download extensions only{{/i}}</small></a>
+      <a href="assets/bootstrap.zip" class="btn btn-primary btn-large" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download {{version}}']);"{{/production}}>{{_i}}Download Bootstrap{{/i}}<small><br/>{{_i}}Includes all Jasny extensions{{/i}}</small></a>
+      <a href="assets/jasny-bootstrap.zip" class="btn btn-warning btn-large" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download extensions {{jasny_version}}']);"{{/production}}>{{_i}}Extend Bootstrap{{/i}}<small><br/>{{_i}}Download extensions only{{/i}}</small></a>
     </p>
     <ul class="masthead-links">
       <li><a href="http://twitter.github.com/bootstrap" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Twitter bootstrap']);"{{/production}}>{{_i}}Original by Twitter{{/i}}</a></li>
       <li><a href="http://github.com/jasny/bootstrap" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'GitHub project']);"{{/production}}>GitHub project</a></li>
       <li><a href="./extend.html" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Extend']);"{{/production}}>Extend</a></li>
-      <li>Version 2.1.1-j2</li>
+      <li>Version {{version}}</li>
     </ul>
   </div>
   <img class="extended-badge" src="assets/img/extended-by-jasny.png">

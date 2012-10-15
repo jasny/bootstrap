@@ -2,7 +2,8 @@
 var hogan = require('hogan.js')
   , fs    = require('fs')
   , prod  = process.argv[2] == 'production'
-  , title = 'Twitter Bootstrap'
+  , title = 'Jasny Bootstrap'
+  , version = '2.1.1-j2'
 
 var layout, pages
 
@@ -28,6 +29,8 @@ pages.forEach(function (name) {
     .replace(/\.mustache/, '')
     .replace(/\-.*/, '')
     .replace(/(.)/, function ($1) { return $1.toUpperCase() })
+  context.version = version
+  context.jasny_version = version.replace(/^.+-/, '')
 
   if (context.title == 'Index') {
     context.title = title

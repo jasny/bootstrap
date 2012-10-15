@@ -31,15 +31,15 @@ build:
 	@echo "Compiling documentation...                  ${CHECK} Done"
 	@cat js/bootstrap-transition.js js/bootstrap-alert.js js/bootstrap-button.js js/bootstrap-carousel.js js/bootstrap-collapse.js js/bootstrap-dropdown.js js/bootstrap-modal.js js/bootstrap-tooltip.js js/bootstrap-popover.js js/bootstrap-scrollspy.js js/bootstrap-tab.js js/bootstrap-typeahead.js js/bootstrap-inputmask.js js/bootstrap-rowlink.js js/bootstrap-fileupload.js js/bootstrap-affix.js > docs/assets/js/bootstrap.js
 	@uglifyjs -nc docs/assets/js/bootstrap.js > docs/assets/js/bootstrap.min.tmp.js
-	@echo "/**\n* Bootstrap.js v2.1.1 by @fat & @mdo\n* Copyright 2012 Twitter, Inc.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > docs/assets/js/copyright.js
+	@echo "/**\n* Bootstrap.js v2.1.1-j2 by @fat & @mdo extended by @ArnoldDaniels\n* Copyright 2012 Twitter, Inc.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > docs/assets/js/copyright.js
 	@cat docs/assets/js/copyright.js docs/assets/js/bootstrap.min.tmp.js > docs/assets/js/bootstrap.min.js
 	@rm docs/assets/js/copyright.js docs/assets/js/bootstrap.min.tmp.js
 	@echo "Compiling and minifying javascript...       ${CHECK} Done"
 	@echo "\n${HR}"
 	@echo "Bootstrap successfully built at ${DATE}."
 	@echo "${HR}\n"
-	@echo "Thanks for using Bootstrap,"
-	@echo "<3 @mdo and @fat\n"
+	@echo "Thanks for using Jasny Bootstrap,"
+	@echo "<3 @mdo, @fat & @ArnoldDaniels\n"
 
 #
 # RUN JSHINT & QUNIT TESTS IN PHANTOMJS
@@ -78,7 +78,7 @@ bootstrap:
 	recess --compress ${BOOTSTRAP_RESPONSIVE_LESS} ${JASNY_BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.min.css
 	cat js/bootstrap-transition.js js/bootstrap-alert.js js/bootstrap-button.js js/bootstrap-carousel.js js/bootstrap-collapse.js js/bootstrap-dropdown.js js/bootstrap-modal.js js/bootstrap-tooltip.js js/bootstrap-popover.js js/bootstrap-scrollspy.js js/bootstrap-tab.js js/bootstrap-typeahead.js js/bootstrap-inputmask.js js/bootstrap-rowlink.js js/bootstrap-fileupload.js js/bootstrap-affix.js > bootstrap/js/bootstrap.js
 	uglifyjs -nc bootstrap/js/bootstrap.js > bootstrap/js/bootstrap.min.tmp.js
-	echo "/*!\n* Bootstrap.js by @fat & @mdo\n* Copyright 2012 Twitter, Inc.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > bootstrap/js/copyright.js
+	echo "/*!\n* Bootstrap.js v2.1.1-j2 by @fat & @mdo extended by @ArnoldDaniels\n* Copyright 2012 Twitter, Inc.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > bootstrap/js/copyright.js
 	cat bootstrap/js/copyright.js bootstrap/js/bootstrap.min.tmp.js > bootstrap/js/bootstrap.min.js
 	rm bootstrap/js/copyright.js bootstrap/js/bootstrap.min.tmp.js
 
@@ -99,7 +99,7 @@ jasny-bootstrap:
 	recess --compress ${JASNY_BOOTSTRAP_RESPONSIVE_LESS} > jasny-bootstrap/css/jasny-bootstrap-responsive.min.css
 	cat js/bootstrap-inputmask.js js/bootstrap-rowlink.js js/bootstrap-fileupload.js > jasny-bootstrap/js/jasny-bootstrap.js
 	uglifyjs -nc jasny-bootstrap/js/jasny-bootstrap.js > jasny-bootstrap/js/jasny-bootstrap.min.tmp.js
-	echo "/*!\n* Jasny-Bootstrap.js by @ArnoldDaniels\n* Copyright 2012 Jasny BV.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > jasny-bootstrap/js/copyright.js
+	echo "/*!\n* Jasny-Bootstrap.js j2 by @ArnoldDaniels\n* Copyright 2012 Jasny BV.\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > jasny-bootstrap/js/copyright.js
 	cat jasny-bootstrap/js/copyright.js jasny-bootstrap/js/jasny-bootstrap.min.tmp.js > jasny-bootstrap/js/jasny-bootstrap.min.js
 	rm jasny-bootstrap/js/copyright.js jasny-bootstrap/js/jasny-bootstrap.min.tmp.js
 
@@ -132,7 +132,7 @@ watch:
 #
 
 haunt:
-	@haunt .issue-guidelines.js https://github.com/twitter/bootstrap
+	@haunt .issue-guidelines.js https://github.com/jasny/bootstrap
 
 
 .PHONY: docs watch gh-pages

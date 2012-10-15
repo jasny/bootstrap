@@ -1,14 +1,14 @@
 {
-    "name": "bootstrap"
+    "name": "jasny-bootstrap"
   , "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development."
-  , "version": "2.1.1"
+  , "version": "2.1.1-j2"
   , "keywords": ["bootstrap", "css"]
-  , "homepage": "http://twitter.github.com/bootstrap/"
-  , "author": "Twitter Inc."
+  , "homepage": "http://jasny.github.com/bootstrap/"
+  , "author": "Arnold Daniels <arnold@jasny.net>"
   , "scripts": { "test": "make test" }
   , "repository": {
       "type": "git"
-    , "url": "https://github.com/twitter/bootstrap.git"
+    , "url": "https://github.com/jasny/bootstrap.git"
   }
   , "licenses": [
     {
