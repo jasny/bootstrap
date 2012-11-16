@@ -132,7 +132,8 @@
       if ($this.data('fileupload')) return
       $this.fileupload($this.data())
       
-      var $target = $(e.target).parents('[data-dismiss=fileupload],[data-trigger=fileupload]').first()
+      var $target = $(e.target).is('[data-dismiss=fileupload],[data-trigger=fileupload]') ?
+        $(e.target) : $(e.target).parents('[data-dismiss=fileupload],[data-trigger=fileupload]').first()
       if ($target.length > 0) {
           $target.trigger('click.fileupload')
           e.preventDefault()
