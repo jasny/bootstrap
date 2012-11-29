@@ -8,5 +8,6 @@
     "devel"    : true,
     "boss"     : true,
     "expr"     : true,
-    "asi"      : true
+    "asi"      : true,
+    "evil"     : true
 }

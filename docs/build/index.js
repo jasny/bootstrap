@@ -3,7 +3,7 @@ var hogan = require('hogan.js')
   , fs    = require('fs')
   , prod  = process.argv[2] == 'production'
   , title = 'Jasny Bootstrap'
-  , version = '2.1.1-j2'
+  , version = '2.2.1-j3'
 
 var layout, pages
 

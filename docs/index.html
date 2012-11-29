@@ -25,16 +25,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-32388850-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -68,7 +58,7 @@
                 <a href="./components.html">Components</a>
               </li>
               <li class="">
-                <a href="./javascript.html">Javascript</a>
+                <a href="./javascript.html">JavaScript</a>
               </li>
               <li class="">
                 <a href="./customize.html">Customize</a>
@@ -84,14 +74,25 @@
     <h1>Bootstrap</h1>
     <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development.</p>
     <p>
-      <a href="assets/bootstrap.zip" class="btn btn-primary btn-large" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.1.1-j2']);">Download Bootstrap<small><br/>Includes all Jasny extensions</small></a>
-      <a href="assets/jasny-bootstrap.zip" class="btn btn-warning btn-large" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download extensions j2']);">Extend Bootstrap<small><br/>Download extensions only</small></a>
+      <a href="assets/bootstrap.zip" class="btn btn-primary btn-large" >Download Bootstrap<small><br/>Includes all Jasny extensions</small></a>
+      <a href="assets/jasny-bootstrap.zip" class="btn btn-warning btn-large" >Extend Bootstrap<small><br/>Download extensions only</small></a>
     </p>
     <ul class="masthead-links">
-      <li><a href="http://twitter.github.com/bootstrap" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Twitter bootstrap']);">Original by Twitter</a></li>
-      <li><a href="http://github.com/jasny/bootstrap" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'GitHub project']);">GitHub project</a></li>
-      <li><a href="./extend.html" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Extend']);">Extend</a></li>
-      <li>Version 2.1.1-j2</li>
+      <li>
+        <a href="http://twitter.github.com/bootstrap" >Original by Twitter</a>
+      </li>
+      <li>
+        <a href="http://github.com/jasny/bootstrap" >GitHub project</a>
+      </li>
+      <li>
+        <a href="./getting-started.html#examples" >Examples</a>
+      </li>
+      <li>
+        <a href="./extend.html" >Extend</a>
+      </li>
+      <li>
+        Version 2.2.1-j3
+      </li>
     </ul>
   </div>
   <img class="extended-badge" src="assets/img/extended-by-jasny.png">
@@ -101,10 +102,10 @@
   <div class="container">
     <ul class="bs-docs-social-buttons">
       <li>
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
       </li>
       <li>
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98" height="20"></iframe>
       </li>
       <li class="follow-btn">
         <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-width="155px" data-link-color="#0069D6" data-show-count="false">Follow @ArnoldDaniels</a>
@@ -210,7 +211,7 @@
       <div class="span4">
         <img src="assets/img/bs-docs-bootstrap-features.png">
         <h2>Packed with features.</h2>
-        <p>A 12-column responsive <a href="./scaffolding.html#grid">grid</a>, dozens of components, <a href="./javascript.html">javascript plugins</a>, typography, form controls, and even a <a href="./customize.html">web-based Customizer</a> to make Bootstrap your own.</p>
+        <p>A 12-column responsive <a href="./scaffolding.html#grid">grid</a>, dozens of components, <a href="./javascript.html">JavaScript plugins</a>, typography, form controls, and even a <a href="./customize.html">web-based Customizer</a> to make Bootstrap your own.</p>
       </div>
     </div>
 
@@ -231,8 +232,8 @@
           </a>
         </li>
         <li class="span3">
-          <a class="thumbnail" href="http://www.fleetio.com/" target="_blank">
-            <img src="assets/img/example-sites/fleetio.png" alt="Fleetio">
+          <a class="thumbnail" href="http://www.gathercontent.com/" target="_blank">
+            <img src="assets/img/example-sites/gathercontent.png" alt="Gather Content">
           </a>
         </li>
         <li class="span3">
@@ -254,14 +255,16 @@
     <footer class="footer">
       <div class="container">
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
         <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny Software solutions</a>.</p>
-        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
         <ul class="footer-links">
-          <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
-          <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
+          <li><a href="http://blog.getbootstrap.com">Blog</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
+          <li class="muted">&middot;</li>
           <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
         </ul>
       </div>

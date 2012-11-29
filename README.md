@@ -1,7 +1,7 @@
 [Jasny Bootstrap](http://jasny.github.com/bootstrap)
 =================
 
-Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat) at Twitter.
+Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
 
 This version is extended by [Arnold Daniels](http://twitter.com/ArnoldDaniels) of [Jasny](http://www.jasny.net) and contains a number of extra features.
 
@@ -12,7 +12,7 @@ To get started, checkout http://jasny.github.com/bootstrap!
 Quick start
 -----------
 
-Clone the repo, `git clone git://github.com/jasny/bootstrap.git`, or [download the latest release](https://github.com/jasny/bootstrap/zipball/master).
+Clone the repo, `git clone git://github.com/jasny/bootstrap.git`, or [download the latest release](https://github.com/jasny/bootstrap/zipball/master), or install with twitter's [Bower](http://twitter.github.com/bower): `bower install jasny/bootstrap`.
 
 
 
@@ -73,7 +73,7 @@ $ npm install recess connect uglify-js jshint -g
 ```
 
 + **build** - `make`
-Runs the recess compiler to rebuild the `/less` files and compiles the docs pages. Requires recess and uglify-js. <a href="http://jasny.github.com/bootstrap/less.html#compiling">Read more in our docs &raquo;</a>
+Runs the recess compiler to rebuild the `/less` files and compiles the docs pages. Requires recess and uglify-js. <a href="http://jasny.github.com/bootstrap/extend.html#compiling">Read more in our docs &raquo;</a>
 
 + **test** - `make test`
 Runs jshint and qunit tests headlessly in [phantomjs](http://code.google.com/p/phantomjs/) (used for ci). Depends on having phantomjs installed.
