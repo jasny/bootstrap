@@ -26,7 +26,7 @@ build:
 	@node docs/build
 	@cp img/* docs/assets/img/
 	@cp js/*.js docs/assets/js/
-	@cp -r fonts docs/assets/
+	@cp -r font docs/assets/
 	@cp js/tests/vendor/jquery.js docs/assets/js/
 	@echo "Compiling documentation...                  ${CHECK} Done"
 	@cat js/bootstrap-transition.js js/bootstrap-alert.js js/bootstrap-button.js js/bootstrap-carousel.js js/bootstrap-collapse.js js/bootstrap-dropdown.js js/bootstrap-modal.js js/bootstrap-tooltip.js js/bootstrap-popover.js js/bootstrap-scrollspy.js js/bootstrap-tab.js js/bootstrap-typeahead.js js/bootstrap-inputmask.js js/bootstrap-rowlink.js js/bootstrap-fileupload.js js/bootstrap-affix.js > docs/assets/js/bootstrap.js
@@ -69,9 +69,9 @@ bootstrap:
 	mkdir -p bootstrap/img
 	mkdir -p bootstrap/css
 	mkdir -p bootstrap/js
-	mkdir -p bootstrap/fonts
+	mkdir -p bootstrap/font
 	cp img/* bootstrap/img/
-	cp fonts/* bootstrap/fonts/
+	cp font/* bootstrap/font/
 	recess --compile ${BOOTSTRAP_LESS} ${JASNY_BOOTSTRAP_LESS} > bootstrap/css/bootstrap.css
 	recess --compress ${BOOTSTRAP_LESS} ${JASNY_BOOTSTRAP_LESS} > bootstrap/css/bootstrap.min.css
 	recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} ${JASNY_BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.css
@@ -90,9 +90,9 @@ bootstrap:
 jasny-bootstrap:
 	mkdir -p jasny-bootstrap/css
 	mkdir -p jasny-bootstrap/js
-	mkdir -p jasny-bootstrap/fonts
+	mkdir -p jasny-bootstrap/font
 	cp js/bootstrap-inputmask.js js/bootstrap-rowlink.js js/bootstrap-fileupload.js jasny-bootstrap/js
-	cp fonts/* jasny-bootstrap/fonts/
+	cp font/* jasny-bootstrap/font/
 	recess --compile ${JASNY_BOOTSTRAP_LESS} > jasny-bootstrap/css/jasny-bootstrap.css
 	recess --compress ${JASNY_BOOTSTRAP_LESS} > jasny-bootstrap/css/jasny-bootstrap.min.css
 	recess --compile ${JASNY_BOOTSTRAP_RESPONSIVE_LESS} > jasny-bootstrap/css/jasny-bootstrap-responsive.css

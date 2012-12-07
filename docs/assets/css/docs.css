@@ -436,6 +436,18 @@ hr.soften {
 /* Download page
 -------------------------------------------------- */
 
+#customupload {
+  display: block;
+  margin-top: 20px;
+  width: 232px;
+  text-align: center;
+}
+
+#no-customupload {
+  margin-top: 20px;
+  width: 206px;
+}
+
 .download .page-header {
   margin-top: 36px;
 }
@@ -864,7 +876,7 @@ form.bs-docs-example {
   background-image: url(../img/glyphicons-halflings-white.png);
   opacity: 1;
 }
-.bs-docs-sidenav.affix {
+.bs-docs-sidebar > .affix {
   top: 40px;
 }
 .bs-docs-sidenav.affix-bottom {

@@ -7341,7 +7341,3 @@ body > .container.tabs-right.tabbable-bodered > .tab-content {
      -moz-border-radius: 0 0 0 4px;
           border-radius: 0 0 0 4px;
 }
-
-.modal form {
-  margin-bottom: 0;
-}

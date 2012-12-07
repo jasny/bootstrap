@@ -14,7 +14,7 @@
     })
 
     // side bar
-    $('.bs-docs-sidenav').affix({
+    $('.bs-docs-sidebar > *').affix({
       offset: {
         top: function () { return $window.width() <= 980 ? 290 : 210 }
       , bottom: 270
@@ -71,7 +71,38 @@
     var inputsComponent = $("#components.download input")
       , inputsPlugin = $("#plugins.download input")
       , inputsVariables = $("#variables.download input")
-
+    
+    // Upload custom.json (requires FileReader support)
+    if (typeof FileReader !== "undefined") {
+      $('#customupload > input[type=file]').on('change', function(e) {
+        var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
+        var reader = new FileReader()
+        
+        reader.onload = function(e) {
+          try {
+            var params = JSON.parse(e.target.result)
+          } catch(err) {
+            window.alert("The loaded file doesn't contain valid JSON: " + new String(err).replace(/^SyntaxError: /i, ''))
+          }
+          
+          inputsComponent.attr('checked', false)
+          $.each(params.css, function(key, value) {
+            $("#components.download input[value='" + value + "']").attr('checked', true)
+          })
+          
+          inputsPlugin.attr('checked', false)
+          $.each(params.js, function(key, value) {
+            $("#plugins.download input[value='" + value + "']").attr('checked', true)
+          })
+        }
+        
+        reader.readAsText(file)
+      })
+      $('#customupload').show()
+    } else {
+      $('#no-customupload').show()
+    }
+    
     // toggle all plugin checkboxes
     $('#components.download .toggle-all').on('click', function (e) {
       e.preventDefault()
@@ -119,22 +150,29 @@
             .toArray()
         , vars = {}
         , img = ['glyphicons-halflings.png', 'glyphicons-halflings-white.png']
-        , fonts = []
+        , font = []
         , autoselect = {
-            'jasny/modals.less': ['modals.less']
-          , 'jasny/layouts-semifluid.responsive-1200px-min.less': ['jasny/layouts-semifluid.less', 'responsive-1200px-min.less']
-          , 'jasny/forms.responsive-767px-max.less': ['jasny/forms.less', 'responsive-767px-max.less']
-          , 'jasny/forms.responsive-768px-979px.less': ['jasny/forms.less', 'responsive-768px-979px.less']
-          , 'jasny/forms.responsive-1200px-min.less': ['jasny/forms.less', 'responsive-1200px-min.less']
-          , 'jasny/page-alert.responsive-767px-max.less': ['jasny/page-alert.less', 'responsive-767px-max.less']
-          , 'jasny/page-alert.responsive-1200px-min.less': ['jasny/page-alert.less', 'responsive-1200px-min.less']
+            'layouts-semifluid.responsive-1200px-min.less': ['layouts-semifluid.less', 'responsive-1200px-min.less']
+          , 'jasny-forms.responsive-767px-max.less': ['jasny-forms.less', 'responsive-767px-max.less']
+          , 'jasny-forms.responsive-768px-979px.less': ['jasny-forms.less', 'responsive-768px-979px.less']
+          , 'jasny-forms.responsive-1200px-min.less': ['jasny-forms.less', 'responsive-1200px-min.less']
+          , 'page-alert.responsive-767px-max.less': ['page-alert.less', 'responsive-767px-max.less']
+          , 'page-alert.responsive-1200px-min.less': ['page-alert.less', 'responsive-1200px-min.less']
+          , 'tooltip.less': ['match:js', 'bootstrap-tooltip.js']
+          , 'popovers.less': ['match:js', 'bootstrap-popovers.js']
+          , 'modals.less': ['match:js', 'bootstrap-modals.js']
+          , 'dropdowns.less': ['match:js', 'bootstrap-dropdowns.js']
+          , 'accordion.less': ['match:js', 'bootstrap-accordion.js']
+          , 'carousel.less': ['match:js', 'bootstrap-carousel.js']
+          , 'rowlink.less': ['match:js', 'bootstrap-rowlink.js']
+          , 'fileupload.less': ['match:js', 'bootstrap-fileupload.js']
         }
         
-    if ($('#components.download input[value="jasny/iconic.less"]').is(':checked'))
-      fonts = ['iconic_fill.eot', 'iconic_fill.otf', 'iconic_fill.svg', 'iconic_fill.ttf', 'iconic_fill.woff', 'iconic_stroke.eot', 'iconic_stroke.otf', 'iconic_stroke.svg', 'iconic_stroke.ttf', 'iconic_stroke.woff']
+    if ($('#components.download input[value="iconic.less"]').is(':checked'))
+      $.merge(font, ['iconic_fill.eot', 'iconic_fill.otf', 'iconic_fill.svg', 'iconic_fill.ttf', 'iconic_fill.woff', 'iconic_stroke.eot', 'iconic_stroke.otf', 'iconic_stroke.svg', 'iconic_stroke.ttf', 'iconic_stroke.woff'])
 
     $.map(autoselect, function(deps, file) {
-      if ($.map(deps, function (value) { return $('#components.download input[value="'+value+'"]').is(':checked') ? 1 : null }).length == deps.length)
+      if ($.map(deps, function (value) { return $('.download input[value="'+value+'"]').is(':checked') ? 1 : null }).length == deps.length)
         css.push(file)
     })
     
@@ -152,7 +190,7 @@
         , css: css
         , vars: vars
         , img: img
-        , fonts: fonts
+        , font: font
       }
       })
     })

@@ -1738,6 +1738,17 @@ For example, &lt;code&gt;&lt;section&gt;&lt;/code&gt; should be wrapped as inlin
           <p>IE9 doesn't crop background gradients on rounded corners, so we remove it. Related, IE9 jankifies disabled <code>button</code> elements, rendering text gray with a nasty text-shadow that we cannot fix.</p>
 
 
+          <h2>Upload button</h2>
+          <p>It's possible to use a button to upload files, instead of showing the native browser element.</p>
+          <div class="bs-docs-example">
+            <span class="btn btn-file">Upload a file<input type="file" /></span>
+          </div>
+<pre class="prettyprint linenums">
+  &lt;span class="btn btn-file"&gt;Upload a file&lt;input type="file" /&gt;&lt;/span&gt;
+</pre>
+          <p>There is also an interactive file and image upload widgets available. View <a href="./javascript.html#fileupload">the Javascript docs</a> for that.</p>
+
+
           <h2>Button sizes</h2>
           <p>Fancy larger or smaller buttons? Add <code>.btn-large</code>, <code>.btn-small</code>, or <code>.btn-mini</code> for additional sizes.</p>
           <div class="bs-docs-example">
@@ -1943,17 +1954,6 @@ For example, &lt;code&gt;&lt;section&gt;&lt;/code&gt; should be wrapped as inlin
 &lt;img src="..." class="img-polaroid"&gt;
 </pre>
           <p><span class="label label-info">Heads up!</span> <code>.img-rounded</code> and <code>.img-circle</code> do not work in IE7-8 due to lack of <code>border-radius</code> support.</p>
-
-  <div class="row">
-    <div class="span4">
-        <h3>Upload button</h3>
-        <p>It's possible to use a button to upload files, instead of showing the native browser element.</p>
-        <span class="btn btn-file">Upload a file<input type="file" /></span>
-        <p>There is also an interactive file and image upload widgets available. View <a href="./javascript.html#fileupload">the Javascript docs</a> for that.</p>
-    </div>
-  </div>
-
-  <br>
 </section>
 
         </section>
@@ -2442,7 +2442,7 @@ For example, &lt;code&gt;&lt;section&gt;&lt;/code&gt; should be wrapped as inlin
           <h3>How to use</h3>
           <p>For iconic icons you can use an <code>&lt;i&gt;</code> tag, just like regular for icons. To use, place the following code just about anywhere:</p>
 <pre class="prettyprint linenums">
-&lt;i class="iconic-search"&gt;&lt;/i&gt;
+&lt;i class="iconic-home"&gt;&lt;/i&gt;
 </pre>
 
           <h3>Styling</h3>
