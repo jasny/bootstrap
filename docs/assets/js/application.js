@@ -140,7 +140,7 @@
     })
 
     // request built javascript
-    $('.download-btn').on('click', function () {
+    $('.download-btn .btn').on('click', function () {
 
       var css = $("#components.download input:checked")
             .map(function () { return this.value })

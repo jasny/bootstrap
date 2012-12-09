@@ -1,6 +1,6 @@
 {
   "name": "bootstrap",
-  "version": "2.2.1-j3",
+  "version": "2.2.2-j3",
   "main": ["./docs/assets/js/bootstrap.js", "./docs/assets/css/bootstrap.css"],
   "dependencies": {
     "jquery": "~1.8.0"
