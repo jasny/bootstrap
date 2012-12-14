@@ -8,6 +8,9 @@
     </p>
     <ul class="masthead-links">
       <li>
+        <a href="http://www.jasny.net" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Jasny.net']);"{{/production}}>{{_i}}Jasny.net{{/i}}</a>
+      </li>
+      <li>
         <a href="http://twitter.github.com/bootstrap" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Twitter bootstrap']);"{{/production}}>{{_i}}Original by Twitter{{/i}}</a>
       </li>
       <li>
@@ -24,7 +27,7 @@
       </li>
     </ul>
   </div>
-  <img class="extended-badge" src="assets/img/extended-by-jasny.png">
+  <a class="extended-badge" href="http://www.jasny.net" {{#production}}onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron badge', 'Jasny.net']);"{{/production}}><img src="assets/img/extended-by-jasny.png"></a>
 </div>
 
 <div class="bs-docs-social">

@@ -1172,8 +1172,14 @@
   .table-responsive th {
     font-style: italic;
   }
-  .table-responsive .responsive-highlight {
+  .responsive-strong {
     font-weight: bold;
+  }
+  .responsive-em {
+    font-style: italic;
+  }
+  .responsive-soft {
+    color: #999;
   }
 }
 
