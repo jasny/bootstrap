@@ -304,6 +304,9 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   font-size: 16px;
   line-height: 1.5;
 }
+.changes ul {
+  text-align: left;
+}
 .changes .row {
   margin-bottom: 9px;
 }
@@ -457,7 +460,6 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 #customupload {
   display: block;
   margin-top: 20px;
-  width: 232px;
   text-align: center;
 }
 

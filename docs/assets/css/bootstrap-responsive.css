@@ -1152,6 +1152,31 @@
   }
 }
 
+@media (max-width: 767px) {
+  .table-responsive tr {
+    display: block;
+    padding: 8px;
+  }
+  .table-bordered.table-responsive tr {
+    border: 1px solid #DDD;
+    border-top: 0;
+    border-right: 0;
+  }
+  .table-responsive td,
+  .table-responsive th {
+    display: block;
+    padding: 0;
+    font-weight: normal;
+    border: none;
+  }
+  .table-responsive th {
+    font-style: italic;
+  }
+  .table-responsive .responsive-highlight {
+    font-weight: bold;
+  }
+}
+
 @media (max-width: 480px) {
   .form-horizontal .controls,
   .form-horizontal .well .controls,

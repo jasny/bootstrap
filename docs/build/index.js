@@ -3,9 +3,13 @@ var hogan = require('hogan.js')
   , fs    = require('fs')
   , prod  = process.argv[2] == 'production'
   , title = 'Jasny Bootstrap'
-  , version = '2.2.1-j3'
 
-var layout, pages
+var info, version, layout, pages
+
+// get version
+info = fs.readFileSync(__dirname + '/../../package.json', 'utf-8')
+info = JSON.parse(info)
+version = info.version
 
 // compile layout template
 layout = fs.readFileSync(__dirname + '/../templates/layout.mustache', 'utf-8')
