@@ -358,4 +358,4 @@
     })
   })
 
-}(window.jQuery)
+}(window.jQuery);
