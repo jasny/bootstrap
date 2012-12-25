@@ -33,7 +33,7 @@
 
     this.name = this.$input.attr('name') || options.name
 
-    this.$hidden = this.$element.find(':hidden[name="'+this.name+'"]')
+    this.$hidden = this.$element.find('input[type=hidden][name="'+this.name+'"]')
     if (this.$hidden.length === 0) {
       this.$hidden = $('<input type="hidden" />')
       this.$element.prepend(this.$hidden)
