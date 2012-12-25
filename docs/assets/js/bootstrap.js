@@ -2704,6 +2704,12 @@
     var height = this.$preview.css('height')
     if (this.$preview.css('display') != 'inline' && height != '0px' && height != 'none') this.$preview.css('line-height', height)
 
+    this.original = {
+      'exists': this.$element.hasClass('fileupload-exists'),
+      'preview': this.$preview.html(),
+      'hiddenVal': this.$hidden.val()
+    }
+    
     this.$remove = this.$element.find('[data-dismiss="fileupload"]')
 
     this.$element.find('[data-trigger="fileupload"]').on('click.fileupload', $.proxy(this.trigger, this))
@@ -2715,6 +2721,7 @@
     
     listen: function() {
       this.$input.on('change.fileupload', $.proxy(this.change, this))
+      $(this.$input[0].form).on('reset.fileupload', $.proxy(this.reset, this))
       if (this.$remove) this.$remove.on('click.fileupload', $.proxy(this.clear, this))
     },
     
@@ -2772,6 +2779,16 @@
       }
     },
     
+    reset: function(e) {
+      this.clear()
+      
+      this.hidden.val(this.original.hiddenVal)
+      this.$preview.html(this.original.preview)
+      
+      if (this.original.exists) this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
+       else this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
+    },
+    
     trigger: function(e) {
       this.$input.trigger('click')
       e.preventDefault()
@@ -2787,6 +2804,7 @@
       var $this = $(this)
       , data = $this.data('fileupload')
       if (!data) $this.data('fileupload', (data = new Fileupload(this, options)))
+      if (typeof options == 'string') data[options]()
     })
   }
 
