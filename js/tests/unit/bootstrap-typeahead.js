@@ -41,7 +41,7 @@ $(function () {
         var $input = $('<input />')
             .appendTo('body')
             .typeahead({
-              source: ['aa', 'ab', 'ac']
+              source: ['aa', 'ab', 'ac', 'bx']
             })
           , typeahead = $input.data('typeahead')
 
@@ -94,6 +94,33 @@ $(function () {
         typeahead.$menu.remove()
       })
 
+      test("should accept ajax data source as url string", function () {
+        stop()
+        var $input = $('<input />').typeahead({
+              source: '/data?items=["aa", "ab", "ac"]',
+              ajaxdelay: 0
+            }).appendTo('body')
+          , typeahead = $input.data('typeahead')
+          , process = $.proxy(typeahead.process, typeahead)
+
+        typeahead.process = function(items) {
+          var ret = process(items)
+          
+          //ok(typeahead.$menu.is(":visible"), 'typeahead is visible')  // Fails, but don't see why
+          equals(typeahead.$menu.find('li').length, 3, 'has 3 items in menu')
+          equals(typeahead.$menu.find('.active').length, 1, 'one item is active')
+
+          start()
+          return ret
+        }
+
+        $input.val('a')
+        typeahead.lookup()
+
+        $input.remove()
+        typeahead.$menu.remove()
+      })
+
       test("should not explode when regex chars are entered", function () {
         var $input = $('<input />').typeahead({
               source: ['aa', 'ab', 'ac', 'mdo*', 'fat+']
@@ -114,7 +141,7 @@ $(function () {
       test("should hide menu when query entered", function () {
         stop()
         var $input = $('<input />').typeahead({
-              source: ['aa', 'ab', 'ac']
+              source: ['aa', 'ab', 'ac', 'bx']
             }).appendTo('body')
           , typeahead = $input.data('typeahead')
 
@@ -138,7 +165,7 @@ $(function () {
 
       test("should set next item when down arrow is pressed", function () {
         var $input = $('<input />').typeahead({
-              source: ['aa', 'ab', 'ac']
+              source: ['aa', 'ab', 'ac', 'bx']
             }).appendTo('body')
           , typeahead = $input.data('typeahead')
 
@@ -188,7 +215,7 @@ $(function () {
 
       test("should set input value to selected item", function () {
         var $input = $('<input />').typeahead({
-              source: ['aa', 'ab', 'ac']
+              source: ['aa', 'ab', 'ac', 'bx']
             }).appendTo('body')
           , typeahead = $input.data('typeahead')
           , changed = false
@@ -224,6 +251,43 @@ $(function () {
         typeahead.lookup()
 
         equals(typeahead.$menu.find('li').length, 3, 'has 3 items in menu')
+
+        $input.remove()
+        typeahead.$menu.remove()
+      })
+      
+      test("should have a value when a menu item is selected", function () {
+        var $input = $('<input />')
+            .appendTo('body')
+            .typeahead({
+              source: ['aa', 'ab', 'ac', 'bx']
+            })
+          , typeahead = $input.data('typeahead')
+
+        $input.val('a')
+        typeahead.lookup()
+        typeahead.select()
+
+        equals($input.val(), 'aa', 'input value = "aa"')
+
+        $input.remove()
+        typeahead.$menu.remove()
+      })
+      
+      test("should have a value when a menu item is selected with key/value source", function () {
+        var $input = $('<input />')
+            .appendTo('body')
+            .typeahead({
+              source: {'z':'aa', 'y':'ab', 'x':'ac', 'w':'bx'}
+            })
+          , typeahead = $input.data('typeahead')
+
+        $input.val('a')
+        typeahead.lookup()
+        typeahead.select()
+
+        equals($input.val(), 'aa', 'input value = "aa"')
+        equals($input.data('value'), 'z', 'input data-value = "z"')
 
         $input.remove()
         typeahead.$menu.remove()

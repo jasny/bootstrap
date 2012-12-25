@@ -141,4 +141,4 @@
     })
   })
 
-}(window.jQuery)
+}(window.jQuery);

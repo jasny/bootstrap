@@ -68,4 +68,4 @@
     })
   })
   
-}(window.jQuery)
+}(window.jQuery);

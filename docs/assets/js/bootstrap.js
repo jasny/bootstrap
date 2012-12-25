@@ -1749,7 +1749,6 @@
     this.$element = $(element)
     this.options = $.extend({}, $.fn.typeahead.defaults, options)
     if (this.options.target) this.$target = $(this.options.target)
-    this.searcher = this.options.searcher || (typeof this.options.source == 'string' ? this.searcherAjax : this.searcher)
     this.matcher = this.options.matcher || this.matcher
     this.sorter = this.options.sorter || this.sorter
     this.highlighter = this.options.highlighter || this.highlighter
@@ -1759,6 +1758,11 @@
     this.$menu = $(this.options.menu)
     this.shown = false
 
+    if (typeof this.source == 'string') {
+        this.url = this.source
+        this.source = this.searchAjax
+    }
+    
     if (element.nodeName == 'SELECT') this.replaceSelect()
 
     this.text = this.$element.val()
@@ -1876,39 +1880,58 @@
 
       this.query = this.$element.val()
 
-      if (!this.query) {
+      if (!this.query || this.query.length < this.options.minLength) {
         return this.shown ? this.hide() : this
       }
 
-      items = this.searcher()
+      items = $.isFunction(this.source) ? this.source(this.query, $.proxy(this.process, this)) : this.source
       
-      if (typeof items == 'undefined') {
-        return this
-      }
+      return items ? this.process(items) : this
+    }
 
-      if ($(items).length === 0) {
+  , process: function (items) {
+      return $.isArray(items) ? this.processArray(items) : this.processObject(items)
+    }
+    
+  , processArray: function (items) {
+      var that = this
+
+      items = $.grep(items, function (item) {
+        return that.matcher(item)
+      })
+
+      items = this.sorter(items)
+
+      if (!items.length) {
         return this.shown ? this.hide() : this
       }
 
+      return this.render(items.slice(0, this.options.items)).show()
+    }
+
+  , processObject: function (itemsIn) {
+      var that = this
+        , items = {}
+        , i = 0
+
+      $.each(itemsIn, function (key, item) {
+        if (that.matcher(item)) items[key] = item
+      })
+
+      items = this.sorter(items)
+
+      if ($.isEmptyObject(items)) {
+        return this.shown ? this.hide() : this
+      }
+      
+      $.each(items, function(key, item) {
+        if (i++ >= that.options.items) delete items[key]
+      })
+      
       return this.render(items).show()
     }
 
-  , searcher: function () {
-      var that = this
-        , array
-        , object = {}
-      
-      
-      array = $.map(this.source, function (item, key) {
-        if (!that.matcher(item)) return
-        object[key] = item
-        return item
-      })
-      
-      return $.isArray(this.source) ? array : object
-  }
-
-  , searcherAjax: function () {
+  , searchAjax: function (query, process) {
       var that = this
       
       if (this.ajaxTimeout) clearTimeout(this.ajaxTimeout)
@@ -1916,22 +1939,18 @@
       this.ajaxTimeout = setTimeout(function () {
         if (that.ajaxTimeout) clearTimeout(that.ajaxTimeout)
 
-        if (that.query === "") {
+        if (query === "") {
           that.hide()
           return
         }
 
-        $.get(that.source, {'q': that.query, 'limit': that.options.items }, function (items) {
-          if ($(items).length === 0) {
-            if (that.shown) that.hide()
-            return
-          }
-
-          that.render(items).show()
+        $.get(that.url, {'q': query, 'limit': that.options.items }, function (items) {
+          if (typeof items == 'string') items = JSON.parse(items)
+          process(items)
         })
       }, this.options.ajaxdelay)
   }
-
+  
   , matcher: function (item) {
       return ~item.toLowerCase().indexOf(this.query.toLowerCase())
     }
@@ -1961,22 +1980,22 @@
         
       for (key in items) {
         if (!items[key].toLowerCase().indexOf(this.query.toLowerCase())) {
-            sorted[key] = items[key]
+          sorted[key] = items[key];
+          delete items[key]
         }
-        delete items[key]
       }
       
       for (key in items) {
         if (~items[key].indexOf(this.query)) {
-            sorted[key] = items[key]
+          sorted[key] = items[key];
+          delete items[key]
         }
-        delete items[key]
       }
 
       for (key in items) {
         sorted[key] = items[key]
       }
-      
+
       return sorted
     }
 
@@ -1996,7 +2015,6 @@
         
         var li
           , a
-          , text
         
         if ($.isArray(items)) value = item
         
@@ -2570,7 +2588,7 @@
     })
   })
 
-}(window.jQuery)/* ============================================================
+}(window.jQuery);/* ============================================================
  * bootstrap-rowlink.js j1
  * http://jasny.github.com/bootstrap/javascript.html#rowlink
  * ============================================================
@@ -2640,7 +2658,7 @@
     })
   })
   
-}(window.jQuery)
+}(window.jQuery);
 /* ===========================================================
  * bootstrap-fileupload.js j2
  * http://jasny.github.com/bootstrap/javascript.html#fileupload
@@ -2784,7 +2802,7 @@
     })
   })
 
-}(window.jQuery)
+}(window.jQuery);
 /* ==========================================================
  * bootstrap-affix.js v2.2.2
  * http://twitter.github.com/bootstrap/javascript.html#affix
