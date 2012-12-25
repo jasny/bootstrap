@@ -2613,7 +2613,7 @@
 
   var Rowlink = function (element, options) {
     options = $.extend({}, $.fn.rowlink.defaults, options)
-    var tr = element.nodeName == 'tr' ? $(element) : $(element).find('tr:has(td)')
+    var tr = element.nodeName.toLowerCase() == 'tr' ? $(element) : $(element).find('tr:has(td)')
     
     tr.each(function() {
       var link = $(this).find(options.target).first()
