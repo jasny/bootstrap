@@ -2752,7 +2752,16 @@
       this.$hidden.val('')
       this.$hidden.attr('name', this.name)
       this.$input.attr('name', '')
-      this.$input.val('') // Doesn't work in IE, which causes issues when selecting the same file twice
+
+      //ie8+ doesn't support changing the value of input with type=file so clone instead
+      if($.browser.msie){
+          var inputClone = this.$input.clone(true);
+          this.$input.after(inputClone);
+          this.$input.remove();
+          this.$input = inputClone;
+      }else{
+          this.$input.val('')
+      }
 
       this.$preview.html('')
       this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
