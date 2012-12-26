@@ -7219,12 +7219,11 @@ body > .page-alert {
   top: 0;
   right: 0;
   margin: 0;
+  font-size: 23px;
   cursor: pointer;
-  border: solid transparent;
-  border-width: 0 0 100px 200px;
   opacity: 0;
   filter: alpha(opacity=0);
-  -moz-transform: translate(-300px, 0) scale(4);
+  transform: translate(-300px, 0) scale(4);
   direction: ltr;
 }
 
