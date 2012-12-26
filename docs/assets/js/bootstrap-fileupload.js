@@ -21,7 +21,7 @@
 
   "use strict"; // jshint ;_
 
- /* INPUTMASK PUBLIC CLASS DEFINITION
+ /* FILEUPLOAD PUBLIC CLASS DEFINITION
   * ================================= */
 
   var Fileupload = function (element, options) {
@@ -135,7 +135,7 @@
   }
 
   
- /* INPUTMASK PLUGIN DEFINITION
+ /* FILEUPLOAD PLUGIN DEFINITION
   * =========================== */
 
   $.fn.fileupload = function (options) {
@@ -150,7 +150,7 @@
   $.fn.fileupload.Constructor = Fileupload
 
 
- /* INPUTMASK DATA-API
+ /* FILEUPLOAD DATA-API
   * ================== */
 
   $(function () {
