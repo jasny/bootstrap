@@ -76,6 +76,11 @@ section > ul li {
   margin: 40px 0 39px;
 }
 
+.page-header .header-actions {
+  line-height: 50px;
+  padding: 0;
+}
+
 /* Faded out hr */
 hr.soften {
   height: 1px;
