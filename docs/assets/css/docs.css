@@ -461,7 +461,12 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 #customupload {
   display: block;
   margin-top: 20px;
+  margin-right: 12px;
   text-align: center;
+}
+
+.affix #customupload {
+  margin-right: 0;
 }
 
 #no-customupload {

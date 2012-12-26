@@ -2694,7 +2694,7 @@
 
     this.name = this.$input.attr('name') || options.name
 
-    this.$hidden = this.$element.find(':hidden[name="'+this.name+'"]')
+    this.$hidden = this.$element.find('input[type=hidden][name="'+this.name+'"]')
     if (this.$hidden.length === 0) {
       this.$hidden = $('<input type="hidden" />')
       this.$element.prepend(this.$hidden)
@@ -2782,11 +2782,11 @@
     reset: function(e) {
       this.clear()
       
-      this.hidden.val(this.original.hiddenVal)
+      this.$hidden.val(this.original.hiddenVal)
       this.$preview.html(this.original.preview)
       
-      if (this.original.exists) this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
-       else this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
+      if (this.original.exists) this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
+       else this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
     },
     
     trigger: function(e) {
