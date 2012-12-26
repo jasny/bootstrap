@@ -6622,15 +6622,15 @@ a.rowlink {
 @font-face {
   font-family: IconicStroke;
   font-weight: normal;
-  src: url('../fonts/iconic_stroke.eot');
-  src: local('IconicStroke'), url('iconic_stroke.eot?#iefix') format('../fonts/embedded-opentype'), url('../fonts/iconic_stroke.woff') format('woff'), url('../fonts/iconic_stroke.ttf') format('truetype'), url('iconic_stroke.svg#iconic') format('svg'), url('../fonts/iconic_stroke.otf') format('opentype');
+  src: url('../font/iconic_stroke.eot');
+  src: local('IconicStroke'), url('iconic_stroke.eot?#iefix') format('../font/embedded-opentype'), url('../font/iconic_stroke.woff') format('woff'), url('../font/iconic_stroke.ttf') format('truetype'), url('iconic_stroke.svg#iconic') format('svg'), url('../font/iconic_stroke.otf') format('opentype');
 }
 
 @font-face {
   font-family: IconicFill;
   font-weight: normal;
-  src: url('../fonts/iconic_fill.eot');
-  src: local('IconicFill'), url('../fonts/iconic_fill.eot?#iefix') format('embedded-opentype'), url('../fonts/iconic_fill.woff') format('woff'), url('../fonts/iconic_fill.ttf') format('truetype'), url('iconic_fill.svg#iconic') format('svg'), url('../fonts/iconic_fill.otf') format('opentype');
+  src: url('../font/iconic_fill.eot');
+  src: local('IconicFill'), url('../font/iconic_fill.eot?#iefix') format('embedded-opentype'), url('../font/iconic_fill.woff') format('woff'), url('../font/iconic_fill.ttf') format('truetype'), url('iconic_fill.svg#iconic') format('svg'), url('../font/iconic_fill.otf') format('opentype');
 }
 
 @media screen, print {
