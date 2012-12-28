@@ -1680,7 +1680,11 @@ $('.carousel').carousel({
               <td>{{_i}}source{{/i}}</td>
               <td>{{_i}}array, object, string, function{{/i}}</td>
               <td>[ ]</td>
-              <td>{{_i}}The data source to query against. May be an array of strings, an object as key/value pairs, a url (string) or a function. The function is passed two arguments, the <code>query</code> value in the input field and the <code>process</code> callback. The function may be used synchronously by returning the data source directly or asynchronously via the <code>process</code> callback's single argument.{{/i}}</td>
+              <td>
+                <p>{{_i}}The data source to query against. May be an array of strings, an object as key/value pairs, a url (string) to get the data using AJAX or a function.{{/i}}</p>
+                <p>{{_i}}When using AJAX, the server should output a valid JSON array or key/value pair object.{{/i}}</p>
+                <p>{{_i}}The function is passed two arguments, the <code>query</code> value in the input field and the <code>process</code> callback. The function may be used synchronously by returning the data source directly or asynchronously via the <code>process</code> callback's single argument.{{/i}}</p>
+              </td>
             </tr>
             <tr>
               <td>{{_i}}items{{/i}}</td>
@@ -1732,7 +1736,7 @@ $('.carousel').carousel({
         <p>{{_i}}Initializes an input with a typeahead.{{/i}}</p>
 
         <h3>{{_i}}Result{{/i}}</h3>
-        <p>{{_i}}If the source are key/value pairs, the <code>data-value</code> attribute will contain the key.{{/i}}</p>
+        <p>{{_i}}If the source is an object with key/value pairs, the <code>data-value</code> attribute will contain the key.{{/i}}</p>
       </section>
 
 

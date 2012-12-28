@@ -1760,7 +1760,11 @@ $('.carousel').carousel({
               <td>source</td>
               <td>array, object, string, function</td>
               <td>[ ]</td>
-              <td>The data source to query against. May be an array of strings, an object as key/value pairs, a url (string) or a function. The function is passed two arguments, the <code>query</code> value in the input field and the <code>process</code> callback. The function may be used synchronously by returning the data source directly or asynchronously via the <code>process</code> callback's single argument.</td>
+              <td>
+                <p>The data source to query against. May be an array of strings, an object as key/value pairs, a url (string) to get the data using AJAX or a function.</p>
+                <p>When using AJAX, the server should output a valid JSON array or key/value pair object.</p>
+                <p>The function is passed two arguments, the <code>query</code> value in the input field and the <code>process</code> callback. The function may be used synchronously by returning the data source directly or asynchronously via the <code>process</code> callback's single argument.</p>
+              </td>
             </tr>
             <tr>
               <td>items</td>
@@ -1812,7 +1816,7 @@ $('.carousel').carousel({
         <p>Initializes an input with a typeahead.</p>
 
         <h3>Result</h3>
-        <p>If the source are key/value pairs, the <code>data-value</code> attribute will contain the key.</p>
+        <p>If the source is an object with key/value pairs, the <code>data-value</code> attribute will contain the key.</p>
       </section>
 
 
