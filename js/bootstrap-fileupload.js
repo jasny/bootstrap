@@ -92,6 +92,8 @@
         this.$preview.text(file.name)
         this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
       }
+      
+      this.$element.trigger("fileupload.change")
     },
 
     clear: function(e) {
@@ -116,6 +118,8 @@
         this.$input.trigger('change', [ 'clear' ])
         e.preventDefault()
       }
+      
+      this.$element.trigger("fileupload.clear")
     },
     
     reset: function(e) {
