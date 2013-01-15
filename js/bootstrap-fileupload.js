@@ -154,18 +154,16 @@
  /* FILEUPLOAD DATA-API
   * ================== */
 
-  $(function () {
-    $('body').on('click.fileupload.data-api', '[data-provides="fileupload"]', function (e) {
-      var $this = $(this)
-      if ($this.data('fileupload')) return
-      $this.fileupload($this.data())
+  $(document).on('click.fileupload.data-api', '[data-provides="fileupload"]', function (e) {
+    var $this = $(this)
+    if ($this.data('fileupload')) return
+    $this.fileupload($this.data())
       
-      var $target = $(e.target).closest('[data-dismiss="fileupload"],[data-trigger="fileupload"]');
-      if ($target.length > 0) {
-          $target.trigger('click.fileupload')
-          e.preventDefault()
-      }
-    })
+    var $target = $(e.target).closest('[data-dismiss="fileupload"],[data-trigger="fileupload"]');
+    if ($target.length > 0) {
+      $target.trigger('click.fileupload')
+      e.preventDefault()
+    }
   })
 
 }(window.jQuery);

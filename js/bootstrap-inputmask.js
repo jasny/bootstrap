@@ -349,13 +349,11 @@
  /* INPUTMASK DATA-API
   * ================== */
 
-  $(function () {
-    $(document).on('focus.inputmask.data-api', '[data-mask]', function (e) {
-      var $this = $(this)
-      if ($this.data('inputmask')) return
-      e.preventDefault()
-      $this.inputmask($this.data())
-    })
+  $(document).on('focus.inputmask.data-api', '[data-mask]', function (e) {
+    var $this = $(this)
+    if ($this.data('inputmask')) return
+    e.preventDefault()
+    $this.inputmask($this.data())
   })
 
 }(window.jQuery);
