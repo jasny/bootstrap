@@ -350,7 +350,7 @@
   * ================== */
 
   $(function () {
-    $('body').on('focus.inputmask.data-api', '[data-mask]', function (e) {
+    $(document).on('focus.inputmask.data-api', '[data-mask]', function (e) {
       var $this = $(this)
       if ($this.data('inputmask')) return
       e.preventDefault()
