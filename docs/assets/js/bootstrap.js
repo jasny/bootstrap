@@ -2255,17 +2255,6 @@
   var isIphone = (window.orientation !== undefined),
       isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1
 
-  $.mask = {
-    //Predefined character definitions
-    definitions: {
-      '9': "[0-9]",
-      'a': "[A-Za-z]",
-      '?': "[A-Za-z0-9]",
-      '*': "."
-    },
-    dataName:"rawMaskFn"
-  }
-
 
  /* INPUTMASK PUBLIC CLASS DEFINITION
   * ================================= */
@@ -2274,8 +2263,8 @@
     if (isAndroid) return // No support because caret positioning doesn't work on Android
     
     this.$element = $(element)
-    this.mask = String(options.mask)
     this.options = $.extend({}, $.fn.inputmask.defaults, options)
+    this.mask = String(options.mask)
     
     this.init()
     this.listen()
@@ -2286,7 +2275,7 @@
   Inputmask.prototype = {
     
     init: function() {
-      var defs = $.mask.definitions
+      var defs = this.options.definitions
       var len = this.mask.length
 
       this.tests = [] 
@@ -2312,7 +2301,7 @@
       
       this.focusText = this.$element.val()
 
-      this.$element.data($.mask.dataName, $.proxy(function() {
+      this.$element.data("rawMaskFn", $.proxy(function() {
         return $.map(this.buffer, function(c, i) {
           return this.tests[i] && c != this.options.placeholder ? c : null
         }).join('')
@@ -2322,7 +2311,7 @@
     listen: function() {
       if (this.$element.attr("readonly")) return
 
-      var pasteEventName = ($.browser.msie ? 'paste' : 'input') + ".mask"
+      var pasteEventName = (navigator.userAgent.match(/msie/i) ? 'paste' : 'input') + ".mask"
 
       this.$element
         .on("unmask", $.proxy(this.unmask, this))
@@ -2570,7 +2559,14 @@
   }
 
   $.fn.inputmask.defaults = {
-    placeholder: "_"
+    mask: "",
+    placeholder: "_",
+    definitions: {
+      '9': "[0-9]",
+      'a': "[A-Za-z]",
+      '?': "[A-Za-z0-9]",
+      '*': "."
+    }
   }
 
   $.fn.inputmask.Constructor = Inputmask
@@ -2579,16 +2575,15 @@
  /* INPUTMASK DATA-API
   * ================== */
 
-  $(function () {
-    $('body').on('focus.inputmask.data-api', '[data-mask]', function (e) {
-      var $this = $(this)
-      if ($this.data('inputmask')) return
-      e.preventDefault()
-      $this.inputmask($this.data())
-    })
+  $(document).on('focus.inputmask.data-api', '[data-mask]', function (e) {
+    var $this = $(this)
+    if ($this.data('inputmask')) return
+    e.preventDefault()
+    $this.inputmask($this.data())
   })
 
-}(window.jQuery);/* ============================================================
+}(window.jQuery);
+/* ============================================================
  * bootstrap-rowlink.js j1
  * http://jasny.github.com/bootstrap/javascript.html#rowlink
  * ============================================================
@@ -2726,8 +2721,9 @@
     },
     
     change: function(e, invoked) {
-      var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
       if (invoked === 'clear') return
+      
+      var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
       
       if (!file) {
         this.clear()
@@ -2761,7 +2757,7 @@
       this.$input.attr('name', '')
 
       //ie8+ doesn't support changing the value of input with type=file so clone instead
-      if($.browser.msie){
+      if (navigator.userAgent.match(/msie/i)){ 
           var inputClone = this.$input.clone(true);
           this.$input.after(inputClone);
           this.$input.remove();
@@ -2814,19 +2810,16 @@
  /* FILEUPLOAD DATA-API
   * ================== */
 
-  $(function () {
-    $('body').on('click.fileupload.data-api', '[data-provides="fileupload"]', function (e) {
-      var $this = $(this)
-      if ($this.data('fileupload')) return
-      $this.fileupload($this.data())
+  $(document).on('click.fileupload.data-api', '[data-provides="fileupload"]', function (e) {
+    var $this = $(this)
+    if ($this.data('fileupload')) return
+    $this.fileupload($this.data())
       
-      var $target = $(e.target).is('[data-dismiss=fileupload],[data-trigger=fileupload]') ?
-        $(e.target) : $(e.target).parents('[data-dismiss=fileupload],[data-trigger=fileupload]').first()
-      if ($target.length > 0) {
-          $target.trigger('click.fileupload')
-          e.preventDefault()
-      }
-    })
+    var $target = $(e.target).closest('[data-dismiss="fileupload"],[data-trigger="fileupload"]');
+    if ($target.length > 0) {
+      $target.trigger('click.fileupload')
+      e.preventDefault()
+    }
   })
 
 }(window.jQuery);
