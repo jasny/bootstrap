@@ -92,7 +92,7 @@
     listen: function() {
       if (this.$element.attr("readonly")) return
 
-      var pasteEventName = ($.browser.msie ? 'paste' : 'input') + ".mask"
+      var pasteEventName = (navigator.userAgent.match(/msie/i) ? 'paste' : 'input') + ".mask"
 
       this.$element
         .on("unmask", $.proxy(this.unmask, this))
