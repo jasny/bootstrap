@@ -25,17 +25,6 @@
   var isIphone = (window.orientation !== undefined),
       isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1
 
-  $.mask = {
-    //Predefined character definitions
-    definitions: {
-      '9': "[0-9]",
-      'a': "[A-Za-z]",
-      '?': "[A-Za-z0-9]",
-      '*': "."
-    },
-    dataName:"rawMaskFn"
-  }
-
 
  /* INPUTMASK PUBLIC CLASS DEFINITION
   * ================================= */
@@ -44,8 +33,8 @@
     if (isAndroid) return // No support because caret positioning doesn't work on Android
     
     this.$element = $(element)
-    this.mask = String(options.mask)
     this.options = $.extend({}, $.fn.inputmask.defaults, options)
+    this.mask = String(options.mask)
     
     this.init()
     this.listen()
@@ -56,7 +45,7 @@
   Inputmask.prototype = {
     
     init: function() {
-      var defs = $.mask.definitions
+      var defs = this.options.definitions
       var len = this.mask.length
 
       this.tests = [] 
@@ -82,7 +71,7 @@
       
       this.focusText = this.$element.val()
 
-      this.$element.data($.mask.dataName, $.proxy(function() {
+      this.$element.data("rawMaskFn", $.proxy(function() {
         return $.map(this.buffer, function(c, i) {
           return this.tests[i] && c != this.options.placeholder ? c : null
         }).join('')
@@ -340,7 +329,14 @@
   }
 
   $.fn.inputmask.defaults = {
-    placeholder: "_"
+    mask: "",
+    placeholder: "_",
+    definitions: {
+      '9': "[0-9]",
+      'a': "[A-Za-z]",
+      '?': "[A-Za-z0-9]",
+      '*': "."
+    }
   }
 
   $.fn.inputmask.Constructor = Inputmask
