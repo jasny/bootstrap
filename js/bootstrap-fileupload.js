@@ -48,7 +48,8 @@
       'preview': this.$preview.html(),
       'hiddenVal': this.$hidden.val()
     }
-    
+
+    this.$reset = this.$element.find('[data-reset="fileupload"]')
     this.$remove = this.$element.find('[data-dismiss="fileupload"]')
 
     this.$element.find('[data-trigger="fileupload"]').on('click.fileupload', $.proxy(this.trigger, this))
@@ -82,16 +83,19 @@
         var reader = new FileReader()
         var preview = this.$preview
         var element = this.$element
+        var reset = this.$reset
 
         reader.onload = function(e) {
           preview.html('<img src="' + e.target.result + '" ' + (preview.css('max-height') != 'none' ? 'style="max-height: ' + preview.css('max-height') + ';"' : '') + ' />')
           element.addClass('fileupload-exists').removeClass('fileupload-new')
+          reset.removeAttr("checked")
         }
 
         reader.readAsDataURL(file)
       } else {
         this.$preview.text(file.name)
         this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
+        this.$reset.removeAttr("checked")
       }
     },
 
@@ -112,6 +116,7 @@
 
       this.$preview.html('')
       this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
+      this.$reset.attr("checked", "checked")
 
       if (e) {
         this.$input.trigger('change', [ 'clear' ])
