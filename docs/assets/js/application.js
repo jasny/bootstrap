@@ -169,7 +169,7 @@
           , 'popovers.less': ['match:js', 'bootstrap-popover.js']
           , 'modals.less': ['match:js', 'bootstrap-modal.js']
           , 'dropdowns.less': ['match:js', 'bootstrap-dropdown.js']
-          , 'accordion.less': ['match:js', 'bootstrap-accordion.js']
+          , 'accordion.less': ['match:js', 'bootstrap-collapse.js']
           , 'carousel.less': ['match:js', 'bootstrap-carousel.js']
           , 'rowlink.less': ['match:js', 'bootstrap-rowlink.js']
           , 'fileupload.less': ['match:js', 'bootstrap-fileupload.js']
