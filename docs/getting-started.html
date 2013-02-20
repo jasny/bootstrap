@@ -15,7 +15,7 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="assets/js/html5shiv.js"></script>
     <![endif]-->
 
     <!-- Le fav and touch icons -->
@@ -25,16 +25,6 @@
                     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-32388850-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -86,7 +76,7 @@
     <h1>Getting started</h1>
     <p class="lead">Overview of the project, its contents, and how to get started with a simple template.</p>
   </div>
-  <a class="extended-badge" href="http://www.jasny.net" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron badge', 'Jasny.net']);"><img src="assets/img/extended-by-jasny.png"></a>
+  <a class="extended-badge" href="http://www.jasny.net" ><img src="assets/img/extended-by-jasny.png"></a>
 </header>
 
 
@@ -121,12 +111,12 @@
             <div class="span6">
               <h2>Download compiled</h2>
               <p><strong>Fastest way to get started:</strong> get the compiled and minified versions of our CSS, JS, and images. No docs or original source files.</p>
-              <p><a class="btn btn-large btn-primary" href="assets/bootstrap.zip" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled 2.2.2-j4']);">Download Bootstrap</a></p>
+              <p><a class="btn btn-large btn-primary" href="assets/bootstrap.zip" >Download Bootstrap</a></p>
             </div>
             <div class="span6">
               <h2>Download source</h2>
               <p>Get the original files for all CSS and JavaScript, along with a local copy of the docs by downloading the latest version directly from GitHub.</p>
-              <p><a class="btn btn-large" href="https://github.com/jasny/bootstrap/zipball/master" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download source 2.2.2-j4']);">Download Bootstrap source</a></p>
+              <p><a class="btn btn-large" href="https://github.com/jasny/bootstrap/zipball/master" >Download Bootstrap source</a></p>
             </div>
           </div>
         </section>
@@ -209,17 +199,18 @@
           <div class="page-header">
             <h1>4. Basic HTML template</h1>
           </div>
-          <p class="lead">With a brief intro into the contents out of the way, we can focus on putting Bootstrap to use. To do that, we'll utilize a basic HTML template that includes everything we mentioned in the <a href="#file-structure">File structure</a>.</p>
+          <p class="lead">With a brief intro into the contents out of the way, we can focus on putting Bootstrap to use. To do that, we'll utilize a basic HTML template that includes everything we mentioned in the <a href="./getting-started.html#file-structure">File structure</a>.</p>
           <p>Now, here's a look at a <strong>typical HTML file</strong>:</p>
 <pre class="prettyprint linenums">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;h1&gt;Hello, world!&lt;/h1&gt;
-    &lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+    &lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </pre>
@@ -229,12 +220,13 @@
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
     &lt;!-- Bootstrap --&gt;
     &lt;link href="css/bootstrap.min.css" rel="stylesheet" media="screen"&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;h1&gt;Hello, world!&lt;/h1&gt;
-    &lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+    &lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
     &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;
@@ -254,21 +246,21 @@
           <ul class="thumbnails bootstrap-examples">
             <li class="span3">
               <a class="thumbnail" href="examples/starter-template.html">
-                <img src="assets/img/examples/bootstrap-example-starter.jpg" alt="">
+                <img src="assets/img/examples/bootstrap-example-starter.png" alt="">
               </a>
               <h4>Starter template</h4>
               <p>A barebones HTML document with all the Bootstrap CSS and JavaScript included.</p>
             </li>
             <li class="span3">
               <a class="thumbnail" href="examples/hero.html">
-                <img src="assets/img/examples/bootstrap-example-hero.jpg" alt="">
+                <img src="assets/img/examples/bootstrap-example-marketing.png" alt="">
               </a>
               <h4>Basic marketing site</h4>
               <p>Featuring a hero unit for a primary message and three supporting elements.</p>
             </li>
             <li class="span3">
               <a class="thumbnail" href="examples/fluid.html">
-                <img src="assets/img/examples/bootstrap-example-fluid.jpg" alt="">
+                <img src="assets/img/examples/bootstrap-example-fluid.png" alt="">
               </a>
               <h4>Fluid layout</h4>
               <p>Uses our new responsive, fluid grid system to create a seamless liquid layout.</p>
@@ -282,12 +274,20 @@
               <p>Slim, lightweight marketing template for small projects or teams.</p>
             </li>
             <li class="span3">
+              <a class="thumbnail" href="examples/justified-nav.html">
+                <img src="assets/img/examples/bootstrap-example-justified-nav.png" alt="">
+              </a>
+              <h4>Justified nav</h4>
+              <p>Marketing page with equal-width navigation links in a modified navbar.</p>
+            </li>
+            <li class="span3">
               <a class="thumbnail" href="examples/signin.html">
                 <img src="assets/img/examples/bootstrap-example-signin.png" alt="">
               </a>
               <h4>Sign in</h4>
               <p>Barebones sign in form with custom, larger form controls and a flexible layout.</p>
             </li>
+
             <li class="span3">
               <a class="thumbnail" href="examples/sticky-footer.html">
                 <img src="assets/img/examples/bootstrap-example-sticky-footer.png" alt="">
@@ -295,7 +295,6 @@
               <h4>Sticky footer</h4>
               <p>Pin a fixed-height footer to the bottom of the user's viewport.</p>
             </li>
-
             <li class="span3">
               <a class="thumbnail" href="examples/carousel.html">
                 <img src="assets/img/examples/bootstrap-example-carousel.png" alt="">
@@ -316,8 +315,8 @@
             <h1>What next?</h1>
           </div>
           <p class="lead">Head to the docs for information, examples, and code snippets, or take the next leap and customize Bootstrap for any upcoming project.</p>
-          <a class="btn btn-large btn-primary" href="./scaffolding.html" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Next steps', 'Visit docs']);">Visit the Bootstrap docs</a>
-          <a class="btn btn-large" href="./customize.html" style="margin-left: 5px;" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Next steps', 'Customize']);">Customize Bootstrap</a>
+          <a class="btn btn-large btn-primary" href="./scaffolding.html" >Visit the Bootstrap docs</a>
+          <a class="btn btn-large" href="./customize.html" style="margin-left: 5px;" >Customize Bootstrap</a>
         </section>
 
 
@@ -344,7 +343,7 @@
           <li class="muted">&middot;</li>
           <li><a href="https://github.com/jasny/bootstrap/issues?state=open">Issues</a></li>
           <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
+          <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
         </ul>
       </div>
     </footer>

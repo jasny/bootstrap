@@ -8,6 +8,5 @@
      , {"name": "Arnold Daniels", "email": "arnold@jasny.net", "homepage": "http://www.jasny.net"}
   ]
   , "license": "Apache-2.0"
-  , "target-dir": "jasny/bootstrap"
   , "replace": "twitter/bootstrap"
 }

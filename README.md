@@ -1,8 +1,11 @@
-# [Jasny Bootstrap v2.2.2-j3](http://jasny.github.com/bootstrap) [![Build Status](https://travis-ci.org/jasny/bootstrap.png?branch=master)](https://travis-ci.org/jasny/bootstrap)
+<a href="http://jasny.github.com/bootstrap">
+  <img src="http://jasny.github.com/bootstrap/assets/img/bootstrap-docs-readme.png" width="100px">
+</a>
+# [Jasny Bootstrap v2.3.0-j4](http://jasny.github.com/bootstrap) [![Build Status](https://travis-ci.org/jasny/bootstrap.png?branch=master)](https://travis-ci.org/jasny/bootstrap)
 
 Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
 
-This version is extended by [Arnold Daniels](http://twitter.com/ArnoldDaniels) of [Jasny](http://www.jasny.net) and contains a number of extra features.
+This version is extended by [Arnold Daniels](http://twitter.com/ArnoldDaniels) of [Jasny](http://www.jasny.net/) and contains a number of extra features.
 
 To get started, checkout http://jasny.github.com/bootstrap!
 
@@ -32,7 +35,7 @@ And constructed with the following guidelines:
 * New additions without breaking backward compatibility bumps the minor (and resets the patch)
 * Bug fixes and misc changes bumps the patch
 
-For more information on SemVer, please visit http://semver.org/.
+For more information on SemVer, please visit [http://semver.org/](http://semver.org/).
 
 Additionally the version for the Jasny extensions will simply be incremented with each release and is prefixed with a 'j'.
 
@@ -78,18 +81,21 @@ Thanks!
 
 **Mark Otto**
 
-+ http://twitter.com/mdo
-+ http://github.com/mdo
++ [http://twitter.com/mdo](http://twitter.com/mdo)
++ [http://github.com/mdo](http://github.com/mdo)
 
 **Jacob Thornton**
 
-+ http://twitter.com/fat
-+ http://github.com/fat
++ [http://twitter.com/fat](http://twitter.com/fat)
++ [http://github.com/fat](http://github.com/fat)
 
 **Arnold Daniels**
 
-+ http://twitter.com/ArnoldDaniels
-+ http://github.com/jasny
++ [http://twitter.com/ArnoldDaniels](http://twitter.com/ArnoldDaniels)
++ [http://github.com/jasny](http://github.com/jasny)
++ [http://www.jasny.net](http://www.jasny.net/)
+
+
 
 ## Copyright and license
 
@@ -99,7 +105,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this work except in compliance with the License.
 You may obtain a copy of the License in the LICENSE file, or at:
 
-   http://www.apache.org/licenses/LICENSE-2.0
+  [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

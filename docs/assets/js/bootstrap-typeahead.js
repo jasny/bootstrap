@@ -1,5 +1,5 @@
 /* =============================================================
- * bootstrap-typeahead.js v2.2.2-j3
+ * bootstrap-typeahead.js v2.3.0-j4
  * http://twitter.github.com/bootstrap/javascript.html#typeahead
  * =============================================================
  * Copyright 2012 Twitter, Inc.
@@ -340,6 +340,7 @@
 
   , listen: function () {
       this.$element
+        .on('focus',    $.proxy(this.focus, this))
         .on('blur',     $.proxy(this.blur, this))
         .on('change',   $.proxy(this.change, this))
         .on('keypress', $.proxy(this.keypress, this))
@@ -352,8 +353,9 @@
       this.$menu
         .on('click', $.proxy(this.click, this))
         .on('mouseenter', 'li', $.proxy(this.mouseenter, this))
-      
-      $(window).on('unload', $.proxy(this.destroyReplacement, this));
+        .on('mouseleave', 'li', $.proxy(this.mouseleave, this))
+        
+      $(window).on('unload', $.proxy(this.destroyReplacement, this))
     }
 
   , eventSupported: function(eventName) {
@@ -440,20 +442,31 @@
       }
     }
 
+  , focus: function (e) {
+      this.focused = true
+    }
+    
   , blur: function (e) {
-      var that = this
-      setTimeout(function () { if (!that.$menu.is(':hover')) that.hide() }, 150)
+      this.focused = false
+      if (!this.mousedover && this.shown) this.hide()
     }
 
   , click: function (e) {
       e.stopPropagation()
       e.preventDefault()
       this.select()
+      this.$element.focus()
     }
 
   , mouseenter: function (e) {
+      this.mousedover = true
       this.$menu.find('.active').removeClass('active')
       $(e.currentTarget).addClass('active')
+    }
+
+  , mouseleave: function (e) {
+      this.mousedover = false
+      if (!this.focused && this.shown) this.hide()
     }
 
   }

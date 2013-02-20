@@ -14,12 +14,14 @@
     })
 
     // side bar
-    $('.bs-docs-sidebar > *').affix({
-      offset: {
-        top: function () { return $window.width() <= 980 ? 290 : 210 }
-      , bottom: 270
-      }
-    })
+    setTimeout(function () {
+      $('.bs-docs-sidebar > *').affix({
+        offset: {
+          top: function () { return $window.width() <= 980 ? 290 : 210 }
+        , bottom: 270
+        }
+      })
+    }, 100)
 
     // make code pretty
     window.prettyPrint && prettyPrint()
@@ -34,21 +36,21 @@
     // add tipsies to grid for scaffolding
     if ($('#gridSystem').length) {
       $('#gridSystem').tooltip({
-          selector: '.show-grid > div'
+          selector: '.show-grid > [class*="span"]'
         , title: function () { return $(this).width() + 'px' }
       })
     }
 
     // tooltip demo
     $('.tooltip-demo').tooltip({
-      selector: "a[rel=tooltip]"
+      selector: "a[data-toggle=tooltip]"
     })
 
     $('.tooltip-test').tooltip()
     $('.popover-test').popover()
 
     // popover demo
-    $("a[rel=popover]")
+    $("a[data-toggle=popover]")
       .popover()
       .click(function(e) {
         e.preventDefault()
@@ -93,6 +95,11 @@
           inputsPlugin.attr('checked', false)
           $.each(params.js, function(key, value) {
             $("#plugins.download input[value='" + value + "']").attr('checked', true)
+          })
+          
+          inputsVariables.val('')
+          $.each(params.vars, function(key, value) {
+            $("#variables.download label:contains('" + key + "')").next().val(value)
           })
         }
         
