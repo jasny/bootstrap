@@ -32,7 +32,14 @@
       var href = link.attr('href')
 
       $(this).find('td').not('.nolink').click(function() {
-        window.location = href;
+        if (e.ctrlKey || e.metaKey) {
+          window.open(href);
+        } else {
+          if (window.Turbolinks && Turbolinks.visit)
+            Turbolinks.visit(href);
+          else
+            window.location = href;
+        }
       })
 
       $(this).addClass('rowlink')
@@ -63,7 +70,7 @@
   * ================== */
 
   $(function () {
-    $('[data-provides="rowlink"]').each(function () {
+    $('[data-provide="rowlink"],[data-provides="rowlink"]').each(function () {
       $(this).rowlink($(this).data())
     })
   })
