@@ -1,7 +1,7 @@
 {
     "name": "bootstrap"
   , "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development."
-  , "version": "2.3.0-j4"
+  , "version": "2.3.0-j5"
   , "keywords": ["bootstrap", "css"]
   , "homepage": "http://jasny.github.com/bootstrap/"
   , "author": "Arnold Daniels <arnold@jasny.net>"
