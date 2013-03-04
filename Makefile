@@ -89,7 +89,7 @@ jasny-bootstrap-js: jasny-bootstrap/js/*.js
 jasny-bootstrap/js/*.js: js/*.js
 	mkdir -p jasny-bootstrap/js
 	cat js/bootstrap-typeahead.js js/bootstrap-inputmask.js js/bootstrap-rowlink.js js/bootstrap-fileupload.js > jasny-bootstrap/js/jasny-bootstrap.js
-	./node_modules/.bin/uglifyjs -nc jasny-bootstrap/js/bootstrap.js > jasny-bootstrap/js/jasny-bootstrap.min.tmp.js
+	./node_modules/.bin/uglifyjs -nc jasny-bootstrap/js/jasny-bootstrap.js > jasny-bootstrap/js/jasny-bootstrap.min.tmp.js
 	echo "/*!\n* Jasny-bootstrap.js by @ArnoldDaniels\n* Copyright 2012 Arnold Daniels\n* http://www.apache.org/licenses/LICENSE-2.0.txt\n*/" > jasny-bootstrap/js/copyright.js
 	cat jasny-bootstrap/js/jasny-copyright.js jasny-bootstrap/js/jasny-bootstrap.min.tmp.js > jasny-bootstrap/js/jasny-bootstrap.min.js
 	rm jasny-bootstrap/js/copyright.js jasny-bootstrap/js/jasny-bootstrap.min.tmp.js
@@ -108,7 +108,7 @@ bootstrap/css/*.css: less/*.less
 	./node_modules/.bin/recess --compress ${JASNY_BOOTSTRAP_RESPONSIVE_LESS} ${BOOTSTRAP_RESPONSIVE_LESS} > bootstrap/css/bootstrap-responsive.min.css
 
 
-jasny-bootstrap-css: bootstrap/css/*.css
+jasny-bootstrap-css: jasny-bootstrap/css/*.css
 
 jasny-bootstrap/css/*.css: less/*.less
 	mkdir -p jasny-bootstrap/css
