@@ -74,6 +74,8 @@
         return
       }
       
+      var fileCount = e.target.files.length;
+      
       this.$hidden.val('')
       this.$hidden.attr('name', '')
       this.$input.attr('name', this.name)
@@ -90,7 +92,7 @@
 
         reader.readAsDataURL(file)
       } else {
-        this.$preview.text(file.name)
+        this.$preview.text(fileCount > 1 ? fileCount + ' files selected' : file.name)
         this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
       }
     },
