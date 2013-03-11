@@ -1,7 +1,7 @@
 <a href="http://jasny.github.com/bootstrap">
   <img src="http://jasny.github.com/bootstrap/assets/img/bootstrap-docs-readme.png" width="100px">
 </a>
-# [Jasny Bootstrap v2.3.0-j5](http://jasny.github.com/bootstrap) [![Build Status](https://travis-ci.org/jasny/bootstrap.png?branch=master)](https://travis-ci.org/jasny/bootstrap)
+# [Jasny Bootstrap v2.3.1-j6](http://jasny.github.com/bootstrap) [![Build Status](https://travis-ci.org/jasny/bootstrap.png?branch=master)](https://travis-ci.org/jasny/bootstrap)
 
 Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
 
@@ -48,24 +48,36 @@ Have a bug or a feature request? [Please open a new issue](https://github.com/ja
 
 ## Community
 
+Keep track of development and community news.
 
-We have included a makefile with convenience methods for working with the Bootstrap library.
+* Follow [@ArnoldDaniels](http://twitter.com/ArnoldDaniels) and [@twbootstrap](http://twitter.com/twbootstrap)  on Twitter.
+* Read articles on [jasny.net](http://www,jasny.net).
+* Read and subscribe to the [The Official Twitter Bootstrap Blog](http://blog.getbootstrap.com).
+* Have a question that's not a feature request or bug report? [Ask on the mailing list.](http://groups.google.com/group/twitter-bootstrap)
+* Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##twitter-bootstrap` channel.
 
-+ **dependencies**
-Our makefile depends on you having recess, connect, uglify.js, and jshint installed. To install, just run the following command in npm:
+
+
+## Compiling CSS and JavaScript
+
+Bootstrap includes a [makefile](Makefile) with convenient methods for working with the framework. Before getting started, be sure to install [the necessary local dependencies](package.json):
 
 ```
-$ npm install recess connect uglify-js jshint -g
+$ npm install
 ```
 
-+ **build** - `make`
-Runs the recess compiler to rebuild the `/less` files and compiles the docs pages. Requires recess and uglify-js. <a href="http://jasny.github.com/bootstrap/extend.html#compiling">Read more in our docs &raquo;</a>
+When completed, you'll be able to run the various make commands provided:
 
-+ **test** - `make test`
+#### build - `make`
+Runs the recess compiler to rebuild the `/less` files and compiles the docs. Requires recess and uglify-js.
+
+#### test - `make test`
 Runs jshint and qunit tests headlessly in [phantomjs](http://code.google.com/p/phantomjs/) (used for ci). Depends on having phantomjs installed.
 
-+ **watch** - `make watch`
+#### watch - `make watch`
 This is a convenience method for watching just Less files and automatically building them whenever you save. Requires the Watchr gem.
+
+Should you encounter problems with installing dependencies or running the makefile commands, be sure to first uninstall any previous versions (global and local) you may have installed, and then rerun `npm install`.
 
 
 

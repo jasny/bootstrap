@@ -25,6 +25,16 @@
                     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32388850-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -76,7 +86,7 @@
     <h1>Customize and download</h1>
     <p class="lead"><a href="https://github.com/twitter/bootstrap/zipball/master">Download Bootstrap</a> or customize variables, components, JavaScript plugins, and more.</p>
   </div>
-  <a class="extended-badge" href="http://www.jasny.net" ><img src="assets/img/extended-by-jasny.png"></a>
+  <a class="extended-badge" href="http://www.jasny.net" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron badge', 'Jasny.net']);"><img src="assets/img/extended-by-jasny.png"></a>
 </header>
 
 
@@ -475,7 +485,7 @@
               </h1>
             </div>
             <div class="download-btn">
-              <a class="btn btn-primary" href="#" >Customize and Download</a>
+              <a class="btn btn-primary" href="#" onclick="_gaq.push(['_trackEvent', 'Customize', 'Download', 'Customize and Download 2.3.1-j6']);">Customize and Download</a>
               <h4>What's included?</h4>
               <p>Downloads include compiled CSS, compiled and minified CSS, and compiled jQuery plugins, all nicely packed up into a zipball for your convenience.</p>
             </div>
