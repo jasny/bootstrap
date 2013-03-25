@@ -31,9 +31,15 @@
       
       var href = link.attr('href')
 
-      $(this).find('td').not('.nolink').click(function() {
-        window.location = href;
+      $(this).find('td').not('.nolink').each(function() {
+        var a = $("<a href=\"" + href + "\" class=\"rowlink\">");
+        $(this).children(":not(div, table, form)").appendTo(a);
+        a.appendTo($(this));
       })
+      
+      $(this).click(function() {
+        location.href=href;
+      });
 
       $(this).addClass('rowlink')
       link.replaceWith(link.html())
