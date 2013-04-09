@@ -9,7 +9,7 @@ This version is extended by [Arnold Daniels](http://twitter.com/ArnoldDaniels) o
 
 To get started, checkout http://jasny.github.com/bootstrap!
 
-
+[Please consider donating](http://www.gofundme.com/2jjyqk) to make Jasny Bootstrap even better.
 
 ## Quick start
 
