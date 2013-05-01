@@ -1964,13 +1964,11 @@ $('.carousel').carousel({
 
         <h2>{{_i}}Usage{{/i}}</h2>
         <h3>{{_i}}Via data attributes{{/i}}</h3>
-        <p>{{_i}}Add data attributes to register the file upload widget. The main container should either have the <code>.fileupload-new</code> class for a new record or if the record
-          does not have file or <code>.fileupload-exists</code> if an existing file is present. Elements inside the container with the <code>.fileupload-new</code> and <code>.fileupload-exists</code>
-          class will be shown or hidden based on the current state. The content of <code>.fileupload-preview</code> is replaced when a file is selected. Implement a button to clear
-          the file with <code>data-dismiss="fileupload"</code>. The content of <code>.fileupload-preview</code> is replaced when a file is selected. Implement a button to clear the file with
-          <code>data-dismiss="fileupload"</code>.{{/i}}</p>
+        <p>{{_i}}Add data attributes to register the file upload widget. The main container should either have the <code>.fileupload-new</code> class for a new record (one with no file yet specified) or the <code>.fileupload-exists</code> class if an existing file is present. Elements inside the container with the <code>.fileupload-new</code> and <code>.fileupload-exists</code>
+          classes will be shown or hidden based on the current state. The content of <code>.fileupload-preview</code> is replaced when a file is selected. Implement a button to clear
+          the file with <code>data-dismiss="fileupload"</code>.{{/i}}</p>
 
-        <p>{{_i}}Via JavaScript{{/i}}</p>
+        <h3>{{_i}}Via JavaScript{{/i}}</h3>
         <pre class="prettyprint linenums">$('.fileupload').fileupload()</pre>
 
         <h3>Layout</h3>
