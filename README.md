@@ -9,8 +9,6 @@ This version is extended by [Arnold Daniels](http://twitter.com/ArnoldDaniels) o
 
 To get started, checkout http://jasny.github.com/bootstrap!
 
-[Please consider donating](http://www.gofundme.com/2jjyqk) to make Jasny Bootstrap even better.
-
 ## Quick start
 
 Three quick start options are available:
@@ -84,6 +82,8 @@ Should you encounter problems with installing dependencies or running the makefi
 ## Contributing
 
 Please submit all pull requests against *-wip branches. If your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the [Code Guide](http://github.com/mdo/code-guide), maintained by [Mark Otto](http://github.com/mdo).
+
+Don't have time to customize your own fork? You can consider [sponsoring a new feature](https://www.catincan.com/projects/close/jasny-bootstrap).
 
 Thanks!
 
