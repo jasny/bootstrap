@@ -20,6 +20,7 @@ And constructed with the following guidelines:
 * Breaking backward compatibility bumps the major
 * New additions without breaking backward compatibility bumps the minor
 * Bug fixes and misc changes bump the patch
+* Additionally the version for the Jasny extensions will simply be incremented with each release and is prefixed with a 'p'
 
 For more information on SemVer, please visit http://semver.org/.
 
