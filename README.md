@@ -1,4 +1,4 @@
-# [Jasny Bootstrap v2.2.2-j3](http://jasny.github.com/bootstrap) [![Build Status](https://travis-ci.org/jasny/bootstrap.png?branch=master)](https://travis-ci.org/jasny/bootstrap)
+# [Jasny Bootstrap v2.2.2-p3](http://jasny.github.com/bootstrap) [![Build Status](https://travis-ci.org/jasny/bootstrap.png?branch=master)](https://travis-ci.org/jasny/bootstrap)
 
 Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
 
@@ -24,17 +24,16 @@ For transparency and insight into our release cycle, and for striving to maintai
 
 Releases will be numbered with the following format:
 
-`<major>.<minor>.<patch>-j<jasny version>`
+`<major>.<minor>.<patch>-p<jasny version>`
 
 And constructed with the following guidelines:
 
-* Breaking backward compatibility bumps the major (and resets the minor and patch)
-* New additions without breaking backward compatibility bumps the minor (and resets the patch)
-* Bug fixes and misc changes bumps the patch
+* Breaking backward compatibility bumps the major
+* New additions without breaking backward compatibility bumps the minor
+* Bug fixes and misc changes bump the patch
+* Additionally the version for the Jasny extensions will simply be incremented with each release and is prefixed with a 'p'
 
 For more information on SemVer, please visit http://semver.org/.
-
-Additionally the version for the Jasny extensions will simply be incremented with each release and is prefixed with a 'j'.
 
 
 ## Bug tracker
