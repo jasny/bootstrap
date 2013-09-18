@@ -195,7 +195,7 @@
           that.caret(pos)
       }
 
-      if ($.browser.msie)
+      if (navigator.userAgent.match(/msie/i))
         moveCaret()
       else
         setTimeout(moveCaret, 0)
