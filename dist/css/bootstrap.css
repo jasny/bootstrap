@@ -4608,6 +4608,224 @@ textarea.input-group-sm > .input-group-btn > .btn {
   color: #ffffff;
 }
 
+.navmenu {
+  width: 300px;
+  height: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.navmenu-fixed-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  border-width: 1px 1px 1px 0;
+  border-radius: 0;
+}
+
+.navmenu-fixed-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1030;
+  border-width: 1px 0 1px 1px;
+  border-radius: 0;
+}
+
+.navmenu-nav {
+  margin-bottom: 10px;
+}
+
+.navmenu-nav.dropdown-menu {
+  position: static;
+  float: none;
+  padding-top: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.navmenu-brand {
+  display: block;
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.navmenu-brand:hover,
+.navmenu-brand:focus {
+  text-decoration: none;
+}
+
+.navmenu-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+
+.navmenu-default .navmenu-brand {
+  color: #777777;
+}
+
+.navmenu-default .navmenu-brand:hover,
+.navmenu-default .navmenu-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+
+.navmenu-default .navmenu-text {
+  color: #777777;
+}
+
+.navmenu-default .navmenu-nav > .dropdown > a:hover .caret,
+.navmenu-default .navmenu-nav > .dropdown > a:focus .caret {
+  border-top-color: #333333;
+  border-bottom-color: #333333;
+}
+
+.navmenu-default .navmenu-nav > .open > a,
+.navmenu-default .navmenu-nav > .open > a:hover,
+.navmenu-default .navmenu-nav > .open > a:focus {
+  color: #555555;
+  background-color: #e7e7e7;
+}
+
+.navmenu-default .navmenu-nav > .open > a .caret,
+.navmenu-default .navmenu-nav > .open > a:hover .caret,
+.navmenu-default .navmenu-nav > .open > a:focus .caret {
+  border-top-color: #555555;
+  border-bottom-color: #555555;
+}
+
+.navmenu-default .navmenu-nav > .dropdown > a .caret {
+  border-top-color: #777777;
+  border-bottom-color: #777777;
+}
+
+.navmenu-default .navmenu-nav.dropdown-menu {
+  background-color: #e7e7e7;
+}
+
+.navmenu-default .navmenu-nav.dropdown-menu > .divider {
+  background-color: #f8f8f8;
+}
+
+.navmenu-default .navmenu-nav.dropdown-menu > .active > a,
+.navmenu-default .navmenu-nav.dropdown-menu > .active > a:hover,
+.navmenu-default .navmenu-nav.dropdown-menu > .active > a:focus {
+  background-color: #d7d7d7;
+}
+
+.navmenu-default .navmenu-nav > li > a {
+  color: #777777;
+}
+
+.navmenu-default .navmenu-nav > li > a:hover,
+.navmenu-default .navmenu-nav > li > a:focus {
+  color: #333333;
+  background-color: transparent;
+}
+
+.navmenu-default .navmenu-nav > .active > a,
+.navmenu-default .navmenu-nav > .active > a:hover,
+.navmenu-default .navmenu-nav > .active > a:focus {
+  color: #555555;
+  background-color: #e7e7e7;
+}
+
+.navmenu-default .navmenu-nav > .disabled > a,
+.navmenu-default .navmenu-nav > .disabled > a:hover,
+.navmenu-default .navmenu-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+
+.navmenu-inverse {
+  background-color: #222222;
+  border-color: #080808;
+}
+
+.navmenu-inverse .navmenu-brand {
+  color: #999999;
+}
+
+.navmenu-inverse .navmenu-brand:hover,
+.navmenu-inverse .navmenu-brand:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.navmenu-inverse .navmenu-text {
+  color: #999999;
+}
+
+.navmenu-inverse .navmenu-nav > .dropdown > a:hover .caret,
+.navmenu-inverse .navmenu-nav > .dropdown > a:focus .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.navmenu-inverse .navmenu-nav > .open > a,
+.navmenu-inverse .navmenu-nav > .open > a:hover,
+.navmenu-inverse .navmenu-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #080808;
+}
+
+.navmenu-inverse .navmenu-nav > .open > a .caret,
+.navmenu-inverse .navmenu-nav > .open > a:hover .caret,
+.navmenu-inverse .navmenu-nav > .open > a:focus .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.navmenu-inverse .navmenu-nav > .dropdown > a .caret {
+  border-top-color: #999999;
+  border-bottom-color: #999999;
+}
+
+.navmenu-inverse .navmenu-nav.dropdown-menu {
+  background-color: #080808;
+}
+
+.navmenu-inverse .navmenu-nav.dropdown-menu > .divider {
+  background-color: #222222;
+}
+
+.navmenu-inverse .navmenu-nav.dropdown-menu > .active > a,
+.navmenu-inverse .navmenu-nav.dropdown-menu > .active > a:hover,
+.navmenu-inverse .navmenu-nav.dropdown-menu > .active > a:focus {
+  background-color: #000000;
+}
+
+.navmenu-inverse .navmenu-nav > li > a {
+  color: #999999;
+}
+
+.navmenu-inverse .navmenu-nav > li > a:hover,
+.navmenu-inverse .navmenu-nav > li > a:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.navmenu-inverse .navmenu-nav > .active > a,
+.navmenu-inverse .navmenu-nav > .active > a:hover,
+.navmenu-inverse .navmenu-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #080808;
+}
+
+.navmenu-inverse .navmenu-nav > .disabled > a,
+.navmenu-inverse .navmenu-nav > .disabled > a:hover,
+.navmenu-inverse .navmenu-nav > .disabled > a:focus {
+  color: #444444;
+  background-color: transparent;
+}
+
 .breadcrumb {
   padding: 8px 15px;
   margin-bottom: 20px;
@@ -6189,6 +6407,69 @@ body.modal-open,
   .carousel-indicators {
     bottom: 20px;
   }
+}
+
+.offcanvas {
+  display: none;
+}
+
+.offcanvas.in {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .offcanvas-xs {
+    display: none;
+  }
+  .offcanvas-xs.in {
+    display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .offcanvas-sm {
+    display: none;
+  }
+  .offcanvas-sm.in {
+    display: block;
+  }
+}
+
+@media (max-width: 1199px) {
+  .offcanvas-md {
+    display: none;
+  }
+  .offcanvas-md.in {
+    display: block;
+  }
+}
+
+.offcanvas-lg {
+  display: none;
+}
+
+.offcanvas-lg.in {
+  display: block;
+}
+
+.canvas-sliding {
+  -webkit-transition: -webkit-transform 0.35s;
+          transition: transform 0.35s, -ms-transform 0.35s;
+}
+
+.offcanvas-clone {
+  position: absolute !important;
+  top: auto !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border: none !important;
+  opacity: 0 !important;
 }
 
 .clearfix:before,

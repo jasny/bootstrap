@@ -7,13 +7,13 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Navmenu Template for Bootstrap</title>
+    <title>Off Canvas Reveal Menu Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="navmenu.css" rel="stylesheet">
+    <link href="navmenu-reveal.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -23,12 +23,12 @@
   </head>
 
   <body>
-    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-      <a class="navmenu-brand visible-md visible-lg" href="#">Project name</a>
+    <div class="navmenu navmenu-default navmenu-fixed-left">
+      <a class="navmenu-brand" href="#">Project name</a>
       <ul class="nav navmenu-nav">
-        <li class="active"><a href="./">Slide in</a></li>
+        <li><a href="../navmenu/">Slide in</a></li>
         <li><a href="../navmenu-push/">Push</a></li>
-        <li><a href="../navmenu-reveal/">Reveal</a></li>
+        <li class="active"><a href="./">Reveal</a></li>
       </ul>
       <ul class="nav navmenu-nav">
         <li><a href="#">Link</a></li>
@@ -49,22 +49,25 @@
       </ul>
     </div>
 
-    <div class="navbar navbar-default navbar-fixed-top visible-sm visible-xs">
-      <button type="button" class="navbar-toggle visible-sm visible-xs" data-toggle="offcanvas" data-target=".navmenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Project name</a>
-    </div>
-
-    <div class="container">
-      <div class="page-header">
-        <h1>Navmenu Template</h1>
+    <div class="canvas">
+      <div class="navbar navbar-default navbar-fixed-top">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-      <p class="lead">This example shows the navmenu element. If the viewport is <b>less than 992px</b> the menu will be placed the off canvas and will be shown with a slide in effect.</p>
-      <p>Also take a look at the examples for a navmenu with <a href="../navmenu-push">push effect</a> and <a href="../navmenu-reveal">reveal effect</a>.</p>
-    </div><!-- /.container -->
+
+      <div class="container">
+        <div class="page-header">
+          <h1>Off Canvas Reveal Menu Template</h1>
+        </div>
+        <p class="lead">This example demonstrates the use of the offcanvas plugin with a reveal effect.</p>
+        <p>You get the reveal effect by wrapping the content in a div and setting the <code>canvas</code> option to target that div.</p>
+        <p>Note that in this example, the navmenu doesn't have the <code>.offcanvas</code> class, but is placed under the canvas by setting the <code>z-index</code>.</p>
+        <p>Also take a look at the examples for a navmenu with <a href="../navmenu">slide in effect</a> and <a href="../navmenu-push">push effect</a>.</p>
+      </div><!-- /.container -->
+    </div>
     
 
     <!-- Bootstrap core JavaScript
