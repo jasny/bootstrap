@@ -53,8 +53,8 @@ module.exports = function(grunt) {
           'js/popover.js',
           'js/scrollspy.js',
           'js/tab.js',
-          'js/affix.js'/*,
-          'js/offcanvas.js'*/
+          'js/affix.js',
+          'js/offcanvas.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }

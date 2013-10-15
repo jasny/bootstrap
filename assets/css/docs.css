@@ -96,8 +96,10 @@ body {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.15);
 }
-.bs-docs-nav .navbar-toggle {
+.bs-docs-nav .navbar-toggle,
+.bs-docs-nav .navbar-toggle:focus {
   border-color: rgba(255, 255, 255, 0.3);
+  background: transparent;
 }
 .bs-docs-nav .navbar-toggle:hover {
   background-color: rgba(255, 255, 255, 0.15);
@@ -1164,6 +1166,10 @@ body:not(.bs-twbs-show) .bs-sidenav > li:not(.bs-jasny) {
   padding: 0;
   margin: 0;
 }
+body:not(.bs-twbs-show) tbody.bs-twbs,
 body:not(.bs-twbs-show) tr.bs-twbs {
+  display: none;
+}
+body.bs-twbs-show .bs-jasny-only {
   display: none;
 }
