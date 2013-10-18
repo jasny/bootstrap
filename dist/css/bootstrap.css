@@ -2357,6 +2357,62 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+.btn-labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.btn-label {
+  position: relative;
+  left: -12px;
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px 0 0 3px;
+}
+
+.btn-label.btn-label-right {
+  right: -12px;
+  left: auto;
+  border-radius: 0 3px 3px 0;
+}
+
+.btn-lg .btn-label {
+  left: -16px;
+  padding: 10px 16px;
+  border-radius: 5px 0 0 5px;
+}
+
+.btn-lg .btn-label.btn-label-right {
+  right: -16px;
+  left: auto;
+  border-radius: 0 5px 5px 0;
+}
+
+.btn-sm .btn-label {
+  left: -10px;
+  padding: 5px 10px;
+  border-radius: 2px 0 0 2px;
+}
+
+.btn-sm .btn-label.btn-label-right {
+  right: -10px;
+  left: auto;
+  border-radius: 0 2px 2px 0;
+}
+
+.btn-xs .btn-label {
+  left: -5px;
+  padding: 1px 5px;
+  border-radius: 2px 0 0 2px;
+}
+
+.btn-xs .btn-label.btn-label-right {
+  right: -5px;
+  left: auto;
+  border-radius: 0 2px 2px 0;
+}
+
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
