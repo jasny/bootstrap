@@ -33,12 +33,13 @@ body > .navbar {
 /* Change the docs' brand */
 body > .navbar .brand {
   padding-right: 0;
-  padding-left: 0;
+  padding-left: 65px;
   margin-left: 20px;
   float: right;
   font-weight: bold;
   color: #000;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  background: url("../img/jasny-logo.png") no-repeat scroll -85px -200px transparent;
   -webkit-transition: all .2s linear;
      -moz-transition: all .2s linear;
           transition: all .2s linear;
@@ -48,6 +49,12 @@ body > .navbar .brand:hover {
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
 }
 
+.extended-badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 1;
+}
 
 /* Sections
 -------------------------------------------------- */
@@ -67,6 +74,11 @@ section > ul li {
 /* Separators (hr) */
 .bs-docs-separator {
   margin: 40px 0 39px;
+}
+
+.page-header .header-actions {
+  line-height: 50px;
+  padding: 0;
 }
 
 /* Faded out hr */
@@ -93,14 +105,14 @@ hr.soften {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
-  background: #020031; /* Old browsers */
-  background: -moz-linear-gradient(45deg,  #020031 0%, #6d3353 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* IE10+ */
-  background: linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: #620d0A; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #a51217 0%, #2f0800 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#a51217), color-stop(100%,#2f0800)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg,  #a51217 0%,#2f0800 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg,  #a51217 0%,#2f0800 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg,  #a51217 0%,#2f0800 100%); /* IE10+ */
+  background: linear-gradient(45deg,  #a51217 0%,#2f0800 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a51217', endColorstr='#2f0800',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
      -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
           box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
@@ -133,17 +145,16 @@ hr.soften {
 
 /* Download button */
 .masthead .btn {
-  padding: 19px 24px;
+  padding: 19px 24px 14px 24px;
   font-size: 24px;
+  line-height: 20px;
   font-weight: 200;
+  white-space: pre;
   color: #fff; /* redeclare to override the `.jumbotron a` */
   border: 0;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
   -webkit-transition: none;
      -moz-transition: none;
           transition: none;
@@ -153,12 +164,24 @@ hr.soften {
      -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
           box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
 }
+.masthead .btn-primary {
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5);
+}
+.masthead .btn-warning {
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(248,148,6,.4);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(248,148,6,.4);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(248,148,6,.4);
+}
 .masthead .btn:active {
   -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
      -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
           box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
 }
-
+.masthead .btn small {
+  font-size: 60%;
+}
 
 /* Pattern overlay
 ------------------------- */
@@ -205,6 +228,9 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   font-weight: 200;
   line-height: 1.25;
 }
+.masthead .container {
+  background: transparent url(../img/jasny-logo-emboss.png) no-repeat left bottom;
+}
 
 /* Textual links in masthead */
 .masthead-links {
@@ -237,8 +263,17 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   display: inline-block;
   padding: 5px 8px;
   line-height: 1;
+  vertical-align: top;
   *display: inline;
   *zoom: 1;
+}
+.bs-docs-social-buttons li .btn {
+  padding-top: 1px;
+  line-height: 16px;
+  font-weight: bold;
+}
+.bs-docs-social-buttons .mailchimp-btn i {
+  color: #666;
 }
 
 /* Subhead (other pages)
@@ -262,10 +297,12 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 /* Marketing section of Overview
 -------------------------------------------------- */
 
+.changes,
 .marketing {
   text-align: center;
   color: #5a5a5a;
 }
+.changes h1,
 .marketing h1 {
   margin: 60px 0 10px;
   font-size: 60px;
@@ -273,6 +310,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   line-height: 1;
   letter-spacing: -1px;
 }
+.changes h2,
 .marketing h2 {
   font-weight: 200;
   margin-bottom: 5px;
@@ -281,6 +319,13 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   font-size: 16px;
   line-height: 1.5;
 }
+.changes ul {
+  text-align: left;
+}
+.changes .row {
+  margin-bottom: 9px;
+}
+.changes .marketing-byline,
 .marketing .marketing-byline {
   margin-bottom: 40px;
   font-size: 20px;
@@ -387,6 +432,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   background-color: #dceaf4;
   margin: 0 auto;
   width: 70%;
+  height: 100%;
 }
 .mini-layout.fluid .mini-layout-sidebar,
 .mini-layout.fluid .mini-layout-header,
@@ -396,22 +442,58 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 .mini-layout.fluid .mini-layout-sidebar {
   background-color: #bbd8e9;
   width: 20%;
+  height: 100%;
 }
 .mini-layout.fluid .mini-layout-body {
   width: 77.5%;
   margin-left: 2.5%;
 }
-
+.semifluid-layouts {
+  clear: both;
+  overflow: hidden;
+}
+.semifluid-layouts .mini-layout {
+  width: auto;
+  height: 180px;
+}
+.semifluid-layouts .mini-layout.desktop {
+  width: 62%;
+  float: left;
+}
+.semifluid-layouts .mini-layout.tablet {
+  width: 25%;
+  float: right;
+}
+.mini-layout.tablet .mini-layout-body {
+  width: 100%;
+}
 
 
 /* Download page
 -------------------------------------------------- */
 
+#customupload {
+  display: block;
+  margin-top: 20px;
+  margin-right: 12px;
+  text-align: center;
+}
+
+.affix #customupload {
+  margin-right: 0;
+}
+
+#no-customupload {
+  margin-top: 20px;
+  width: 206px;
+}
+
 .download .page-header {
   margin-top: 36px;
 }
-.page-header .toggle-all {
+.page-header .toggle-all, .page-header .toggle-jasny {
   margin-top: 5px;
+  margin-left: 5px;
 }
 
 /* Space out h3s when following a section */
@@ -516,6 +598,14 @@ h2 + .row {
   height: 200px;
   overflow: auto;
   position: relative;
+}
+
+.note {
+  color: #888;
+}
+
+.note i {
+  color: #000;
 }
 
 
@@ -690,6 +780,13 @@ form.bs-docs-example {
   margin: 20px;
 }
 
+/* Alerts */
+#page-alert-container {
+  position: relative;
+  border-top: 1px solid #DDDDDD;
+  padding-top: 5px;
+}
+
 /* Dropdowns */
 .bs-docs-example-submenus {
   min-height: 180px;
@@ -836,7 +933,7 @@ form.bs-docs-example {
   background-image: url(../img/glyphicons-halflings-white.png);
   opacity: 1;
 }
-.bs-docs-sidenav.affix {
+.bs-docs-sidebar > .affix {
   top: 40px;
 }
 .bs-docs-sidenav.affix-bottom {
@@ -846,53 +943,16 @@ form.bs-docs-example {
 }
 
 
-
-/* Ads in headers
--------------------------------------------------- */
-
-.subhead h1,
-.subhead .lead {
-  margin-right: 340px;
-}
-
-.carbonad {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 0 !important;
-  padding: 15px;
-  height: auto !important;
-  overflow: hidden; /* clearfix */
-  font-size: 13px !important;
-  line-height: 16px !important;
-  background: #222 !important; /* reset image and color in one line */
-  background: rgba(0,0,0,.5) !important;
-  border: 0 !important;
-  border-radius: 4px;
-  box-shadow: inset 0 3px 5px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
-}
-.carbonad-img {
-  margin: 0 !important;
-}
-.carbonad-text,
-.carbonad-tag,
-.carbonad-tag a {
-  color: #fff !important;
-}
-.carbonad-text,
-.carbonad-tag {
-  float: none !important;
-  display: block !important;
-  width: auto !important;
-  height: auto !important;
-  margin-left: 145px !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-.carbonad-text {
-  padding-top: 0 !important;
-}
-.carbonad-tag {
-  text-align: left !important;
+/* Ribbons and ads
+---------------------- */
+#catincan-ribbon {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 40px;
+    left: 0px;
+    width: 192px;
+    height: 198px;
 }
 
 
@@ -911,6 +971,10 @@ form.bs-docs-example {
   .bs-docs-sidenav > li > a {
     width: 230px \9; /* Override the previous IE8-9 hack */
   }
+
+  #catincan-ribbon {
+    display: block;
+  }
 }
 
 /* Desktop
@@ -924,6 +988,11 @@ form.bs-docs-example {
     padding-right: 10px;
   }
 
+  .extended-badge {
+    top: 10px;
+    right: 10px;
+  }
+  
   /* Inline-block quick links for more spacing */
   .quick-links li {
     display: inline-block;
@@ -937,18 +1006,11 @@ form.bs-docs-example {
     margin-top: 30px;
     margin-right: 0;
   }
-
-  .subhead h1,
-  .subhead .lead {
-    margin-right: 0;
+  
+  /* Space out the show-grid examples */
+  .row-desktop.show-grid [class*="span"] {
+    margin-bottom: 5px;
   }
-
-  .carbonad {
-    position: static;
-    width: auto !important;
-    margin-top: 30px !important;
-  }
-
 }
 
 /* Tablet to desktop
@@ -980,6 +1042,10 @@ form.bs-docs-example {
     padding-top: 0;
   }
 
+  .extended-badge {
+      width: 100px;
+  }
+  
   /* Widen masthead and social buttons to fill body padding */
   .jumbotron {
     padding: 40px 20px;
@@ -999,15 +1065,6 @@ form.bs-docs-example {
   }
   .bs-docs-social {
     margin: 0 -20px;
-  }
-
-  .carbonad {
-    position: static;
-    width: auto !important;
-    margin: 40px -20px -40px !important;
-    padding: 20px !important;
-    overflow: hidden; /* clearfix */
-    border-radius: 0;
   }
 
   /* Space out the show-grid examples */
@@ -1046,6 +1103,10 @@ form.bs-docs-example {
     padding-top: 0;
   }
 
+  .extended-badge {
+    display: none;
+  }
+  
   /* Change up some type stuff */
   h2 small {
     display: block;
@@ -1061,7 +1122,7 @@ form.bs-docs-example {
   }
   .jumbotron .btn {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
   }
 
   /* center align subhead text like the masthead */
@@ -1098,6 +1159,12 @@ form.bs-docs-example {
     white-space: normal;
     word-wrap: break-word;
     word-break: break-all;
+  }
+  
+  /* Page alert is show as normal alert */
+  #page-alert-container {
+    border-top-width: 0px;
+    padding: 0;
   }
 
   /* Examples: dropdowns */

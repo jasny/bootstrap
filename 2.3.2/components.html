@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Components · Bootstrap</title>
+    <title>Components · Jasny Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -27,7 +27,7 @@
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_setAccount', 'UA-32388850-1']);
       _gaq.push(['_trackPageview']);
       (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -85,8 +85,8 @@
   <div class="container">
     <h1>Components</h1>
     <p class="lead">Dozens of reusable components built to provide navigation, alerts, popovers, and more.</p>
-    <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZDARK"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
   </div>
+  <a class="extended-badge" href="http://www.jasny.net" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron badge', 'Jasny.net']);"><img src="assets/img/extended-by-jasny.png"></a>
 </header>
 
 
@@ -1067,6 +1067,39 @@
           </div>
 <pre class="prettyprint linenums">
 &lt;div class="tabbable tabs-right"&gt;
+  &lt;ul class="nav nav-tabs"&gt;
+    ...
+  &lt;/ul&gt;
+  &lt;div class="tab-content"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h4>Bordered tabbable</h4>
+          <p>You can place a border around the tab content by adding <code>.tabbable-bordered</code> to the <code>.tabbable.</code></p>
+          <div class="bs-docs-example">
+            <div class="tabbable tabbable-bordered">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#xA" data-toggle="tab">Section 1</a></li>
+                <li><a href="#xB" data-toggle="tab">Section 2</a></li>
+                <li><a href="#xC" data-toggle="tab">Section 3</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="xA">
+                  <p>I'm in Section A.</p>
+                </div>
+                <div class="tab-pane" id="xB">
+                  <p>Howdy, I'm in Section B.</p>
+                </div>
+                <div class="tab-pane" id="xC">
+                  <p>What up girl, this is Section C.</p>
+                </div>
+              </div>
+            </div> <!-- /tabbable -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="tabbable tabbable-bordered"&gt;
   &lt;ul class="nav nav-tabs"&gt;
     ...
   &lt;/ul&gt;
@@ -2180,7 +2213,28 @@
   ...
 &lt;/div&gt;
 </pre>
-
+          
+          <a name="page-alerts"></a>
+          <h3>Page alerts</h3>
+          <p>Know those nice little alerts after you save your profile? With <code>.page-alert</code> the alert will be shown on top op your page.</p>
+          <div id="page-alert-container" class="bs-docs-example">
+            <div class="page-alert">
+              <div class="alert alert-success">
+                <a class="close">×</a>
+                <strong>Success!</strong> Your profile information has been saved.
+              </div>
+            </div>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          </div>
+<pre class="prettyprint linenums">
+&lt;body&gt;
+  &lt;div class="navbar"&gt; ... &lt;/div&gt;
+  &lt;div class="page-alert"&gt;
+    &lt;div class="alert"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
         </section>
 
 
@@ -2593,20 +2647,56 @@ class="clearfix"
     <footer class="footer">
       <div class="container">
         <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Extended with pride by <a href="http://twitter.com/ArnoldDaniels" target="_blank">@ArnoldDaniels</a> of <a href="http://www.jasny.net/" target="_blank">Jasny &middot; web development</a>.</p>
         <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://somerandomdude.com/work/iconic/">Iconic icon set font</a>, licensed under the <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>.</p>
         <ul class="footer-links">
           <li><a href="http://blog.getbootstrap.com">Blog</a></li>
           <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twbs/bootstrap/issues?state=open">Issues</a></li>
+          <li><a href="https://github.com/jasny/bootstrap/issues?state=open">Issues</a></li>
           <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twbs/bootstrap/releases">Changelog</a></li>
+          <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
         </ul>
+
+        <p>Help fund this open source project at <a href="https://www.catincan.com/projects/close/jasny-bootstrap" target="_blank">Catincan</a></p>
       </div>
     </footer>
 
+    <!-- Ribons and ads
+    ================================================== -->
+    <div id="catincan-ribbon"><img src="https://www.catincan.com/sites/all/themes/catincan2/ribbons/images/catincan-ribbon-l02.png" usemap="#triangle"><map name="triangle"><area shape="poly" coords="0,0,192,0,0,198" href="https://www.catincan.com/projects/close/jasny-bootstrap" target="_blank"></map></div>
+    
+    <div id="mailchimp" class="modal hide fade">
+        <form action="http://jasny.us7.list-manage.com/subscribe/post?u=855245ba5e00477a023aeeb93&amp;id=af2f061785" onsubmit="$(this).parent().modal('close')" method="post" name="mc-embedded-subscribe-form" class="form-horizontal modal-form">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Stay updated on Jasny Bootstrap</h3>
+            </div>
+            <div class="modal-body">
+                <div class="control-group">
+                    <label for="mce-EMAIL" class="control-label">Email Address <span class="asterisk">*</span></label>
+                    <div class="controls"><input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required></div>
+                </div>
+                <div class="control-group">
+                    <label for="mce-NAME" class="control-label">Name</label>
+                    <div class="controls"><input type="text" value="" name="NAME" class="" id="mce-NAME"></div>
+                </div>
+                <div class="control-group">
+                    <label for="mce-GITHUB" class="control-label">GitHub username</label>
+                    <div class="controls"><input type="text" value="" name="GITHUB" class="" id="mce-GITHUB"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+            </div>
+        </form>
+        </div>
 
-
+<!--End mc_embed_signup-->        
+    </div>
+    
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -2625,28 +2715,12 @@ class="clearfix"
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-affix.js"></script>
-
+    <script src="assets/js/bootstrap-inputmask.js"></script>
+    <script src="assets/js/bootstrap-rowlink.js"></script>
+    <script src="assets/js/bootstrap-fileupload.js"></script>
     <script src="assets/js/holder/holder.js"></script>
     <script src="assets/js/google-code-prettify/prettify.js"></script>
-
     <script src="assets/js/application.js"></script>
-
-
-    <!-- Analytics
-    ================================================== -->
-    <script>
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
-    </script>
 
   </body>
 </html>
