@@ -22,7 +22,7 @@
 
   var isIphone = (window.orientation !== undefined)
   var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1
-  var isMSIE = navigator.userAgent.match(/msie/i)
+  var isIE = window.navigator.appName == 'Microsoft Internet Explorer'
 
   // INPUTMASK PUBLIC CLASS DEFINITION
   // =================================
@@ -88,7 +88,7 @@
   Inputmask.prototype.listen = function() {
     if (this.$element.attr("readonly")) return
 
-    var pasteEventName = (isMSIE ? 'paste' : 'input') + ".mask"
+    var pasteEventName = (isIE ? 'paste' : 'input') + ".mask"
 
     this.$element
       .on("unmask.bs.inputmask", $.proxy(this.unmask, this))
@@ -202,7 +202,7 @@
         that.caret(pos)
     }
 
-    if (isMSIE) moveCaret()
+    if (isIE) moveCaret()
     else setTimeout(moveCaret, 0)
   }
 
@@ -341,7 +341,7 @@
   // INPUTMASK NO CONFLICT
   // ====================
 
-  $.fn.dropdown.noConflict = function () {
+  $.fn.inputmask.noConflict = function () {
     $.fn.inputmask = old
     return this
   }
