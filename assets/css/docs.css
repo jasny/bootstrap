@@ -1164,28 +1164,12 @@ h1[id] {
   margin-bottom: 0;
 }
 
-body.bs-twbs-statefull .bs-twbs,
-body.bs-twbs-statefull .bs-docs-section,
-body.bs-twbs-statefull .bs-sidenav > li {
-  transition: opacity 2s;
-}
 body:not(.bs-twbs-show) .bs-twbs,
 body:not(.bs-twbs-show) .bs-docs-section:not(.bs-jasny),
-body:not(.bs-twbs-show) .bs-sidenav > li:not(.bs-jasny) {
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-}
-body:not(.bs-twbs-show) tbody.bs-twbs,
-body:not(.bs-twbs-show) tr.bs-twbs {
-  display: none;
-}
+body:not(.bs-twbs-show) .bs-sidenav > li:not(.bs-jasny),
 body.bs-twbs-show .bs-jasny-only {
   display: none;
 }
-
 body:not(.bs-twbs-show) .bs-docs-section:not(.bs-jasny) + .bs-docs-section.bs-jasny {
   padding-top: 0;
 }

@@ -5,7 +5,7 @@
     {% include header.html %}
     <!-- Place anything custom after this. -->
   </head>
-  <body>
+  <body class="{% if page.slug == "customize" %}bs-twbs-show{% endif %}">
     <a class="sr-only" href="#content">Skip navigation</a>
 
     <!-- Docs master nav -->
@@ -43,18 +43,20 @@
           </div>
         </div>
         <div class="col-md-9" role="main">
-          <div class="bs-callout bs-callout-info bs-twbs-toggle">
-            Are you already familiar with Twitter Bootstrap?
+          {% if page.slug != "customize" %}
+            <div class="bs-callout bs-callout-info bs-twbs-toggle">
+              Are you already familiar with Twitter Bootstrap?
 
-            <div class="btn-group pull-right" data-toggle="buttons">
-              <label class="btn btn-default">
-                <input type="radio" name="show-twbs" value="yes"> Yes
-              </label>
-              <label class="btn btn-default">
-                <input type="radio" name="show-twbs" value="no"> No
-              </label>
+              <div class="btn-group pull-right" data-toggle="buttons">
+                <label class="btn btn-default">
+                  <input type="radio" name="show-twbs" value="yes"> Yes
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio" name="show-twbs" value="no"> No
+                </label>
+              </div>
             </div>
-          </div>
+          {% endif %}
 
           {{ content }}
         </div>
