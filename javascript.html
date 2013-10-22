@@ -1912,8 +1912,6 @@ $('#myCarousel').on('slide.bs.carousel', function () {
   </div>
 
   
-  <!-- Overview
-  ================================================== -->
   <!-- Input mask
   ================================================== -->
   <div class="bs-docs-section bs-jasny">
@@ -1998,3 +1996,152 @@ $('.inputmask').inputmask({
     <h4>.inputmask(options)</h4>
     <p>Initializes an input element with an input mask.</p>
   </div>
+
+  
+  
+  <!-- File upload
+  ================================================== -->
+  <div class="bs-docs-section bs-jasny">
+    <div class="page-header">
+      <h1 id="fileupload">File upload <small>fileupload.js</small></h1>
+    </div>
+
+    <h2 id="fileupload-examples">Examples</h2>
+    <p>The file upload plugin allows you to create a visually appealing file or image upload widgets.</p>
+
+    <h3>File upload widgets</h3>
+    <div class="bs-example">
+      <div class="fileupload fileupload-new" data-provides="fileupload">
+        <div class="input-group">
+          <div class="form-control uneditable-input span3"><i class="glyphicon glyphicon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
+          <span class="input-group-addon btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file"></span>
+          <a href="#" class="input-group-addon btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+        </div>
+      </div>
+    </div>
+{% highlight html %}
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <div class="input-group">
+    <div class="form-control uneditable-input span3"><i class="glyphicon glyphicon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
+    <span class="input-group-addon btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
+    <a href="#" class="input-group-addon btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+  </div>
+</div>
+{% endhighlight %}
+    <div class="bs-example">
+      <div class="fileupload fileupload-new" data-provides="fileupload">
+        <span class="btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file"></span>
+        <span class="fileupload-preview"></span>
+        <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">&times;</a>
+      </div>
+    </div>
+{% highlight html %}
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <span class="btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
+  <span class="fileupload-preview"></span>
+  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">&times;</a>
+</div>
+{% endhighlight %}
+
+    <h3>Image upload widgets</h3>
+    <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
+    <div class="bs-example">
+      <div class="fileupload fileupload-new" data-provides="fileupload">
+        <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+        <div>
+          <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file"></span>
+          <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+        </div>
+      </div>
+    </div>
+{% highlight html %}
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+  <div>
+    <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
+    <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+  </div>
+</div>
+{% endhighlight %}
+
+    <div class="bs-example">
+      <div class="fileupload fileupload-new" data-provides="fileupload">
+        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+          <img data-src="holder.js/100%x100%" alt="Generic placeholder thumbnail" src="data:image/png;base64,">
+        </div>
+        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+        <div>
+          <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file"></span>
+          <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+        </div>
+      </div>
+    </div>
+{% highlight html %}
+<div class="fileupload fileupload-new" data-provides="fileupload">
+  <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+    <img data-src="holder.js/100%x100%" alt="...">
+  </div>
+  <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  <div>
+    <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
+    <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+  </div>
+</div>
+{% endhighlight %}
+
+    <div class="bs-callout bs-callout-warning">
+      <p>Image preview only works in IE10+, FF3.6+, Safari6.0+, Chrome6.0+ and Opera11.1+. In older browsers the filename is shown instead.</p>
+    </div>
+
+    <hr class="bs-docs-separator">
+
+
+    <h2 id="fileupload-usage">Usage</h2>
+    <p>
+      The <code>.fileupload</code> element should either have the <code>.fileupload-new</code> or the <code>.fileupload-exists</code> class. Elements inside the container with <code>.fileupload-new</code> and <code>.fileupload-exists</code>
+      are shown or hidden based on the current state. The content of <code>.fileupload-preview</code> is replaced when a file is selected.
+    </p>
+    
+    <h3>Via data attributes</h3>
+    <p>Add <code>data-provides="fileupload"</code> to the <code>.fileupload</code> element. Implement a button to clear the file with <code>data-dismiss="fileupload"</code>.</p>
+
+    <h3>Via JavaScript</h3>
+    <pre class="prettyprint linenums">$('.fileupload').fileupload()</pre>
+
+    <h3>Layout</h3>
+    <p>Using the given elements, you can layout the upload widget the way you want, either with a fixed <code>width</code> and <code>height</code> or with <code>max-width</code> and <code>max-height</code>.</p>
+
+    <h3>Options</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="width: 100px;">Name</th>
+            <th style="width: 50px;">type</th>
+            <th>description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>uploadtype</td>
+            <td>string</td>
+            <td>Choose 'file' or 'image'. If omitted, the type is automatically determined based on the presence of a <code>.thumbnail</code> element.</td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>Use this option instead of setting the <code>name</code> attribute on the <code>&lt;input&gt;</code> element to prevent it from being part of the post data when not changed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <h3>Methods</h3>
+    <h4>.fileupload(options)</h4>
+    <p>Initializes a file upload widget.</p>
+    <h4>.fileupload('clear')</h4>
+    <p>Clear the selected file.</p>
+    <h4>.fileupload('reset')</h4>
+    <p>Reset the form element to the original value.</p>
+  </div>
+  

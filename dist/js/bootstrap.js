@@ -1640,6 +1640,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
         return ($href
           && $href.length
+          && $href.is(':visible')
           && [[ $href[offsetMethod]().top + (!$.isWindow(self.$scrollElement.get(0)) && self.$scrollElement.scrollTop()), href ]]) || null
       })
       .sort(function (a, b) { return a[0] - b[0] })
@@ -2341,6 +2342,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   Inputmask.DEFAULS = {
     mask: "",
     placeholder: "_",
+    lenient: false,
     definitions: {
       '9': "[0-9]",
       'a': "[A-Za-z]",
@@ -2611,7 +2613,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     if (!allow && lastMatch + 1 < this.partialPosition) {
       this.$element.val("")
       this.clearBuffer(0, len)
-    } else if (allow || lastMatch + 1 >= this.partialPosition) {
+    } else if (allow || this.options.linient || lastMatch + 1 >= this.partialPosition) {
       this.writeBuffer()
       if (!allow) this.$element.val(this.$element.val().substring(0, lastMatch + 1))
     }
@@ -2652,6 +2654,178 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     var $this = $(this)
     if ($this.data('inputmask')) return
     $this.inputmask($this.data())
+  })
+
+}(window.jQuery);
+
+/* ===========================================================
+ * Bootstrap: fileupload.js v3.0.0-p7
+ * http://jasny.github.com/bootstrap/javascript.html#fileupload
+ * ===========================================================
+ * Copyright 2012 Jasny BV, Netherlands.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================== */
+
++function ($) { "use strict";
+
+  var isIE = window.navigator.appName == 'Microsoft Internet Explorer'
+
+  // FILEUPLOAD PUBLIC CLASS DEFINITION
+  // =================================
+
+  var Fileupload = function (element, options) {
+    this.$element = $(element)
+    this.type = this.$element.data('uploadtype') || (this.$element.find('.thumbnail').length > 0 ? "image" : "file")
+      
+    this.$input = this.$element.find(':file')
+    if (this.$input.length === 0) return
+
+    this.name = this.$input.attr('name') || options.name
+
+    this.$hidden = this.$element.find('input[type=hidden][name="'+this.name+'"]')
+    if (this.$hidden.length === 0) {
+      this.$hidden = $('<input type="hidden" />')
+      this.$element.prepend(this.$hidden)
+    }
+
+    this.$preview = this.$element.find('.fileupload-preview')
+    var height = this.$preview.css('height')
+    if (this.$preview.css('display') != 'inline' && height != '0px' && height != 'none') this.$preview.css('line-height', height)
+
+    this.original = {
+      exists: this.$element.hasClass('fileupload-exists'),
+      preview: this.$preview.html(),
+      hiddenVal: this.$hidden.val()
+    }
+    
+    this.$remove = this.$element.find('[data-dismiss="fileupload"]')
+
+    this.$element.find('[data-trigger="fileupload"]').on('click.fileupload', $.proxy(this.trigger, this))
+
+    this.listen()
+  }
+  
+  Fileupload.prototype.listen = function() {
+    this.$input.on('change.fileupload', $.proxy(this.change, this))
+    $(this.$input[0].form).on('reset.fileupload', $.proxy(this.reset, this))
+    if (this.$remove) this.$remove.on('click.fileupload', $.proxy(this.clear, this))
+  },
+
+  Fileupload.prototype.change = function(e, invoked) {
+    if (invoked === 'clear') return
+
+    var file = e.target.files !== undefined ? e.target.files[0] : (e.target.value ? { name: e.target.value.replace(/^.+\\/, '') } : null)
+
+    if (!file) {
+      this.clear()
+      return
+    }
+
+    this.$hidden.val('')
+    this.$hidden.attr('name', '')
+    this.$input.attr('name', this.name)
+
+    if (this.type === "image" && this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {
+      var reader = new FileReader()
+      var preview = this.$preview
+      var element = this.$element
+
+      reader.onload = function(e) {
+        var $img = $('<img src="' + e.target.result + '">');
+        
+        // if parent has max-height, using `(max-)height: 100%` on child doesn't take padding and border into account
+        if (preview.css('max-height') != 'none') $img.css('max-height', parseInt(preview.css('max-height'), 10) - parseInt(preview.css('padding-top'), 10) - parseInt(preview.css('padding-bottom'), 10)  - parseInt(preview.css('border-top'), 10) - parseInt(preview.css('border-bottom'), 10))
+        
+        preview.html($img)
+        element.addClass('fileupload-exists').removeClass('fileupload-new')
+      }
+
+      reader.readAsDataURL(file)
+    } else {
+      this.$preview.text(file.name)
+      this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
+    }
+  },
+
+  Fileupload.prototype.clear = function(e) {
+    this.$hidden.val('')
+    this.$hidden.attr('name', this.name)
+    this.$input.attr('name', '')
+
+    //ie8+ doesn't support changing the value of input with type=file so clone instead
+    if (isIE) { 
+      var inputClone = this.$input.clone(true);
+      this.$input.after(inputClone);
+      this.$input.remove();
+      this.$input = inputClone;
+    } else {
+      this.$input.val('')
+    }
+
+    this.$preview.html('')
+    this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
+
+    if (e) {
+      this.$input.trigger('change', [ 'clear' ])
+      e.preventDefault()
+    }
+  },
+
+  Fileupload.prototype.reset = function(e) {
+    this.clear()
+
+    this.$hidden.val(this.original.hiddenVal)
+    this.$preview.html(this.original.preview)
+
+    if (this.original.exists) this.$element.addClass('fileupload-exists').removeClass('fileupload-new')
+     else this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
+  },
+
+  Fileupload.prototype.trigger = function(e) {
+    this.$input.trigger('click')
+    e.preventDefault()
+  }
+
+  
+  // FILEUPLOAD PLUGIN DEFINITION
+  // ===========================
+
+  $.fn.fileupload = function (options) {
+    return this.each(function () {
+      var $this = $(this)
+      , data = $this.data('fileupload')
+      if (!data) $this.data('fileupload', (data = new Fileupload(this, options)))
+      if (typeof options == 'string') data[options]()
+    })
+  }
+
+  $.fn.fileupload.Constructor = Fileupload
+
+
+  // FILEUPLOAD DATA-API
+  // ==================
+
+  $(document).on('click.fileupload.data-api', '[data-provides="fileupload"]', function (e) {
+    var $this = $(this)
+    if ($this.data('fileupload')) return
+    $this.fileupload($this.data())
+      
+    var $target = $(e.target).closest('[data-dismiss="fileupload"],[data-trigger="fileupload"]');
+    if ($target.length > 0) {
+      $target.trigger('click.fileupload')
+      e.preventDefault()
+    }
   })
 
 }(window.jQuery);

@@ -6528,6 +6528,124 @@ body.modal-open,
   opacity: 0 !important;
 }
 
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.btn-file > input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  font-size: 23px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transform: translate(-300px, 0) scale(4);
+  direction: ltr;
+}
+
+.fileupload {
+  margin-bottom: 9px;
+}
+
+.fileupload .uneditable-input {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  cursor: text;
+}
+
+.fileupload .thumbnail {
+  display: inline-block;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.fileupload .thumbnail > img {
+  max-height: 100%;
+}
+
+.fileupload .btn {
+  vertical-align: middle;
+}
+
+.fileupload-exists .fileupload-new,
+.fileupload-new .fileupload-exists {
+  display: none;
+}
+
+.fileupload-inline .fileupload-controls {
+  display: inline;
+}
+
+.thumbnail-borderless .thumbnail {
+  padding: 0;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.fileupload-new .input-group .btn-file {
+  border-radius: 0 4px 4px 0;
+}
+
+.fileupload-new .input-group .btn-file.btn-xs,
+.fileupload-new .input-group .btn-file.btn-sm {
+  border-radius: 0 3px 3px 0;
+}
+
+.fileupload-new .input-group .btn-file.btn-lg {
+  border-radius: 0 6px 6px 0;
+}
+
+.form-group.has-warning .fileupload .uneditable-input {
+  color: #c09853;
+  border-color: #fbeed5;
+}
+
+.form-group.has-warning .fileupload .fileupload-preview {
+  color: #c09853;
+}
+
+.form-group.has-warning .fileupload .thumbnail {
+  border-color: #fbeed5;
+}
+
+.form-group.has-error .fileupload .uneditable-input {
+  color: #b94a48;
+  border-color: #eed3d7;
+}
+
+.form-group.has-error .fileupload .fileupload-preview {
+  color: #b94a48;
+}
+
+.form-group.has-error .fileupload .thumbnail {
+  border-color: #eed3d7;
+}
+
+.form-group.has-success .fileupload .uneditable-input {
+  color: #468847;
+  border-color: #d6e9c6;
+}
+
+.form-group.has-success .fileupload .fileupload-preview {
+  color: #468847;
+}
+
+.form-group.has-success .fileupload .thumbnail {
+  border-color: #d6e9c6;
+}
+
+.input-group-addon:not(:first-child) {
+  border-left: 0;
+}
+
 .clearfix:before,
 .clearfix:after {
   display: table;

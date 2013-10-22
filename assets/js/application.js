@@ -12,8 +12,6 @@
     var navHeight = $('.navbar').outerHeight(true) + 10
 
     // show/hide Twitter Bootstrap docs
-    $('.bs-twbs-toggle :radio')
-    
     var hide_twbs = localStorage && localStorage.hide_twbs ? localStorage.hide_twbs : 'yes'
     $('.bs-twbs-toggle :radio')
       .attr('checked', function() {
@@ -25,9 +23,6 @@
         $body.scrollspy('refresh')
       })
     $('.bs-twbs-toggle label').removeClass('active').has(':radio[checked]').addClass('active')
-    
-    if (hide_twbs === 'no') $('body').addClass('bs-twbs-show')
-    if (localStorage) localStorage.hide_twbs = hide_twbs
     
     // scrollspy
     $body.scrollspy({

@@ -6,6 +6,10 @@
     <!-- Place anything custom after this. -->
   </head>
   <body class="{% if page.slug == "customize" %}bs-twbs-show{% endif %}">
+    <script type="text/javascript">
+      if (localStorage && localStorage.hide_twbs === 'no') document.body.setAttribute('class', 'bs-twbs-show')
+    </script>
+    
     <a class="sr-only" href="#content">Skip navigation</a>
 
     <!-- Docs master nav -->
