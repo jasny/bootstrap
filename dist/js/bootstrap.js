@@ -1999,8 +1999,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 }(window.jQuery);
 
 /* ========================================================================
- * Bootstrap: offcanvas.js v3.0.0
- * http://twbs.github.com/bootstrap/javascript.html#offcanvas
+ * Bootstrap: offcanvas.js v3.0.0-p7
+ * http://jasny.github.io/bootstrap/javascript.html#offcanvas
  * 
  * Based on Boostrap collapse.js by Twitter, Inc. 
  * ========================================================================

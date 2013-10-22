@@ -11,6 +11,25 @@
 
     var navHeight = $('.navbar').outerHeight(true) + 10
 
+    // show/hide Twitter Bootstrap docs
+    $('.bs-twbs-toggle :radio')
+    
+    var hide_twbs = localStorage && localStorage.hide_twbs ? localStorage.hide_twbs : 'yes'
+    $('.bs-twbs-toggle :radio')
+      .attr('checked', function() {
+        return $(this).val() === hide_twbs
+      })
+      .on('change', function() {
+        $(this).val() === 'no' ? $('body').addClass('bs-twbs-show') : $('body').removeClass('bs-twbs-show')
+        if (localStorage) localStorage.hide_twbs = $(this).val()
+        $body.scrollspy('refresh')
+      })
+    $('.bs-twbs-toggle label').removeClass('active').has(':radio[checked]').addClass('active')
+    
+    if (hide_twbs === 'no') $('body').addClass('bs-twbs-show')
+    if (localStorage) localStorage.hide_twbs = hide_twbs
+    
+    // scrollspy
     $body.scrollspy({
       target: '.bs-sidebar',
       offset: navHeight
@@ -24,20 +43,6 @@
       e.preventDefault()
     })
 
-    // show/hide Twitter Bootstrap docs
-    $('.bs-twbs-toggle :radio').on('change', function() {
-      $(this).val() === 'no' ? $('body').addClass('bs-twbs-show') : $('body').removeClass('bs-twbs-show')
-      if (localStorage) localStorage.hide_twbs = $(this).val()
-      $body.scrollspy('refresh')
-    })
-    
-    var hide_twbs = localStorage && localStorage.hide_twbs ? localStorage.hide_twbs : 'yes'
-    $('.bs-twbs-toggle :radio').attr('checked', function() {
-      return $(this).val() === hide_twbs }
-    ).filter(':checked').trigger('change')
-    $('.bs-twbs-toggle label').removeClass('active').has(':radio[checked]').addClass('active')
-    $('body').addClass('bs-twbs-statefull');
-    
     // back to top
     setTimeout(function () {
       var $sideBar = $('.bs-sidebar')

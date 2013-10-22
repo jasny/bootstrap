@@ -630,6 +630,10 @@ h1[id] {
   padding-top: 80px;
   margin-top: -45px;
 }
+h2[id], h3[id] {
+  padding-top: 65px;
+  margin-top: -20px;
+}
 
 
 /*
@@ -1225,11 +1229,17 @@ h1[id] {
 
 body:not(.bs-twbs-show) .bs-twbs,
 body:not(.bs-twbs-show) .bs-docs-section:not(.bs-jasny),
-body:not(.bs-twbs-show) .bs-sidenav > li:not(.bs-jasny),
+body:not(.bs-twbs-show) .bs-sidenav > li:not(.bs-jasny) {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body:not(.bs-twbs-show) table .bs-twbs,
 body.bs-twbs-show .bs-jasny-only {
   display: none;
-  height: 0;
 }
+
 body:not(.bs-twbs-show) .bs-docs-section:not(.bs-jasny) + .bs-docs-section.bs-jasny {
   padding-top: 0;
 }
