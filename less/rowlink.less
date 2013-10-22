@@ -1,0 +1,20 @@
+//
+// Rowlink
+// --------------------------------------------------
+
+.table.rowlink,
+.table .rowlink {
+  td:not(.nolink) {
+    cursor: pointer;
+
+    a {
+      color: inherit;
+      font: inherit;
+      text-decoration: inherit;
+    }
+  }
+
+  tr:hover td {
+    background-color: darken(@tableBackgroundHover, 15%);
+  }
+}
