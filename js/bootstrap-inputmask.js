@@ -31,24 +31,24 @@
 
   var Inputmask = function (element, options) {
     if (isAndroid) return // No support because caret positioning doesn't work on Android
-    
+
     this.$element = $(element)
     this.options = $.extend({}, $.fn.inputmask.defaults, options)
     this.mask = String(options.mask)
-    
+
     this.init()
     this.listen()
-        
+
     this.checkVal() //Perform initial check for existing values
   }
 
   Inputmask.prototype = {
-    
+
     init: function() {
       var defs = this.options.definitions
       var len = this.mask.length
 
-      this.tests = [] 
+      this.tests = []
       this.partialPosition = this.mask.length
       this.firstNonMaskPos = null
 
@@ -68,7 +68,7 @@
       this.buffer = $.map(this.mask.split(""), $.proxy(function(c, i) {
         if (c != '?') return defs[c] ? this.options.placeholder : c
       }, this))
-      
+
       this.focusText = this.$element.val()
 
       this.$element.data("rawMaskFn", $.proxy(function() {
@@ -77,7 +77,7 @@
         }).join('')
       }, this))
     },
-    
+
     listen: function() {
       if (this.$element.attr("readonly")) return
 
@@ -85,10 +85,10 @@
 
       this.$element
         .on("unmask", $.proxy(this.unmask, this))
-        
+
         .on("focus.mask", $.proxy(this.focusEvent, this))
         .on("blur.mask", $.proxy(this.blurEvent, this))
-        
+
         .on("keydown.mask", $.proxy(this.keydownEvent, this))
         .on("keypress.mask", $.proxy(this.keypressEvent, this))
 
@@ -121,30 +121,30 @@
           end = begin + range.text.length
         }
         return {
-          begin: begin, 
+          begin: begin,
           end: end
         }
       }
     },
-    
+
     seekNext: function(pos) {
       var len = this.mask.length
       while (++pos <= len && !this.tests[pos]);
-      
+
       return pos
     },
-    
+
     seekPrev: function(pos) {
       while (--pos >= 0 && !this.tests[pos]);
-      
+
       return pos
     },
 
     shiftL: function(begin,end) {
       var len = this.mask.length
-      
+
       if(begin<0) return
-      
+
       for (var i = begin,j = this.seekNext(end); i < len; i++) {
         if (this.tests[i]) {
           if (j < len && this.tests[i].test(this.buffer[j])) {
@@ -161,7 +161,7 @@
 
     shiftR: function(pos) {
       var len = this.mask.length
-      
+
       for (var i = pos, c = this.options.placeholder; i < len; i++) {
         if (this.tests[i]) {
           var j = this.seekNext(i)
@@ -180,10 +180,10 @@
         .unbind(".mask")
         .removeData("inputmask")
     },
-    
+
     focusEvent: function() {
       this.focusText = this.$element.val()
-      var len = this.mask.length 
+      var len = this.mask.length
       var pos = this.checkVal()
       this.writeBuffer()
 
@@ -200,13 +200,13 @@
       else
         setTimeout(moveCaret, 0)
     },
-    
+
     blurEvent: function() {
       this.checkVal()
       if (this.$element.val() != this.focusText)
         this.$element.trigger('change')
     },
-        
+
     keydownEvent: function(e) {
       var k=e.which
 
@@ -215,7 +215,7 @@
         var pos = this.caret(),
         begin = pos.begin,
         end = pos.end
-						
+
         if (end-begin === 0) {
           begin = k!=46 ? this.seekPrev(begin) : (end=this.seekNext(begin-1))
           end = k==46 ? this.seekNext(end) : end
@@ -233,7 +233,7 @@
 
     keypressEvent: function(e) {
       var len = this.mask.length
-      
+
       var k = e.which,
       pos = this.caret()
 
@@ -262,15 +262,15 @@
 
     pasteEvent: function() {
       var that = this
-      
+
       setTimeout(function() {
         that.caret(that.checkVal(true))
       }, 0)
     },
-    
+
     clearBuffer: function(start, end) {
       var len = this.mask.length
-      
+
       for (var i = start; i < end && i < len; i++) {
         if (this.tests[i])
           this.buffer[i] = this.options.placeholder
@@ -286,7 +286,7 @@
       //try to place characters where they belong
       var test = this.$element.val()
       var lastMatch = -1
-      
+
       for (var i = 0, pos = 0; i < len; i++) {
         if (this.tests[i]) {
           this.buffer[i] = this.options.placeholder
@@ -306,8 +306,10 @@
         }
       }
       if (!allow && lastMatch + 1 < this.partialPosition) {
-        this.$element.val("")
-        this.clearBuffer(0, len)
+        if (this.options.clearfield) {
+          this.$element.val("")
+          this.clearBuffer(0, len)
+        }
       } else if (allow || lastMatch + 1 >= this.partialPosition) {
         this.writeBuffer()
         if (!allow) this.$element.val(this.$element.val().substring(0, lastMatch + 1))
@@ -316,7 +318,6 @@
     }
   }
 
-  
  /* INPUTMASK PLUGIN DEFINITION
   * =========================== */
 
@@ -331,6 +332,7 @@
   $.fn.inputmask.defaults = {
     mask: "",
     placeholder: "_",
+    clearfield: true,
     definitions: {
       '9': "[0-9]",
       'a': "[A-Za-z]",
@@ -353,3 +355,4 @@
   })
 
 }(window.jQuery);
+
