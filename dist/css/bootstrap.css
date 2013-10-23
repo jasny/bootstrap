@@ -4672,22 +4672,22 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-radius: 4px;
 }
 
-.navmenu-fixed-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1030;
-  border-width: 1px 1px 1px 0;
-  border-radius: 0;
-}
-
+.navmenu-fixed-left,
 .navmenu-fixed-right {
   position: fixed;
   top: 0;
-  right: 0;
   z-index: 1030;
-  border-width: 1px 0 1px 1px;
   border-radius: 0;
+}
+
+.navmenu-fixed-left {
+  left: 0;
+  border-width: 0 1px 0 0;
+}
+
+.navmenu-fixed-right {
+  right: 0;
+  border-width: 0 0 0 1px;
 }
 
 .navmenu-nav {

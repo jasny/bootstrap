@@ -36,6 +36,16 @@ body {
   padding-top: 50px; /* Account for fixed navbar */
 }
 
+/* Fix */
+span.hidden-sm {
+  display: inline !important;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  span.hidden-sm {
+    display: none !important;
+  }
+}
+
 /* Keep code small in tables on account of limited space */
 .table code {
   font-size: 13px;
@@ -879,6 +889,44 @@ h2[id], h3[id] {
   .bs-navbar-bottom-example {
     border-radius: 4px 4px 0 0;
   }
+}
+
+.bs-navmenu-fixed-example {
+  height: 200px;
+  padding-left: 315px;
+}
+.bs-navmenu-fixed-example:after {
+  left: 315px;
+}
+
+.bs-navmenu-offcanvas-example {
+  min-height: 200px;
+  overflow: hidden;
+}
+.bs-navmenu-offcanvas-example:after {
+  display: none;
+}
+.bs-navmenu-offcanvas-example > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 70px 15px 15px 15px;
+}
+.bs-navmenu-offcanvas-example p {
+  color: #bbb;
+}
+.bs-navmenu-fixed-example .navmenu-fixed-left,
+.bs-navmenu-offcanvas-example .navmenu-fixed-left,
+.bs-navmenu-offcanvas-example .navbar-fixed-top {
+  position: absolute;
+  z-index: 1;
+}
+.bs-navmenu-offcanvas-example .navbar-toggle {
+  float: left;
+  margin-left: 15px;
+  display: block;
 }
 
 /* Pagination */
