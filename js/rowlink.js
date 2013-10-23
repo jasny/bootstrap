@@ -23,7 +23,7 @@
     this.$element = $(element)
     this.options = $.extend({}, Rowlink.DEFAULTS, options)
     
-    this.$element.on('click.bs.rowlink', 'td:not(.nolink)', $.proxy(this.click, this))
+    this.$element.on('click.bs.rowlink', 'td:not(.rowlink-skip)', $.proxy(this.click, this))
   }
 
   Rowlink.DEFAULTS = {
@@ -31,10 +31,18 @@
   }
 
   Rowlink.prototype.click = function(e) {
-    if ($(e.target).is('a')) return
+    var target = $(e.currentTarget).closest('tr').find(this.options.target)[0]
+    if ($(e.target)[0] === target) return
     
     e.preventDefault();
-    $(e.currentTarget).closest('tr').find(this.options.target).trigger('click')
+    
+    if (target.click) {
+      target.click()
+    } else if(document.createEvent) {
+      var evt = document.createEvent("MouseEvents"); 
+      evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null); 
+      target.dispatchEvent(evt);
+    }
   }
 
   
@@ -68,6 +76,7 @@
     var $this = $(this)
     if ($this.data('rowlink')) return
     $this.rowlink($this.data())
+    $(e.target).trigger('click.bs.rowlink')
   })
   
 }(window.jQuery);

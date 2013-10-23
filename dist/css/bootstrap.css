@@ -6528,6 +6528,23 @@ body.modal-open,
   opacity: 0 !important;
 }
 
+.table.rowlink td:not(.rowlink-skip),
+.table .rowlink td:not(.rowlink-skip) {
+  cursor: pointer;
+}
+
+.table.rowlink td:not(.rowlink-skip) a,
+.table .rowlink td:not(.rowlink-skip) a {
+  font: inherit;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.table.rowlink tr:hover td,
+.table .rowlink tr:hover td {
+  background-color: #cfcfcf;
+}
+
 .btn-file {
   position: relative;
   overflow: hidden;

@@ -55,6 +55,7 @@ module.exports = function(grunt) {
           'js/tab.js',
           'js/affix.js',
           'js/offcanvas.js',
+          'js/rowlink.js',
           'js/inputmask.js',
           'js/fileupload.js'
         ],

@@ -4,7 +4,7 @@
 
 .table.rowlink,
 .table .rowlink {
-  td:not(.nolink) {
+  td:not(.rowlink-skip) {
     cursor: pointer;
 
     a {
@@ -15,6 +15,6 @@
   }
 
   tr:hover td {
-    background-color: darken(@tableBackgroundHover, 15%);
+    background-color: darken(@table-bg-hover, 15%);
   }
 }
