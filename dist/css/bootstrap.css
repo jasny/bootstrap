@@ -6540,8 +6540,8 @@ body.modal-open,
   text-decoration: inherit;
 }
 
-.table.rowlink tr:hover td,
-.table .rowlink tr:hover td {
+.table-hover.rowlink tr:hover td,
+.table-hover .rowlink tr:hover td {
   background-color: #cfcfcf;
 }
 
