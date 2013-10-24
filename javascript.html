@@ -2230,7 +2230,7 @@ $('.inputmask').inputmask({
     <div class="bs-example">
       <div class="fileupload fileupload-new" data-provides="fileupload">
         <div class="input-group">
-          <div class="form-control uneditable-input span3"><i class="glyphicon glyphicon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
+          <div class="form-control uneditable-input span3" data-trigger="fileupload"><i class="glyphicon glyphicon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
           <span class="input-group-addon btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file"></span>
           <a href="#" class="input-group-addon btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
         </div>
@@ -2239,12 +2239,13 @@ $('.inputmask').inputmask({
 {% highlight html %}
 <div class="fileupload fileupload-new" data-provides="fileupload">
   <div class="input-group">
-    <div class="form-control uneditable-input span3"><i class="glyphicon glyphicon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
+    <div class="form-control uneditable-input span3" data-trigger="fileupload"><i class="glyphicon glyphicon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
     <span class="input-group-addon btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
     <a href="#" class="input-group-addon btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
   </div>
 </div>
 {% endhighlight %}
+
     <div class="bs-example">
       <div class="fileupload fileupload-new" data-provides="fileupload">
         <span class="btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file"></span>
@@ -2264,7 +2265,7 @@ $('.inputmask').inputmask({
     <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
     <div class="bs-example">
       <div class="fileupload fileupload-new" data-provides="fileupload">
-        <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+        <div class="fileupload-preview thumbnail" data-trigger="fileupload" style="width: 200px; height: 150px;"></div>
         <div>
           <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file"></span>
           <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
@@ -2273,7 +2274,7 @@ $('.inputmask').inputmask({
     </div>
 {% highlight html %}
 <div class="fileupload fileupload-new" data-provides="fileupload">
-  <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+  <div class="fileupload-preview thumbnail" data-trigger="fileupload" style="width: 200px; height: 150px;"></div>
   <div>
     <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
     <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
@@ -2320,7 +2321,7 @@ $('.inputmask').inputmask({
     </p>
     
     <h3>Via data attributes</h3>
-    <p>Add <code>data-provides="fileupload"</code> to the <code>.fileupload</code> element. Implement a button to clear the file with <code>data-dismiss="fileupload"</code>.</p>
+    <p>Add <code>data-provides="fileupload"</code> to the <code>.fileupload</code> element. Implement a button to clear the file with <code>data-dismiss="fileupload"</code>. Add <code>data-trigger="fileupload"</code> to any element within the <code>.fileupload</code> widget to trigger the file dialog.</p>
 
     <h3>Via JavaScript</h3>
     <pre class="prettyprint linenums">$('.fileupload').fileupload()</pre>

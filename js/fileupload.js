@@ -51,15 +51,15 @@
     
     this.$remove = this.$element.find('[data-dismiss="fileupload"]')
 
-    this.$element.find('[data-trigger="fileupload"]').on('click.fileupload', $.proxy(this.trigger, this))
+    this.$element.find('[data-trigger="fileupload"]').on('click.bs.fileupload', $.proxy(this.trigger, this))
 
     this.listen()
   }
   
   Fileupload.prototype.listen = function() {
-    this.$input.on('change.fileupload', $.proxy(this.change, this))
-    $(this.$input[0].form).on('reset.fileupload', $.proxy(this.reset, this))
-    if (this.$remove) this.$remove.on('click.fileupload', $.proxy(this.clear, this))
+    this.$input.on('change.bs.fileupload', $.proxy(this.change, this))
+    $(this.$input[0].form).on('reset.bs.fileupload', $.proxy(this.reset, this))
+    if (this.$remove) this.$remove.on('click.bs.fileupload', $.proxy(this.clear, this))
   },
 
   Fileupload.prototype.change = function(e, invoked) {
@@ -117,7 +117,7 @@
     this.$element.addClass('fileupload-new').removeClass('fileupload-exists')
 
     if (e) {
-      this.$input.trigger('change', [ 'clear' ])
+      this.$input.trigger('change.bs.fileupload', [ 'clear' ])
       e.preventDefault()
     }
   },
@@ -163,8 +163,8 @@
       
     var $target = $(e.target).closest('[data-dismiss="fileupload"],[data-trigger="fileupload"]');
     if ($target.length > 0) {
-      $target.trigger('click.fileupload')
       e.preventDefault()
+      $target.trigger('click.bs.fileupload')
     }
   })
 
