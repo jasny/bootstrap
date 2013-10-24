@@ -11,13 +11,13 @@ exclude:          [".editorconfig", ".gitignore", ".ruby-version", "bower.json",
 port:             9001
 
 # Custom vars
-repo:             https://github.com/twbs/bootstrap
-download:         https://github.com/twbs/bootstrap/archive/v3.0.0.zip
-download_dist:    https://github.com/twbs/bootstrap/releases/download/v3.0.0/bootstrap-3.0.0-dist.zip
+repo:             https://github.com/jasny/bootstrap
+download:         https://github.com/jasny/bootstrap/archive/v3.0.0.zip
+download_dist:    https://github.com/jasny/bootstrap/releases/download/v3.0.0/bootstrap-3.0.0-dist.zip
 
 blog:             http://blog.getbootstrap.com
 expo:             http://expo.getbootstrap.com
 
-cdn_css:          //netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css
-cdn_theme_css:    //netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css
-cdn_js:           //netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js
+cdn_css:          //cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.0-p7/css/bootstrap.min.css
+cdn_theme_css:    //cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.0-p7/css/bootstrap-theme.min.css
+cdn_js:           //cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.0-p7/js/bootstrap.min.js
