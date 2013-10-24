@@ -6565,6 +6565,7 @@ body.modal-open,
 }
 
 .fileupload {
+  display: inline-block;
   margin-bottom: 9px;
 }
 
