@@ -2584,8 +2584,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         that.caret(pos)
     }
 
-    if (isIE) moveCaret()
-    else setTimeout(moveCaret, 0)
+    moveCaret()
+    setTimeout(moveCaret, 50)
   }
 
   Inputmask.prototype.blurEvent = function() {
