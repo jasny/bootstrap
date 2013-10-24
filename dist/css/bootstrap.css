@@ -6601,6 +6601,10 @@ body.modal-open,
   display: inline;
 }
 
+.fileupload .uneditable-input {
+  white-space: normal;
+}
+
 .thumbnail-borderless .thumbnail {
   padding: 0;
   border: none;
