@@ -57,7 +57,7 @@ module.exports = function(grunt) {
           'js/offcanvas.js',
           'js/rowlink.js',
           'js/inputmask.js',
-          'js/fileupload.js'
+          'js/fileinput.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
@@ -135,7 +135,7 @@ module.exports = function(grunt) {
       },
       files: {
         src: ["_gh_pages/**/*.html"],
-        filter: function(file) { return !file.match(/^_gh_pages\/2.3.2\//) }
+        filter: function(file) { return !file.match(/^_gh_pages\/2\.3\.1\//) }
       }
     },
 

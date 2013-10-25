@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v3.0.0
+ * Bootstrap v3.0.0-p7
  *
  * Copyright 2013 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -6564,19 +6564,19 @@ body.modal-open,
   direction: ltr;
 }
 
-.fileupload {
+.fileinput {
   display: inline-block;
   margin-bottom: 9px;
 }
 
-.fileupload .uneditable-input {
+.fileinput .uneditable-input {
   display: inline-block;
   margin-bottom: 0;
   vertical-align: middle;
   cursor: text;
 }
 
-.fileupload .thumbnail {
+.fileinput .thumbnail {
   display: inline-block;
   margin-bottom: 5px;
   overflow: hidden;
@@ -6584,24 +6584,24 @@ body.modal-open,
   vertical-align: middle;
 }
 
-.fileupload .thumbnail > img {
+.fileinput .thumbnail > img {
   max-height: 100%;
 }
 
-.fileupload .btn {
+.fileinput .btn {
   vertical-align: middle;
 }
 
-.fileupload-exists .fileupload-new,
-.fileupload-new .fileupload-exists {
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
   display: none;
 }
 
-.fileupload-inline .fileupload-controls {
+.fileinput-inline .fileinput-controls {
   display: inline;
 }
 
-.fileupload .uneditable-input {
+.fileinput .uneditable-input {
   white-space: normal;
 }
 
@@ -6612,55 +6612,55 @@ body.modal-open,
           box-shadow: none;
 }
 
-.fileupload-new .input-group .btn-file {
+.fileinput-new .input-group .btn-file {
   border-radius: 0 4px 4px 0;
 }
 
-.fileupload-new .input-group .btn-file.btn-xs,
-.fileupload-new .input-group .btn-file.btn-sm {
+.fileinput-new .input-group .btn-file.btn-xs,
+.fileinput-new .input-group .btn-file.btn-sm {
   border-radius: 0 3px 3px 0;
 }
 
-.fileupload-new .input-group .btn-file.btn-lg {
+.fileinput-new .input-group .btn-file.btn-lg {
   border-radius: 0 6px 6px 0;
 }
 
-.form-group.has-warning .fileupload .uneditable-input {
+.form-group.has-warning .fileinput .uneditable-input {
   color: #c09853;
   border-color: #fbeed5;
 }
 
-.form-group.has-warning .fileupload .fileupload-preview {
+.form-group.has-warning .fileinput .fileinput-preview {
   color: #c09853;
 }
 
-.form-group.has-warning .fileupload .thumbnail {
+.form-group.has-warning .fileinput .thumbnail {
   border-color: #fbeed5;
 }
 
-.form-group.has-error .fileupload .uneditable-input {
+.form-group.has-error .fileinput .uneditable-input {
   color: #b94a48;
   border-color: #eed3d7;
 }
 
-.form-group.has-error .fileupload .fileupload-preview {
+.form-group.has-error .fileinput .fileinput-preview {
   color: #b94a48;
 }
 
-.form-group.has-error .fileupload .thumbnail {
+.form-group.has-error .fileinput .thumbnail {
   border-color: #eed3d7;
 }
 
-.form-group.has-success .fileupload .uneditable-input {
+.form-group.has-success .fileinput .uneditable-input {
   color: #468847;
   border-color: #d6e9c6;
 }
 
-.form-group.has-success .fileupload .fileupload-preview {
+.form-group.has-success .fileinput .fileinput-preview {
   color: #468847;
 }
 
-.form-group.has-success .fileupload .thumbnail {
+.form-group.has-success .fileinput .thumbnail {
   border-color: #d6e9c6;
 }
 

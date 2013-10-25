@@ -2216,93 +2216,93 @@ $('.inputmask').inputmask({
 
   
   
-  <!-- File upload
+  <!-- File input
   ================================================== -->
   <div class="bs-docs-section bs-jasny">
     <div class="page-header">
-      <h1 id="fileupload">File upload <small>fileupload.js</small></h1>
+      <h1 id="fileinput">File input <small>fileinput.js</small></h1>
     </div>
 
-    <h2 id="fileupload-examples">Examples</h2>
-    <p>The file upload plugin allows you to create a visually appealing file or image upload widgets.</p>
+    <h2 id="fileinput-examples">Examples</h2>
+    <p>The file input plugin allows you to create a visually appealing file or image input widgets.</p>
 
-    <h3>File upload widgets</h3>
+    <h3>File input widgets</h3>
     <div class="bs-example">
-      <div class="fileupload fileupload-new" data-provides="fileupload">
+      <div class="fileinput fileinput-new" data-provides="fileinput">
         <div class="input-group">
-          <div class="form-control uneditable-input span3" data-trigger="fileupload"><i class="glyphicon glyphicon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
-          <span class="input-group-addon btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file"></span>
-          <a href="#" class="input-group-addon btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+          <div class="form-control uneditable-input span3" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-preview"></span></div>
+          <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file"></span>
+          <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
         </div>
       </div>
     </div>
 {% highlight html %}
-<div class="fileupload fileupload-new" data-provides="fileupload">
+<div class="fileinput fileinput-new" data-provides="fileinput">
   <div class="input-group">
-    <div class="form-control uneditable-input span3" data-trigger="fileupload"><i class="glyphicon glyphicon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
-    <span class="input-group-addon btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
-    <a href="#" class="input-group-addon btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+    <div class="form-control uneditable-input span3" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-preview"></span></div>
+    <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+    <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
   </div>
 </div>
 {% endhighlight %}
 
     <div class="bs-example">
-      <div class="fileupload fileupload-new" data-provides="fileupload">
-        <span class="btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file"></span>
-        <span class="fileupload-preview"></span>
-        <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">&times;</a>
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file"></span>
+        <span class="fileinput-preview"></span>
+        <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
       </div>
     </div>
 {% highlight html %}
-<div class="fileupload fileupload-new" data-provides="fileupload">
-  <span class="btn btn-default btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
-  <span class="fileupload-preview"></span>
-  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">&times;</a>
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+  <span class="fileinput-preview"></span>
+  <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
 </div>
 {% endhighlight %}
 
     <h3>Image upload widgets</h3>
     <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
     <div class="bs-example">
-      <div class="fileupload fileupload-new" data-provides="fileupload">
-        <div class="fileupload-preview thumbnail" data-trigger="fileupload" style="width: 200px; height: 150px;"></div>
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
         <div>
-          <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file"></span>
-          <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file"></span>
+          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
         </div>
       </div>
     </div>
 {% highlight html %}
-<div class="fileupload fileupload-new" data-provides="fileupload">
-  <div class="fileupload-preview thumbnail" data-trigger="fileupload" style="width: 200px; height: 150px;"></div>
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
   <div>
-    <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
-    <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
   </div>
 </div>
 {% endhighlight %}
 
     <div class="bs-example">
-      <div class="fileupload fileupload-new" data-provides="fileupload">
-        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
           <img data-src="holder.js/100%x100%" alt="Generic placeholder thumbnail" src="data:image/png;base64,">
         </div>
-        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
         <div>
-          <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file"></span>
-          <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file"></span>
+          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
         </div>
       </div>
     </div>
 {% highlight html %}
-<div class="fileupload fileupload-new" data-provides="fileupload">
-  <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
     <img data-src="holder.js/100%x100%" alt="...">
   </div>
-  <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
   <div>
-    <span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="..."></span>
-    <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
   </div>
 </div>
 {% endhighlight %}
@@ -2314,17 +2314,15 @@ $('.inputmask').inputmask({
     <hr class="bs-docs-separator">
 
 
-    <h2 id="fileupload-usage">Usage</h2>
-    <p>
-      The <code>.fileupload</code> element should either have the <code>.fileupload-new</code> or the <code>.fileupload-exists</code> class. Elements inside the container with <code>.fileupload-new</code> and <code>.fileupload-exists</code>
-      are shown or hidden based on the current state. The content of <code>.fileupload-preview</code> is replaced when a file is selected.
-    </p>
+    <h2 id="fileinput-usage">Usage</h2>
+    <p>Add <code>.fileinput</code> to the container. Elements inside the container with <code>.fileinput-new</code> and <code>.fileinput-exists</code> are shown or hidden based on the current state. A preview of the selected file is placed in <code>.fileinput-preview</code>. The text of <code>.fileinput-filename</code> gets set to the name of the selected file.</p>
+    <p>The file input widget should be placed in a regular <code>&lt;form&gt;</code> replacing a standard <code>&lt;input type="file"&gt;</code>. The server side code should handle the file upload as normal.</p>
     
     <h3>Via data attributes</h3>
-    <p>Add <code>data-provides="fileupload"</code> to the <code>.fileupload</code> element. Implement a button to clear the file with <code>data-dismiss="fileupload"</code>. Add <code>data-trigger="fileupload"</code> to any element within the <code>.fileupload</code> widget to trigger the file dialog.</p>
+    <p>Add <code>data-provides="fileinput"</code> to the <code>.fileinput</code> element. Implement a button to clear the file with <code>data-dismiss="fileinput"</code>. Add <code>data-trigger="fileinput"</code> to any element within the <code>.fileinput</code> widget to trigger the file dialog.</p>
 
     <h3>Via JavaScript</h3>
-    <pre class="prettyprint linenums">$('.fileupload').fileupload()</pre>
+    <pre class="prettyprint linenums">$('.fileinput').fileinput()</pre>
 
     <h3>Layout</h3>
     <p>Using the given elements, you can layout the upload widget the way you want, either with a fixed <code>width</code> and <code>height</code> or with <code>max-width</code> and <code>max-height</code>.</p>
@@ -2355,11 +2353,42 @@ $('.inputmask').inputmask({
     </div>
     
     <h3>Methods</h3>
-    <h4>.fileupload(options)</h4>
+    <h4>.fileinput(options)</h4>
     <p>Initializes a file upload widget.</p>
-    <h4>.fileupload('clear')</h4>
+    <h4>.fileinput('clear')</h4>
     <p>Clear the selected file.</p>
-    <h4>.fileupload('reset')</h4>
+    <h4>.fileinput('reset')</h4>
     <p>Reset the form element to the original value.</p>
+    
+    <h3>Events</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="width: 150px;">Event Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>change.bs.fileinput</td>
+            <td>This event is fired after a file is selected.</td>
+          </tr>
+          <tr>
+            <td>clear.bs.fileinput</td>
+            <td>This event is fired when the file input is cleared.</td>
+          </tr>
+          <tr>
+            <td>reset.bs.fileinput</td>
+            <td>This event is fired when the file input is reset.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- ./bs-table-responsive -->
+{% highlight js %}
+$('#myDropdown').on('show.bs.dropdown', function () {
+  // do something…
+})
+{% endhighlight %}
   </div>
   

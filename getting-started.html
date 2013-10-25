@@ -358,6 +358,10 @@ bootstrap/
             <td><code>.container-semifluid</code></td>
             <td><code>.container-smooth</code></td>
           </tr>
+          <tr>
+            <td><code>.fileupload</code> <code>.fileupload-*</code></td>
+            <td><code>.fileinput</code> <code>.fileinput-*</code></td>
+          </tr>
         </tbody>
         <tbody class="bs-twbs">
           <tr>
@@ -683,14 +687,12 @@ bootstrap/
       <li><code>.container</code> and <code>.row</code> are now fluid (percentage-based).</li>
       <li>Images are no longer responsive by default. Use <code>.img-responsive</code> for fluid <code>&lt;img&gt;</code> size.</li>
       <li>The icons, now <code>.glyphicon</code>, are now font based. They also require a base and icon class (e.g. <code>.glyphicon .glyphicon-asterisk</code>).</li>
-      <li>Typeahead has been dropped, in favor of using <a href="http://brianreavis.github.io/selectize.js/">Selectize.js</a>.</li>
       <li>Modal markup has changed significantly. The <code>.modal-header</code>, <code>.modal-body</code>, and <code>.modal-footer</code> sections now get wrapped in <code>.modal-content</code> and <code>.modal-dialog</code> for improved mobile styling and behavior.</li>
       <li>JavaScript events are namespaced. For example, to handle the modal "show" event, use <code>'show.bs.modal'</code>. For tabs "shown" use <code>'shown.bs.tab'</code>, etc..</li>
-      <li>Iconic icons are still available from <a href="http://www.somerandomdude.com/work/open-iconic/">P.J. Onori</a>.</li>
-      <li>Customize no longer generates a 'custom.json' file.</li>
     </ul>
-    <ul class="bs-jasny-only">
-      <li>Tab alignments are still supported in this fork (while dropped in Twitter Bootstrap).</li>
+    <ul>
+      <li>The fileupload plugin has been renamed to fileinput. File upload was poorly chosen, since the plugin allows the creation of a styled file input element. It has nothing to do with how the file is uploaded.</li>
+      <li class="bs-jasny-only">Tab alignments are still supported in this fork (while dropped in Twitter Bootstrap).</li>
       <li>Typeahead has been dropped, in favor of using <a href="http://brianreavis.github.io/selectize.js/">Selectize.js</a>.</li>
       <li>Iconic icons are still available from <a href="http://www.somerandomdude.com/work/open-iconic/">P.J. Onori</a>.</li>
       <li>Customize no longer generates a 'custom.json' file.</li>
