@@ -935,6 +935,22 @@ h2[id], h3[id] {
   margin-bottom: 10px;
 }
 
+/* Alerts */
+.bs-example .alert-fixed-top {
+  position: absolute;
+  z-index: 1;
+  width: auto;
+  left: 0;
+  right: 0;
+  margin-left: 0;
+}
+@media (min-width: 992px) {
+  .bs-example .alert-fixed-top {
+    left: 15px;
+    right: 15px;
+  }
+}
+
 /* Pager */
 .bs-example > .pager {
   margin-top: 0;
