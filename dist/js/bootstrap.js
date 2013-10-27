@@ -2378,7 +2378,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     $(e.target).trigger('click.bs.rowlink')
   })
   
-}(window.jQuery);
+}(window.jQuery)
 
 /* ===========================================================
  * Bootstrap: inputmask.js v3.0.0-p7
@@ -2738,7 +2738,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     $this.inputmask($this.data())
   })
 
-}(window.jQuery);
+}(window.jQuery)
 
 /* ===========================================================
  * Bootstrap: fileinput.js v3.0.0-p7
@@ -2913,4 +2913,4 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     }
   })
 
-}(window.jQuery);
+}(window.jQuery)

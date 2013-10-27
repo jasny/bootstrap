@@ -4,9 +4,10 @@ Jasny Bootstrap is a fork of the famous [Twitter Bootstrap](http://getbootstrap.
 
 * [Button labels](http://jasny.github.io/bootstrap/css/#buttons-labels)
 * [Off canvas navmenu](http://jasny.github.io/bootstrap/components/#navmenu)
+* [Fixed alerts](http://jasny.github.io/bootstrap/components/#alerts-fixed)
 * [Row link](http://jasny.github.io/bootstrap/javascript/#rowlink)
 * [Input mask](http://jasny.github.io/bootstrap/javascript/#inputmask)
-* [File upload widget](http://jasny.github.io/bootstrap/javascript/#fileupload)
+* [File input widget](http://jasny.github.io/bootstrap/javascript/#fileupload)
 
 To get started, check out [http://jasny.github.io/bootstrap/](http://jasny.github.io/bootstrap)!
 

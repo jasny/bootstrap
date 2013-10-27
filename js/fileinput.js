@@ -171,4 +171,4 @@
     }
   })
 
-}(window.jQuery);
+}(window.jQuery)

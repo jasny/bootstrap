@@ -1393,6 +1393,12 @@ pre code {
   }
 }
 
+@media (min-width: 1px) {
+  .container-smooth {
+    max-width: 1170px;
+  }
+}
+
 table {
   max-width: 100%;
   background-color: transparent;

@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/**\n' +
-              '* <%= pkg.name %>.js v<%= pkg.version %> by @fat and @mdo\n' +
+              '* bootstrap.js v<%= pkg.version %> by @fat and @mdo\n' +
               '* Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
               '* <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
               '*/\n',
@@ -59,7 +59,16 @@ module.exports = function(grunt) {
           'js/inputmask.js',
           'js/fileinput.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'dist/js/bootstrap.js'
+      },
+      jasny: {
+        src: [
+          'js/offcanvas.js',
+          'js/rowlink.js',
+          'js/inputmask.js',
+          'js/fileinput.js'
+        ],
+        dest: 'dist/extend/js/jasny-bootstrap.js'
       }
     },
 
@@ -69,7 +78,11 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: ['<%= concat.bootstrap.dest %>'],
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'dist/js/bootstrap.min.js'
+      },
+      jasny: {
+        src: ['<%= concat.jasny.dest %>'],
+        dest: 'dist/extend/js/jasny-bootstrap.min.js'
       }
     },
 
@@ -79,25 +92,36 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: ['less/bootstrap.less'],
-        dest: 'dist/css/<%= pkg.name %>.css'
+        dest: 'dist/css/bootstrap.css'
       },
       min: {
         options: {
           compress: true
         },
         src: ['less/bootstrap.less'],
-        dest: 'dist/css/<%= pkg.name %>.min.css'
+        dest: 'dist/css/bootstrap.min.css'
+      },
+      jasny: {
+        src: ['less/jasny-bootstrap.less'],
+        dest: 'dist/extend/css/jasny-bootstrap.css'
+      },
+      jasny_min: {
+        options: {
+          compress: true
+        },
+        src: ['less/jasny-bootstrap.less'],
+        dest: 'dist/extend/css/jasny-bootstrap.min.css'
       },
       theme: {
         src: ['less/theme.less'],
-        dest: 'dist/css/<%= pkg.name %>-theme.css'
+        dest: 'dist/css/bootstrap-theme.css'
       },
       theme_min: {
         options: {
           compress: true
         },
         src: ['less/theme.less'],
-        dest: 'dist/css/<%= pkg.name %>-theme.min.css'
+        dest: 'dist/css/bootstrap-theme.min.css'
       }
     },
 

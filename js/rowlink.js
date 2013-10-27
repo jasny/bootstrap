@@ -79,4 +79,4 @@
     $(e.target).trigger('click.bs.rowlink')
   })
   
-}(window.jQuery);
+}(window.jQuery)
