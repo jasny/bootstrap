@@ -6748,13 +6748,6 @@ body.modal-open,
   white-space: normal;
 }
 
-.thumbnail-borderless .thumbnail {
-  padding: 0;
-  border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
 .fileinput-new .input-group .btn-file {
   border-radius: 0 4px 4px 0;
 }

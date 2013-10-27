@@ -2295,7 +2295,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       else $canvas.offcanvas(option)
   })
 
-}(window.jQuery)
+}(window.jQuery);
 
 /* ============================================================
  * Bootstrap: rowlink.js v3.0.0-p7
@@ -2378,7 +2378,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     $(e.target).trigger('click.bs.rowlink')
   })
   
-}(window.jQuery)
+}(window.jQuery);
 
 /* ===========================================================
  * Bootstrap: inputmask.js v3.0.0-p7
@@ -2738,7 +2738,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     $this.inputmask($this.data())
   })
 
-}(window.jQuery)
+}(window.jQuery);
 
 /* ===========================================================
  * Bootstrap: fileinput.js v3.0.0-p7
@@ -2768,7 +2768,6 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
   var Fileupload = function (element, options) {
     this.$element = $(element)
-    this.type = this.$element.data('uploadtype') || (this.$element.find('.thumbnail').length > 0 ? "image" : "file")
       
     this.$input = this.$element.find(':file')
     if (this.$input.length === 0) return
@@ -2812,7 +2811,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
     var file = e.target.files[0]
 
-    if (this.type === "image" && this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {
+    if (this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {
       var reader = new FileReader()
       var preview = this.$preview
       var element = this.$element
@@ -2821,7 +2820,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         var $img = $('<img>').attr('src', re.target.result)
         e.target.files[0].result = re.target.result
         
-        this.$element.find('.fileinput-filename').text(file)
+        element.find('.fileinput-filename').text(file.name)
         
         // if parent has max-height, using `(max-)height: 100%` on child doesn't take padding and border into account
         if (preview.css('max-height') != 'none') $img.css('max-height', parseInt(preview.css('max-height'), 10) - parseInt(preview.css('padding-top'), 10) - parseInt(preview.css('padding-bottom'), 10)  - parseInt(preview.css('border-top'), 10) - parseInt(preview.css('border-bottom'), 10))
@@ -2829,13 +2828,13 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         preview.html($img)
         element.addClass('fileinput-exists').removeClass('fileinput-new')
 
-        this.$element.trigger('change.bs.fileinput', e.target.files)
+        element.trigger('change.bs.fileinput', e.target.files)
       }
 
       reader.readAsDataURL(file)
     } else {
-      this.$element.find('.fileinput-filename').text(file)
-      this.$preview.text(file)
+      this.$element.find('.fileinput-filename').text(file.name)
+      this.$preview.text(file.name)
       
       this.$element.addClass('fileinput-exists').removeClass('fileinput-new')
       
@@ -2861,6 +2860,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     }
 
     this.$preview.html('')
+    this.$element.find('.fileinput-filename').text('')
     this.$element.addClass('fileinput-new').removeClass('fileinput-exists')
     
     if (e !== false) {
@@ -2874,6 +2874,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
     this.$hidden.val(this.original.hiddenVal)
     this.$preview.html(this.original.preview)
+    this.$element.find('.fileinput-filename').text('')
 
     if (this.original.exists) this.$element.addClass('fileinput-exists').removeClass('fileinput-new')
      else this.$element.addClass('fileinput-new').removeClass('fileinput-exists')

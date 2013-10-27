@@ -356,4 +356,4 @@
     $this.inputmask($this.data())
   })
 
-}(window.jQuery)
+}(window.jQuery);

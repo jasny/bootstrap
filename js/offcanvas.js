@@ -294,4 +294,4 @@
       else $canvas.offcanvas(option)
   })
 
-}(window.jQuery)
+}(window.jQuery);
