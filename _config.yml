@@ -12,8 +12,8 @@ port:             9001
 
 # Custom vars
 repo:             https://github.com/jasny/bootstrap
-download:         https://github.com/jasny/bootstrap/archive/v3.0.0.zip
-download_dist:    https://github.com/jasny/bootstrap/releases/download/v3.0.0/bootstrap-3.0.0-dist.zip
+download:         https://github.com/jasny/bootstrap/archive/v3.0.0-p7.zip
+download_dist:    https://github.com/jasny/bootstrap/releases/download/v3.0.0-p7/bootstrap-3.0.0-p7-dist.zip
 
 blog:             http://blog.getbootstrap.com
 expo:             http://expo.getbootstrap.com
