@@ -1,20 +1,31 @@
 {
-    "name": "bootstrap"
-  , "description": "The sleek and powerfull front-end framework you love, plus everything it's missing."
+    "name": "jasny-bootstrap"
+  , "description": "An extended version of Twitter Bootstrap"
   , "version": "3.0.0-p7"
-  , "keywords": ["bootstrap", "css"]
+  , "keywords": ["twitter bootstrap", "bootstrap", "css"]
   , "homepage": "http://jasny.github.com/bootstrap/"
   , "author": "Jasny BV"
+  , "maintainers": [
+    {
+      "name": "Arnold Daniels",
+      "email": "arnold@jasny.net",
+      "web": "https://twitter.com/ArnoldDaniels/"
+    }
+  ]
   , "scripts": { "test": "grunt test" }
   , "repository": {
       "type": "git"
     , "url": "https://github.com/jasny/bootstrap.git"
   }
+  , "bugs": "https://github.com/jasny/bootstrap/issues"
   , "licenses": [
     {
         "type": "Apache-2.0"
       , "url": "http://www.apache.org/licenses/LICENSE-2.0"
     }
+  ]
+  , "bundledDependencies": [
+      "bootstrap"
   ]
   , "devDependencies": {
       "grunt": "~0.4.1"

@@ -1,6 +1,6 @@
 {
     "name": "jasny/bootstrap"
-  , "description": "The sleek and powerfull front-end framework you love, plus everything it's missing."
+  , "description": "An extended version of Twitter Bootstrap"
   , "keywords": ["bootstrap", "css"]
   , "homepage": "http://jasny.github.io/bootstrap"
   , "authors": [
