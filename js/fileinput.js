@@ -48,6 +48,9 @@
       hiddenVal: this.$hidden.val()
     }
     
+    this.$element.find('.fileinput-filename').css("max-width", (this.$element.find('[data-trigger="fileinput"]').width()-50)+"px");
+  
+    
     this.listen()
   }
   
