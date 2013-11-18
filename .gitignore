@@ -39,3 +39,7 @@ validation-report.json
 
 # Folders to ignore
 node_modules
+
+# Don't ignore these files
+!/2.3.1/assets/*.zip
+
