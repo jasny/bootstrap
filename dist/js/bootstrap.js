@@ -1,6 +1,6 @@
 /*!
  * Jasny Bootstrap v3.0.1-p7, maintained by @ArnoldDaniels
- * Copyright 2013 Twitter, Inc
+ * Copyright 2014 Twitter, Inc
  * Licensed under http://www.apache.org/licenses/LICENSE-2.0
  */
 
@@ -2001,7 +2001,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 }(window.jQuery);
 
 /* ========================================================================
- * Bootstrap: offcanvas.js v3.0.0-p7
+ * Bootstrap: offcanvas.js v3.0.3-p7
  * http://jasny.github.io/bootstrap/javascript.html#offcanvas
  * 
  * Based on Boostrap collapse.js by Twitter, Inc. 
@@ -2022,6 +2022,10 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * ======================================================================== */
 
 +function ($) { "use strict";
+  var nua = window.navigator.userAgent
+  var isAndroid = nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1
+  
+  var isIE = window.navigator.appName == 'Microsoft Internet Explorer'
 
   // OFFCANVAS PUBLIC CLASS DEFINITION
   // ================================
@@ -2032,13 +2036,11 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     this.options       = $.extend({}, OffCanvas.DEFAULTS, options)
     this.transitioning = null
     
-    this.calcTransform()
+    this.transform = false;
+    //this.calcTransform()
 
     // If transform or transition aren't supported just slide the element
-    if (!this.transform) this.$canvas = this.$element
-
-    if (this.options.placement === 'auto')
-      this.options.placement = this.calcPlacement()
+    //if (!this.transform) this.$canvas = this.$element
 
     if (this.options.recalc) {
       this.calcClone()
@@ -2048,11 +2050,10 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     if (this.options.autohide)
       $(document).on('click.bs.offcanvas', $.proxy(this.autohide, this))
 
-    // Workaround: IE doesn't move fixed elements with translate
-    var isIE = window.navigator.appName == 'Microsoft Internet Explorer'
-    if (isIE && this.$canvas !== this.$element) {
+    // With IE and Android translate doesn't move fixed elements
+    if (isIE || isAndroid || !this.transform) {
       var elems = this.$canvas.find('*').filter(function() {
-        return $(this).css("position") === 'fixed'
+        return $(this).css("position") === 'fixed' && this !== element
       })
       this.$canvas = this.$canvas.add(elems)
     }
@@ -2062,7 +2063,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
   OffCanvas.DEFAULTS = {
     toggle: true,
-    placement: 'auto',
+    placement: 'left',
     autohide: true,
     recalc: true
   }
@@ -2096,24 +2097,6 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     }
 
     $el.remove()
-  }
-
-  OffCanvas.prototype.calcPlacement = function () {
-    var horizontal = $(window).width() / this.$element.width(),
-        vertical = $(window).height() / this.$element.height(),
-        $element = this.$element
-    
-    function ab(a, b) {
-      if ($element.css(b) === 'auto') return a
-      if ($element.css(a) === 'auto') return b
-      
-      var size_a = parseInt($element.css(a), 10),
-          size_b = parseInt($element.css(b), 10)
-  
-      return size_a > size_b ? b : a
-    }
-    
-    return horizontal > vertical ? ab('left', 'right') : ab('top', 'bottom')
   }
 
   OffCanvas.prototype.offset = function () {
@@ -2162,6 +2145,9 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
       return this.$canvas.animate(anim, 350, callback)
     }
 
+    this.$element.css(this.options.placement, 0)
+
+    this.$canvas.filter(function () { return $(this).css('position') === 'static' } ).css('position', 'relative')
     this.$canvas.css(this.options.placement, offset)
 
     this.$element
@@ -2176,6 +2162,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     this.$element.trigger(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
+    if (this.$canvas.find(this.$element).length) this.$element.css('top', $(window).scrollTop())
+
     var complete = function () {
       this.$canvas
         .addClass('canvas-slid')
@@ -2186,16 +2174,19 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     }
     
     if (!this.$element.is(':visible') || !this.transform)
-      this.$element.css(this.options.placement, -1 * this.offset() + "px")
+      this.$element.css(this.options.placement, 0)
     this.$element.addClass('in')
 
-    this.$canvas.addClass('canvas-sliding')
-    if (this.$canvas != this.$element) $('body').css('overflow-x', 'hidden')
+    // Workaround for ignored transition because of display: none
+    setTimeout($.proxy(function() {
+        this.$canvas.addClass('canvas-sliding')
+        $('body').css('overflow', 'hidden')
 
-    this.transitioning = 1
+        this.transitioning = 1
 
-    if (this.transform) this.slideTransform(this.offset(), $.proxy(complete, this))
-    else this.slidePosition(0, $.proxy(complete, this))
+        if (this.transform) this.slideTransform(this.offset(), $.proxy(complete, this))
+        else this.slidePosition(this.offset(), $.proxy(complete, this))
+    }, this), 1)
   }
 
   OffCanvas.prototype.hide = function (fast) {
@@ -2216,7 +2207,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
         .removeClass('canvas-sliding canvas-slid')
         .css('transform', '')
 
-      $('body').css('overflow-x', '')
+      $('body').css('overflow', '')
       
       this.$element.trigger('hidden.bs.offcanvas')
     }

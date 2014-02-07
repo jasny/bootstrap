@@ -1,5 +1,5 @@
 //
-// Navmenu
+// Navmenu and offcanvas navbar
 // --------------------------------------------------
 
 
@@ -8,7 +8,8 @@
 // Provide a static navmenu from which we expand to create the fixed navmenu
 // variations.
 
-.navmenu {
+.navmenu,
+.navbar-offcanvas {
   width: @navmenu-width;
   height: 100%;
   border-width: 1px;
@@ -17,13 +18,15 @@
 }
 
 .navmenu-fixed-left,
-.navmenu-fixed-right {
+.navmenu-fixed-right,
+.navbar-offcanvas {
   position: fixed;
   z-index: @zindex-navmenu-fixed;
   top: 0;
   border-radius: 0;
 }
-.navmenu-fixed-left {
+.navmenu-fixed-left,
+.navbar-offcanvas {
   left: 0;
   border-width: 0 1px 0 0;
 }
@@ -46,6 +49,34 @@
   }
 }
 
+.navbar-offcanvas {
+  .navbar-nav {
+    margin: 0;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+
+    &.offcanvas {
+      position: static;
+      display: block !important;
+      height: auto !important;
+      padding-bottom: 0; // Override default setting
+      overflow: visible !important;
+    }
+
+    // Account for first and last children spacing
+    .navbar-nav.navbar-left:first-child {
+      margin-left: -@navbar-padding-horizontal;
+    }
+    .navbar-nav.navbar-right:last-child {
+      margin-right: -@navbar-padding-horizontal;
+    }
+  }
+}
+
 // Brand/project name
 
 .navmenu-brand {
@@ -64,7 +95,8 @@
 // --------------------------------------------------
 
 // Default navmenu
-.navmenu-default {
+.navmenu-default,
+.navbar-default .navbar-offcanvas {
   background-color: @navmenu-default-bg;
   border-color: @navmenu-default-border;
 
@@ -148,7 +180,8 @@
 }
 
 // Inverse navmenu
-.navmenu-inverse {
+.navmenu-inverse,
+.navbar-inverse .navbar-offcanvas {
   background-color: @navmenu-inverse-bg;
   border-color: @navmenu-inverse-border;
 
