@@ -2022,26 +2022,15 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * ======================================================================== */
 
 +function ($) { "use strict";
-  var nua = window.navigator.userAgent
-  var isAndroid = nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1
-  
-  var isIE = window.navigator.appName == 'Microsoft Internet Explorer'
 
   // OFFCANVAS PUBLIC CLASS DEFINITION
-  // ================================
+  // =================================
 
   var OffCanvas = function (element, options) {
-    this.$element      = $(element)
-    this.$canvas       = options.canvas ? $(options.canvas) : this.$element
-    this.options       = $.extend({}, OffCanvas.DEFAULTS, options)
-    this.transitioning = null
+    this.$element = $(element)
+    this.options  = $.extend({}, OffCanvas.DEFAULTS, options)
+    this.state    = null
     
-    this.transform = false;
-    //this.calcTransform()
-
-    // If transform or transition aren't supported just slide the element
-    //if (!this.transform) this.$canvas = this.$element
-
     if (this.options.recalc) {
       this.calcClone()
       $(window).on('resize.bs.offcanvas', $.proxy(this.recalc, this))
@@ -2049,14 +2038,6 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     
     if (this.options.autohide)
       $(document).on('click.bs.offcanvas', $.proxy(this.autohide, this))
-
-    // With IE and Android translate doesn't move fixed elements
-    if (isIE || isAndroid || !this.transform) {
-      var elems = this.$canvas.find('*').filter(function() {
-        return $(this).css("position") === 'fixed' && this !== element
-      })
-      this.$canvas = this.$canvas.add(elems)
-    }
 
     if (this.options.toggle) this.toggle()
   }
@@ -2068,37 +2049,6 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     recalc: true
   }
 
-  OffCanvas.prototype.calcTransform = function() {
-    this.transform = false
-
-    // Don't use transform with jQuery animations just to move the element
-    if (!$.support.transition && this.$canvas === this.$element) return
-
-    var $el = $('<div style="visibility: hidden"></div>'),
-        props = {
-          'transform':'transform',
-          'webkitTransform':'-webkit-transform',
-          'OTransform':'-o-transform',
-          'msTransform':'-ms-transform',
-          'MozTransform':'-moz-transform'
-        }
-
-    // Add it to the body to get the computed style.
-    $el.appendTo($('body'))
-
-    for (var prop in props) {
-      if ($el[0].style[prop] === undefined) continue
-
-      $el[0].style[prop] = "translate3d(1px,1px,1px)"
-      var m = window.getComputedStyle($el[0]).getPropertyValue(props[prop])
-      this.transform = props[prop]
-      this.translate = m.match(/^matrix3d/) ? 'translate3d' : 'translate'
-      break
-    }
-
-    $el.remove()
-  }
-
   OffCanvas.prototype.offset = function () {
     switch (this.options.placement) {
       case 'left':
@@ -2108,122 +2058,105 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     }
   }
 
-  OffCanvas.prototype.slideTransform = function (offset, callback) {
-    var placement = this.options.placement,
-        prop = this.transform
-
-    offset *= (placement === 'right' || placement === 'bottom' ? -1 : 1)
-
-    var css = placement === 'left' || placement === 'right' ?
-        "{}px, 0" : "0, {}px"
-    if (this.translate === 'translate3d') css += ', 0'
-    css = this.translate + "(" + css + ")"
-
-    // Use jQuery animation if CSS transitions aren't supported
-    if (!$.support.transition) {
-      return this.$canvas.animate({ borderSpacing: offset }, {
-        step: function(now, fx) {
-          $(this).css(prop, css.replace('{}', now))
-        },
-        complete: callback,
-        duration: 350
-      })
-    }
-
-    this.$canvas.css(prop, css.replace('{}', offset))
-
-    this.$element
-      .one($.support.transition.end, callback)
-      .emulateTransitionEnd(350)
+  OffCanvas.prototype.getCanvasElements = function() {
+    // Return a set containing the canvas plus all fixed elements
+    var canvas = $(this.options.canvas)
+    
+    var fixed_elements = canvas.find('*').filter(function() {
+      return $(this).css('position') === 'fixed'
+    }).not(this.options.exclude)
+    
+    return canvas.add(fixed_elements)
   }
-
-  OffCanvas.prototype.slidePosition = function (offset, callback) {
+  
+  OffCanvas.prototype.slide = function (elements, offset, callback) {
     // Use jQuery animation if CSS transitions aren't supported
     if (!$.support.transition) {
       var anim = {}
       anim[this.options.placement] = offset
-      return this.$canvas.animate(anim, 350, callback)
+      return elements.animate(anim, 350, callback)
     }
 
-    this.$element.css(this.options.placement, 0)
-
-    this.$canvas.filter(function () { return $(this).css('position') === 'static' } ).css('position', 'relative')
-    this.$canvas.css(this.options.placement, offset)
-
+    var placement = this.options.placement
+    
+    elements.each(function() {
+      $(this).css(placement, (parseInt($(this).css(placement)) || 0) + offset)
+    })
+    
     this.$element
       .one($.support.transition.end, callback)
       .emulateTransitionEnd(350)
   }
 
   OffCanvas.prototype.show = function () {
-    if (this.transitioning || this.$canvas.hasClass('canvas-slid')) return
-
+    if (this.state) return
+    
     var startEvent = $.Event('show.bs.offcanvas')
     this.$element.trigger(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
-    if (this.$canvas.find(this.$element).length) this.$element.css('top', $(window).scrollTop())
+    this.state = 'sliding'
+
+    var elements = this.getCanvasElements()
+    var offset = this.offset()
 
     var complete = function () {
-      this.$canvas
+      this.state = 'slid'
+
+      elements
         .addClass('canvas-slid')
         .removeClass('canvas-sliding')
-
-      this.transitioning = 0
       this.$element.trigger('shown.bs.offcanvas')
     }
+
+    $('body').css('overflow', 'hidden')
+    if (elements.index(this.$element) !== -1) this.$element.css(this.options.placement, -1 * offset)
+
+    elements.filter(function() {
+        return $(this).css('position') === 'static'
+    }).css('position', 'relative').css(this.options.placement, 0)
     
-    if (!this.$element.is(':visible') || !this.transform)
-      this.$element.css(this.options.placement, 0)
-    this.$element.addClass('in')
-
-    // Workaround for ignored transition because of display: none
+    elements.addClass('canvas-sliding')
+    
     setTimeout($.proxy(function() {
-        this.$canvas.addClass('canvas-sliding')
-        $('body').css('overflow', 'hidden')
-
-        this.transitioning = 1
-
-        if (this.transform) this.slideTransform(this.offset(), $.proxy(complete, this))
-        else this.slidePosition(this.offset(), $.proxy(complete, this))
+        this.$element.addClass('in')
+        this.slide(elements, offset, $.proxy(complete, this))
     }, this), 1)
   }
 
   OffCanvas.prototype.hide = function (fast) {
-    if (this.transitioning || !this.$canvas.hasClass('canvas-slid')) return
+    if (this.state !== 'slid') return
 
     var startEvent = $.Event('hide.bs.offcanvas')
     this.$element.trigger(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
+    this.state = 'sliding'
+
+    var elements = this.getCanvasElements()
+    var offset = -1 * this.offset()
+
     var complete = function () {
-      this.transitioning = 0
+      this.state = null
 
-      this.$element
-        .removeClass('in')
-        .css('left', '').css('right', '').css('top', '').css('bottom', '')
-
-      this.$canvas
-        .removeClass('canvas-sliding canvas-slid')
-        .css('transform', '')
-
+      elements.removeClass('canvas-sliding')
       $('body').css('overflow', '')
       
+      this.$element.removeClass('in')
+      if (elements.index(this.$element) !== -1) this.$element.css(this.options.placement, -1 * offset)
       this.$element.trigger('hidden.bs.offcanvas')
     }
 
-    if (fast) return complete.call(this)
-
-    this.$canvas.removeClass('canvas-slid').addClass('canvas-sliding')
-
-    this.transitioning = 1
-
-    if (this.transform) this.slideTransform(0, $.proxy(complete, this))
-    else this.slidePosition(-1 * this.offset(), $.proxy(complete, this))
+    elements.removeClass('canvas-slid').addClass('canvas-sliding')
+    
+    setTimeout($.proxy(function() {
+        this.slide(elements, offset, $.proxy(complete, this))
+    }, this), 1)
   }
 
   OffCanvas.prototype.toggle = function () {
-    this[this.$canvas.hasClass('canvas-slid') ? 'hide' : 'show']()
+    if (this.state === 'sliding') return
+    this[this.state === 'slid' ? 'hide' : 'show']()
   }
 
   OffCanvas.prototype.calcClone = function() {
@@ -2234,7 +2167,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   }
 
   OffCanvas.prototype.recalc = function () {
-    if (this.$calcClone.css('display') !== 'none') this.hide(true)
+    if (this.state() !== 'slid' || this.$calcClone.css('display') === 'none') return
+    
+    var offset = -1 * this.offset()
+    
+    var placement = this.options.placement
+    this.getCanvasElements().each(function() {
+      $(this).css(placement, (parseInt($(this).css(placement)) || 0) + offset)
+    }).removeClass('canvas-slid')
+    
+    $('body').css('overflow', '')
+    this.$element.css(placement, '').removeClass('in canvas-slid')
   }
   
   OffCanvas.prototype.autohide = function (e) {
@@ -2809,7 +2752,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
       var element = this.$element
 
       reader.onload = function(re) {
-        var $img = $('<img>').attr('src', re.target.result)
+        var $img = $('<img>') // .attr('src', re.target.result)
+        $img[0].src = re.target.result
         e.target.files[0].result = re.target.result
         
         element.find('.fileinput-filename').text(file.name)
