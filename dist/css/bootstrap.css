@@ -5088,6 +5088,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-offcanvas .navbar-nav.navbar-right:last-child {
     margin-right: -15px;
   }
+  .navbar-offcanvas .navmenu-brand {
+    display: none;
+  }
 }
 
 .navmenu-brand {

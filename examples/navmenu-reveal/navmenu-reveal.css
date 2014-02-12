@@ -3,16 +3,11 @@ html, body {
 }
 
 .navbar-toggle {
-  float: left;
   margin-left: 15px;
 }
 
 .navmenu {
   z-index: 1;
-}
-.navmenu.canvas-sliding,
-.navmenu.canvas-slid {
-  z-index: 2000;
 }
 
 .canvas {
@@ -26,7 +21,7 @@ html, body {
 
 @media (min-width: 0px) {
   .navbar-toggle {
-    display: block;
+    display: block; /* force showing the toggle */
   }
 }
 
@@ -35,9 +30,9 @@ html, body {
     padding: 0;
   }
   .navbar {
-    width: 0; /* Don't show the menu */
-    height: 0;
-    overflow: visible; /* Do show the contents (the button) */
+    right: auto;
+    background: none;
+    border: none;
   }
   .canvas {
     padding: 0;
