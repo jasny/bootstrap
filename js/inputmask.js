@@ -65,7 +65,7 @@
         this.partialPosition = i
       } else if (defs[c]) {
         this.tests.push(new RegExp(defs[c]))
-        if(this.firstNonMaskPos === null)
+        if (this.firstNonMaskPos === null)
           this.firstNonMaskPos =  this.tests.length - 1
       } else {
         this.tests.push(null)
@@ -150,9 +150,9 @@
   Inputmask.prototype.shiftL = function(begin,end) {
     var len = this.mask.length
 
-    if(begin<0) return
+    if (begin < 0) return
 
-    for (var i = begin,j = this.seekNext(end); i < len; i++) {
+    for (var i = begin, j = this.seekNext(end); i < len; i++) {
       if (this.tests[i]) {
         if (j < len && this.tests[i].test(this.buffer[j])) {
           this.buffer[i] = this.buffer[j]
@@ -213,7 +213,7 @@
   }
 
   Inputmask.prototype.keydownEvent = function(e) {
-    var k=e.which
+    var k = e.which
 
     //backspace, delete, and escape get special treatment
     if (k == 8 || k == 46 || (isIphone && k == 127)) {
@@ -221,12 +221,12 @@
       begin = pos.begin,
       end = pos.end
 
-      if (end-begin === 0) {
-        begin = k!=46 ? this.seekPrev(begin) : (end=this.seekNext(begin-1))
-        end = k==46 ? this.seekNext(end) : end
+      if (end - begin === 0) {
+        begin = k != 46 ? this.seekPrev(begin) : (end = this.seekNext(begin - 1))
+        end = k == 46 ? this.seekNext(end) : end
       }
       this.clearBuffer(begin, end)
-      this.shiftL(begin,end-1)
+      this.shiftL(begin, end - 1)
 
       return false
     } else if (k == 27) {//escape
@@ -242,12 +242,12 @@
     var k = e.which,
     pos = this.caret()
 
-    if (e.ctrlKey || e.altKey || e.metaKey || k<32)  {//Ignore
+    if (e.ctrlKey || e.altKey || e.metaKey || k < 32)  {//Ignore
       return true
     } else if (k) {
       if (pos.end - pos.begin !== 0) {
         this.clearBuffer(pos.begin, pos.end)
-        this.shiftL(pos.begin, pos.end-1)
+        this.shiftL(pos.begin, pos.end - 1)
       }
 
       var p = this.seekNext(pos.begin - 1)

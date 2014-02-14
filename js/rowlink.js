@@ -38,7 +38,7 @@
     
     if (target.click) {
       target.click()
-    } else if(document.createEvent) {
+    } else if (document.createEvent) {
       var evt = document.createEvent("MouseEvents"); 
       evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null); 
       target.dispatchEvent(evt);
@@ -48,6 +48,8 @@
   
   // ROWLINK PLUGIN DEFINITION
   // ===========================
+
+  var old = $.fn.rowlink
 
   $.fn.rowlink = function (options) {
     return this.each(function () {
@@ -64,7 +66,7 @@
   // ====================
 
   $.fn.rowlink.noConflict = function () {
-    $.fn.inputmask = old
+    $.fn.rowlink = old
     return this
   }
 
