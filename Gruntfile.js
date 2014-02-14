@@ -319,7 +319,7 @@ module.exports = function (grunt) {
 
     exec: {
       npmUpdate: {
-        command: 'npm update'
+        command: 'npm update --silent'
       },
       npmShrinkWrap: {
         command: 'npm shrinkwrap --dev'
@@ -366,7 +366,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-docs']);
 
   // Default task.
-  grunt.registerTask('default', ['test', 'dist', 'build-customizer', 'update-shrinkwrap']);
+  grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
 
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z

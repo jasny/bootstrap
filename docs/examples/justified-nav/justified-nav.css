@@ -70,21 +70,21 @@ body
 @media (min-width: 768px)
 {
   .nav-justified
-                                                                        {
+                                                                                {
     max-height: 52px;
   }
   .nav-justified > li > a
-                                                                        {
+                                                                                {
     border-right: 1px solid #d5d5d5;
     border-left: 1px solid #fff;
   }
   .nav-justified > li:first-child > a
-                                                                        {
+                                                                                {
     border-left: 0;
     border-radius: 5px 0 0 5px;
   }
   .nav-justified > li:last-child > a
-                                                                        {
+                                                                                {
     border-right: 0;
     border-radius: 0 5px 5px 0;
   }
@@ -97,7 +97,7 @@ body
   .masthead,
   .marketing,
   .footer
-                                                                        {
+                                                                                {
     padding-right: 0;
     padding-left: 0;
   }
