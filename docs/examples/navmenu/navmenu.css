@@ -31,11 +31,11 @@ body
 @media (min-width: 992px)
 {
   body
-                                                                                {
+                                                                                          {
     padding: 0 0 0 300px;
   }
   .navmenu
-                                                                                {
+                                                                                          {
     padding-top: 0;
   }
 }

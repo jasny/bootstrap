@@ -40,7 +40,7 @@ body
 @media (min-width: 768px)
 {
   .container
-                                                                                {
+                                                                                          {
     max-width: 730px;
   }
 }
@@ -78,18 +78,18 @@ body
   .header,
   .marketing,
   .footer
-                                                                                {
+                                                                                          {
     padding-right: 0;
     padding-left: 0;
   }
   /* Space out the masthead */
   .header
-                                                                                {
+                                                                                          {
     margin-bottom: 30px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron
-                                                                                {
+                                                                                          {
     border-bottom: 0;
   }
 }
