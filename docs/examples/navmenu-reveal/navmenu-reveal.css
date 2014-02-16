@@ -1,21 +1,17 @@
-html, body
-{
+html, body {
   height: 100%;
 }
 
-.navbar-toggle
-{
+.navbar-toggle {
   float: left;
   margin-left: 15px;
 }
 
-.navmenu
-{
+.navmenu {
   z-index: 1;
 }
 
-.canvas
-{
+.canvas {
   position: relative;
   left: 0;
   z-index: 2;
@@ -24,24 +20,22 @@ html, body
   background: #fff;
 }
 
-@media (min-width: 0)
-{
+@media (min-width: 0) {
   .navbar-toggle {
     display: block; /* force showing the toggle */
   }
 }
 
-@media (min-width: 992px)
-{
-  body
+@media (min-width: 992px) {
+  body {
     padding: 0;
   }
-  .navbar
+  .navbar {
     right: auto;
     background: none;
     border: none;
   }
-  .canvas
+  .canvas {
     padding: 0;
   }
 }

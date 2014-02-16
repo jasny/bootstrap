@@ -1,41 +1,32 @@
-html, body
-{
+html, body {
   height: 100%;
 }
-body
-{
+body {
   padding: 50px 0 0 0;
 }
 
-.navmenu
-{
+.navmenu {
   padding-top: 50px;
 }
 
-.navbar
-{
+.navbar {
   text-align: center;
 }
-.navbar-brand
-{
+.navbar-brand {
   display: inline-block;
   float: none;
 }
-.navbar-toggle
-{
+.navbar-toggle {
   position: absolute;
   float: left;
   margin-left: 15px;
 }
 
-@media (min-width: 992px)
-{
-  body
-                                                                                                                                          {
+@media (min-width: 992px) {
+  body {
     padding: 0 0 0 300px;
   }
-  .navmenu
-                                                                                                                                          {
+  .navmenu {
     padding-top: 0;
   }
 }
