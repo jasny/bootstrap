@@ -44,6 +44,7 @@
 body {
   position: relative; /* For scrollyspy */
   padding-top: 50px; /* Account for fixed navbar */
+  overflow: auto !important; /* For offcanvas */
 }
 
 /* Fix */
@@ -898,6 +899,11 @@ h2[id], h3[id] {
   position: absolute;
   z-index: 1;
 }
+.bs-navmenu-fixed-example .navmenu-fixed-left,
+.bs-navmenu-offcanvas-example .navmenu-fixed-left {
+  transform: translate(-300px, 0);
+  -webkit-transform: translate(-300px, 0);  
+}
 .bs-navmenu-offcanvas-example .navbar-toggle {
   float: left;
   margin-left: 15px;
@@ -1119,7 +1125,7 @@ h2[id], h3[id] {
 
 .bs-customizer .toggle {
   float: right;
-  margin-top: 85px; /* On account of ghetto navbar fix */
+  margin-top: 25px;
 }
 
 /* Headings and form contrls */
@@ -1158,6 +1164,13 @@ h2[id], h3[id] {
   font-weight: normal;
 }
 
+.bs-customizer-input {
+  float: left;
+  width: 33.333333%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /* Downloads */
 .bs-customize-download .btn-outline {
   padding: 20px;
@@ -1166,7 +1179,7 @@ h2[id], h3[id] {
 /* Error handling */
 .bs-customizer-alert {
   position: fixed;
-  top: 51px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1030;

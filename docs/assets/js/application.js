@@ -3,8 +3,8 @@
 // ++++++++++++++++++++++++++++++++++++++++++
 
 /*!
- * JavaScript for Bootstrap's docs (http://getbootstrap.com)
- * Copyright 2011-2014 Twitter, Inc.
+ * Copyright 2013 Twitter, Inc.
+ *
  * Licensed under the Creative Commons Attribution 3.0 Unported License. For
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
@@ -12,19 +12,20 @@
 
 !function ($) {
 
-  $(function () {
+  $(function(){
 
     // IE10 viewport hack for Surface/desktop Windows 8 bug
     //
     // See Getting Started docs for more information
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-      var msViewportStyle = document.createElement('style')
+      var msViewportStyle = document.createElement("style");
       msViewportStyle.appendChild(
         document.createTextNode(
-          '@-ms-viewport{width:auto!important}'
+          "@-ms-viewport{width:auto!important}"
         )
-      )
-      document.querySelector('head').appendChild(msViewportStyle)
+      );
+      document.getElementsByTagName("head")[0].
+        appendChild(msViewportStyle);
     }
 
 
@@ -33,9 +34,10 @@
 
     var navHeight = $('.navbar').outerHeight(true) + 10
 
+    // scrollspy
     $body.scrollspy({
-      target: '.bs-docs-sidebar',
-      // offset: navHeight
+      target: '.bs-sidebar',
+      offset: navHeight
     })
 
     $window.on('load', function () {
@@ -48,7 +50,7 @@
 
     // back to top
     setTimeout(function () {
-      var $sideBar = $('.bs-docs-sidebar')
+      var $sideBar = $('.bs-sidebar')
 
       $sideBar.affix({
         offset: {
@@ -58,9 +60,9 @@
             var navOuterHeight = $('.bs-docs-nav').height()
 
             return (this.top = offsetTop - navOuterHeight - sideBarMargin)
-          },
-          bottom: function () {
-            return (this.bottom = $('.bs-docs-footer').outerHeight(true))
+          }
+        , bottom: function () {
+            return (this.bottom = $('.bs-footer').outerHeight(true))
           }
         }
       })
@@ -69,33 +71,6 @@
     setTimeout(function () {
       $('.bs-top').affix()
     }, 100)
-
-    // tooltip demo
-    $('.tooltip-demo').tooltip({
-      selector: '[data-toggle=tooltip]',
-      container: 'body'
-    })
-
-    $('.tooltip-test').tooltip()
-    $('.popover-test').popover()
-
-    $('.bs-docs-navbar').tooltip({
-      selector: 'a[data-toggle=tooltip]',
-      container: '.bs-docs-navbar .nav'
-    })
-
-    // popover demo
-    $('[data-toggle=popover]').popover()
-
-    // button state demo
-    $('#loading-example-btn')
-      .click(function () {
-        var btn = $(this)
-        btn.button('loading')
-        setTimeout(function () {
-          btn.button('reset')
-        }, 3000)
-      })
   })
 
 }(jQuery)

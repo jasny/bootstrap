@@ -17,7 +17,6 @@ body
 @media (min-width: 0)
 {
   .navbar-toggle
-                                                                                          {
     display: block; /* force showing the toggle */
   }
 }
@@ -25,11 +24,9 @@ body
 @media (min-width: 992px)
 {
   body
-                                                                                          {
     padding: 0;
   }
   .navbar
-                                                                                          {
     right: auto;
     background: none;
     border: none;

@@ -23,9 +23,6 @@
       </div>
     </div>
 
-    <!-- Callout for the old docs link -->
-    {% include old-bs-docs.html %}
-
     <div class="container bs-docs-container">
       <div class="row">
         <div class="col-md-3">
@@ -48,21 +45,6 @@
           </div>
         </div>
         <div class="col-md-9" role="main">
-          {% if page.slug != "customize" %}
-            <div class="bs-callout bs-callout-info bs-twbs-toggle">
-              Are you already familiar with Twitter Bootstrap?
-
-              <div class="btn-group pull-right" data-toggle="buttons">
-                <label class="btn btn-default">
-                  <input type="radio" name="show-twbs" value="yes"> Yes
-                </label>
-                <label class="btn btn-default">
-                  <input type="radio" name="show-twbs" value="no"> No
-                </label>
-              </div>
-            </div>
-          {% endif %}
-
           {{ content }}
         </div>
       </div>
