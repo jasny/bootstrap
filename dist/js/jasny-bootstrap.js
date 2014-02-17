@@ -749,10 +749,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 }(window.jQuery);
 
 /* ===========================================================
- * Bootstrap: fileinput.js v3.0.0-p7
- * http://jasny.github.com/bootstrap/javascript.html#fileinput
+ * Bootstrap: fileinput.js v3.1.0
+ * http://jasny.github.com/bootstrap/javascript/#fileinput
  * ===========================================================
- * Copyright 2012 Jasny BV, Netherlands.
+ * Copyright 2012-2014 Jasny BV, Netherlands.
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
@@ -776,7 +776,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 
   var Fileinput = function (element, options) {
     this.$element = $(element)
-      
+    
     this.$input = this.$element.find(':file')
     if (this.$input.length === 0) return
 

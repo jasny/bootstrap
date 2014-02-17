@@ -15,6 +15,7 @@
     filter: alpha(opacity=0);
     transform: translate(-300px, 0) scale(4);
     font-size: 23px;
+    height: 100%;
     direction: ltr;
     cursor: pointer;
   }
@@ -23,7 +24,9 @@
 .fileinput {
   margin-bottom: 9px;
   display: inline-block;
-  .uneditable-input {
+  .form-control {
+    padding-top: 7px;
+    padding-bottom: 5px;
     display: inline-block;
     margin-bottom: 0px;
     vertical-align: middle;
@@ -51,12 +54,13 @@
   display: inline;
 }
 
-.fileinput .uneditable-input {
-  white-space: normal;
-}
-.fileinput-filename{
+.fileinput-filename {
+  vertical-align: middle;
   display: inline-block;
   overflow: hidden;
+}
+.form-control .fileinput-filename {
+  vertical-align: bottom;
 }
 
 // Not 100% correct, but helps in typical use case
@@ -72,10 +76,6 @@
 }
 
 .form-group.has-warning .fileinput {
-  .uneditable-input {
-    color: @state-warning-text;
-    border-color: @state-warning-border;
-  }
   .fileinput-preview {
     color: @state-warning-text;
   }
@@ -84,10 +84,6 @@
   }
 }
 .form-group.has-error .fileinput {
-  .uneditable-input {
-    color: @state-danger-text;
-    border-color: @state-danger-border;
-  }
   .fileinput-preview {
     color: @state-danger-text;
   }
@@ -96,10 +92,6 @@
   }
 }
 .form-group.has-success .fileinput {
-  .uneditable-input {
-    color: @state-success-text;
-    border-color: @state-success-border;
-  }
   .fileinput-preview {
     color: @state-success-text;
   }
