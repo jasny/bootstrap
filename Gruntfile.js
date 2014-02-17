@@ -152,7 +152,7 @@ module.exports = function (grunt) {
           sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
+          'dist/css/<%= pkg.name %>.css': 'less/build/<%= pkg.name %>.less'
         }
       },
       minify: {
@@ -251,7 +251,7 @@ module.exports = function (grunt) {
         options: {
           pretty: true,
           data: function () {
-            var filePath = path.join(__dirname, 'less/variables.less');
+            var filePath = path.join(__dirname, 'less/build/default-variables.less');
             var fileContent = fs.readFileSync(filePath, {encoding: 'utf8'});
             var parser = new BsLessdocParser(fileContent);
             return {sections: parser.parseFile()};
