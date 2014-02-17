@@ -11,14 +11,9 @@ body {
   margin-left: 15px;
 }
 
-.navmenu.canvas-sliding,
-.navmenu.canvas-slid {
-  z-index: 2000;
-}
-
-@media (min-width: 0px) {
+@media (min-width: 0) {
   .navbar-toggle {
-    display: block;
+    display: block; /* force showing the toggle */
   }
 }
 
@@ -27,8 +22,8 @@ body {
     padding: 0;
   }
   .navbar {
-    width: 0; /* Don't show the menu */
-    height: 0;
-    overflow: visible; /* Do show the contents (the button) */
+    right: auto;
+    background: none;
+    border: none;
   }
 }

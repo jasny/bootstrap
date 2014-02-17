@@ -17,9 +17,9 @@ body {
   float: none;
 }
 .navbar-toggle {
+  position: absolute;
   float: left;
   margin-left: 15px;
-  position: absolute;
 }
 
 @media (min-width: 992px) {
