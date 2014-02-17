@@ -2,6 +2,22 @@
 // CSS for file upload button and fileinput widget
 // ------------------------------------------------
 
+.no-js {
+	span.fileinput-new,
+	span.fileinput-exists {
+		display: none;
+	}
+
+	.btn-file > input {
+		position: static;
+		top: 0;
+		right: 0;
+		font-size: 1em;
+		opacity: 1;
+		filter: alpha(opacity=1);
+	}
+}
+
 .btn-file {
   overflow: hidden;
   position: relative;
@@ -13,7 +29,6 @@
     margin: 0;
     opacity: 0;
     filter: alpha(opacity=0);
-    transform: translate(-300px, 0) scale(4);
     font-size: 23px;
     direction: ltr;
     cursor: pointer;
