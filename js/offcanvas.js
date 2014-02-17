@@ -162,7 +162,10 @@
     elements.addClass('canvas-sliding').each(function() {
       $(this).data('offcanvas-style', $(this).attr('style') || '')
       if ($(this).css('position') === 'static') $(this).css('position', 'relative')
-      if ($(this).css(placement) === 'auto' && $(this).css(opposite) === 'auto') $(this).css(placement, 0)
+      if (($(this).css(placement) === 'auto' || $(this).css(placement) === '0px') &&
+          ($(this).css(opposite) === 'auto' || $(this).css(opposite) === '0px')) {
+        $(this).css(placement, 0)
+      }
     })
     
     if (elements.index(this.$element) !== -1) this.$element.css(placement, -1 * offset)
