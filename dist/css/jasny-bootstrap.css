@@ -566,6 +566,10 @@
 .fileinput .uneditable-input {
   white-space: normal;
 }
+.fileinput-filename {
+  display: inline-block;
+  overflow: hidden;
+}
 .fileinput-new .input-group .btn-file {
   border-radius: 0 4px 4px 0;
 }
