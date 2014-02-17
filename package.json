@@ -21,7 +21,7 @@
     "url": "https://github.com/jasny/bootstrap/issues"
   },
   "license": {
-    "type": "MIT",
+    "type": "Apache-2.0",
     "url": "https://github.com/jasny/bootstrap/blob/master/LICENSE"
   },
   "devDependencies": {

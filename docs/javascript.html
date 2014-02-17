@@ -44,9 +44,9 @@ $(".fileinput").fileinput().addClass("fat")
 
     <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
 {% highlight js %}
-$("#myMenu").navmenu()                      // initialized with defaults
-$("#myMenu").navmenu({ autohide: false })   // initialized with no autohide
-$("#myMenu").navmenu('show')                // initializes and invokes show immediately</p>
+$("#myMenu").offcanvas()                      // initialized with defaults
+$("#myMenu").offcanvas({ autohide: false })   // initialized with no autohide
+$("#myMenu").offcanvas('show')                // initializes and invokes show immediately</p>
 {% endhighlight %}
 
     <p>Each plugin also exposes its raw constructor on a <code>Constructor</code> property: <code>$.fn.popover.Offcanvas</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element: <code>$('.navmenu').data('offcanvas')</code>.</p>
@@ -63,8 +63,8 @@ $.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Boot
     <p>As of 3.0.0, all Bootstrap events are namespaced.</p>
     <p>All infinitive events provide <code>preventDefault</code> functionality. This provides the ability to stop the execution of an action before it starts.</p>
 {% highlight js %}
-$('#myModal').on('show.bs.modal', function (e) {
-  if (!data) return e.preventDefault() // stops modal from being shown
+$('#myMenu').on('show.bs.offcanvas', function (e) {
+  if (!data) return e.preventDefault() // stops menu from being shown
 })
 {% endhighlight %}
   </div>
@@ -198,6 +198,36 @@ $('.navmenu').offcanvas()
     <p>Shows an off canvas element.</p>
     <h4>.offcanvas('hide')</h4>
     <p>Hides an off canvas element.</p>
+    
+    <h3>Events</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="width: 150px;">Event Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>show.bs.offcanvas</td>
+            <td>This event fires immediately when the show instance method is called.</td>
+          </tr>
+          <tr>
+            <td>shown.bs.offcanvas</td>
+            <td>This event is fired when the target has been made visible to the user (will wait for CSS transitions to complete).</td>
+          </tr>
+          <tr>
+            <td>hide.bs.offcanvas</td>
+            <td>This event is fired immediately when the hide instance method has been called.</td>
+          </tr>
+          <tr>
+            <td>hidden.bs.offcanvas</td>
+            <td>This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions to complete).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- ./bs-table-responsive -->
   </div>
 
 

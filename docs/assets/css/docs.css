@@ -899,7 +899,6 @@ h2[id], h3[id] {
   position: absolute;
   z-index: 1;
 }
-.bs-navmenu-fixed-example .navmenu-fixed-left,
 .bs-navmenu-offcanvas-example .navmenu-fixed-left {
   -webkit-transform: translate(-300px, 0);  
   transform: translate(-300px, 0);

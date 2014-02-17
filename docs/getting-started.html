@@ -2,7 +2,7 @@
 layout: default
 title: Getting started
 slug: getting-started
-lead: "An overview of Bootstrap, how to download and use, basic templates and examples, and more."
+lead: "An overview of Jasny Bootstrap, how to download and use, basic templates and examples, and more."
 base_url: "../"
 ---
 
@@ -14,6 +14,11 @@ base_url: "../"
     </div>
     <p class="lead">Jasny Bootstrap is an extension to <a href="http://getbootstrap.com">Twitter Bootstrap</a>, adding a number of features and components.</p>
     <p>The aim of Jasny Bootstrap is to provide all the required features for building highly interactive web applications for desktop and mobile.</p>
+    
+    <div class="bs-callout bs-callout-warning">
+      <h4>Delivered as extension only</h4>
+      <p>As of version 3.1.0 Jasny Bootstrap is no longer bundeled with Twitter Bootstrap. You should load Twitter Bootstrap's CSS before this extension.</p>
+    </div>
   </div>
 
   <!-- Getting started
@@ -22,45 +27,42 @@ base_url: "../"
     <div class="page-header">
       <h1 id="download">Download</h1>
     </div>
-    <p class="lead">Bootstrap has a few easy ways to quickly get started, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
+    <p class="lead">Jasny Bootstrap has a few easy ways to quickly get started, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
 
-    <h3 id="download-compiled">Compiled CSS, JS, and fonts</h3>
-    <p>The fastest way to get Bootstrap is to download the compiled and minified versions of our CSS and JavaScript, along with the included fonts. No documentation or original source files are included.</p>
-    <p><a class="btn btn-lg btn-primary" href="{{ site.download_dist }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled']);">Download Bootstrap</a></p>
+    <h3 id="download-compiled">Compiled CSS and JS</h3>
+    <p>The fastest way to get Jasny Bootstrap is to download the compiled and minified versions of our CSS and JavaScript. No documentation or original source files are included.</p>
+    <p><a class="btn btn-lg btn-primary" href="{{ site.download.dist }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled']);">Download Jasny Bootstrap</a></p>
   
     <h3 id="download-additional">Additional downloads</h3>
     <div class="bs-docs-dl-options">
       <h4>
-        <a href="{{ site.download_source }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download source']);">Download source code</a>
+        <a href="{{ site.download.source }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download source']);">Download source code</a>
       </h4>
-      <p>Get the latest Bootstrap LESS and JavaScript source code by downloading it directly from GitHub.</p>
+      <p>Get the latest Jasny Bootstrap LESS and JavaScript source code by downloading it directly from GitHub.</p>
       <h4>
         <a href="{{ site.repo }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'GitHub project']);">Clone or fork via GitHub</a>
       </h4>
-      <p>Visit us on GitHub to clone or fork the Bootstrap project.</p>
+      <p>Visit us on GitHub to clone or fork the Jasny Bootstrap project.</p>
       <h4>
         Install with <a href="http://bower.io">Bower</a>
       </h4>
       <p>Install and manage the original files for all CSS and JavaScript, along with a local copy of the docs, using <a href="http://bower.io">Bower</a>.</p>
-      {% highlight bash %}$ bower install jasny/bootstrap{% endhighlight %}
+      {% highlight bash %}$ bower install jasny-bootstrap{% endhighlight %}
     </div>
 
     <h3 id="download-cdn">Jasny Bootstrap @ cdnjs</h3>
     <p><a href="http://cdnjs.com" target="_blank">CDNJS</a> is a community driven CDN hosted by CloudFlare, supporting over a hundred projects. To use this CDN, swap your local instances for the CDN links listed below.</p>
 {% highlight html %}
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="{{ site.cdn_css }}">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="{{ site.cdn_theme_css }}">
+<link rel="stylesheet" href="{{ site.cdn.css }}">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="{{ site.cdn_js }}"></script>
+<script src="{{ site.cdn.js }}"></script>
 {% endhighlight %}
 
     <div class="bs-callout bs-callout-warning" id="callout-less-compilation">
-      <h4>Compiling Bootstrap's LESS files</h4>
-      <p>If you work with Bootstrap's uncompiled source code, you need to compile the LESS files to produce usable CSS files. For compiling LESS files into CSS, we only officially support <a href="http://twitter.github.io/recess/">Recess</a>, which is Twitter's CSS hinter based on <a href="http://lesscss.org">less.js</a>.</p>
+      <h4>Compiling Jasny Bootstrap's LESS files</h4>
+      <p>If you work with Jasny Bootstrap's uncompiled source code, you need to compile the LESS files to produce usable CSS files. For compiling LESS files into CSS, we only officially support <a href="http://twitter.github.io/recess/">Recess</a>, which is Twitter's CSS hinter based on <a href="http://lesscss.org">less.js</a>.</p>
     </div>
   </div>
 
@@ -72,7 +74,7 @@ base_url: "../"
       <h1 id="whats-included">What's included</h1>
     </div>
     <p class="lead">Within the download you'll find the following directories and files, logically grouping common resources and providing both compiled and minified variations.</p>
-    <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You'll see something like this:</p>
+    <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Jasny Bootstrap. You'll see something like this:</p>
 
 <!-- NOTE: This info is intentionally duplicated in the README.
 Copy any changes made here over to the README too. -->
