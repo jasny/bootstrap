@@ -39,11 +39,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
     
     if (this.options.recalc) {
       this.calcClone()
-      $(window).on('resize.bs.offcanvas', $.proxy(this.recalc, this))
+      $(window).on('resize', $.proxy(this.recalc, this))
     }
     
     if (this.options.autohide)
-      $(document).on('click.bs.offcanvas', $.proxy(this.autohide, this))
+      $(document).on('click', $.proxy(this.autohide, this))
 
     if (this.options.toggle) this.toggle()
   }
