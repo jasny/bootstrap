@@ -3,7 +3,7 @@
 // without importing Twitter Bootstrap.
 // --------------------------------------------------------
 
-//== Colors
+//-- Colors
 //
 //## Gray colors for use across Bootstrap.
 
@@ -13,7 +13,7 @@
 @gray-light:             lighten(#000, 60%);   // #999
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-//== Typography
+//-- Typography
 //
 //## Font size and line-height.
 
@@ -98,6 +98,8 @@
 @screen-sm-max:              (@screen-md-min - 1);
 @screen-md-max:              (@screen-lg-min - 1);
 
+//--
+@container-lg:              ((1140px + @grid-gutter-width));
 
 //== Grid system
 //
@@ -108,13 +110,8 @@
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     768px;
 
-//== Container sizes
-//
-//## Define the maximum width of `.container` for different screen sizes.
-
-@container-lg:              ((1140px + @grid-gutter-width));
 //** Maximum with of a smooth container.
-//@container-smooth:          @container-lg;
+@container-smooth:          @container-lg;
 
 //== Navbar
 //
@@ -216,4 +213,4 @@
 //## Define alert colors, border radius, and padding.
 
 @alert-border-radius:         @border-radius-base;
-@alert-fixed-width:           @screen-md-min;
+@alert-fixed-width:           @screen-md;

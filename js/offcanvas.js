@@ -1,10 +1,10 @@
 /* ========================================================================
- * Bootstrap: offcanvas.js v3.0.3-p7
- * http://jasny.github.io/bootstrap/javascript.html#offcanvas
+ * Bootstrap: offcanvas.js v3.1.0
+ * http://jasny.github.io/bootstrap/javascript/#offcanvas
  * 
  * Based on Boostrap collapse.js by Twitter, Inc. 
  * ========================================================================
- * Copyright 2013 Jasny, BV.
+ * Copyright 2013-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.

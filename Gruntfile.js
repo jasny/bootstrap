@@ -35,7 +35,10 @@ module.exports = function (grunt) {
 
     // Task configuration.
     clean: {
-      dist: ['dist', 'docs/dist']
+      dist: ['dist', 'docs/dist'],
+      jekyll: ['_gh_pages'],
+      assets: ['assets/css/*.min.css', 'assets/js/*.min.js'],
+      jade: ['jade/*.jade']
     },
 
     jshint: {
@@ -251,7 +254,7 @@ module.exports = function (grunt) {
         options: {
           pretty: true,
           data: function () {
-            var filePath = path.join(__dirname, 'less/build/default-variables.less');
+            var filePath = path.join(__dirname, 'less/build/variables.less');
             var fileContent = fs.readFileSync(filePath, {encoding: 'utf8'});
             var parser = new BsLessdocParser(fileContent);
             return {sections: parser.parseFile()};
@@ -363,10 +366,10 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-docs', 'copy:docs');
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-docs']);
+  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-docs']);
 
   // Default task.
-  grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
+  grunt.registerTask('default', ['dist', 'build-customizer']);
 
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z

@@ -13,10 +13,10 @@ function getFiles(type) {
   var files = {};
   fs.readdirSync(type)
     .filter(function (path) {
-      return type === 'fonts' ? true : new RegExp('\\.' + type + '$').test(path);
+      return new RegExp('\\.' + type + '$').test(path);
     })
     .forEach(function (path) {
-      var fullPath = type + '/' + path;
+      var fullPath = type + (path === 'variables.less' ? '/build/' : '/') + path;
       files[path] = fs.readFileSync(fullPath, 'utf8');
     });
   return 'var __' + type + ' = ' + JSON.stringify(files) + '\n';

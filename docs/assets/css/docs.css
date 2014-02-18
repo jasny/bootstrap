@@ -65,7 +65,7 @@ span.hidden-sm {
 
 /* Outline button for use within the docs */
 .btn-outline {
-  color: #563d7c;
+  color: #962A28;
   background-color: #fff;
   border-color: #e5e5e5;
 }
@@ -73,8 +73,14 @@ span.hidden-sm {
 .btn-outline:focus,
 .btn-outline:active {
   color: #fff;
-  background-color: #563d7c;
-  border-color: #563d7c;
+  background-color: #962A28;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #450915), color-stop(1, #962A28));
+  background-image: -o-linear-gradient(right, #450915 0%, #962A28 100%);
+  background-image: -moz-linear-gradient(right, #450915 0%, #962A28 100%);
+  background-image: -webkit-linear-gradient(right, #450915 0%, #962A28 100%);
+  background-image: -ms-linear-gradient(right, #450915 0%, #962A28 100%);
+  background-image: linear-gradient(to right, #450915 0%, #962A28 100%);
+  border-color: #962A28;
 }
 
 /* Inverted outline button (white on dark) */
@@ -570,7 +576,7 @@ span.hidden-sm {
 /* Janky fix for preventing navbar from overlapping */
 h1[id] {
   padding-top: 80px;
-  margin-top: -45px;
+  margin-top: -80px;
 }
 h2[id], h3[id] {
   padding-top: 65px;
@@ -1124,7 +1130,7 @@ h2[id], h3[id] {
 
 .bs-customizer .toggle {
   float: right;
-  margin-top: 25px;
+  margin-top: 80px;
 }
 
 /* Headings and form contrls */

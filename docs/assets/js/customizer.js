@@ -260,8 +260,8 @@ window.onload = function () { // wait for load in a dumb way because B-0
       .join('\n')
 
     return {
-      'bootstrap.js': js,
-      'bootstrap.min.js': cw + uglify(js)
+      'jasny-bootstrap.js': js,
+      'jasny-bootstrap.min.js': cw + uglify(js)
     }
   }
 
@@ -277,11 +277,6 @@ window.onload = function () { // wait for load in a dumb way because B-0
   $('#plugin-section .toggle').on('click', function (e) {
     e.preventDefault()
     inputsPlugin.prop('checked', !inputsPlugin.is(':checked'))
-  })
-
-  $('#less-variables-section .toggle').on('click', function (e) {
-    e.preventDefault()
-    inputsVariables.val('')
   })
 
   $('[data-dependencies]').on('click', function () {
@@ -319,7 +314,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
     generateZip(generateCSS(), generateJavascript(), generateFonts(), configJson, function (blob) {
       $compileBtn.removeAttr('disabled')
-      saveAs(blob, 'bootstrap.zip')
+      saveAs(blob, 'jasny-bootstrap.zip')
       createGist(configJson)
     })
   })
@@ -329,7 +324,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
     showCallout('Looks like you\'re using safari, which sadly doesn\'t have the best support' +
                  'for HTML5 blobs. Because of this your file will be downloaded with the name <code>"untitled"</code>.' +
                  'However, if you check your downloads folder, just rename this <code>"untitled"</code> file' +
-                 'to <code>"bootstrap.zip"</code> and you should be good to go!')
+                 'to <code>"jasny-bootstrap.zip"</code> and you should be good to go!')
   } else if (!window.URL && !window.webkitURL) {
     $('.bs-docs-section, .bs-docs-sidebar').css('display', 'none')
 

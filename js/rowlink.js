@@ -1,8 +1,8 @@
 /* ============================================================
- * Bootstrap: rowlink.js v3.0.0-p7
- * http://jasny.github.io/bootstrap/javascript.html#rowlink
+ * Bootstrap: rowlink.js v3.1.0
+ * http://jasny.github.io/bootstrap/javascript/#rowlink
  * ============================================================
- * Copyright 2012 Jasny BV, Netherlands.
+ * Copyright 2012-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
