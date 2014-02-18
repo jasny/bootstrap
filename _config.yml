@@ -24,7 +24,7 @@ repo:             https://github.com/jasny/bootstrap
 
 download:
   source:         https://github.com/jasny/bootstrap/archive/v3.1.0.zip
-  dist:           https://github.com/jasny/bootstrap/releases/download/v3.1.0/bootstrap-3.1.0-dist.zip
+  dist:           https://github.com/jasny/bootstrap/releases/download/v3.1.0/jasny-bootstrap-3.1.0-dist.zip
 
 cdn:
   css:            //cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.0/css/jasny-bootstrap.min.css
