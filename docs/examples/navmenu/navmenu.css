@@ -11,6 +11,7 @@ body {
 
 .navbar {
   text-align: center;
+  display: block;
 }
 .navbar-brand {
   display: inline-block;
@@ -22,11 +23,24 @@ body {
   margin-left: 15px;
 }
 
+.container {
+  max-width: 100%;
+}
+
+@media (min-width: 1px) {
+  .navbar-toggle {
+    display: block !important;
+  }
+}
+
 @media (min-width: 992px) {
   body {
     padding: 0 0 0 300px;
   }
   .navmenu {
     padding-top: 0;
+  }
+  .navbar {
+    display: none !important; /* IE8 fix */
   }
 }
