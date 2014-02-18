@@ -10,8 +10,8 @@ body {
 }
 
 .navbar {
-  text-align: center;
   display: block;
+  text-align: center;
 }
 .navbar-brand {
   display: inline-block;
