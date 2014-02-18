@@ -8,9 +8,9 @@
 
 window.onload = function () { // wait for load in a dumb way because B-0
   var cw = '/*!\n' +
-           ' * Bootstrap v3.1.0 (http://getbootstrap.com)\n' +
-           ' * Copyright 2011-2014 Twitter, Inc.\n' +
-           ' * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n' +
+           ' * Jasny Bootstrap v3.1.0 (http://jasny.github.com/bootstrap)\n' +
+           ' * Copyright 2011-2014 Arnold Daniels.\n' +
+           ' * Licensed under Apache-2.0 (https://github.com/jasny/bootstrap/blob/master/LICENSE)\n' +
            ' */\n\n'
 
   function showError(msg, err) {
@@ -166,10 +166,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
   }
 
   function generateFonts() {
-    var glyphicons = $('#less-section [value="glyphicons.less"]:checked')
-    if (glyphicons.length) {
-      return __fonts
-    }
+    return false;
   }
 
   // Returns an Array of @import'd filenames in the order
@@ -200,7 +197,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
       // Custom variables are added after Bootstrap variables so the custom
       // ones take precedence.
-      if (('variables.less' === filename) && vars) lessSource += generateCustomCSS(vars)
+      if (('build/default-variables.less' === filename) && vars) lessSource += generateCustomCSS(vars)
     })
 
     lessSource = lessSource.replace(/@import[^\n]*/gi, '') //strip any imports
@@ -209,7 +206,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
   function compileLESS(lessSource, baseFilename, intoResult) {
     var parser = new less.Parser({
-        paths: ['variables.less', 'mixins.less'],
+        paths: ['build/default-variables.less', 'mixins.less'],
         optimization: 0,
         filename: baseFilename + '.css'
     }).parse(lessSource, function (err, tree) {
@@ -242,12 +239,10 @@ window.onload = function () { // wait for load in a dumb way because B-0
           $(this).val() && (vars[$(this).prev().text()] = $(this).val())
         })
 
-    var bsLessSource    = generateLESS('bootstrap.less', lessFileIncludes, vars)
-    var themeLessSource = generateLESS('theme.less',     lessFileIncludes, vars)
+    var bsLessSource    = generateLESS('jasny-bootstrap.less', lessFileIncludes, vars)
 
     try {
-      compileLESS(bsLessSource, 'bootstrap', result)
-      compileLESS(themeLessSource, 'bootstrap-theme', result)
+      compileLESS(bsLessSource, 'jasny-bootstrap', result)
     } catch (err) {
       return showError('<strong>Ruh roh!</strong> Could not parse less files.', err)
     }
@@ -265,8 +260,8 @@ window.onload = function () { // wait for load in a dumb way because B-0
       .join('\n')
 
     return {
-      'bootstrap.js': js,
-      'bootstrap.min.js': cw + uglify(js)
+      'jasny-bootstrap.js': js,
+      'jasny-bootstrap.min.js': cw + uglify(js)
     }
   }
 
@@ -282,11 +277,6 @@ window.onload = function () { // wait for load in a dumb way because B-0
   $('#plugin-section .toggle').on('click', function (e) {
     e.preventDefault()
     inputsPlugin.prop('checked', !inputsPlugin.is(':checked'))
-  })
-
-  $('#less-variables-section .toggle').on('click', function (e) {
-    e.preventDefault()
-    inputsVariables.val('')
   })
 
   $('[data-dependencies]').on('click', function () {
@@ -324,7 +314,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
     generateZip(generateCSS(), generateJavascript(), generateFonts(), configJson, function (blob) {
       $compileBtn.removeAttr('disabled')
-      saveAs(blob, 'bootstrap.zip')
+      saveAs(blob, 'jasny-bootstrap.zip')
       createGist(configJson)
     })
   })
@@ -334,7 +324,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
     showCallout('Looks like you\'re using safari, which sadly doesn\'t have the best support' +
                  'for HTML5 blobs. Because of this your file will be downloaded with the name <code>"untitled"</code>.' +
                  'However, if you check your downloads folder, just rename this <code>"untitled"</code> file' +
-                 'to <code>"bootstrap.zip"</code> and you should be good to go!')
+                 'to <code>"jasny-bootstrap.zip"</code> and you should be good to go!')
   } else if (!window.URL && !window.webkitURL) {
     $('.bs-docs-section, .bs-docs-sidebar').css('display', 'none')
 
