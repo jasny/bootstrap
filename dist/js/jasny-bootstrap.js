@@ -7,12 +7,12 @@
 if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScript requires jQuery') }
 
 /* ========================================================================
- * Bootstrap: offcanvas.js v3.0.3-p7
- * http://jasny.github.io/bootstrap/javascript.html#offcanvas
+ * Bootstrap: offcanvas.js v3.1.0
+ * http://jasny.github.io/bootstrap/javascript/#offcanvas
  * 
  * Based on Boostrap collapse.js by Twitter, Inc. 
  * ========================================================================
- * Copyright 2013 Jasny, BV.
+ * Copyright 2013-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
@@ -304,10 +304,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 }(window.jQuery);
 
 /* ============================================================
- * Bootstrap: rowlink.js v3.0.0-p7
- * http://jasny.github.io/bootstrap/javascript.html#rowlink
+ * Bootstrap: rowlink.js v3.1.0
+ * http://jasny.github.io/bootstrap/javascript/#rowlink
  * ============================================================
- * Copyright 2012 Jasny BV, Netherlands.
+ * Copyright 2012-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -389,11 +389,12 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 }(window.jQuery);
 
 /* ===========================================================
- * Bootstrap: inputmask.js v3.0.0-p7
- * http://jasny.github.io/bootstrap/javascript.html#inputmask
+ * Bootstrap: inputmask.js v3.1.0
+ * http://jasny.github.io/bootstrap/javascript/#inputmask
+ * 
  * Based on Masked Input plugin by Josh Bush (digitalbush.com)
  * ===========================================================
- * Copyright 2012 Jasny BV, Netherlands.
+ * Copyright 2012-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
@@ -752,7 +753,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
  * Bootstrap: fileinput.js v3.1.0
  * http://jasny.github.com/bootstrap/javascript/#fileinput
  * ===========================================================
- * Copyright 2012-2014 Jasny BV, Netherlands.
+ * Copyright 2012-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
