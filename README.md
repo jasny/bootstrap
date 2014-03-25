@@ -1,6 +1,6 @@
 # [Jasny Bootstrap](http://jasny.github.io/bootstrap/) [![Build Status](https://secure.travis-ci.org/jasny/bootstrap.png)](http://travis-ci.org/jasny/bootstrap)[![devDependency Status](https://david-dm.org/jasny/bootstrap/dev-status.png)](https://david-dm.org/jasny/bootstrap#info=devDependencies)
 
-Jasny Bootstrap is a fork of the famous [Twitter Bootstrap](http://getbootstrap.com/) with added components.
+Jasny Bootstrap is an extension of the famous [Twitter Bootstrap](http://getbootstrap.com/), adding the following components:
 
 * [Button labels](http://jasny.github.io/bootstrap/css/#buttons-labels)
 * [Off canvas navmenu](http://jasny.github.io/bootstrap/components/#navmenu)
@@ -16,9 +16,9 @@ To get started, check out <http://jasny.github.io/bootstrap>!
 
 Three quick start options are available:
 
-* [Download the latest release](https://github.com/jasny/bootstrap/releases/tag/v3.0.0-p7).
+* [Download the latest release](https://github.com/jasny/bootstrap/releases/download/v3.1.0/jasny-bootstrap-3.1.0-dist.zip).
 * Clone the repo: `git clone git://github.com/jasny/bootstrap.git`.
-* Install with [Bower](http://bower.io): `bower install bootstrap=jasny/bootstrap`. To install Jasny Bootstrap next to Twitter Bootstrap use `bower install jasny-bootstrap=jasny/bootstrap`.
+* Install with [Bower](http://bower.io): `bower install bootstrap=jasny-bootstrap`.
 
 Read the [Getting Started page](http://jasny.github.io/bootstrap/getting-started/) for information on the framework contents, templates and examples, and more.
 
@@ -27,28 +27,7 @@ Read the [Getting Started page](http://jasny.github.io/bootstrap/getting-started
 Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
 
 ```
-bootstrap/
-├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.min.css
-│   ├── bootstrap-theme.css
-│   └── bootstrap-theme.min.css
-├── js/
-│   ├── bootstrap.js
-│   └── bootstrap.min.js
-└── fonts/
-    ├── glyphicons-halflings-regular.eot
-    ├── glyphicons-halflings-regular.svg
-    ├── glyphicons-halflings-regular.ttf
-    └── glyphicons-halflings-regular.woff
-```
-
-We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified CSS and JS (`bootstrap.min.*`). Fonts from Glyphicons are included, as is the optional Bootstrap theme.
-
-Alternatively you can extend Twitter Bootstrap by downloading <code>jasny-bootstrap.*</code> files from the extension package, in conjunction with the original Twitter Bootstrap files or a custom build of Bootstrap. The structure of (the compiled) Jasny Bootstrap extension package is:
-
-```
-extend/
+jasny-bootstrap/
 ├── css/
 │   ├── jasny-bootstrap.css
 │   ├── jasny-bootstrap.min.css
@@ -56,6 +35,11 @@ extend/
     ├── jasny-bootstrap.js
     └── jasny-bootstrap.min.js
 ```
+
+We provide compiled CSS and JS (`jasny-bootstrap.*`), as well as compiled and minified CSS and JS (`jasny-bootstrap.min.*`).
+
+Jasny Bootstrap should be loaded after Twitter Bootstrap.
+
 
 ## Bugs and feature requests
 
@@ -67,7 +51,7 @@ You may use [this JS Bin](http://jsbin.com/iKumuWo/1/edit) as a template for you
 
 ## Documentation
 
-Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://jasny.github.io/bootstrap>. The docs may also be run locally.
+Jasny Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://jasny.github.io/bootstrap>. The docs may also be run locally.
 
 ### Running documentation locally
 
@@ -80,7 +64,7 @@ Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com
 
 ### Documentation for previous releases
 
-Documentation for v2.3.2 has been made available for the time being at <http://jasny.github.io/bootstrap/2.3.2/> while folks transition to Bootstrap 3.
+Documentation for v2.3.1 has been made available for the time being at <http://jasny.github.io/bootstrap/2.3.1/> while folks transition to Bootstrap 3.
 
 [Previous releases](https://github.com/jasny/bootstrap/releases) and their documentation are also available for download.
 
@@ -123,14 +107,11 @@ Should you encounter problems with installing dependencies or running Grunt comm
 
 ## Contributing
 
-Please read through our [contributing guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+Please read through our [contributing guidelines](https://github.com/jasny/bootstrap/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
 
 More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the [Code Guide](http://github.com/mdo/code-guide), maintained by [Mark Otto](http://github.com/mdo).
 
 Editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-With v3.1, we're moving from the Apache 2 to the MIT license for the Bootstrap code (not the docs). Please see the [contributing guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md) for more information.
-
 
 ## Community
 
@@ -141,27 +122,27 @@ Keep track of development and community news.
 
 
 
-
 ## Versioning
 
-Jasny Bootstrap follows the version of Twitter Bootstrap added with a custom patch number.
+For transparency into our release cycle and in striving to maintain backward compatibility, Jasny Bootstrap is maintained under the Semantic Versioning guidelines. Sometimes we screw up, but we'll adhere to these rules whenever possible.
 
-`<major>.<minor>.<patch>-p<jasny patch>`
+Releases will be numbered with the following format:
 
-Backwards compatibility is only broken if Twitter Bootstrap also does so, in which case the major is incremented.
+`<major>.<minor>.<patch>`
+
+And constructed with the following guidelines:
+
+- Breaking backward compatibility **bumps the major** while resetting minor and patch
+- New additions without breaking backward compatibility **bumps the minor** while resetting the patch
+- Bug fixes and misc changes **bumps only the patch**
+
+For more information on SemVer, please visit <http://semver.org/>.
+
+__The major version will follow Twitter Bootstraps major version. This means backward compatibility will only be broken if Twitter Bootstrap does so.__
+
 
 
 ## Authors
-
-**Mark Otto**
-
-+ <http://twitter.com/mdo>
-+ <http://github.com/mdo>
-
-**Jacob Thornton**
-
-+ <http://twitter.com/fat>
-+ <http://github.com/fat>
 
 **Arnold Daniels**
 
@@ -172,5 +153,4 @@ Backwards compatibility is only broken if Twitter Bootstrap also does so, in whi
 
 ## Copyright and license
 
-Copyright 2013 Twitter, Inc under [the Apache 2.0 license](LICENSE).
 Copyright 2013 Jasny BV under [the Apache 2.0 license](LICENSE).
