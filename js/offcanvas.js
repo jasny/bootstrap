@@ -155,7 +155,7 @@
     this.$element.trigger(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
-    this.state = 'sliding'
+    this.state = 'slide-in'
     this.calcPlacement();
     
     var elements = this.getCanvasElements()
@@ -164,12 +164,13 @@
     var offset = this.offset()
 
     if (elements.index(this.$element) !== -1) {
+      $(this.$element).data('offcanvas-style', $(this.$element).attr('style') || '')
       this.$element.css(placement, -1 * offset)
       this.$element.css(placement); // Workaround: Need to get the CSS property for it to be applied before the next line of code
     }
 
     elements.addClass('canvas-sliding').each(function() {
-      $(this).data('offcanvas-style', $(this).attr('style') || '')
+      if ($(this).data('offcanvas-style') === undefined) $(this).data('offcanvas-style', $(this).attr('style') || '')
       if ($(this).css('position') === 'static') $(this).css('position', 'relative')
       if (($(this).css(placement) === 'auto' || $(this).css(placement) === '0px') &&
           ($(this).css(opposite) === 'auto' || $(this).css(opposite) === '0px')) {
@@ -180,6 +181,8 @@
     if (this.options.disableScrolling) this.disableScrolling()
     
     var complete = function () {
+      if (this.state != 'slide-in') return
+      
       this.state = 'slid'
 
       elements.removeClass('canvas-sliding').addClass('canvas-slid')
@@ -199,20 +202,22 @@
     this.$element.trigger(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
-    this.state = 'sliding'
+    this.state = 'slide-out'
 
     var elements = $('.canvas-slid')
     var placement = this.placement
     var offset = -1 * this.offset()
 
     var complete = function () {
+      if (this.state != 'slide-out') return
+      
       this.state = null
       this.placement = null
       
       this.$element.removeClass('in')
       
       elements.removeClass('canvas-sliding')
-      elements.add('body').each(function() {
+      elements.add(this.$element).add('body').each(function() {
         $(this).attr('style', $(this).data('offcanvas-style')).removeData('offcanvas-style')
       })
 
@@ -227,7 +232,7 @@
   }
 
   OffCanvas.prototype.toggle = function () {
-    if (this.state === 'sliding') return
+    if (this.state === 'slide-in' || this.state === 'slide-out') return
     this[this.state === 'slid' ? 'hide' : 'show']()
   }
 
@@ -239,17 +244,18 @@
   }
 
   OffCanvas.prototype.recalc = function () {
-    if (this.state !== 'slid' || this.$calcClone.css('display') === 'none') return
+    if (this.$calcClone.css('display') === 'none' || (this.state !== 'slid' && this.state !== 'slide-in')) return
     
-    var placement = this.placement
-    var offset = -1 * this.offset()
+    this.state = null
+    this.placement = null
+    var elements = this.getCanvasElements()
     
-    this.getCanvasElements().each(function() {
-      $(this).css(placement, (parseInt($(this).css(placement), 10) || 0) + offset)
-    }).removeClass('canvas-slid')
+    this.$element.removeClass('in')
     
-    $('body').css('overflow', '')
-    this.$element.css(placement, '').removeClass('in canvas-slid')
+    elements.removeClass('canvas-slid')
+    elements.add(this.$element).add('body').each(function() {
+      $(this).attr('style', $(this).data('offcanvas-style')).removeData('offcanvas-style')
+    })
   }
   
   OffCanvas.prototype.autohide = function (e) {
