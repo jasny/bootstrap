@@ -26,11 +26,14 @@
   border-radius: 0;
 }
 .navmenu-fixed-left,
-.navbar-offcanvas {
+.navbar-offcanvas.navmenu-fixed-left {
   left: 0;
+  right: auto;
   border-width: 0 1px 0 0;
 }
-.navmenu-fixed-right {
+.navmenu-fixed-right,
+.navbar-offcanvas {
+  left: auto;
   right: 0;
   border-width: 0 0 0 1px;
 }

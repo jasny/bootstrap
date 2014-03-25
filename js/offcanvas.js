@@ -1,8 +1,6 @@
 /* ========================================================================
- * Bootstrap: offcanvas.js v3.1.0
+ * Bootstrap: offcanvas.js v3.1.1
  * http://jasny.github.io/bootstrap/javascript/#offcanvas
- * 
- * Based on Boostrap collapse.js by Twitter, Inc. 
  * ========================================================================
  * Copyright 2013-2014 Arnold Daniels
  *
@@ -28,6 +26,7 @@
     this.$element = $(element)
     this.options  = $.extend({}, OffCanvas.DEFAULTS, options)
     this.state    = null
+    this.placement = null
     
     if (this.options.recalc) {
       this.calcClone()
@@ -42,14 +41,14 @@
 
   OffCanvas.DEFAULTS = {
     toggle: true,
-    placement: 'left',
+    placement: 'auto',
     autohide: true,
     recalc: true,
     disableScrolling: true
   }
 
   OffCanvas.prototype.offset = function () {
-    switch (this.options.placement) {
+    switch (this.placement) {
       case 'left':
       case 'right':  return this.$element.outerWidth()
       case 'top':
@@ -58,26 +57,31 @@
   }
   
   OffCanvas.prototype.calcPlacement = function () {
-    var horizontal = $(window).width() / this.$element.width(),
-        vertical = $(window).height() / this.$element.height()
-        
+    if (this.options.placement !== 'auto') {
+        this.placement = this.options.placement
+        return
+    }
+    
     if (!this.$element.hasClass('in')) {
       this.$element.css('visiblity', 'hidden !important').addClass('in')
     } 
     
+    var horizontal = $(window).width() / this.$element.width()
+    var vertical = $(window).height() / this.$element.height()
+        
     var element = this.$element
     function ab(a, b) {
       if (element.css(b) === 'auto') return a
       if (element.css(a) === 'auto') return b
       
-      var size_a = parseInt(element.css(a), 10),
-          size_b = parseInt(element.css(b), 10)
+      var size_a = parseInt(element.css(a), 10)
+      var size_b = parseInt(element.css(b), 10)
   
       return size_a > size_b ? b : a
     }
     
-    this.options.placement = horizontal > vertical ? ab('left', 'right') : ab('top', 'bottom')
-    
+    this.placement = horizontal >= vertical ? ab('left', 'right') : ab('top', 'bottom')
+      
     if (this.$element.css('visibility') === 'hidden !important') {
       this.$element.removeClass('in').css('visiblity', '')
     }
@@ -107,12 +111,12 @@
     // Use jQuery animation if CSS transitions aren't supported
     if (!$.support.transition) {
       var anim = {}
-      anim[this.options.placement] = "+=" + offset
+      anim[this.placement] = "+=" + offset
       return elements.animate(anim, 350, callback)
     }
 
-    var placement = this.options.placement,
-        opposite = this.opposite(placement)
+    var placement = this.placement
+    var opposite = this.opposite(placement)
     
     elements.each(function() {
       if ($(this).css(placement) !== 'auto')
@@ -129,7 +133,7 @@
 
   OffCanvas.prototype.disableScrolling = function() {
     var bodyWidth = $('body').width()
-    var prop = 'padding-' + this.opposite(this.options.placement)
+    var prop = 'padding-' + this.opposite(this.placement)
 
     if ($('body').data('offcanvas-style') === undefined) $('body').data('offcanvas-style', $('body').attr('style'))
     
@@ -151,14 +155,18 @@
     this.$element.trigger(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
-    if (this.options.placement === 'auto') this.calcPlacement()
-
     this.state = 'sliding'
-
+    this.calcPlacement();
+    
     var elements = this.getCanvasElements()
-    var offset = this.offset(),
-        placement = this.options.placement,
-        opposite = this.opposite(placement)
+    var placement = this.placement
+    var opposite = this.opposite(placement)
+    var offset = this.offset()
+
+    if (elements.index(this.$element) !== -1) {
+      this.$element.css(placement, -1 * offset)
+      this.$element.css(placement); // Workaround: Need to get the CSS property for it to be applied before the next line of code
+    }
 
     elements.addClass('canvas-sliding').each(function() {
       $(this).data('offcanvas-style', $(this).attr('style') || '')
@@ -169,8 +177,6 @@
       }
     })
     
-    if (elements.index(this.$element) !== -1) this.$element.css(placement, -1 * offset)
-
     if (this.options.disableScrolling) this.disableScrolling()
     
     var complete = function () {
@@ -196,11 +202,13 @@
     this.state = 'sliding'
 
     var elements = $('.canvas-slid')
+    var placement = this.placement
     var offset = -1 * this.offset()
 
     var complete = function () {
       this.state = null
-
+      this.placement = null
+      
       this.$element.removeClass('in')
       
       elements.removeClass('canvas-sliding')
@@ -233,9 +241,9 @@
   OffCanvas.prototype.recalc = function () {
     if (this.state !== 'slid' || this.$calcClone.css('display') === 'none') return
     
+    var placement = this.placement
     var offset = -1 * this.offset()
     
-    var placement = this.options.placement
     this.getCanvasElements().each(function() {
       $(this).css(placement, (parseInt($(this).css(placement), 10) || 0) + offset)
     }).removeClass('canvas-slid')
@@ -257,10 +265,10 @@
     return this.each(function () {
       var $this   = $(this)
       var data    = $this.data('bs.offcanvas')
-      var options = $.extend({}, OffCanvas.DEFAULTS, $this.data(), typeof option == 'object' && option)
+      var options = $.extend({}, OffCanvas.DEFAULTS, $this.data(), typeof option === 'object' && option)
 
       if (!data) $this.data('bs.offcanvas', (data = new OffCanvas(this, options)))
-      if (typeof option == 'string') data[option]()
+      if (typeof option === 'string') data[option]()
     })
   }
 
