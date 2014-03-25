@@ -1,5 +1,5 @@
 /* ===========================================================
- * Bootstrap: fileinput.js v3.1.0
+ * Bootstrap: fileinput.js v3.1.1
  * http://jasny.github.com/bootstrap/javascript/#fileinput
  * ===========================================================
  * Copyright 2012-2014 Arnold Daniels
@@ -61,7 +61,11 @@
 
   Fileinput.prototype.change = function(e) {
     if (e.target.files === undefined) e.target.files = e.target && e.target.value ? [ {name: e.target.value.replace(/^.+\\/, '')} ] : []
-    if (e.target.files.length === 0) return
+
+    if (e.target.files.length === 0) {
+      this.clear()
+      return
+    }
 
     this.$hidden.val('')
     this.$hidden.attr('name', '')
