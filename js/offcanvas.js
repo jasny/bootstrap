@@ -44,7 +44,8 @@
     toggle: true,
     placement: 'left',
     autohide: true,
-    recalc: true
+    recalc: true,
+    disableScrolling: true
   }
 
   OffCanvas.prototype.offset = function () {
@@ -170,7 +171,7 @@
     
     if (elements.index(this.$element) !== -1) this.$element.css(placement, -1 * offset)
 
-    this.disableScrolling()
+    if (this.options.disableScrolling) this.disableScrolling()
     
     var complete = function () {
       this.state = 'slid'
