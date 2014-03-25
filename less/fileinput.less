@@ -64,16 +64,22 @@
   vertical-align: bottom;
 }
 
+.fileinput.input-group {
+    display: table;
+}
+
 // Not 100% correct, but helps in typical use case
+.fileinput-new.input-group .btn-file,
 .fileinput-new .input-group .btn-file {
   border-radius: 0 @border-radius-base @border-radius-base 0;
-}
-.fileinput-new .input-group .btn-file.btn-xs,
-.fileinput-new .input-group .btn-file.btn-sm {
-  border-radius: 0 @border-radius-small @border-radius-small 0;
-}
-.fileinput-new .input-group .btn-file.btn-lg {
-  border-radius: 0 @border-radius-large @border-radius-large 0;
+
+  &.btn-xs,
+  &.btn-sm {
+    border-radius: 0 @border-radius-small @border-radius-small 0;
+  }
+  &.btn-lg {
+    border-radius: 0 @border-radius-large @border-radius-large 0;
+  }
 }
 
 .form-group.has-warning .fileinput {
