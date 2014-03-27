@@ -1,5 +1,5 @@
 /* ============================================================
- * Bootstrap: rowlink.js v3.1.0
+ * Bootstrap: rowlink.js v3.1.1
  * http://jasny.github.io/bootstrap/javascript/#rowlink
  * ============================================================
  * Copyright 2012-2014 Arnold Daniels
@@ -75,6 +75,8 @@
   // ==================
 
   $(document).on('click.bs.rowlink.data-api', '[data-link="row"]', function (e) {
+    if ($(e.target).closest('.rowlink-skip')) return
+    
     var $this = $(this)
     if ($this.data('rowlink')) return
     $this.rowlink($this.data())
