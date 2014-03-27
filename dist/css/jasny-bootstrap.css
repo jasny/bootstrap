@@ -1,12 +1,15 @@
 /*!
- * Jasny Bootstrap v3.1.0 (http://jasny.github.io/bootstrap)
+ * Jasny Bootstrap v3.1.1 (http://jasny.github.io/bootstrap)
  * Copyright 2012-2014 Arnold Daniels
  * Licensed under Apache-2.0 (https://github.com/jasny/bootstrap/blob/master/LICENSE)
  */
 
+.container-smooth {
+  max-width: 1170px;
+}
 @media (min-width: 1px) {
   .container-smooth {
-    max-width: 1170px;
+    width: auto;
   }
 }
 .btn-labeled {
@@ -56,6 +59,43 @@
   right: -5px;
   left: auto;
   border-radius: 0 2px 2px 0;
+}
+.dropdown-menu .dropdown {
+  position: relative;
+}
+.dropdown-menu .dropdown > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+          border-radius: 0 6px 6px 6px;
+
+  -webkit-border-radius: 0 6px 6px 6px;
+     -moz-border-radius: 0 6px 6px;
+}
+.dropdown-menu .dropdown > a:after {
+  display: block;
+  float: right;
+  width: 0;
+  height: 0;
+  margin-top: 5px;
+  margin-right: -10px;
+  content: " ";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #ccc;
+}
+.dropdown-menu .dropdown.pull-left {
+  float: none;
+}
+.dropdown-menu .dropdown.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+          border-radius: 6px 0 6px 6px;
+
+  -webkit-border-radius: 6px 0 6px 6px;
+     -moz-border-radius: 6px 0 6px 6px;
 }
 .nav-tabs-bottom {
   border-top: 1px solid #ddd;
@@ -151,12 +191,15 @@
   border-radius: 0;
 }
 .navmenu-fixed-left,
-.navbar-offcanvas {
+.navbar-offcanvas.navmenu-fixed-left {
+  right: auto;
   left: 0;
   border-width: 0 1px 0 0;
 }
-.navmenu-fixed-right {
+.navmenu-fixed-right,
+.navbar-offcanvas {
   right: 0;
+  left: auto;
   border-width: 0 0 0 1px;
 }
 .navmenu-nav {
@@ -521,7 +564,8 @@
   cursor: pointer;
   filter: alpha(opacity=0);
   opacity: 0;
-  transform: translate(-300px, 0) scale(4);
+  -webkit-transform: translate(-300px, 0) scale(4);
+          transform: translate(-300px, 0) scale(4);
 
   direction: ltr;
 }
@@ -565,13 +609,20 @@
 .form-control .fileinput-filename {
   vertical-align: bottom;
 }
+.fileinput.input-group {
+  display: table;
+}
+.fileinput-new.input-group .btn-file,
 .fileinput-new .input-group .btn-file {
   border-radius: 0 4px 4px 0;
 }
+.fileinput-new.input-group .btn-file.btn-xs,
 .fileinput-new .input-group .btn-file.btn-xs,
+.fileinput-new.input-group .btn-file.btn-sm,
 .fileinput-new .input-group .btn-file.btn-sm {
   border-radius: 0 3px 3px 0;
 }
+.fileinput-new.input-group .btn-file.btn-lg,
 .fileinput-new .input-group .btn-file.btn-lg {
   border-radius: 0 6px 6px 0;
 }

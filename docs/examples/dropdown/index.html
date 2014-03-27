@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>Navmenu Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../dist/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="dropdown clearfix">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          Dropdown
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+          <li><a href="#">Some action</a></li>
+          <li><a href="#">Some other action</a></li>
+          <li class="divider"></li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown">More options</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Second level</a></li>
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown">Even more options</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">3rd level</a></li>
+                  <li><a href="#">Yet another action</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="dropdown clearfix">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          Dropdown 2
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+          <li><a href="#">Some action</a></li>
+          <li><a href="#">Some other action</a></li>
+          <li class="divider"></li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown">More options</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Second level</a></li>
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown">Even more options</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">3rd level</a></li>
+                  <li><a href="#">Yet another action</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!--script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script-->
+    <script src="../../../js/dropdown.js"></script>
+    <script src="../../dist/js/jasny-bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).on('hidden.bs.dropdown', '.dropdown', function(e) {
+            $(this).parents('[toggle=dropdown]').addClass('open')
+        });
+    </script>
+  </body>
+</html>

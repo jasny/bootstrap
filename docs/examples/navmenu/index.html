@@ -41,7 +41,7 @@
         <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu navmenu-nav">
+          <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
@@ -49,6 +49,13 @@
             <li class="dropdown-header">Nav header</li>
             <li><a href="#">Separated link</a></li>
             <li><a href="#">One more separated link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">2nd level dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Subaction</a></li>
+                <li><a href="#">Another subaction</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -78,5 +85,11 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="../../dist/js/jasny-bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+        $('.dropdown').on('hidden', function(e) {
+            alert(1);
+        });
+    </script>
   </body>
 </html>

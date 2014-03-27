@@ -371,6 +371,9 @@ module.exports = function (grunt) {
   // Default task.
   grunt.registerTask('default', ['dist', 'build-customizer']);
 
+  // Documentation task.
+  grunt.registerTask('docs', ['jekyll', 'dist-docs']);
+  
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
   // This can be overzealous, so its changes should always be manually reviewed!
@@ -386,5 +389,5 @@ module.exports = function (grunt) {
 
   // Task for updating the npm packages used by the Travis build.
   grunt.registerTask('update-shrinkwrap', ['exec:npmUpdate', 'exec:npmShrinkWrap', '_update-shrinkwrap']);
-  grunt.registerTask('_update-shrinkwrap', function () { updateShrinkwrap.call(this, grunt); });
+  grunt.registerTask('∆update-shrinkwrap', function () { updateShrinkwrap.call(this, grunt); });
 };
