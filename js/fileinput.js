@@ -60,9 +60,9 @@
   },
 
   Fileinput.prototype.change = function(e) {
-    if (e.target.files === undefined) e.target.files = e.target && e.target.value ? [ {name: e.target.value.replace(/^.+\\/, '')} ] : []
+    var files = e.target.files === undefined ? (e.target && e.target.value ? [{ name: e.target.value.replace(/^.+\\/, '')}] : []) : e.target.files
 
-    if (e.target.files.length === 0) {
+    if (files.length === 0) {
       this.clear()
       return
     }
@@ -71,7 +71,7 @@
     this.$hidden.attr('name', '')
     this.$input.attr('name', this.name)
 
-    var file = e.target.files[0]
+    var file = files[0]
 
     if (this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match(/^image\/(gif|png|jpeg)$/) : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {
       var reader = new FileReader()
@@ -81,7 +81,7 @@
       reader.onload = function(re) {
         var $img = $('<img>')
         $img[0].src = re.target.result
-        e.target.files[0].result = re.target.result
+        files[0].result = re.target.result
         
         element.find('.fileinput-filename').text(file.name)
         
@@ -91,7 +91,7 @@
         preview.html($img)
         element.addClass('fileinput-exists').removeClass('fileinput-new')
 
-        element.trigger('change.bs.fileinput', e.target.files)
+        element.trigger('change.bs.fileinput', files)
       }
 
       reader.readAsDataURL(file)
