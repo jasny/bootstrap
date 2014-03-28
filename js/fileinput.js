@@ -73,13 +73,13 @@
 
     var file = e.target.files[0]
 
-    if (this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {
+    if (this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match(/^image\/(gif|png|jpeg)$/) : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {
       var reader = new FileReader()
       var preview = this.$preview
       var element = this.$element
 
       reader.onload = function(re) {
-        var $img = $('<img>') // .attr('src', re.target.result)
+        var $img = $('<img>')
         $img[0].src = re.target.result
         e.target.files[0].result = re.target.result
         
