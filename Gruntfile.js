@@ -388,6 +388,6 @@ module.exports = function (grunt) {
   });
 
   // Task for updating the npm packages used by the Travis build.
-  grunt.registerTask('update-shrinkwrap', ['exec:npmUpdate', 'exec:npmShrinkWrap', '_update-shrinkwrap']);
+  grunt.registerTask('update-shrinkwrap', ['exec:npmUpdate', 'exec:npmShrinkWrap', '∆update-shrinkwrap']);
   grunt.registerTask('∆update-shrinkwrap', function () { updateShrinkwrap.call(this, grunt); });
 };
