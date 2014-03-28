@@ -61,6 +61,8 @@
 
   Fileinput.prototype.change = function(e) {
     var files = e.target.files === undefined ? (e.target && e.target.value ? [{ name: e.target.value.replace(/^.+\\/, '')}] : []) : e.target.files
+    
+    e.stopPropagation()
 
     if (files.length === 0) {
       this.clear()
