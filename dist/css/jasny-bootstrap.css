@@ -1,12 +1,15 @@
 /*!
- * Jasny Bootstrap v3.1.0 (http://jasny.github.io/bootstrap)
+ * Jasny Bootstrap v3.1.1 (http://jasny.github.io/bootstrap)
  * Copyright 2012-2014 Arnold Daniels
  * Licensed under Apache-2.0 (https://github.com/jasny/bootstrap/blob/master/LICENSE)
  */
 
+.container-smooth {
+  max-width: 1170px;
+}
 @media (min-width: 1px) {
   .container-smooth {
-    max-width: 1170px;
+    width: auto;
   }
 }
 .btn-labeled {
@@ -151,12 +154,17 @@
   border-radius: 0;
 }
 .navmenu-fixed-left,
-.navbar-offcanvas {
+.navbar-offcanvas.navmenu-fixed-left {
+  right: auto;
+  bottom: 0;
   left: 0;
+  overflow-y: auto;
   border-width: 0 1px 0 0;
 }
-.navmenu-fixed-right {
+.navmenu-fixed-right,
+.navbar-offcanvas {
   right: 0;
+  left: auto;
   border-width: 0 0 0 1px;
 }
 .navmenu-nav {
@@ -515,15 +523,22 @@
   position: absolute;
   top: 0;
   right: 0;
+  width: 100%;
   height: 100%;
   margin: 0;
   font-size: 23px;
   cursor: pointer;
   filter: alpha(opacity=0);
   opacity: 0;
-  transform: translate(-300px, 0) scale(4);
+  -webkit-transform: translate(-300px, 0) scale(4);
+          transform: translate(-300px, 0) scale(4);
 
   direction: ltr;
+}
+@-moz-document url-prefix() {
+  .btn-file > input {
+    transform: none;
+  }
 }
 .fileinput {
   display: inline-block;
@@ -565,13 +580,20 @@
 .form-control .fileinput-filename {
   vertical-align: bottom;
 }
+.fileinput.input-group {
+  display: table;
+}
+.fileinput-new.input-group .btn-file,
 .fileinput-new .input-group .btn-file {
   border-radius: 0 4px 4px 0;
 }
+.fileinput-new.input-group .btn-file.btn-xs,
 .fileinput-new .input-group .btn-file.btn-xs,
+.fileinput-new.input-group .btn-file.btn-sm,
 .fileinput-new .input-group .btn-file.btn-sm {
   border-radius: 0 3px 3px 0;
 }
+.fileinput-new.input-group .btn-file.btn-lg,
 .fileinput-new .input-group .btn-file.btn-lg {
   border-radius: 0 6px 6px 0;
 }
