@@ -1,5 +1,6 @@
 //
-// Mixins
+// These mixins are used when Jasny Bootstrap is
+// built without importing Twitter Bootstrap.
 // --------------------------------------------------
 
 
@@ -28,20 +29,4 @@
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
           box-shadow: @shadow;
-}
-
-
-// BUTTONS
-// --------------------------------------------------
-
-.button-label-size(@padding-vertical; @padding-horizontal; @border-radius) {
-  padding: @padding-vertical @padding-horizontal;
-  left: (-1 * @padding-horizontal);
-  border-radius: (@border-radius - 1px) 0 0 (@border-radius - 1px);
-
-  &.btn-label-right {
-    left: auto;
-    right: (-1 * @padding-horizontal);
-    border-radius: 0 (@border-radius - 1px) (@border-radius - 1px) 0;
-  }
 }
