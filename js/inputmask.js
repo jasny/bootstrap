@@ -32,7 +32,7 @@
     if (isAndroid) return // No support because caret positioning doesn't work on Android
     
     this.$element = $(element)
-    this.options = $.extend({}, Inputmask.DEFAULS, options)
+    this.options = $.extend({}, Inputmask.DEFAULTS, options)
     this.mask = String(this.options.mask)
     
     this.init()
@@ -41,7 +41,7 @@
     this.checkVal() //Perform initial check for existing values
   }
 
-  Inputmask.DEFAULS = {
+  Inputmask.DEFAULTS = {
     mask: "",
     placeholder: "_",
     definitions: {
