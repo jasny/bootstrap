@@ -1,6 +1,19 @@
 // Labels for buttons
 // --------------------------------------------------
 
+@mixin button-label-size($padding-vertical, $padding-horizontal, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  left: (-1 * $padding-horizontal);
+  border-radius: ($border-radius - 1px) 0 0 ($border-radius - 1px);
+
+  &.btn-label-right {
+    left: auto;
+    right: (-1 * $padding-horizontal);
+    border-radius: 0 ($border-radius - 1px) ($border-radius - 1px) 0;
+  }
+}
+
+
 .btn-labeled {
   padding-top: 0;
   padding-bottom: 0;
