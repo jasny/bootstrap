@@ -1,5 +1,5 @@
 /* ============================================================
- * Bootstrap: rowlink.js v3.1.1
+ * Bootstrap: rowlink.js v3.1.2
  * http://jasny.github.io/bootstrap/javascript/#rowlink
  * ============================================================
  * Copyright 2012-2014 Arnold Daniels
