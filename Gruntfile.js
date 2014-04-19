@@ -299,14 +299,14 @@ module.exports = function (grunt) {
       }
     },
 
-    sed: {
+    replace: {
       versionNumber: {
-        pattern: (function () {
-          var old = grunt.option('oldver');
-          return old ? RegExp.quote(old) : old;
-        })(),
-        replacement: grunt.option('newver'),
-        recursive: true
+        src: ['*.js', '*.md', '*.json', '*.yml', 'js/*.js'],
+        overwrite: true,
+        replacements: [{
+          from: grunt.option('oldver'),
+          to: grunt.option('newver')
+        }]
       }
     },
 
@@ -378,7 +378,7 @@ module.exports = function (grunt) {
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
   // This can be overzealous, so its changes should always be manually reviewed!
-  grunt.registerTask('change-version-number', 'sed');
+  grunt.registerTask('change-version-number', 'replace');
 
   // task for building customizer
   grunt.registerTask('build-customizer', ['build-customizer-html', 'build-raw-files']);
