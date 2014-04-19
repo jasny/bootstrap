@@ -37,6 +37,11 @@
       $(document).on('click', $.proxy(this.autohide, this))
 
     if (this.options.toggle) this.toggle()
+    
+    if (this.options.disablescrolling) {
+        this.options.disableScrolling = this.options.disablescrolling
+        delete this.options.disablescrolling
+    }
   }
 
   OffCanvas.DEFAULTS = {
