@@ -1,8 +1,8 @@
 /*!
- * Bootstrap's Gruntfile
- * http://getbootstrap.com
- * Copyright 2013-2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Jasny Bootstrap's Gruntfile
+ * http://jasny.github.io/bootstrap
+ * Copyright 2013-2014 Arnold Daniels.
+ * Licensed under Apache License 2.0 (https://github.com/jasny/bootstrap/blob/master/LICENSE)
  */
 
 module.exports = function (grunt) {
@@ -98,6 +98,7 @@ module.exports = function (grunt) {
       },
       bootstrap: {
         src: [
+          'js/transition.js',
           'js/offcanvas.js',
           'js/rowlink.js',
           'js/inputmask.js',
