@@ -75,7 +75,7 @@
   // ==================
 
   $(document).on('click.bs.rowlink.data-api', '[data-link="row"]', function (e) {
-    if ($(e.target).closest('.rowlink-skip')) return
+    if ($(e.target).closest('.rowlink-skip').length !== 0) return
     
     var $this = $(this)
     if ($this.data('rowlink')) return
