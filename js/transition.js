@@ -47,4 +47,4 @@
     $.support.transition = transitionEnd()
   })
 
-}(jQuery);
+}(window.jQuery);
