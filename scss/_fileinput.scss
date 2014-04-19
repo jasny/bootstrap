@@ -1,4 +1,4 @@
-// Fileinput.less
+// Fileinput
 // CSS for file upload button and fileinput widget
 // ------------------------------------------------
 
@@ -18,12 +18,6 @@
     width: 100%;
     direction: ltr;
     cursor: pointer;
-  }
-}
-
-@-moz-document url-prefix() {
-  .btn-file > input {
-    transform: none;
   }
 }
 
