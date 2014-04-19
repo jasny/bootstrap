@@ -34,14 +34,15 @@
 
     this.$hidden = this.$element.find('input[type=hidden][name="' + this.name + '"]')
     if (this.$hidden.length === 0) {
-      this.$hidden = $('<input type="hidden" />')
-      this.$element.prepend(this.$hidden)
+      this.$hidden = $('<input type="hidden">').insertBefore(this.$input)
     }
 
     this.$preview = this.$element.find('.fileinput-preview')
     var height = this.$preview.css('height')
-    if (this.$preview.css('display') != 'inline' && height != '0px' && height != 'none') this.$preview.css('line-height', height)
-
+    if (this.$preview.css('display') !== 'inline' && height !== '0px' && height !== 'none') {
+      this.$preview.css('line-height', height)
+    }
+        
     this.original = {
       exists: this.$element.hasClass('fileinput-exists'),
       preview: this.$preview.html(),
@@ -128,14 +129,14 @@
     this.$element.find('.fileinput-filename').text('')
     this.$element.addClass('fileinput-new').removeClass('fileinput-exists')
     
-    if (e !== false) {
+    if (e !== undefined) {
       this.$input.trigger('change')
       this.$element.trigger('clear.bs.fileinput')
     }
   },
 
   Fileinput.prototype.reset = function() {
-    this.clear(false)
+    this.clear()
 
     this.$hidden.val(this.original.hiddenVal)
     this.$preview.html(this.original.preview)
