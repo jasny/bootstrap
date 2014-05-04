@@ -162,8 +162,8 @@
   $.fn.fileinput = function (options) {
     return this.each(function () {
       var $this = $(this),
-          data = $this.data('fileinput')
-      if (!data) $this.data('fileinput', (data = new Fileinput(this, options)))
+          data = $this.data('bs.fileinput')
+      if (!data) $this.data('bs.fileinput', (data = new Fileinput(this, options)))
       if (typeof options == 'string') data[options]()
     })
   }
@@ -185,7 +185,7 @@
 
   $(document).on('click.fileinput.data-api', '[data-provides="fileinput"]', function (e) {
     var $this = $(this)
-    if ($this.data('fileinput')) return
+    if ($this.data('bs.fileinput')) return
     $this.fileinput($this.data())
       
     var $target = $(e.target).closest('[data-dismiss="fileinput"],[data-trigger="fileinput"]');

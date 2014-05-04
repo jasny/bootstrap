@@ -330,9 +330,9 @@
   $.fn.inputmask = function (options) {
     return this.each(function () {
       var $this = $(this)
-      var data = $this.data('inputmask')
+      var data = $this.data('bs.inputmask')
       
-      if (!data) $this.data('inputmask', (data = new Inputmask(this, options)))
+      if (!data) $this.data('bs.inputmask', (data = new Inputmask(this, options)))
     })
   }
 
@@ -353,7 +353,7 @@
 
   $(document).on('focus.bs.inputmask.data-api', '[data-mask]', function (e) {
     var $this = $(this)
-    if ($this.data('inputmask')) return
+    if ($this.data('bs.inputmask')) return
     $this.inputmask($this.data())
   })
 
