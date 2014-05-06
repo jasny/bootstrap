@@ -140,8 +140,10 @@
     var bodyWidth = $('body').width()
     var prop = 'padding-' + this.opposite(this.placement)
 
-    if ($('body').data('offcanvas-style') === undefined) $('body').data('offcanvas-style', $('body').attr('style'))
-    
+    if ($('body').data('offcanvas-style') === undefined) {
+      $('body').data('offcanvas-style', $('body').attr('style') || '')
+    }
+      
     $('body').css('overflow', 'hidden')
 
     if ($('body').width() > bodyWidth) {
