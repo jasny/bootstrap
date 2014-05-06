@@ -430,8 +430,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
   $.fn.rowlink = function (options) {
     return this.each(function () {
       var $this = $(this)
-      var data = $this.data('rowlink')
-      if (!data) $this.data('rowlink', (data = new Rowlink(this, options)))
+      var data = $this.data('bs.rowlink')
+      if (!data) $this.data('bs.rowlink', (data = new Rowlink(this, options)))
     })
   }
 
@@ -454,7 +454,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
     if ($(e.target).closest('.rowlink-skip').length !== 0) return
     
     var $this = $(this)
-    if ($this.data('rowlink')) return
+    if ($this.data('bs.rowlink')) return
     $this.rowlink($this.data())
     $(e.target).trigger('click.bs.rowlink')
   })
@@ -793,9 +793,9 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
   $.fn.inputmask = function (options) {
     return this.each(function () {
       var $this = $(this)
-      var data = $this.data('inputmask')
+      var data = $this.data('bs.inputmask')
       
-      if (!data) $this.data('inputmask', (data = new Inputmask(this, options)))
+      if (!data) $this.data('bs.inputmask', (data = new Inputmask(this, options)))
     })
   }
 
@@ -816,7 +816,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 
   $(document).on('focus.bs.inputmask.data-api', '[data-mask]', function (e) {
     var $this = $(this)
-    if ($this.data('inputmask')) return
+    if ($this.data('bs.inputmask')) return
     $this.inputmask($this.data())
   })
 
@@ -986,8 +986,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
   $.fn.fileinput = function (options) {
     return this.each(function () {
       var $this = $(this),
-          data = $this.data('fileinput')
-      if (!data) $this.data('fileinput', (data = new Fileinput(this, options)))
+          data = $this.data('bs.fileinput')
+      if (!data) $this.data('bs.fileinput', (data = new Fileinput(this, options)))
       if (typeof options == 'string') data[options]()
     })
   }
@@ -1009,7 +1009,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 
   $(document).on('click.fileinput.data-api', '[data-provides="fileinput"]', function (e) {
     var $this = $(this)
-    if ($this.data('fileinput')) return
+    if ($this.data('bs.fileinput')) return
     $this.fileinput($this.data())
       
     var $target = $(e.target).closest('[data-dismiss="fileinput"],[data-trigger="fileinput"]');
