@@ -1,5 +1,5 @@
 /* ===========================================================
- * Bootstrap: fileinput.js v3.1.2
+ * Bootstrap: fileinput.js v3.1.3
  * http://jasny.github.com/bootstrap/javascript/#fileinput
  * ===========================================================
  * Copyright 2012-2014 Arnold Daniels
