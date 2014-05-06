@@ -138,7 +138,7 @@
 
   OffCanvas.prototype.disableScrolling = function() {
     var bodyWidth = $('body').width()
-    var prop = 'padding-' + this.opposite(this.placement)
+    var prop = 'padding-right'
 
     if ($('body').data('offcanvas-style') === undefined) {
       $('body').data('offcanvas-style', $('body').attr('style') || '')
