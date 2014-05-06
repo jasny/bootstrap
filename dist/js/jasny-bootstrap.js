@@ -1,5 +1,5 @@
 /*!
- * Jasny Bootstrap v3.1.2 (http://jasny.github.io/bootstrap)
+ * Jasny Bootstrap v3.1.3 (http://jasny.github.io/bootstrap)
  * Copyright 2012-2014 Arnold Daniels
  * Licensed under Apache-2.0 (https://github.com/jasny/bootstrap/blob/master/LICENSE)
  */
@@ -7,7 +7,7 @@
 if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScript requires jQuery') }
 
 /* ========================================================================
- * Bootstrap: transition.js v3.1.2
+ * Bootstrap: transition.js v3.1.3
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
@@ -58,7 +58,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 }(window.jQuery);
 
 /* ========================================================================
- * Bootstrap: offcanvas.js v3.1.2
+ * Bootstrap: offcanvas.js v3.1.3
  * http://jasny.github.io/bootstrap/javascript/#offcanvas
  * ========================================================================
  * Copyright 2013-2014 Arnold Daniels
@@ -199,8 +199,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
     var bodyWidth = $('body').width()
     var prop = 'padding-' + this.opposite(this.placement)
 
-    if ($('body').data('offcanvas-style') === undefined) $('body').data('offcanvas-style', $('body').attr('style'))
-    
+    if ($('body').data('offcanvas-style') === undefined) {
+      $('body').data('offcanvas-style', $('body').attr('style') || '')
+    }
+      
     $('body').css('overflow', 'hidden')
 
     if ($('body').width() > bodyWidth) {
@@ -375,7 +377,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 }(window.jQuery);
 
 /* ============================================================
- * Bootstrap: rowlink.js v3.1.2
+ * Bootstrap: rowlink.js v3.1.3
  * http://jasny.github.io/bootstrap/javascript/#rowlink
  * ============================================================
  * Copyright 2012-2014 Arnold Daniels
@@ -510,7 +512,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
     definitions: {
       '9': "[0-9]",
       'a': "[A-Za-z]",
-      '?': "[A-Za-z0-9]",
+      'w': "[A-Za-z0-9]",
       '*': "."
     }
   }
@@ -823,7 +825,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 }(window.jQuery);
 
 /* ===========================================================
- * Bootstrap: fileinput.js v3.1.2
+ * Bootstrap: fileinput.js v3.1.3
  * http://jasny.github.com/bootstrap/javascript/#fileinput
  * ===========================================================
  * Copyright 2012-2014 Arnold Daniels
