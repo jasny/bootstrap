@@ -11,7 +11,7 @@ var fs = require('fs');
 
 function getFiles(type, subdirs, exclude) {
   var files = {};
-  if (!exclude) exclude = [];
+  exclude = exclude || [];
   
   subdirs.forEach(function(subdir) {
     var sub = subdir ? subdir + '/' : '';
