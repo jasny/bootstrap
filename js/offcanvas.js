@@ -1,5 +1,5 @@
 /* ========================================================================
- * Bootstrap: offcanvas.js v3.1.2
+ * Bootstrap: offcanvas.js v3.1.3
  * http://jasny.github.io/bootstrap/javascript/#offcanvas
  * ========================================================================
  * Copyright 2013-2014 Arnold Daniels
