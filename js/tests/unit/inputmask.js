@@ -1,11 +1,11 @@
 $(function () {
 
-      var $body;
+      var $input;
 
       module('inputmask', {
         setup : function() {
-          $body = $(document.body);
-          $body.removeData('inputmask');
+          $input = $('<input type="text">').appendTo(document.body);
+          $input.removeData('inputmask');
         }
       })
 
@@ -16,66 +16,66 @@ $(function () {
       })
 
       test('should be defined on jquery object', function () {
-        ok($(document.body).inputmask, 'inputmask method is defined')
+        ok($input.inputmask, 'inputmask method is defined')
       })
 
       test('should return element', function () {
-        ok($(document.body).inputmask()[0] == document.body, 'document.body returned')
+        ok($input.inputmask()[0] == $input[0], 'input returned')
       })
 
       test('should use default mask', function() {
         var expected = ""
         $.fn.inputmask.Constructor.DEFAULTS.mask = expected
 
-        $body.inputmask()
+        $input.inputmask()
 
-        equal(expected, $body.data('inputmask').options.mask)
+        equal(expected, $input.data('bs.inputmask').options.mask)
       })
 
       test('should use default placeholder', function() {
         var expected = "_"
         $.fn.inputmask.Constructor.DEFAULTS.placeholder = expected
 
-        $body.inputmask()
+        $input.inputmask()
 
-        equal(expected, $body.data('inputmask').options.placeholder)
+        equal(expected, $input.data('bs.inputmask').options.placeholder)
       })
 
       test('should use default definitions', function() {
         var expected = {
-          '9': "[0-9]",
-          'a': "[A-Za-z]"
+          '0': "[0-9]",
+          'A': "[A-Za-z]"
         }
         $.fn.inputmask.Constructor.DEFAULTS.definitions = expected
 
-        $body.inputmask()
+        $input.inputmask()
 
-        deepEqual(expected, $body.data('inputmask').options.definitions)
+        deepEqual(expected, $input.data('bs.inputmask').options.definitions)
       })
 
       test('should override mask when options.mask provided', function() {
         var expected = '99-99';
-        $body.inputmask({ mask: expected})
+        $input.inputmask({ mask: expected})
 
-        equal(expected, $body.data('inputmask').options.mask)
+        equal(expected, $input.data('bs.inputmask').options.mask)
       })
 
       test('should override placeholder when options.placeholder provided', function() {
           var expected = '-';
-          $body.inputmask({ placeholder: expected})
+          $input.inputmask({ placeholder: expected})
 
-          equal(expected, $body.data('inputmask').options.placeholder)
+          equal(expected, $input.data('bs.inputmask').options.placeholder)
       })
 
       test('should override definitions when options.definitions provided', function() {
         var expected = {
-          '9': "[0-9]",
-          'a': "[A-Za-z]"
+          '0': "[0-9]",
+          'A': "[A-Za-z]"
         }
 
-        $body.inputmask({definitions: expected})
+        $input.inputmask({definitions: expected})
 
-        deepEqual(expected, $body.data('inputmask').options.definitions)
+        deepEqual(expected, $input.data('bs.inputmask').options.definitions)
       })
       // TODO: add inputmask tests
 })
