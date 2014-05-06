@@ -183,8 +183,13 @@ window.onload = function () { // wait for load in a dumb way because B-0
     return imports
   }
 
-  function generateLESS(lessFilename, lessFileIncludes, vars) {
+  function generateLESS(lessFilename, lessFileIncludes, vars, additionalLessFiles) {
     var lessSource = __less[lessFilename]
+
+    // Additional imports files, not present in less file, but required to build
+    $.each(additionalLessFiles || [], function(index, filename) {
+      lessSource += __less[filename]
+    })
 
     $.each(includedLessFilenames(lessFilename), function(index, filename) {
       var fileInclude = lessFileIncludes[filename]
@@ -197,7 +202,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
       // Custom variables are added after Bootstrap variables so the custom
       // ones take precedence.
-      if (('build/default-variables.less' === filename) && vars) lessSource += generateCustomCSS(vars)
+      if (('variables.less' === filename) && vars) lessSource += generateCustomCSS(vars)
     })
 
     lessSource = lessSource.replace(/@import[^\n]*/gi, '') //strip any imports
@@ -206,7 +211,6 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
   function compileLESS(lessSource, baseFilename, intoResult) {
     var parser = new less.Parser({
-        paths: ['build/default-variables.less', 'mixins.less'],
         optimization: 0,
         filename: baseFilename + '.css'
     }).parse(lessSource, function (err, tree) {
@@ -239,7 +243,8 @@ window.onload = function () { // wait for load in a dumb way because B-0
           $(this).val() && (vars[$(this).prev().text()] = $(this).val())
         })
 
-    var bsLessSource    = generateLESS('jasny-bootstrap.less', lessFileIncludes, vars)
+    var bsLessSource    = generateLESS('jasny-bootstrap.less', lessFileIncludes, vars,
+        ['build/variables.less', 'build/mixins.less'])
 
     try {
       compileLESS(bsLessSource, 'jasny-bootstrap', result)
