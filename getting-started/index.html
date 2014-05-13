@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>
+  
+    Getting started &middot; Jasny Bootstrap
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="../dist/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="../assets/css/docs.css" rel="stylesheet">
+<link href="../assets/css/pygments-manni.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+                               <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32388850-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </head>
+  <body class="">
+    <script type="text/javascript">
+      if (localStorage && localStorage.hide_twbs === 'no') document.body.setAttribute('class', 'bs-twbs-show')
+    </script>
+    
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="../" class="navbar-brand">Jasny Bootstrap</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="../getting-started">Getting started</a>
+        </li>
+        <li>
+          <a href="../css">CSS</a>
+        </li>
+        <li>
+          <a href="../components">Components</a>
+        </li>
+        <li>
+          <a href="../javascript">JavaScript</a>
+        </li>
+        <li>
+          <a href="../customize">Customize</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="http://www.jasny.net"><span class="hidden-sm">More by</span> Jasny</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>Getting started</h1>
+        <p>An overview of Jasny Bootstrap, how to download and use, basic templates and examples, and more.</p>
+        <div id="aboutme-container">
+  <a href="mailto:arnold@jasny.net" class="aboutme">
+    <img class="img-circle" src="http://0.gravatar.com/avatar/0bba82e8b2a9d2cf9645cb07ea54766f?s=100&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&amp;r=G" alt="Arnold Daniels">
+    <div class="aboutme-text">
+      <span class="aboutme-title">Looking for a developer?</span>
+      I'm available for freelance work, I want to hear about your projects.
+      <span class="aboutme-name">- Arnold Daniels</span>
+    </div>
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+              
+                <li>
+  <a href="#jasny-bootstrap">Jasny Bootstrap</a>
+</li>
+<li>
+  <a href="#download">Download Jasny Bootstrap</a>
+  <ul class="nav">
+    <li><a href="#download-compiled">Compiled CSS, JS, and fonts</a></li>
+    <li><a href="#download-additional">Additional downloads</a></li>
+    <li><a href="#download-cdn">Bootstrap CDN</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#whats-included">What's included</a>
+</li>
+<li>
+  <a href="#examples">Examples</a>
+</li>
+<li>
+  <a href="#migration">Migrating from 2.x to 3.0</a>
+  <ul class="nav">
+    <li><a href="#migration-classes">Major class changes</a></li>
+    <li><a href="#migration-new">What's new</a></li>
+    <li><a href="#migration-dropped">What's removed</a></li>
+    <li><a href="#migration-notes">Additional notes</a></li>
+  </ul>
+</li>
+
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9" role="main">
+            <!-- Getting started
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="jasny-bootstrap">Jasny Bootstrap</h1>
+    </div>
+    <p class="lead">Jasny Bootstrap is an extension to <a href="http://getbootstrap.com">Twitter Bootstrap</a>, adding a number of features and components.</p>
+    <p>The aim of Jasny Bootstrap is to provide all the required features for building highly interactive web applications for desktop and mobile.</p>
+    
+    <div class="bs-callout bs-callout-warning">
+      <h4>Delivered as extension only</h4>
+      <p>As of version 3.1.0 Jasny Bootstrap is no longer bundeled with Twitter Bootstrap. You should load Twitter Bootstrap's CSS before this extension.</p>
+    </div>
+  </div>
+
+  <!-- Getting started
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="download">Download</h1>
+    </div>
+    <p class="lead">Jasny Bootstrap has a few easy ways to quickly get started, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
+
+    <h3 id="download-compiled">Compiled CSS and JS</h3>
+    <p>The fastest way to get Jasny Bootstrap is to download the compiled and minified versions of our CSS and JavaScript. No documentation or original source files are included.</p>
+    <p><a class="btn btn-lg btn-primary" href="https://github.com/jasny/bootstrap/releases/download/v3.1.3/jasny-bootstrap-3.1.3-dist.zip" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled']);">Download Jasny Bootstrap</a></p>
+  
+    <h3 id="download-additional">Additional downloads</h3>
+    <div class="bs-docs-dl-options">
+      <h4>
+        <a href="https://github.com/jasny/bootstrap/archive/v3.1.3.zip" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download source']);">Download source code</a>
+      </h4>
+      <p>Get the latest Jasny Bootstrap LESS and JavaScript source code by downloading it directly from GitHub.</p>
+      <h4>
+        <a href="https://github.com/jasny/bootstrap" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'GitHub project']);">Clone or fork via GitHub</a>
+      </h4>
+      <p>Visit us on GitHub to clone or fork the Jasny Bootstrap project.</p>
+      <h4>
+        Install with <a href="http://bower.io">Bower</a>
+      </h4>
+      <p>Install and manage the original files for all CSS and JavaScript, along with a local copy of the docs, using <a href="http://bower.io">Bower</a>.</p>
+      <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>bower install jasny-bootstrap
+</code></pre></div>
+    </div>
+
+    <h3 id="download-cdn">Jasny Bootstrap @ cdnjs</h3>
+    <p><a href="http://cdnjs.com" target="_blank">CDNJS</a> is a community driven CDN hosted by CloudFlare, supporting over a hundred projects. To use this CDN, swap your local instances for the CDN links listed below.</p>
+<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- Latest compiled and minified CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Latest compiled and minified JavaScript --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
+
+    <div class="bs-callout bs-callout-warning" id="callout-less-compilation">
+      <h4>Compiling Jasny Bootstrap's LESS files</h4>
+      <p>If you work with Jasny Bootstrap's uncompiled source code, you need to compile the LESS files to produce usable CSS files. For compiling LESS files into CSS, we only officially support <a href="http://twitter.github.io/recess/">Recess</a>, which is Twitter's CSS hinter based on <a href="http://lesscss.org">less.js</a>.</p>
+    </div>
+  </div>
+
+
+  <!-- File structure
+  ================================================== -->
+  <div class="bs-docs-section bs-jasny">
+    <div class="page-header">
+      <h1 id="whats-included">What's included</h1>
+    </div>
+    <p class="lead">Within the download you'll find the following directories and files, logically grouping common resources and providing both compiled and minified variations.</p>
+    <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Jasny Bootstrap. You'll see something like this:</p>
+
+<!-- NOTE: This info is intentionally duplicated in the README.
+Copy any changes made here over to the README too. -->
+<div class="highlight"><pre><code class="bash">jasny-bootstrap/
+├── css/
+│   ├── jasny-bootstrap.css
+│   ├── jasny-bootstrap.min.css
+└── js/
+    ├── jasny-bootstrap.js
+    └── jasny-bootstrap.min.js
+    
+</code></pre></div>
+
+    <p>This is the most basic form of Jasny Bootstrap. We provide compiled CSS and JS (<code>jasny-bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>jasny-bootstrap.min.*</code>).</p>
+    
+    <p>The <code>jasny-bootstrap.*</code> files should be loaded in conjunction with the original Twitter Bootstrap files.</p>
+        
+    <div class="bs-callout bs-callout-danger" id="jquery-required">
+      <h4>jQuery required</h4>
+      <p>Please note that <strong>all JavaScript plugins require jQuery</strong> to be included, as shown in the <a href="#template">starter template</a>. <a href="https://github.com/jasny/bootstrap/blob/v3.1.3/bower.json">Consult our <code>bower.json</code></a> to see which versions of jQuery are supported.</p>
+    </div>
+  </div>
+
+
+  <!-- Template
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="template">Basic template</h1>
+    </div>
+    <p class="lead">Start with this basic HTML template, or modify <a href="../getting-started#examples">these examples</a>. We hope you'll customize our templates and examples, adapting them to suit your needs.</p>
+
+    <p>Copy the HTML below to begin working with a minimal Bootstrap document.</p>
+<div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Bootstrap 101 Template<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Bootstrap --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;css/bootstrap.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;css/jasny-bootstrap.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</span>
+    <span class="c">&lt;!-- WARNING: Respond.js doesn&#39;t work if you view the page via file:// --&gt;</span>
+    <span class="c">&lt;!--[if lt IE 9]&gt;</span>
+<span class="c">      &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</span>
+<span class="c">      &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</span>
+<span class="c">    &lt;![endif]--&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+
+    <span class="c">&lt;!-- jQuery (necessary for Bootstrap&#39;s JavaScript plugins) --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://code.jquery.com/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="c">&lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/jasny-bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+  </div>
+
+
+  <!-- Template
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="examples">Examples</h1>
+    </div>
+    <p class="lead">Create diverse and advanced user interfaces using Jasny's Bootstrap components. See also <a href="#customizing">Customizing Bootstrap</a> for tips on maintaining your own Bootstrap variants.</p>
+    
+    <div class="row bs-examples">
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/starter-template/">
+          <img src="../examples/screenshots/starter-template.jpg" alt="">
+        </a>
+        <h4>Starter template</h4>
+        <p>Nothing but the basics: compiled CSS and JavaScript along with a container.</p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/navmenu/">
+          <img src="../examples/screenshots/navmenu.jpg" alt="">
+        </a>
+        <h4>Navmenu</h4>
+        <p>A basic template showing the navmenu element and demonstrates usage of the offcanvas plugin.</p>
+      </div>
+      <div class="clearfix visible-xs visible-sm"></div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/navmenu-push/">
+          <img src="../examples/screenshots/navmenu-push.jpg" alt="">
+        </a>
+        <h4>Off Canvas Push Menu</h4>
+        <p>A template demonstrating a push effect for the off canvas navmenu.</p>
+      </div>
+      <div class="clearfix visible-md visible-lg"></div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/navmenu-reveal/">
+          <img src="../examples/screenshots/navmenu-reveal.jpg" alt="">
+        </a>
+        <h4>Off Canvas Reveal Menu</h4>
+        <p>A template demonstrating a reveal effect by placing the navmenu under the content.</p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <a class="thumbnail" href="../examples/navbar-offcanvas/">
+          <img src="../examples/screenshots/navbar-offcanvas.jpg" alt="">
+        </a>
+        <h4>Off canvas navbar</h4>
+        <p>A template using offcanvas for mobile view of the navbar.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Migration
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="migration">Migrating from 2.x to 3.0</h1>
+    </div>
+    <p class="lead">Folks looking to upgrade to v3 should use this section as a general upgrade guide. We've outlined some of the major changes and provided tables that highlight key changes.</p>
+
+    <h2 id="migration-classes">Major class changes</h2>
+    <p>This table shows the style changes between v2.x and v3.0.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Bootstrap 2.x</th>
+            <th>Bootstrap 3.0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.container-semifluid</code></td>
+            <td><code>.container-smooth</code></td>
+          </tr>
+          <tr>
+            <td><code>.fileupload</code> <code>.fileupload-*</code></td>
+            <td><code>.fileinput</code> <code>.fileinput-*</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.table-responsive -->
+
+    <h2 id="migration-new">What's new</h2>
+    <p>We've added new elements and changed some existing ones. Here are the new or updated styles.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Navmenu</td>
+            <td><code>.navmenu .navmenu-default</code> <code>.navmenu .navmenu-inverse</code> <code>.navmenu-fixed-left</code> <code>.navmenu-fixed-right</code> <code>.navmenu-brand</code> <code>.navmenu-nav</code></td>
+          </tr>
+          <tr>
+            <td>Fixed alerts</td>
+            <td><code>.alert-fixed-top</code> <code>.alert-fixed-bottom</code></td>
+          </tr>
+          <tr>
+            <td>Off canvas</td>
+            <td><code>.offcanvas</code> <code>.offcanvas-*</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.table-responsive -->
+
+
+    <h2 id="migration-dropped">What's removed</h2>
+    <p>The following elements have been dropped or changed in v3.0.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Removed from 2.x</th>
+            <th>3.0 Equivalent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Header actions</td>
+            <td><code>.header-actions</code></td>
+            <td class="text-muted">N/A</td>
+          </tr>
+          <tr>
+            <td>Table actions</td>
+            <td><code>.table-actions</code></td>
+            <td class="text-muted">N/A</td>
+          </tr>
+          <tr>
+            <td>Desktop rows</td>
+            <td><code>.row-desktop</code></td>
+            <td><code>.row &gt; .col-md-*</code></td>
+          </tr>
+          <tr>
+            <td>Action links</td>
+            <td><code>.act-*</code></td>
+            <td class="text-muted">N/A</td>
+          </tr>
+          <tr>
+            <td>Page alerts</td>
+            <td><code>.pagealert</code></td>
+            <td><code>.alert-fixed-top</code></td>
+          </tr>
+          <tr>
+            <td>Iconic icons</td>
+            <td><code>.iconic-*</code></td>
+            <td class="text-muted">N/A</td>
+          </tr>
+          <tr>
+            <td>Editor textarea</td>
+            <td><code>.editor</code></td>
+            <td class="text-muted">N/A</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.table-responsive -->
+
+
+    <h2 id="migration-notes">Additional notes</h2>
+    <p>Other changes in v3.0 are not immediately apparent. Base classes, key styles, and behaviors have been adjusted for flexibility and our <em>mobile first</em> approach. Here's a partial list:</p>
+    <ul>
+      <li>The fileupload plugin has been renamed to fileinput. File upload was poorly chosen, since the plugin allows the creation of a styled file input element. It has nothing to do with how the file is uploaded.</li>
+      <li class="bs-jasny-only">Tab alignments are still supported in this fork (while dropped in Twitter Bootstrap).</li>
+      <li>Typeahead has been dropped, in favor of using <a href="http://brianreavis.github.io/selectize.js/">Selectize.js</a>.</li>
+      <li>Iconic icons are still available from <a href="http://www.somerandomdude.com/work/open-iconic/">P.J. Onori</a>.</li>
+    </ul>
+    <p>For more information on upgrading to v3.0, and code snippets from the community, see <a href="http://bootply.com/">Bootply</a>.</p>
+  </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <div class="container">
+        <div class="bs-social">
+  <ul class="bs-social-buttons">
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&amp;repo=bootstrap&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe>
+    </li>
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&amp;repo=bootstrap&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
+    </li>
+    <li class="follow-btn">
+      <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @ArnoldDaniels</a>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.io/bootstrap" data-count="horizontal" data-via="ArnoldDaniels">Tweet</a>
+    </li>
+  </ul>
+</div>
+
+
+        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li>Currently v3.1.3</li>
+          <li class="muted">&middot;</li>
+          <li><a href="../2.3.1/">Bootstrap 2.3.1 docs</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="http://www.jasny.net">Jasny.net</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/jasny/bootstrap/issues?state=open">Issues</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/jasny/bootstrap/releases">Releases</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="../dist/js/jasny-bootstrap.min.js"></script>
+
+<script src="http://platform.twitter.com/widgets.js"></script>
+<script src="../assets/js/docs.min.js"></script>
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>
+  
+    Components &middot; Jasny Bootstrap
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="../dist/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="../assets/css/docs.css" rel="stylesheet">
+<link href="../assets/css/pygments-manni.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+                               <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32388850-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </head>
+  <body class="">
+    <script type="text/javascript">
+      if (localStorage && localStorage.hide_twbs === 'no') document.body.setAttribute('class', 'bs-twbs-show')
+    </script>
+    
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="../" class="navbar-brand">Jasny Bootstrap</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="../getting-started">Getting started</a>
+        </li>
+        <li>
+          <a href="../css">CSS</a>
+        </li>
+        <li class="active">
+          <a href="../components">Components</a>
+        </li>
+        <li>
+          <a href="../javascript">JavaScript</a>
+        </li>
+        <li>
+          <a href="../customize">Customize</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="http://www.jasny.net"><span class="hidden-sm">More by</span> Jasny</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>Components</h1>
+        <p>Reusable components to built the user interface.</p>
+        <div id="aboutme-container">
+  <a href="mailto:arnold@jasny.net" class="aboutme">
+    <img class="img-circle" src="http://0.gravatar.com/avatar/0bba82e8b2a9d2cf9645cb07ea54766f?s=100&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&amp;r=G" alt="Arnold Daniels">
+    <div class="aboutme-text">
+      <span class="aboutme-title">Looking for a developer?</span>
+      I'm available for freelance work, I want to hear about your projects.
+      <span class="aboutme-name">- Arnold Daniels</span>
+    </div>
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+              
+                <li>
+  <a href="#navmenu">Navmenu</a>
+  <ul class="nav">
+    <li><a href="#navmenu-default">Default navmenu</a></li>
+    <li><a href="#navmenu-fixed">Fixed to left or right</a></li>
+    <li><a href="#navmenu-offcanvas">Off canvas</a></li>
+    <li><a href="#navmenu-inverted">Inverted navmenu</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#alerts">Alerts</a>
+  <ul class="nav">
+    <li><a href="#alerts-fixed">Fixed to top / bottom</a></li>
+  </ul>
+</li>
+
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9" role="main">
+            <!-- Navmenu
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="navmenu">Navmenu</h1>
+    </div>
+    <p>Navmenu is a vertical navigation component. By default it shares it look and feel with the navmenu component.</p>
+
+    <div class="bs-callout bs-callout-info">
+      <h4>Custom width</h4>
+      <p>The navmenu is 300px wide by default. You can change this by customizing the <code>@navmenu-width</code> variable or by setting the width of <code>.navmenu</code> in your CSS.</p>
+    </div>
+
+    <h2 id="navmenu-default">Default navmenu</h2>
+
+    <div class="bs-example">
+      <nav class="navmenu navmenu-default" role="navigation">
+        <a class="navmenu-brand" href="#">Brand</a>
+
+        <ul class="nav navmenu-nav">
+          <li class="active"><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu navmenu-nav" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;navmenu-brand&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Brand<span class="nt">&lt;/a&gt;</span>
+
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navmenu-nav&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>Dropdown <span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/b&gt;&lt;/a&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu navmenu-nav&quot;</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>One more separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div>
+
+    <div class="bs-callout bs-callout-warning">
+      <h4>Make navmenus accessible</h4>
+      <p>Be sure to add a <code>role="navigation"</code> to every navmenu to help with accessibility.</p>
+    </div>
+
+
+    <h2 id="navmenu-fixed">Fixed to left or right</h2>
+    <p>Add either <code>.navmenu-fixed-left</code> or <code>.navmenu-fixed-right</code>.</p>
+    <div class="bs-example bs-navmenu-fixed-example">
+      <nav class="navmenu navmenu-default navmenu-fixed-left" role="navigation">
+        <a class="navmenu-brand" href="#">Brand</a>
+        <ul class="nav navmenu-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+    </div><!-- /example -->
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default navmenu-fixed-left offcanvas-sm&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div>
+
+    <div class="bs-callout bs-callout-danger">
+      <h4>Body padding required</h4>
+      <p>The fixed navmenu will overlay your other content, unless you add <code>padding</code> to the left or right of the <code>&lt;body&gt;</code>. Try out your own values or use our snippet below. Tip: By default, the navmenu is 300px wide.</p>
+<div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">992px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">padding-left</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+      <p>Make sure to include this <strong>after</strong> the Jasny Bootstrap CSS.</p>
+    </div>
+
+
+    <h2 id="navmenu-offcanvas">Off canvas</h2>
+    <p>With the <a href="../javascript/#offcanvas">offcanvas plugin</a>, you can hide the navmenu off canvas. This is especially useful for screens with a small viewport.</p>
+    <div class="bs-example bs-navmenu-offcanvas-example">
+      <div id="myNavmenuCanvas">
+        <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+          <a class="navmenu-brand" href="#">Brand</a>
+          <ul class="nav navmenu-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </nav>
+        <div class="navbar navbar-default navbar-fixed-top">
+          <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="#myNavmenuCanvas" data-placement="left">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
+      </div>
+    </div><!-- /example -->
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">&quot;myNavmenu&quot;</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default navmenu-fixed-left offcanvas&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-default navbar-fixed-top&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;navbar-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;offcanvas&quot;</span> <span class="na">data-target=</span><span class="s">&quot;#myNavmenu&quot;</span> <span class="na">data-canvas=</span><span class="s">&quot;body&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+
+    <div class="bs-callout bs-callout-info">
+      <h4>Examples</h4>
+      <p>There is a full example for an <a href="../examples/navmenu-push/">off canvas push menu</a> as well as examples for an off canvas navmenu with an <a href="../examples/navmenu/">slide in</a> and <a href="../examples/navmenu-reveal/">reveal</a> effect.</p>
+    </div>
+    
+    <h2 id="navmenu-inverted">Inverted navmenu</h2>
+    <p>Modify the look of the navmenu by adding <code>.navmenu-inverse</code>.</p>
+    <div class="bs-example">
+      <nav class="navmenu navmenu-inverse" role="navigation">
+        <a class="navmenu-brand" href="#">Brand</a>
+        <ul class="nav navmenu-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+    </div><!-- /example -->
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-inverse&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div>
+
+  </div>
+
+
+  <!-- Alerts
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="page-header">
+      <h1 id="alerts">Alerts</h1>
+    </div>
+
+    <h2 id="alerts-fixed">Fixed to top / bottom</h2>
+    <p>Add <code>.alert-fixed-top</code> top stick the alert on top of your page. Use <code>.alert-fixed-bottom</code> for the bottom.</p>
+    <div class="bs-example">
+      <div class="alert alert-success alert-fixed-top">
+        <strong>Success!</strong> Your action has been completed succefully.
+      </div>
+    </div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-success alert-fixed-top&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;strong&gt;</span>Success!<span class="nt">&lt;/strong&gt;</span> Your action has been completed succefully.
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+
+  </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <div class="container">
+        <div class="bs-social">
+  <ul class="bs-social-buttons">
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&amp;repo=bootstrap&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe>
+    </li>
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&amp;repo=bootstrap&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
+    </li>
+    <li class="follow-btn">
+      <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @ArnoldDaniels</a>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.io/bootstrap" data-count="horizontal" data-via="ArnoldDaniels">Tweet</a>
+    </li>
+  </ul>
+</div>
+
+
+        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li>Currently v3.1.3</li>
+          <li class="muted">&middot;</li>
+          <li><a href="../2.3.1/">Bootstrap 2.3.1 docs</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="http://www.jasny.net">Jasny.net</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/jasny/bootstrap/issues?state=open">Issues</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/jasny/bootstrap/releases">Releases</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="../dist/js/jasny-bootstrap.min.js"></script>
+
+<script src="http://platform.twitter.com/widgets.js"></script>
+<script src="../assets/js/docs.min.js"></script>
+
+
+
+
+
+  </body>
+</html>
