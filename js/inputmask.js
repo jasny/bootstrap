@@ -186,7 +186,7 @@
   Inputmask.prototype.unmask = function() {
     this.$element
       .unbind(".mask")
-      .removeData("inputmask")
+      .removeData("bs.inputmask")
   }
 
   Inputmask.prototype.focusEvent = function() {
