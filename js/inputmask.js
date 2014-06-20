@@ -89,7 +89,7 @@
   Inputmask.prototype.listen = function() {
     if (this.$element.attr("readonly")) return
 
-    var pasteEventName = (isIE ? 'paste' : 'input') + ".mask"
+    var pasteEventName = (isIE ? 'paste' : 'input') + ".bs.inputmask"
 
     this.$element
       .on("unmask.bs.inputmask", $.proxy(this.unmask, this))
@@ -185,7 +185,7 @@
 
   Inputmask.prototype.unmask = function() {
     this.$element
-      .unbind(".mask")
+      .unbind(".bs.inputmask")
       .removeData("bs.inputmask")
   }
 
