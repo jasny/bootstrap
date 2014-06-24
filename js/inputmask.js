@@ -209,8 +209,10 @@
 
   Inputmask.prototype.blurEvent = function() {
     this.checkVal()
-    if (this.$element.val() !== this.focusText)
+    if (this.$element.val() !== this.focusText) {
       this.$element.trigger('change')
+      this.$element.trigger('input')
+    }
   }
 
   Inputmask.prototype.keydownEvent = function(e) {
