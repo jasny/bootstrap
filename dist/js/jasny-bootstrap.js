@@ -108,7 +108,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
     placement: 'auto',
     autohide: true,
     recalc: true,
-    disableScrolling: true
+    disableScrolling: true,
+    modal: false
   }
 
   OffCanvas.prototype.offset = function () {
@@ -212,6 +213,14 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
         $('body').css(prop, padding)
       }, 1)
     }
+    //disable scrolling on mobiles (they ignore overflow:hidden)
+    $('body').on('touchmove.bs', function(e) {
+      e.preventDefault();
+    });
+  }
+
+  OffCanvas.prototype.enableScrolling = function() {
+    $('body').off('touchmove.bs');
   }
 
   OffCanvas.prototype.show = function () {
@@ -245,6 +254,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
     })
     
     if (this.options.disableScrolling) this.disableScrolling()
+    if (this.options.modal) this.toggleBackdrop()
     
     var complete = function () {
       if (this.state != 'slide-in') return
@@ -290,6 +300,9 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
       this.$element.trigger('hidden.bs.offcanvas')
     }
 
+    if (this.options.disableScrolling) this.enableScrolling()
+    if (this.options.modal) this.toggleBackdrop()
+
     elements.removeClass('canvas-slid').addClass('canvas-sliding')
     
     setTimeout($.proxy(function() {
@@ -300,6 +313,45 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
   OffCanvas.prototype.toggle = function () {
     if (this.state === 'slide-in' || this.state === 'slide-out') return
     this[this.state === 'slid' ? 'hide' : 'show']()
+  }
+
+  OffCanvas.prototype.toggleBackdrop = function (callback) {
+    callback = callback || $.noop;
+    if (this.state == 'slide-in') {
+      var doAnimate = $.support.transition;
+
+      this.$backdrop = $('<div class="modal-backdrop fade" />')
+      .insertAfter(this.$element);
+
+      if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
+
+      this.$backdrop.addClass('in')
+
+      doAnimate ?
+        this.$backdrop
+        .one($.support.transition.end, callback)
+        .emulateTransitionEnd(150) :
+        callback()
+    } else if (this.state == 'slide-out' && this.$backdrop) {
+      this.$backdrop.removeClass('in');
+      $('body').off('touchmove.bs');
+      var self = this;
+      if ($.support.transition) {
+        this.$backdrop
+          .one($.support.transition.end, function() {
+            self.$backdrop.remove();
+            callback()
+            self.$backdrop = null;
+          })
+        .emulateTransitionEnd(150);
+      } else {
+        this.$backdrop.remove();
+        this.$backdrop = null;
+        callback();
+      }
+    } else if (callback) {
+      callback()
+    }
   }
 
   OffCanvas.prototype.calcClone = function() {
@@ -554,7 +606,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
   Inputmask.prototype.listen = function() {
     if (this.$element.attr("readonly")) return
 
-    var pasteEventName = (isIE ? 'paste' : 'input') + ".mask"
+    var pasteEventName = (isIE ? 'paste' : 'input') + ".bs.inputmask"
 
     this.$element
       .on("unmask.bs.inputmask", $.proxy(this.unmask, this))
@@ -650,8 +702,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 
   Inputmask.prototype.unmask = function() {
     this.$element
-      .unbind(".mask")
-      .removeData("inputmask")
+      .unbind(".bs.inputmask")
+      .removeData("bs.inputmask")
   }
 
   Inputmask.prototype.focusEvent = function() {
@@ -674,8 +726,10 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 
   Inputmask.prototype.blurEvent = function() {
     this.checkVal()
-    if (this.$element.val() !== this.focusText)
+    if (this.$element.val() !== this.focusText) {
       this.$element.trigger('change')
+      this.$element.trigger('input')
+    }
   }
 
   Inputmask.prototype.keydownEvent = function(e) {
