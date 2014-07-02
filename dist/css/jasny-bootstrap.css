@@ -151,7 +151,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  z-index: 1030;
+  z-index: 1050;
   overflow-y: auto;
   border-radius: 0;
 }
