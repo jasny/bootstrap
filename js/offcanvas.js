@@ -33,7 +33,7 @@
       $(window).on('resize', $.proxy(this.recalc, this))
     }
     
-    if (this.options.autohide)
+    if (this.options.autohide && !this.options.modal)
       $(document).on('click', $.proxy(this.autohide, this))
 
     if (this.options.toggle) this.toggle()
@@ -267,6 +267,7 @@
       if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
       this.$backdrop.addClass('in')
+      this.$backdrop.on('click.bs', $.proxy(this.autohide, this))
 
       doAnimate ?
         this.$backdrop
