@@ -16,9 +16,9 @@ To get started, check out <http://jasny.github.io/bootstrap>!
 
 Three quick start options are available:
 
-* [Download the latest release](https://github.com/jasny/bootstrap/releases/download/v3.1.0/jasny-bootstrap-3.1.0-dist.zip).
+* [Download the latest release](https://github.com/jasny/bootstrap/releases/download/v3.1.3/jasny-bootstrap-3.1.3-dist.zip).
 * Clone the repo: `git clone git://github.com/jasny/bootstrap.git`.
-* Install with [Bower](http://bower.io): `bower install bootstrap=jasny-bootstrap`.
+* Install with [Bower](http://bower.io): `bower install jasny-bootstrap`.
 
 Read the [Getting Started page](http://jasny.github.io/bootstrap/getting-started/) for information on the framework contents, templates and examples, and more.
 
