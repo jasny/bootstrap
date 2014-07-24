@@ -14,11 +14,12 @@ To get started, check out <http://jasny.github.io/bootstrap>!
 
 ## Quick start
 
-Three quick start options are available:
+Four quick start options are available:
 
 * [Download the latest release](https://github.com/jasny/bootstrap/releases/download/v3.1.3/jasny-bootstrap-3.1.3-dist.zip).
 * Clone the repo: `git clone git://github.com/jasny/bootstrap.git`.
 * Install with [Bower](http://bower.io): `bower install jasny-bootstrap`.
+* Use [cdnjs](http://cdnjs.com/libraries/jasny-bootstrap).
 
 Read the [Getting Started page](http://jasny.github.io/bootstrap/getting-started/) for information on the framework contents, templates and examples, and more.
 
@@ -45,7 +46,7 @@ Jasny Bootstrap should be loaded after Twitter Bootstrap.
 
 Have a bug or a feature request? [Please open a new issue](https://github.com/jasny/bootstrap/issues). Before opening any issue, please search for existing issues and read the [Issue Guidelines](https://github.com/necolas/issue-guidelines), written by [Nicolas Gallagher](https://github.com/necolas/).
 
-You may use [this JS Bin](http://jsbin.com/iKumuWo/1/edit) as a template for your bug reports.
+You may use [this JSFiddle](http://jsfiddle.net/jasny/k9K5d/) as a template for your bug reports.
 
 
 
