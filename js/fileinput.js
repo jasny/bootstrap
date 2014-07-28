@@ -1,8 +1,8 @@
 /* ===========================================================
- * Bootstrap: fileinput.js v3.0.0-p7
- * http://jasny.github.com/bootstrap/javascript.html#fileinput
+ * Bootstrap: fileinput.js v3.1.3
+ * http://jasny.github.com/bootstrap/javascript/#fileinput
  * ===========================================================
- * Copyright 2012 Jasny BV, Netherlands.
+ * Copyright 2012-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
@@ -24,24 +24,25 @@
   // FILEUPLOAD PUBLIC CLASS DEFINITION
   // =================================
 
-  var Fileupload = function (element, options) {
+  var Fileinput = function (element, options) {
     this.$element = $(element)
-      
+    
     this.$input = this.$element.find(':file')
     if (this.$input.length === 0) return
 
     this.name = this.$input.attr('name') || options.name
 
-    this.$hidden = this.$element.find('input[type=hidden][name="'+this.name+'"]')
+    this.$hidden = this.$element.find('input[type=hidden][name="' + this.name + '"]')
     if (this.$hidden.length === 0) {
-      this.$hidden = $('<input type="hidden" />')
-      this.$element.prepend(this.$hidden)
+      this.$hidden = $('<input type="hidden">').insertBefore(this.$input)
     }
 
     this.$preview = this.$element.find('.fileinput-preview')
     var height = this.$preview.css('height')
-    if (this.$preview.css('display') != 'inline' && height != '0px' && height != 'none') this.$preview.css('line-height', height)
-
+    if (this.$preview.css('display') !== 'inline' && height !== '0px' && height !== 'none') {
+      this.$preview.css('line-height', height)
+    }
+        
     this.original = {
       exists: this.$element.hasClass('fileinput-exists'),
       preview: this.$preview.html(),
@@ -51,7 +52,7 @@
     this.listen()
   }
   
-  Fileupload.prototype.listen = function() {
+  Fileinput.prototype.listen = function() {
     this.$input.on('change.bs.fileinput', $.proxy(this.change, this))
     $(this.$input[0].form).on('reset.bs.fileinput', $.proxy(this.reset, this))
     
@@ -59,25 +60,31 @@
     this.$element.find('[data-dismiss="fileinput"]').on('click.bs.fileinput', $.proxy(this.clear, this))
   },
 
-  Fileupload.prototype.change = function(e) {
-    if (e.target.files === undefined) e.target.files = e.target && e.target.value ? [ {name: e.target.value.replace(/^.+\\/, '')} ] : []
-    if (e.target.files.length === 0) return
+  Fileinput.prototype.change = function(e) {
+    var files = e.target.files === undefined ? (e.target && e.target.value ? [{ name: e.target.value.replace(/^.+\\/, '')}] : []) : e.target.files
+    
+    e.stopPropagation()
+
+    if (files.length === 0) {
+      this.clear()
+      return
+    }
 
     this.$hidden.val('')
     this.$hidden.attr('name', '')
     this.$input.attr('name', this.name)
 
-    var file = e.target.files[0]
+    var file = files[0]
 
-    if (this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match('image.*') : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {
+    if (this.$preview.length > 0 && (typeof file.type !== "undefined" ? file.type.match(/^image\/(gif|png|jpeg)$/) : file.name.match(/\.(gif|png|jpe?g)$/i)) && typeof FileReader !== "undefined") {
       var reader = new FileReader()
       var preview = this.$preview
       var element = this.$element
 
       reader.onload = function(re) {
-        var $img = $('<img>') // .attr('src', re.target.result)
+        var $img = $('<img>')
         $img[0].src = re.target.result
-        e.target.files[0].result = re.target.result
+        files[0].result = re.target.result
         
         element.find('.fileinput-filename').text(file.name)
         
@@ -87,7 +94,7 @@
         preview.html($img)
         element.addClass('fileinput-exists').removeClass('fileinput-new')
 
-        element.trigger('change.bs.fileinput', e.target.files)
+        element.trigger('change.bs.fileinput', files)
       }
 
       reader.readAsDataURL(file)
@@ -101,7 +108,7 @@
     }
   },
 
-  Fileupload.prototype.clear = function(e) {
+  Fileinput.prototype.clear = function(e) {
     if (e) e.preventDefault()
     
     this.$hidden.val('')
@@ -122,14 +129,14 @@
     this.$element.find('.fileinput-filename').text('')
     this.$element.addClass('fileinput-new').removeClass('fileinput-exists')
     
-    if (e !== false) {
+    if (e !== undefined) {
       this.$input.trigger('change')
       this.$element.trigger('clear.bs.fileinput')
     }
   },
 
-  Fileupload.prototype.reset = function() {
-    this.clear(false)
+  Fileinput.prototype.reset = function() {
+    this.clear()
 
     this.$hidden.val(this.original.hiddenVal)
     this.$preview.html(this.original.preview)
@@ -141,7 +148,7 @@
     this.$element.trigger('reset.bs.fileinput')
   },
 
-  Fileupload.prototype.trigger = function(e) {
+  Fileinput.prototype.trigger = function(e) {
     this.$input.trigger('click')
     e.preventDefault()
   }
@@ -150,16 +157,27 @@
   // FILEUPLOAD PLUGIN DEFINITION
   // ===========================
 
+  var old = $.fn.fileinput
+  
   $.fn.fileinput = function (options) {
     return this.each(function () {
-      var $this = $(this)
-      , data = $this.data('fileinput')
-      if (!data) $this.data('fileinput', (data = new Fileupload(this, options)))
+      var $this = $(this),
+          data = $this.data('bs.fileinput')
+      if (!data) $this.data('bs.fileinput', (data = new Fileinput(this, options)))
       if (typeof options == 'string') data[options]()
     })
   }
 
-  $.fn.fileinput.Constructor = Fileupload
+  $.fn.fileinput.Constructor = Fileinput
+
+
+  // FILEINPUT NO CONFLICT
+  // ====================
+
+  $.fn.fileinput.noConflict = function () {
+    $.fn.fileinput = old
+    return this
+  }
 
 
   // FILEUPLOAD DATA-API
@@ -167,7 +185,7 @@
 
   $(document).on('click.fileinput.data-api', '[data-provides="fileinput"]', function (e) {
     var $this = $(this)
-    if ($this.data('fileinput')) return
+    if ($this.data('bs.fileinput')) return
     $this.fileinput($this.data())
       
     var $target = $(e.target).closest('[data-dismiss="fileinput"],[data-trigger="fileinput"]');

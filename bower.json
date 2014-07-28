@@ -1,11 +1,21 @@
 {
-  "name": "bootstrap",
-  "version": "3.0.1-p7",
-  "main": ["./dist/js/bootstrap.js", "./dist/css/bootstrap.css", "./dist/fonts/*"],
+  "name": "jasny-bootstrap",
+  "version": "3.1.3",
+  "main": [
+    "./dist/css/jasny-bootstrap.css",
+    "./dist/js/jasny-bootstrap.js"
+  ],
   "ignore": [
-      "**/.*"
+    "**/.*",
+    "_config.yml",
+    "CNAME",
+    "composer.json",
+    "CONTRIBUTING.md",
+    "docs",
+    "js/tests"
   ],
   "dependencies": {
-    "jquery": ">= 1.9.0"
+    "jquery": ">= 1.9.0",
+    "bootstrap": ">= 3.1.0"
   }
 }

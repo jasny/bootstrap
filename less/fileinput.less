@@ -13,8 +13,9 @@
     margin: 0;
     opacity: 0;
     filter: alpha(opacity=0);
-    transform: translate(-300px, 0) scale(4);
     font-size: 23px;
+    height: 100%;
+    width: 100%;
     direction: ltr;
     cursor: pointer;
   }
@@ -23,7 +24,9 @@
 .fileinput {
   margin-bottom: 9px;
   display: inline-block;
-  .uneditable-input {
+  .form-control {
+    padding-top: 7px;
+    padding-bottom: 5px;
     display: inline-block;
     margin-bottom: 0px;
     vertical-align: middle;
@@ -51,27 +54,42 @@
   display: inline;
 }
 
-.fileinput .uneditable-input {
-  white-space: normal;
+.fileinput-filename {
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+}
+.form-control .fileinput-filename {
+  vertical-align: bottom;
+}
+
+.fileinput.input-group {
+    display: table;
+    
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+    > .btn-file {
+        z-index: 1;
+    }
 }
 
 // Not 100% correct, but helps in typical use case
+.fileinput-new.input-group .btn-file,
 .fileinput-new .input-group .btn-file {
   border-radius: 0 @border-radius-base @border-radius-base 0;
-}
-.fileinput-new .input-group .btn-file.btn-xs,
-.fileinput-new .input-group .btn-file.btn-sm {
-  border-radius: 0 @border-radius-small @border-radius-small 0;
-}
-.fileinput-new .input-group .btn-file.btn-lg {
-  border-radius: 0 @border-radius-large @border-radius-large 0;
+
+  &.btn-xs,
+  &.btn-sm {
+    border-radius: 0 @border-radius-small @border-radius-small 0;
+  }
+  &.btn-lg {
+    border-radius: 0 @border-radius-large @border-radius-large 0;
+  }
 }
 
 .form-group.has-warning .fileinput {
-  .uneditable-input {
-    color: @state-warning-text;
-    border-color: @state-warning-border;
-  }
   .fileinput-preview {
     color: @state-warning-text;
   }
@@ -80,10 +98,6 @@
   }
 }
 .form-group.has-error .fileinput {
-  .uneditable-input {
-    color: @state-danger-text;
-    border-color: @state-danger-border;
-  }
   .fileinput-preview {
     color: @state-danger-text;
   }
@@ -92,10 +106,6 @@
   }
 }
 .form-group.has-success .fileinput {
-  .uneditable-input {
-    color: @state-success-text;
-    border-color: @state-success-border;
-  }
   .fileinput-preview {
     color: @state-success-text;
   }
