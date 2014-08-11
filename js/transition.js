@@ -32,7 +32,7 @@
     return false // explicit for ie8 (  ._.)
   }
 
-  if ($.support.transition !== undefined) return  // Prevent conflict with Twitter Bootstrap
+  if ($.support.transition !== undefined) return  // Prevent conflict with vanilla Bootstrap
 
   // http://blog.alexmaccaw.com/css-transitions
   $.fn.emulateTransitionEnd = function (duration) {
