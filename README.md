@@ -1,6 +1,6 @@
 # [Jasny Bootstrap](http://jasny.github.io/bootstrap/) [![Build Status](https://secure.travis-ci.org/jasny/bootstrap.png)](http://travis-ci.org/jasny/bootstrap)[![devDependency Status](https://david-dm.org/jasny/bootstrap/dev-status.png)](https://david-dm.org/jasny/bootstrap#info=devDependencies)
 
-Jasny Bootstrap is an extension of the famous [Twitter Bootstrap](http://getbootstrap.com/), adding the following components:
+Jasny Bootstrap is an extension of the famous [Bootstrap](http://getbootstrap.com/), adding the following components:
 
 * [Button labels](http://jasny.github.io/bootstrap/css/#buttons-labels)
 * [Off canvas navmenu](http://jasny.github.io/bootstrap/components/#navmenu)
@@ -39,7 +39,7 @@ jasny-bootstrap/
 
 We provide compiled CSS and JS (`jasny-bootstrap.*`), as well as compiled and minified CSS and JS (`jasny-bootstrap.min.*`).
 
-Jasny Bootstrap should be loaded after Twitter Bootstrap.
+Jasny Bootstrap should be loaded after vanilla Bootstrap.
 
 
 ## Bugs and feature requests
@@ -139,7 +139,7 @@ And constructed with the following guidelines:
 
 For more information on SemVer, please visit <http://semver.org/>.
 
-__The major version will follow Twitter Bootstraps major version. This means backward compatibility will only be broken if Twitter Bootstrap does so.__
+__The major version will follow Bootstrap's major version. This means backward compatibility will only be broken if Bootstrap does so.__
 
 
 
