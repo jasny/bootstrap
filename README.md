@@ -1,4 +1,4 @@
-# [Jasny Bootstrap](http://jasny.github.io/bootstrap/) [![Build Status](https://secure.travis-ci.org/jasny/bootstrap.png)](http://travis-ci.org/jasny/bootstrap)[![devDependency Status](https://david-dm.org/jasny/bootstrap/dev-status.png)](https://david-dm.org/jasny/bootstrap#info=devDependencies)
+# [Jasny Bootstrap](http://jasny.github.io/bootstrap/) [![Build Status](https://travis-ci.org/jasny/bootstrap.svg)](http://travis-ci.org/jasny/bootstrap)[![devDependency Status](https://david-dm.org/jasny/bootstrap/dev-status.svg)](https://david-dm.org/jasny/bootstrap#info=devDependencies)
 
 Jasny Bootstrap is an extension of the famous [Bootstrap](http://getbootstrap.com/), adding the following components:
 
@@ -31,20 +31,21 @@ Within the download you'll find the following directories and files, logically g
 jasny-bootstrap/
 ├── css/
 │   ├── jasny-bootstrap.css
-│   ├── jasny-bootstrap.min.css
+│   ├── jasny-bootstrap.css.map
+│   └── jasny-bootstrap.min.css
 └── js/
     ├── jasny-bootstrap.js
     └── jasny-bootstrap.min.js
 ```
 
-We provide compiled CSS and JS (`jasny-bootstrap.*`), as well as compiled and minified CSS and JS (`jasny-bootstrap.min.*`).
+We provide compiled CSS and JS (`jasny-bootstrap.*`), as well as compiled and minified CSS and JS (`jasny-bootstrap.min.*`). CSS [source maps](https://developers.google.com/chrome-developer-tools/docs/css-preprocessors) (`jasny-bootstrap.*.map`) are available for use with certain browsers' developer tools.
 
 Jasny Bootstrap should be loaded after vanilla Bootstrap.
 
 
 ## Bugs and feature requests
 
-Have a bug or a feature request? [Please open a new issue](https://github.com/jasny/bootstrap/issues). Before opening any issue, please search for existing issues and read the [Issue Guidelines](https://github.com/necolas/issue-guidelines), written by [Nicolas Gallagher](https://github.com/necolas/).
+Have a bug or a feature request? Please [open a new issue](https://github.com/jasny/bootstrap/issues/new). Before opening any issue, please search for existing issues and read the [Issue Guidelines](https://github.com/necolas/issue-guidelines), written by [Nicolas Gallagher](https://github.com/necolas/).
 
 You may use [this JSFiddle](http://jsfiddle.net/jasny/k9K5d/) as a template for your bug reports.
 
@@ -147,9 +148,9 @@ __The major version will follow Bootstrap's major version. This means backward c
 
 **Arnold Daniels**
 
-+ [http://twitter.com/ArnoldDaniels](http://twitter.com/ArnoldDaniels)
-+ [http://github.com/jasny](http://github.com/jasny)
-+ [http://jasny.net](http://jasny.net)
++ <https://twitter.com/ArnoldDaniels>
++ <https://github.com/jasny>
++ <http://jasny.net>
 
 
 ## Copyright and license
