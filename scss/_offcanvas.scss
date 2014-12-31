@@ -8,6 +8,10 @@
   }
 }
 
+.offcanvas {
+  @include offcanvas;
+}
+
 @media (max-width: $screen-xs-max) {
   .offcanvas-xs {
     @include offcanvas;
