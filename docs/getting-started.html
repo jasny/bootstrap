@@ -82,14 +82,15 @@ Copy any changes made here over to the README too. -->
 jasny-bootstrap/
 ├── css/
 │   ├── jasny-bootstrap.css
-│   ├── jasny-bootstrap.min.css
+│   ├── jasny-bootstrap.css.map
+│   └── jasny-bootstrap.min.css
 └── js/
     ├── jasny-bootstrap.js
     └── jasny-bootstrap.min.js
     
 {% endhighlight %}
 
-    <p>This is the most basic form of Jasny Bootstrap. We provide compiled CSS and JS (<code>jasny-bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>jasny-bootstrap.min.*</code>).</p>
+    <p>This is the most basic form of Jasny Bootstrap. We provide compiled CSS and JS (<code>jasny-bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>jasny-bootstrap.min.*</code>). CSS <a href="https://developers.google.com/chrome-developer-tools/docs/css-preprocessors">source maps</a> (<code>jasny-bootstrap.*.map</code>) are available for use with certain browsers' developer tools.</p>
     
     <p>The <code>jasny-bootstrap.*</code> files should be loaded in conjunction with the original vanilla Bootstrap files.</p>
         
