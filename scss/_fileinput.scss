@@ -50,6 +50,12 @@
 .fileinput-new .fileinput-exists {
   display: none;
 }
+
+//close X button alignment
+.fileinput-exists.close {
+  float: none;
+}
+
 .fileinput-inline .fileinput-controls {
   display: inline;
 }
