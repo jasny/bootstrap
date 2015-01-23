@@ -15,7 +15,7 @@
 </title>
 
 <!-- Bootstrap core CSS -->
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="../dist/css/jasny-bootstrap.min.css" rel="stylesheet">
 
 <!-- Documentation extras -->
@@ -43,6 +43,17 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */</script>
 
   </head>
   <body class="">
@@ -97,7 +108,7 @@
       <div class="container">
         <h1>Getting started</h1>
         <p>An overview of Jasny Bootstrap, how to download and use, basic templates and examples, and more.</p>
-        <div id="aboutme-container">
+        <!-- <div id="aboutme-container">
   <a href="mailto:arnold@jasny.net" class="aboutme">
     <img class="img-circle" src="http://0.gravatar.com/avatar/0bba82e8b2a9d2cf9645cb07ea54766f?s=100&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&amp;r=G" alt="Arnold Daniels">
     <div class="aboutme-text">
@@ -106,7 +117,13 @@
       <span class="aboutme-name">- Arnold Daniels</span>
     </div>
   </a>
+</div> -->
+
+
+<div id="carbonads-container">
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=jansy" id="_carbonads_js"></script>
 </div>
+
 
       </div>
     </div>
@@ -155,12 +172,12 @@
     <div class="page-header">
       <h1 id="jasny-bootstrap">Jasny Bootstrap</h1>
     </div>
-    <p class="lead">Jasny Bootstrap is an extension to <a href="http://getbootstrap.com">Twitter Bootstrap</a>, adding a number of features and components.</p>
+    <p class="lead">Jasny Bootstrap is an extension to <a href="http://getbootstrap.com">vanilla Bootstrap</a>, adding a number of features and components.</p>
     <p>The aim of Jasny Bootstrap is to provide all the required features for building highly interactive web applications for desktop and mobile.</p>
     
     <div class="bs-callout bs-callout-warning">
       <h4>Delivered as extension only</h4>
-      <p>As of version 3.1.0 Jasny Bootstrap is no longer bundeled with Twitter Bootstrap. You should load Twitter Bootstrap's CSS before this extension.</p>
+      <p>As of version 3.1.0 Jasny Bootstrap is no longer bundled with vanilla Bootstrap. You should load vanilla Bootstrap's CSS before this extension.</p>
     </div>
   </div>
 
@@ -190,18 +207,16 @@
         Install with <a href="http://bower.io">Bower</a>
       </h4>
       <p>Install and manage the original files for all CSS and JavaScript, along with a local copy of the docs, using <a href="http://bower.io">Bower</a>.</p>
-      <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>bower install jasny-bootstrap
-</code></pre></div>
+      <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower install jasny-bootstrap</code></pre></div>
     </div>
 
     <h3 id="download-cdn">Jasny Bootstrap @ cdnjs</h3>
     <p><a href="http://cdnjs.com" target="_blank">CDNJS</a> is a community driven CDN hosted by CloudFlare, supporting over a hundred projects. To use this CDN, swap your local instances for the CDN links listed below.</p>
-<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- Latest compiled and minified CSS --&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Latest compiled and minified CSS --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
 
 <span class="c">&lt;!-- Latest compiled and minified JavaScript --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
 
     <div class="bs-callout bs-callout-warning" id="callout-less-compilation">
       <h4>Compiling Jasny Bootstrap's LESS files</h4>
@@ -221,19 +236,17 @@
 
 <!-- NOTE: This info is intentionally duplicated in the README.
 Copy any changes made here over to the README too. -->
-<div class="highlight"><pre><code class="bash">jasny-bootstrap/
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">jasny-bootstrap/
 ├── css/
 │   ├── jasny-bootstrap.css
 │   ├── jasny-bootstrap.min.css
 └── js/
     ├── jasny-bootstrap.js
-    └── jasny-bootstrap.min.js
-    
-</code></pre></div>
+    └── jasny-bootstrap.min.js</code></pre></div>
 
     <p>This is the most basic form of Jasny Bootstrap. We provide compiled CSS and JS (<code>jasny-bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>jasny-bootstrap.min.*</code>).</p>
     
-    <p>The <code>jasny-bootstrap.*</code> files should be loaded in conjunction with the original Twitter Bootstrap files.</p>
+    <p>The <code>jasny-bootstrap.*</code> files should be loaded in conjunction with the original vanilla Bootstrap files.</p>
         
     <div class="bs-callout bs-callout-danger" id="jquery-required">
       <h4>jQuery required</h4>
@@ -251,7 +264,7 @@ Copy any changes made here over to the README too. -->
     <p class="lead">Start with this basic HTML template, or modify <a href="../getting-started#examples">these examples</a>. We hope you'll customize our templates and examples, adapting them to suit your needs.</p>
 
     <p>Copy the HTML below to begin working with a minimal Bootstrap document.</p>
-<div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>Bootstrap 101 Template<span class="nt">&lt;/title&gt;</span>
@@ -276,8 +289,7 @@ Copy any changes made here over to the README too. -->
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;js/jasny-bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
   </div>
 
 
@@ -446,7 +458,7 @@ Copy any changes made here over to the README too. -->
     <p>Other changes in v3.0 are not immediately apparent. Base classes, key styles, and behaviors have been adjusted for flexibility and our <em>mobile first</em> approach. Here's a partial list:</p>
     <ul>
       <li>The fileupload plugin has been renamed to fileinput. File upload was poorly chosen, since the plugin allows the creation of a styled file input element. It has nothing to do with how the file is uploaded.</li>
-      <li class="bs-jasny-only">Tab alignments are still supported in this fork (while dropped in Twitter Bootstrap).</li>
+      <li class="bs-jasny-only">Tab alignments are still supported in this fork (while dropped in vanilla Bootstrap).</li>
       <li>Typeahead has been dropped, in favor of using <a href="http://brianreavis.github.io/selectize.js/">Selectize.js</a>.</li>
       <li>Iconic icons are still available from <a href="http://www.somerandomdude.com/work/open-iconic/">P.J. Onori</a>.</li>
     </ul>
@@ -476,11 +488,14 @@ Copy any changes made here over to the README too. -->
     <li class="tweet-btn">
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.io/bootstrap" data-count="horizontal" data-via="ArnoldDaniels">Tweet</a>
     </li>
+    <li>
+      <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://github.com/jasny/bootstrap">Flattr</a>
+    </li>
   </ul>
 </div>
 
 
-        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
+        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">vanilla Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
         <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <ul class="footer-links">
           <li>Currently v3.1.3</li>
@@ -501,7 +516,7 @@ Copy any changes made here over to the README too. -->
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="../dist/js/jasny-bootstrap.min.js"></script>
 
 <script src="http://platform.twitter.com/widgets.js"></script>

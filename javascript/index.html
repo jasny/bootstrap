@@ -15,7 +15,7 @@
 </title>
 
 <!-- Bootstrap core CSS -->
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="../dist/css/jasny-bootstrap.min.css" rel="stylesheet">
 
 <!-- Documentation extras -->
@@ -43,6 +43,17 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */</script>
 
   </head>
   <body class="">
@@ -97,7 +108,7 @@
       <div class="container">
         <h1>JavaScript</h1>
         <p>Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.</p>
-        <div id="aboutme-container">
+        <!-- <div id="aboutme-container">
   <a href="mailto:arnold@jasny.net" class="aboutme">
     <img class="img-circle" src="http://0.gravatar.com/avatar/0bba82e8b2a9d2cf9645cb07ea54766f?s=100&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&amp;r=G" alt="Arnold Daniels">
     <div class="aboutme-text">
@@ -106,7 +117,13 @@
       <span class="aboutme-name">- Arnold Daniels</span>
     </div>
   </a>
+</div> -->
+
+
+<div id="carbonads-container">
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=jansy" id="_carbonads_js"></script>
 </div>
+
 
       </div>
     </div>
@@ -169,8 +186,8 @@
     </div>
 
     <h3 id="js-individual-compiled">Individual or compiled</h3>
-    <p>Plugins can be included individually (using Jasny Bootstrap's individual <code>*.js</code> files), or all at once (using <code>jasny-bootstrap.js</code> or the minified <code>jasn-bootstrap.min.js</code>).</p>
-    <p>The Jasny Bootstrap plugins work with or without loading Twitter Bootstrap's <code>bootstrap.js</code>.</p>
+    <p>Plugins can be included individually (using Jasny Bootstrap's individual <code>*.js</code> files), or all at once (using <code>jasny-bootstrap.js</code> or the minified <code>jasny-bootstrap.min.js</code>).</p>
+    <p>The Jasny Bootstrap plugins work with or without loading vanilla Bootstrap's <code>bootstrap.js</code>.</p>
     
     <div class="bs-callout bs-callout-danger">
       <h4>Do not attempt to include both.</h4>
@@ -181,40 +198,34 @@
     <p>You can use all Jasny Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.</p>
 
     <p>That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with <code>data-api</code>. This looks like this:
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;.data-api&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;.data-api&#39;</span><span class="p">)</span></code></pre></div>
 
     <p>Alternatively, to target a specific plugin, just include the plugin's name as a namespace along with the data-api namespace like this:</p>
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;.alert.data-api&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;.alert.data-api&#39;</span><span class="p">)</span></code></pre></div>
 
     <h3 id="js-programmatic-api">Programmatic API</h3>
     <p>We also believe you should be able to use all Bootstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.fileinput&quot;</span><span class="p">).</span><span class="nx">fileinput</span><span class="p">().</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;fat&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.fileinput&quot;</span><span class="p">).</span><span class="nx">fileinput</span><span class="p">().</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;fat&quot;</span><span class="p">)</span></code></pre></div>
 
     <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#myMenu&quot;</span><span class="p">).</span><span class="nx">offcanvas</span><span class="p">()</span>                      <span class="c1">// initialized with defaults</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#myMenu&quot;</span><span class="p">).</span><span class="nx">offcanvas</span><span class="p">()</span>                      <span class="c1">// initialized with defaults</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#myMenu&quot;</span><span class="p">).</span><span class="nx">offcanvas</span><span class="p">({</span> <span class="nx">autohide</span><span class="o">:</span> <span class="kc">false</span> <span class="p">})</span>   <span class="c1">// initialized with no autohide</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#myMenu&quot;</span><span class="p">).</span><span class="nx">offcanvas</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">)</span>                <span class="c1">// initializes and invokes show immediately&lt;/p&gt;</span>
-</code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#myMenu&quot;</span><span class="p">).</span><span class="nx">offcanvas</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">)</span>                <span class="c1">// initializes and invokes show immediately&lt;/p&gt;</span></code></pre></div>
 
     <p>Each plugin also exposes its raw constructor on a <code>Constructor</code> property: <code>$.fn.popover.Offcanvas</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element: <code>$('.navmenu').data('offcanvas')</code>.</p>
 
     <h3 id="js-noconflict">No conflict</h3>
     <p>Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
-<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">bootstrapButton</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">button</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">()</span> <span class="c1">// return $.fn.button to previously assigned value</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">bootstrapBtn</span> <span class="o">=</span> <span class="nx">bootstrapButton</span>            <span class="c1">// give $().bootstrapBtn the Bootstrap functionality</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">bootstrapButton</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">button</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">()</span> <span class="c1">// return $.fn.button to previously assigned value</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">bootstrapBtn</span> <span class="o">=</span> <span class="nx">bootstrapButton</span>            <span class="c1">// give $().bootstrapBtn the Bootstrap functionality</span></code></pre></div>
 
     <h3 id="js-events">Events</h3>
     <p>Bootstrap provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
     <p>As of 3.1.2, all Bootstrap events are namespaced.</p>
     <p>All infinitive events provide <code>preventDefault</code> functionality. This provides the ability to stop the execution of an action before it starts.</p>
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myMenu&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;show.bs.offcanvas&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myMenu&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;show.bs.offcanvas&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span> <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span> <span class="c1">// stops menu from being shown</span>
-<span class="p">})</span>
-</code></pre></div>
+<span class="p">})</span></code></pre></div>
   </div>
 
   
@@ -226,7 +237,7 @@
     </div>
 
     <h2 id="offcanvas-examples">Example</h2>
-    <p>The offcanvas plugin allows you to hide an element from sight and than show it by moving either that or any other element. It's intented to be used for off canvas navigation, like push menus.</p>
+    <p>The offcanvas plugin allows you to hide an element from sight and than show it by moving either that or any other element. It's intended to be used for off canvas navigation, like push menus.</p>
     <div class="bs-example bs-navmenu-offcanvas-example">
       <div id="myNavmenuCanvas">
         <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
@@ -247,7 +258,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
       </div>
     </div><!-- /example -->
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">&quot;myNavmenu&quot;</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default navmenu-fixed-left offcanvas&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">&quot;myNavmenu&quot;</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default navmenu-fixed-left offcanvas&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;navmenu-brand&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Brand<span class="nt">&lt;/a&gt;</span>
   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navmenu-nav&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -261,8 +272,7 @@
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
   <span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <div class="bs-callout bs-callout-info">
       <h4>Examples</h4>
@@ -282,8 +292,7 @@
 
     <h3>Via JavaScript</h3>
     <p>Call the input mask via javascript:</p>
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.navmenu&#39;</span><span class="p">).</span><span class="nx">offcanvas</span><span class="p">()</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.navmenu&#39;</span><span class="p">).</span><span class="nx">offcanvas</span><span class="p">()</span></code></pre></div>
 
     <h3>Options</h3>
     <table class="table table-bordered table-striped">
@@ -417,7 +426,7 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table table-striped table-bordered table-hover&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table table-striped table-bordered table-hover&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
     <span class="nt">&lt;tr&gt;&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;&lt;th&gt;</span>Description<span class="nt">&lt;/th&gt;&lt;th&gt;</span>Actions<span class="nt">&lt;/th&gt;&lt;/tr&gt;</span>
   <span class="nt">&lt;/thead&gt;</span>
@@ -426,8 +435,7 @@
     <span class="nt">&lt;tr&gt;&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.jasny.net/&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>jasny.net<span class="nt">&lt;/a&gt;&lt;/td&gt;&lt;td&gt;</span>Shared knowledge of Arnold Daniels aka Jasny.<span class="nt">&lt;/td&gt;&lt;td</span> <span class="na">class=</span><span class="s">&quot;rowlink-skip&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</span>
     <span class="nt">&lt;tr&gt;&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#rowlinkModal&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;modal&quot;</span><span class="nt">&gt;</span>Launch modal<span class="nt">&lt;/a&gt;&lt;/td&gt;&lt;td&gt;</span>Toggle a modal via JavaScript by clicking this row.<span class="nt">&lt;/td&gt;&lt;td</span> <span class="na">class=</span><span class="s">&quot;rowlink-skip&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</span>
   <span class="nt">&lt;/tbody&gt;</span>
-<span class="nt">&lt;/table&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/table&gt;</span></code></pre></div>
 
     <hr class="bs-docs-separator">
 
@@ -438,8 +446,7 @@
 
     <h3>Via JavaScript</h3>
     <p>Call the input mask via javascript:</p>
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;tbody.rowlink&#39;</span><span class="p">).</span><span class="nx">rowlink</span><span class="p">()</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;tbody.rowlink&#39;</span><span class="p">).</span><span class="nx">rowlink</span><span class="p">()</span></code></pre></div>
 
     <h3>Options</h3>
     <table class="table table-bordered table-striped">
@@ -480,8 +487,7 @@
     <div class="bs-example">
       <input type="text" class="form-control" data-mask="999-99-999-9999-9" placeholder="ISBN">
     </div>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">data-mask=</span><span class="s">&quot;999-99-999-9999-9&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;ISBN&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">data-mask=</span><span class="s">&quot;999-99-999-9999-9&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;ISBN&quot;</span><span class="nt">&gt;</span></code></pre></div>
 
     <hr class="bs-docs-separator">
 
@@ -492,10 +498,9 @@
 
     <h3>Via JavaScript</h3>
     <p>Call the input mask via javascript:</p>
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.inputmask&#39;</span><span class="p">).</span><span class="nx">inputmask</span><span class="p">({</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.inputmask&#39;</span><span class="p">).</span><span class="nx">inputmask</span><span class="p">({</span>
   <span class="nx">mask</span><span class="o">:</span> <span class="s1">&#39;999-99-999-9999-9&#39;</span>
-<span class="p">})</span>
-</code></pre></div>
+<span class="p">})</span></code></pre></div>
 
     <h3>Options</h3>
     <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-mask="999-99-999-9999-9"</code>.</p>
@@ -571,12 +576,11 @@
         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
       </div>
     </div>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput fileinput-new input-group&quot;</span> <span class="na">data-provides=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput fileinput-new input-group&quot;</span> <span class="na">data-provides=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">data-trigger=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-file fileinput-exists&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-filename&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/div&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon btn btn-default btn-file&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-new&quot;</span><span class="nt">&gt;</span>Select file<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-exists&quot;</span><span class="nt">&gt;</span>Change<span class="nt">&lt;/span&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;input-group-addon btn btn-default fileinput-exists&quot;</span> <span class="na">data-dismiss=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>Remove<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <div class="bs-example">
       <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -585,12 +589,11 @@
         <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
       </div>
     </div>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput fileinput-new&quot;</span> <span class="na">data-provides=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput fileinput-new&quot;</span> <span class="na">data-provides=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-file&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-new&quot;</span><span class="nt">&gt;</span>Select file<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-exists&quot;</span><span class="nt">&gt;</span>Change<span class="nt">&lt;/span&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-filename&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;close fileinput-exists&quot;</span> <span class="na">data-dismiss=</span><span class="s">&quot;fileinput&quot;</span> <span class="na">style=</span><span class="s">&quot;float: none&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <h3>Image upload widgets</h3>
     <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
@@ -603,14 +606,13 @@
         </div>
       </div>
     </div>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput fileinput-new&quot;</span> <span class="na">data-provides=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput fileinput-new&quot;</span> <span class="na">data-provides=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput-preview thumbnail&quot;</span> <span class="na">data-trigger=</span><span class="s">&quot;fileinput&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 200px; height: 150px;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
   <span class="nt">&lt;div&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-file&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-new&quot;</span><span class="nt">&gt;</span>Select image<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-exists&quot;</span><span class="nt">&gt;</span>Change<span class="nt">&lt;/span&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default fileinput-exists&quot;</span> <span class="na">data-dismiss=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>Remove<span class="nt">&lt;/a&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <div class="bs-example">
       <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -624,7 +626,7 @@
         </div>
       </div>
     </div>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput fileinput-new&quot;</span> <span class="na">data-provides=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput fileinput-new&quot;</span> <span class="na">data-provides=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fileinput-new thumbnail&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 200px; height: 150px;&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;img</span> <span class="na">data-src=</span><span class="s">&quot;holder.js/100%x100%&quot;</span> <span class="na">alt=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
@@ -633,8 +635,7 @@
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-file&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-new&quot;</span><span class="nt">&gt;</span>Select image<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;fileinput-exists&quot;</span><span class="nt">&gt;</span>Change<span class="nt">&lt;/span&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default fileinput-exists&quot;</span> <span class="na">data-dismiss=</span><span class="s">&quot;fileinput&quot;</span><span class="nt">&gt;</span>Remove<span class="nt">&lt;/a&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <div class="bs-callout bs-callout-warning">
       <p>Image preview only works in IE10+, FF3.6+, Safari6.0+, Chrome6.0+ and Opera11.1+. In older browsers the filename is shown instead.</p>
@@ -735,11 +736,14 @@
     <li class="tweet-btn">
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.io/bootstrap" data-count="horizontal" data-via="ArnoldDaniels">Tweet</a>
     </li>
+    <li>
+      <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://github.com/jasny/bootstrap">Flattr</a>
+    </li>
   </ul>
 </div>
 
 
-        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
+        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">vanilla Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
         <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <ul class="footer-links">
           <li>Currently v3.1.3</li>
@@ -760,7 +764,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="../dist/js/jasny-bootstrap.min.js"></script>
 
 <script src="http://platform.twitter.com/widgets.js"></script>

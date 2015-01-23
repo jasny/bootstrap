@@ -15,7 +15,7 @@
 </title>
 
 <!-- Bootstrap core CSS -->
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="dist/css/jasny-bootstrap.min.css" rel="stylesheet">
 
 <!-- Documentation extras -->
@@ -43,6 +43,17 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */</script>
 
   </head>
   <body class="bs-docs-home">
@@ -102,7 +113,7 @@
 
 
     <footer class="container" role="contentinfo">
-      <div id="aboutme-container">
+      <!-- <div id="aboutme-container">
   <a href="mailto:arnold@jasny.net" class="aboutme">
     <img class="img-circle" src="http://0.gravatar.com/avatar/0bba82e8b2a9d2cf9645cb07ea54766f?s=100&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&amp;r=G" alt="Arnold Daniels">
     <div class="aboutme-text">
@@ -111,7 +122,13 @@
       <span class="aboutme-name">- Arnold Daniels</span>
     </div>
   </a>
+</div> -->
+
+
+<div id="carbonads-container">
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=jansy" id="_carbonads_js"></script>
 </div>
+
 
 
       <div class="bs-social">
@@ -127,6 +144,9 @@
     </li>
     <li class="tweet-btn">
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.io/bootstrap" data-count="horizontal" data-via="ArnoldDaniels">Tweet</a>
+    </li>
+    <li>
+      <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://github.com/jasny/bootstrap">Flattr</a>
     </li>
   </ul>
 </div>
@@ -145,14 +165,6 @@
         <li>
           <a href="getting-started/#examples" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'Examples']);">Examples</a>
         </li>
-        <li>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: inline-block; vertical-align: middle;">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="9SVFVMJ63M4R4">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="Make a donation">
-            <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
-          </form>
-        </li>
       </ul>
     </footer>
 
@@ -161,7 +173,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="dist/js/jasny-bootstrap.min.js"></script>
 
 <script src="http://platform.twitter.com/widgets.js"></script>

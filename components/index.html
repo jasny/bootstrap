@@ -15,7 +15,7 @@
 </title>
 
 <!-- Bootstrap core CSS -->
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="../dist/css/jasny-bootstrap.min.css" rel="stylesheet">
 
 <!-- Documentation extras -->
@@ -43,6 +43,17 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */</script>
 
   </head>
   <body class="">
@@ -97,7 +108,7 @@
       <div class="container">
         <h1>Components</h1>
         <p>Reusable components to built the user interface.</p>
-        <div id="aboutme-container">
+        <!-- <div id="aboutme-container">
   <a href="mailto:arnold@jasny.net" class="aboutme">
     <img class="img-circle" src="http://0.gravatar.com/avatar/0bba82e8b2a9d2cf9645cb07ea54766f?s=100&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&amp;r=G" alt="Arnold Daniels">
     <div class="aboutme-text">
@@ -106,7 +117,13 @@
       <span class="aboutme-name">- Arnold Daniels</span>
     </div>
   </a>
+</div> -->
+
+
+<div id="carbonads-container">
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=jansy" id="_carbonads_js"></script>
 </div>
+
 
       </div>
     </div>
@@ -173,7 +190,7 @@
         </ul>
       </nav>
     </div>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;navmenu-brand&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Brand<span class="nt">&lt;/a&gt;</span>
 
   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav navmenu-nav&quot;</span><span class="nt">&gt;</span>
@@ -190,8 +207,7 @@
       <span class="nt">&lt;/ul&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/nav&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/nav&gt;</span></code></pre></div>
 
     <div class="bs-callout bs-callout-warning">
       <h4>Make navmenus accessible</h4>
@@ -211,20 +227,18 @@
         </ul>
       </nav>
     </div><!-- /example -->
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default navmenu-fixed-left offcanvas-sm&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default navmenu-fixed-left offcanvas-sm&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
   ...
-<span class="nt">&lt;/nav&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/nav&gt;</span></code></pre></div>
 
     <div class="bs-callout bs-callout-danger">
       <h4>Body padding required</h4>
       <p>The fixed navmenu will overlay your other content, unless you add <code>padding</code> to the left or right of the <code>&lt;body&gt;</code>. Try out your own values or use our snippet below. Tip: By default, the navmenu is 300px wide.</p>
-<div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">992px</span><span class="o">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">992px</span><span class="o">)</span> <span class="p">{</span>
   <span class="nt">body</span> <span class="p">{</span>
     <span class="k">padding-left</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
       <p>Make sure to include this <strong>after</strong> the Jasny Bootstrap CSS.</p>
     </div>
 
@@ -251,7 +265,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
       </div>
     </div><!-- /example -->
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">&quot;myNavmenu&quot;</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default navmenu-fixed-left offcanvas&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">&quot;myNavmenu&quot;</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-default navmenu-fixed-left offcanvas&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
 ...
 <span class="nt">&lt;/nav&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;navbar navbar-default navbar-fixed-top&quot;</span><span class="nt">&gt;</span>
@@ -260,8 +274,7 @@
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-bar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
   <span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
     <div class="bs-callout bs-callout-info">
       <h4>Examples</h4>
@@ -280,10 +293,9 @@
         </ul>
       </nav>
     </div><!-- /example -->
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-inverse&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navmenu navmenu-inverse&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
   ...
-<span class="nt">&lt;/nav&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/nav&gt;</span></code></pre></div>
 
   </div>
 
@@ -302,10 +314,9 @@
         <strong>Success!</strong> Your action has been completed succefully.
       </div>
     </div>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-success alert-fixed-top&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-success alert-fixed-top&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;strong&gt;</span>Success!<span class="nt">&lt;/strong&gt;</span> Your action has been completed succefully.
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   </div>
 
@@ -332,11 +343,14 @@
     <li class="tweet-btn">
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.io/bootstrap" data-count="horizontal" data-via="ArnoldDaniels">Tweet</a>
     </li>
+    <li>
+      <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://github.com/jasny/bootstrap">Flattr</a>
+    </li>
   </ul>
 </div>
 
 
-        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
+        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">vanilla Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
         <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <ul class="footer-links">
           <li>Currently v3.1.3</li>
@@ -357,7 +371,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="../dist/js/jasny-bootstrap.min.js"></script>
 
 <script src="http://platform.twitter.com/widgets.js"></script>
