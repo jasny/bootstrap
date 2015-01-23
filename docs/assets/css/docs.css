@@ -40,6 +40,9 @@
  *
  * Update the basics of our documents to prep for docs content.
  */
+html {
+  height: 100%;
+}
 
 body {
   position: relative; /* For scrollyspy */
@@ -193,12 +196,12 @@ span.hidden-sm {
 .bs-social-buttons li {
   display: inline-block;
   line-height: 1;
-  padding: 5px 8px;
+  padding: 5px 8px 5px 0;
 }
-.bs-social-buttons .twitter-follow-button {
-  width: 225px !important;
+.bs-social-buttons .follow-btn {
+  width: 240px !important;
 }
-.bs-social-buttons .twitter-share-button {
+.bs-social-buttons .tweet-btn {
   width: 98px !important;
 }
 /* Style the GitHub buttons via CSS instead of inline attributes */
@@ -231,6 +234,8 @@ span.hidden-sm {
   background-image: url(../img/bg-1920x1200.jpg);
 }
 @media (min-width: 1921px), (min-height: 1201px) {
+  .bs-docs-nav,
+  .bs-docs-home,
   .bs-header {
     background-image: url(../img/bg-3500x2500.jpg);
   }
@@ -350,6 +355,100 @@ span.hidden-sm {
   }
 }
 
+
+/*
+ * Carbon ads
+ *
+ * Single display ad that shows on all pages (except homepage) in page headers.
+ * The hella `!important` is required for any pre-set property.
+ */
+
+#carbonads {
+  width: auto !important;
+  margin: 50px -30px -40px !important;
+  padding: 20px !important;
+  overflow: hidden; /* clearfix */
+  height: auto !important;
+  font-size: 13px !important;
+  line-height: 16px !important;
+  text-align: left;
+  background: #63303A !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,.075);
+  border: 0 !important;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,.075);
+}
+.carbon-img {
+  margin: 0 !important;
+  float: left;
+}
+.carbon-text {
+  float: none !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  margin-left: 145px !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  padding-top: 0 !important;
+  color: #eee !important;
+}
+.carbon-poweredby {
+  color: #ceb6b8 !important;
+  margin-left: 145px;
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85em;
+}
+#carbonads a:hover {
+  text-decoration: none !important;
+}
+
+@media (min-width: 768px) {
+  #carbonads {
+    margin: 0 !important;
+    border-radius: 4px;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.075), 0 1px 0 rgba(255,255,255,.1);
+  }
+}
+
+@media (min-width: 992px) {
+  #carbonads {
+    position: absolute;
+    top: 20px !important;
+    right: 15px !important; /* 15px instead of 0 since box-sizing */
+    width: 330px !important;
+    padding: 15px !important;
+  }
+}
+
+/* Homepage variations */
+.bs-docs-home #carbonads {
+  margin: 0 -15px 40px !important;
+}
+@media (min-width: 480px) {
+  .bs-docs-home #carbonads {
+    width: 330px !important;
+    margin: 0 auto 40px !important;
+    border-radius: 4px;
+  }
+}
+@media (min-width: 768px) {
+  .bs-docs-home #carbonads {
+    float: left;
+    width: 330px !important;
+    margin: 0 0 30px !important;
+  }
+}
+@media (min-width: 992px) {
+  .bs-docs-home #carbonads {
+    position: static;
+  }
+}
+@media (min-width: 1170px) {
+  .bs-docs-home #carbonads {
+    margin-top: -25px !important;
+  }
+}
 
 /*
  * About me
