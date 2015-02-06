@@ -145,7 +145,10 @@
       $('body').data('offcanvas-style', $('body').attr('style') || '')
     }
       
-    $('body').css('overflow', 'hidden')
+    $('body').css({ 
+      overflowY: 'scroll',
+      position: 'fixed'
+    });
 
     if ($('body').width() > bodyWidth) {
       var padding = parseInt($('body').css(prop), 10) + $('body').width() - bodyWidth
