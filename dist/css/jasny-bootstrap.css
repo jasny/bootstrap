@@ -12,10 +12,6 @@
     width: auto;
   }
 }
-.btn-labeled {
-  padding-top: 0;
-  padding-bottom: 0;
-}
 .btn-label {
   position: relative;
   left: -12px;
@@ -59,6 +55,11 @@
   right: -5px;
   left: auto;
   border-radius: 0 2px 2px 0;
+}
+.btn-group > .btn:last-child:not(:first-child) .btn-label,
+.btn-group > .dropdown-toggle:not(:first-child) .btn-label {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .nav-tabs-bottom {
   border-top: 1px solid #ddd;
