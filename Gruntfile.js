@@ -374,7 +374,7 @@ module.exports = function (grunt) {
 
   // Documentation task.
   grunt.registerTask('docs', ['jekyll', 'dist-docs']);
-  
+
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
   // This can be overzealous, so its changes should always be manually reviewed!
