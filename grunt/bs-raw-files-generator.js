@@ -12,7 +12,7 @@ var fs = require('fs');
 function getFiles(type, subdirs, exclude) {
   var files = {};
   exclude = exclude || [];
-  
+
   subdirs.forEach(function(subdir) {
     var sub = subdir ? subdir + '/' : '';
     fs.readdirSync(type + '/' + sub)

@@ -15,6 +15,6 @@ $(function () {
       test('should return element', function () {
         ok($(document.body).fileinput()[0] == document.body, 'document.body returned')
       })
-      
+
       // TODO: add fileinput tests
 })

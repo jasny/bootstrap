@@ -15,6 +15,6 @@ $(function () {
       test('should return element', function () {
         ok($(document.body).rowlink()[0] == document.body, 'document.body returned')
       })
-      
+
       // TODO: add rowlink tests
 })

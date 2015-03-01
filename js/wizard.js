@@ -31,26 +31,26 @@
   Wizard.prototype.listen = function () {
     this.$element.on('click.bs.wizard', '[data-toggle="wizard"]', $.proxy(this.click, this))
   }
-  
+
   Wizard.prototype.show = function (step) {
     var self = this
     var $target = this.getTarget(step)
-    
+
     if ($target.length === 0 || $target.hasClass('active')) {
         if (step === 'done') this.$element.trigger('done.bs.wizard')
         return
     }
-    
+
     var $active   = this.$element.find('.wizard-step.active')
-    var direction = $target.nextAll('.active').length ? 'right' : 'left' 
+    var direction = $target.nextAll('.active').length ? 'right' : 'left'
     var to = direction === 'left' ? 'next' : 'prev'
-      
+
     var e = $.Event('step.bs.wizard', { relatedTarget: $target, direction: to === 'next' ? 'forward' : 'back' })
     this.$element.trigger(e)
     if (e.isDefaultPrevented()) return
-    
+
     if (this.sliding) return this.$element.one('step.bs.wizard', function () { self.show(step) })
-    
+
     this.sliding = true
 
     if ($.support.transition && this.$element.hasClass('slide')) {
@@ -75,19 +75,19 @@
       this.$element.trigger('stepped.bs.wizard')
     }
   }
-  
+
   Wizard.prototype.refresh = function() {
     var $target = this.$element.find('.wizard-step.active')
     if ($target.length === 0) $target = this.$element.find('.wizard-step').first()
-    
+
     $target.addClass('active')
     this.activate($target)
   }
-  
+
   Wizard.prototype.getTarget = function (step) {
     var $target
     var $active = this.$element.children('.wizard-step.active')
-        
+
     if (step === 'first') {
       $target = this.$element.children('.wizard-step').first()
     } else if (step === 'prev') {
@@ -101,7 +101,7 @@
     } else {
       $target = $(step)
     }
-    
+
     return $target
   }
 
@@ -114,10 +114,10 @@
   Wizard.prototype.clearActivate = function () {
     var self = this
     var $links = $()
-    
+
     var id = this.$element.attr('id')
     $links = $links.add('[data-target="#' + id + '"], a[href="#' + id + '"]')
-  
+
     var ids = this.$element.children('.wizard-step[id]').map(function() {
       return $(this).attr('id')
     })
@@ -125,22 +125,22 @@
     $.each(ids, function(id) {
       $links = $links.add('[data-target="#' + id + '"],a[href="#' + id + '"]')
     })
-    
+
     $links.each(function() {
       $(this).closest('.wizard-hide').removeClass('in')
       self.getActivateElement(this).not('.progress').removeClass('active')
     })
   }
-  
+
   Wizard.prototype.setActivate = function ($target) {
     var self = this
     var $steps = this.$element.children('.wizard-step')
     var $target = $steps.filter('.active')
     var index = $steps.index($target)
     var length = $steps.length - (this.options.donestep ? 1 : 0)
-    
+
     if (index === -1) return // shouldn't happen
-    
+
     var id = this.$element.attr('id')
     $('[data-target="#' + id + '"],a[href="#' + id + '"]').filter(function() {
       var step = $(this).data('step')
@@ -161,7 +161,7 @@
       var $el = self.getActivateElement(this)
       $el.addClass('active')
     })
-    
+
     $('[data-target="#' + $target.attr('id') + '"],a[href="#' + $target.attr('id') + '"]').each(function() {
       $(this).closest('.wizard-hide').addClass('in')
       self.getActivateElement(this).addClass('active')
@@ -170,7 +170,7 @@
 
   Wizard.prototype.getActivateElement = function (link) {
     if ($(link).closest('.wizard-follow').length === 0) return $()
-    
+
     if ($(link).closest('li').length) {
       return $(link).parentsUntil('.wizard-follow', 'li')
     }
@@ -186,11 +186,11 @@
 
     $progress.find('.step').text(index + 1)
     $progress.find('.steps').text(length)
-    
+
     $progress[index < length ? 'show' : 'hide']()
     $progress.find('.progress-bar').width(((index + 1) * 100 / length) + '%')
   }
-  
+
   // WIZARD PLUGIN DEFINITION
   // ===========================
 
@@ -203,7 +203,7 @@
       var options = $.extend({}, Wizard.DEFAULTS, $this.data(), typeof option === 'object' && option)
 
       if (!data) $this.data('bs.wizard', (data = new Wizard(this, options)))
-      
+
       if (option === 'refresh') data.refresh()
        else if (typeof option === 'string' || typeof option === 'number') data.show(option)
     })
@@ -230,9 +230,9 @@
         || e.preventDefault()
         || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
     var $element = $(target).closest('.wizard')
-    
+
     var step = $(target).hasClass('wizard') ? $this.data('step') : target
-    
+
     e.preventDefault()
     $element.wizard(step)
   })

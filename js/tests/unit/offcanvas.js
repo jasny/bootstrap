@@ -15,6 +15,6 @@ $(function () {
       test('should return element', function () {
         ok($(document.body).offcanvas()[0] == document.body, 'document.body returned')
       })
-      
+
       // TODO: add offcanvas tests
 })
