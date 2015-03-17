@@ -1,4 +1,3 @@
-//
 // Navmenu and offcanvas navbar
 // --------------------------------------------------
 
@@ -11,7 +10,7 @@
 .navmenu,
 .navbar-offcanvas {
   width: @navmenu-width;
-  height: 100%;
+  height: auto;
   border-width: 1px;
   border-style: solid;
   border-radius: @border-radius-base;
@@ -23,14 +22,19 @@
   position: fixed;
   z-index: @zindex-navmenu-fixed;
   top: 0;
+  bottom: 0;
+  overflow-y: auto;
   border-radius: 0;
 }
 .navmenu-fixed-left,
-.navbar-offcanvas {
+.navbar-offcanvas.navmenu-fixed-left {
   left: 0;
+  right: auto;
   border-width: 0 1px 0 0;
 }
-.navmenu-fixed-right {
+.navmenu-fixed-right,
+.navbar-offcanvas {
+  left: auto;
   right: 0;
   border-width: 0 0 0 1px;
 }

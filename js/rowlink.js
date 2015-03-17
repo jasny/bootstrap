@@ -1,8 +1,8 @@
 /* ============================================================
- * Bootstrap: rowlink.js v3.0.0-p7
- * http://jasny.github.io/bootstrap/javascript.html#rowlink
+ * Bootstrap: rowlink.js v3.1.3
+ * http://jasny.github.io/bootstrap/javascript/#rowlink
  * ============================================================
- * Copyright 2012 Jasny BV, Netherlands.
+ * Copyright 2012-2014 Arnold Daniels
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@
     
     if (target.click) {
       target.click()
-    } else if(document.createEvent) {
+    } else if (document.createEvent) {
       var evt = document.createEvent("MouseEvents"); 
       evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null); 
       target.dispatchEvent(evt);
@@ -49,11 +49,13 @@
   // ROWLINK PLUGIN DEFINITION
   // ===========================
 
+  var old = $.fn.rowlink
+
   $.fn.rowlink = function (options) {
     return this.each(function () {
       var $this = $(this)
-      var data = $this.data('rowlink')
-      if (!data) $this.data('rowlink', (data = new Rowlink(this, options)))
+      var data = $this.data('bs.rowlink')
+      if (!data) $this.data('bs.rowlink', (data = new Rowlink(this, options)))
     })
   }
 
@@ -64,7 +66,7 @@
   // ====================
 
   $.fn.rowlink.noConflict = function () {
-    $.fn.inputmask = old
+    $.fn.rowlink = old
     return this
   }
 
@@ -73,8 +75,10 @@
   // ==================
 
   $(document).on('click.bs.rowlink.data-api', '[data-link="row"]', function (e) {
+    if ($(e.target).closest('.rowlink-skip').length !== 0) return
+    
     var $this = $(this)
-    if ($this.data('rowlink')) return
+    if ($this.data('bs.rowlink')) return
     $this.rowlink($this.data())
     $(e.target).trigger('click.bs.rowlink')
   })
