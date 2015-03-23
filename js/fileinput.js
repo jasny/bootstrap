@@ -66,7 +66,7 @@
     e.stopPropagation()
 
     if (files.length === 0) {
-      this.clear()
+      this.clear(e)
       return
     }
 
