@@ -66,7 +66,8 @@
     e.stopPropagation()
 
     if (files.length === 0) {
-      this.clear(e)
+      this.clear()
+      this.$element.trigger('clear.bs.fileinput')
       return
     }
 
