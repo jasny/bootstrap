@@ -111,9 +111,9 @@
       var fixed_elements = canvas.find(this.options.fixedSelector).filter(function() {
         return $(this).css('position') === 'fixed'
       }).not(this.options.exclude);
+      canvas = canvas.add(fixed_elements);
     }
-
-    return canvas.add(fixed_elements)
+    return canvas;
   }
   
   OffCanvas.prototype.slide = function (elements, offset, callback) {
