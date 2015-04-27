@@ -50,7 +50,8 @@
     autohide: true,
     recalc: true,
     disableScrolling: true,
-    modal: false
+    modal: false,
+    fixedSelector: '*'
   }
 
   OffCanvas.prototype.offset = function () {
@@ -105,11 +106,13 @@
   OffCanvas.prototype.getCanvasElements = function() {
     // Return a set containing the canvas plus all fixed elements
     var canvas = this.options.canvas ? $(this.options.canvas) : this.$element
-    
-    var fixed_elements = canvas.find('*').filter(function() {
-      return $(this).css('position') === 'fixed'
-    }).not(this.options.exclude)
-    
+
+    if (this.options.fixedSelector) {
+      var fixed_elements = canvas.find(this.options.fixedSelector).filter(function() {
+        return $(this).css('position') === 'fixed'
+      }).not(this.options.exclude);
+    }
+
     return canvas.add(fixed_elements)
   }
   
