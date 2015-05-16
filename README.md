@@ -20,6 +20,7 @@ Four quick start options are available:
 * Clone the repo: `git clone git://github.com/jasny/bootstrap.git`.
 * Install with [Bower](http://bower.io): `bower install jasny-bootstrap`.
 * Use [cdnjs](http://cdnjs.com/libraries/jasny-bootstrap).
+* Install with [Meteor](https://meteor.com): `meteor add jasny:bootstrap`.
 
 Read the [Getting Started page](http://jasny.github.io/bootstrap/getting-started/) for information on the framework contents, templates and examples, and more.
 
