@@ -236,7 +236,8 @@
 
       elements.removeClass('canvas-sliding')
       elements.add(this.$element).add('body').each(function() {
-        $(this).attr('style', $(this).data('offcanvas-style')).removeData('offcanvas-style')
+        $(this).style = $(this).data('offcanvas-style')
+        $(this).removeData('offcanvas-style')
       })
 
       this.$element.trigger('hidden.bs.offcanvas')
