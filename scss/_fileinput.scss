@@ -64,6 +64,8 @@
   vertical-align: middle;
   display: inline-block;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .form-control .fileinput-filename {
   vertical-align: bottom;
