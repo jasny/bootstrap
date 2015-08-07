@@ -64,7 +64,7 @@ module.exports = function (grunt) {
 
     jscs: {
       options: {
-        config: 'js/.jscs.json',
+        config: 'js/.jscsrc'
       },
       grunt: {
         src: ['Gruntfile.js', 'grunt/*.js']
@@ -256,9 +256,9 @@ module.exports = function (grunt) {
           pretty: true,
           data: function () {
             var filePath = path.join(__dirname, 'less/build/variables.less');
-            var fileContent = fs.readFileSync(filePath, {encoding: 'utf8'});
+            var fileContent = fs.readFileSync(filePath, { encoding: 'utf8' });
             var parser = new BsLessdocParser(fileContent);
-            return {sections: parser.parseFile()};
+            return { sections: parser.parseFile() };
           }
         },
         files: {
@@ -305,10 +305,12 @@ module.exports = function (grunt) {
       versionNumber: {
         src: ['*.js', '*.md', '*.json', '*.yml', 'js/*.js'],
         overwrite: true,
-        replacements: [{
-          from: grunt.option('oldver'),
-          to: grunt.option('newver')
-        }]
+        replacements: [
+          {
+            from: grunt.option('oldver'),
+            to: grunt.option('newver')
+          }
+        ]
       }
     },
 
@@ -335,7 +337,7 @@ module.exports = function (grunt) {
 
 
   // These plugins provide necessary tasks.
-  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+  require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
 
   // Docs HTML validation task
   grunt.registerTask('validate-html', ['jekyll', 'validation']);
