@@ -6,14 +6,15 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 'use strict';
+
 var btoa = require('btoa');
 var fs = require('fs');
 
 function getFiles(type, subdirs, exclude) {
   var files = {};
   exclude = exclude || [];
-  
-  subdirs.forEach(function(subdir) {
+
+  subdirs.forEach(function (subdir) {
     var sub = subdir ? subdir + '/' : '';
     fs.readdirSync(type + '/' + sub)
       .filter(function (path) {
@@ -24,6 +25,7 @@ function getFiles(type, subdirs, exclude) {
         files[sub + path] = fs.readFileSync(fullPath, 'utf8');
       });
   });
+
   return 'var __' + type + ' = ' + JSON.stringify(files) + '\n';
 }
 
