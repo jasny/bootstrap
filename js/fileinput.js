@@ -67,6 +67,7 @@
 
     if (files.length === 0) {
       this.clear()
+      this.$element.trigger('clear.bs.fileinput')
       return
     }
 
