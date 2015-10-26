@@ -40,9 +40,9 @@
 
     if (this.options.toggle) this.toggle()
 
-    if (this.options.disablescrolling) {
-        this.options.disableScrolling = this.options.disablescrolling
-        delete this.options.disablescrolling
+    if (this.options.disableScrolling) {
+        this.options.disableScrolling = this.options.disableScrolling
+        delete this.options.disableScrolling
     }
   }
 
