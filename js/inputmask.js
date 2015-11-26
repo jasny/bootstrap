@@ -211,7 +211,7 @@
     this.checkVal()
     if (this.$element.val() !== this.focusText) {
       this.$element.trigger('change')
-      this.$element.trigger('input')
+      this.$element.trigger(this.$element.attr('name'))
     }
   }
 
