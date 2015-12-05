@@ -33,8 +33,10 @@
       $(window).on('resize', $.proxy(this.recalc, this))
     }
 
-    if (this.options.autohide && !this.options.modal)
-      $(document).on('click', $.proxy(this.autohide, this))
+    if (this.options.autohide && !this.options.modal) {
+      var eventName = (navigator.userAgent.match(/(iPad|iPhone)/i) === null) ? 'click' : 'touchstart'
+      $(document).on(eventName, $.proxy(this.autohide, this))
+    }
 
     if (this.options.toggle) this.toggle()
 
@@ -236,7 +238,8 @@
 
       elements.removeClass('canvas-sliding')
       elements.add(this.$element).add('body').each(function() {
-        $(this).attr('style', $(this).data('offcanvas-style')).removeData('offcanvas-style')
+        $(this).style = $(this).data('offcanvas-style')
+        $(this).removeData('offcanvas-style')
       })
 
       this.$element.trigger('hidden.bs.offcanvas')
@@ -357,12 +360,12 @@
   $(document).on('click.bs.offcanvas.data-api', '[data-toggle=offcanvas]', function (e) {
     var $this   = $(this), href
     var target  = $this.attr('data-target')
-        || e.preventDefault()
         || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') //strip for ie7
     var $canvas = $(target)
     var data    = $canvas.data('bs.offcanvas')
     var option  = data ? 'toggle' : $this.data()
 
+    e.preventDefault();
     e.stopPropagation()
 
     if (data) data.toggle()
