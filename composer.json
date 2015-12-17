@@ -1,19 +1,32 @@
 {
-    "name": "jasny/bootstrap"
-  , "description": "The missing bootstrap components"
-  , "keywords": ["bootstrap", "css"]
-  , "homepage": "http://jasny.github.io/bootstrap"
-  , "authors": [
+    "name": "jasny/bootstrap",
+    "description": "The missing bootstrap components",
+    "type": "component",
+    "keywords": ["bootstrap", "css"],
+    "homepage": "http://jasny.github.io/bootstrap",
+    "authors": [
       {
         "name": "Arnold Daniels",
         "email": "arnold@jasny.net"
       }
-    ]
-  , "support": {
+    ],
+    "support": {
       "issues": "https://github.com/jasny/bootstrap/issues"
-    }
-  , "license": "Apache-2.0"
-  , "require": {
+    },
+    "license": "Apache-2.0",
+    "require": {
       "twbs/bootstrap" : ">=3.1.0"
+    },
+    "extra": {
+      "component": {
+        "scripts": [
+          "dist/js/jasny-bootstrap.js",
+          "dist/js/jasny-bootstrap.min.js"
+        ],
+        "styles": [
+          "dist/css/jasny-bootstrap.css",
+          "dist/css/jasny-bootstrap.min.css"
+        ]
+      }
     }
 }
