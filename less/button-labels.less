@@ -1,0 +1,25 @@
+// Labels for buttons
+// --------------------------------------------------
+
+.btn-labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.btn-label {
+  position: relative;
+  background: transparent;
+  background: rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  .button-label-size(@padding-base-vertical; @padding-base-horizontal; @border-radius-base);
+}
+
+.btn-lg .btn-label {
+  .button-label-size(@padding-large-vertical; @padding-large-horizontal; @border-radius-large);
+}
+.btn-sm .btn-label {
+  .button-label-size(@padding-small-vertical; @padding-small-horizontal; @border-radius-small);
+}
+.btn-xs .btn-label {
+  .button-label-size(1px; 5px; @border-radius-small);
+}

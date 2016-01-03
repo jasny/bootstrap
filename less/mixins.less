@@ -1,0 +1,47 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Single side border-radius
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+     border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+     border-top-left-radius: @radius;
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+          box-shadow: @shadow;
+}
+
+
+// BUTTONS
+// --------------------------------------------------
+
+.button-label-size(@padding-vertical; @padding-horizontal; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  left: (-1 * @padding-horizontal);
+  border-radius: (@border-radius - 1px) 0 0 (@border-radius - 1px);
+
+  &.btn-label-right {
+    left: auto;
+    right: (-1 * @padding-horizontal);
+    border-radius: 0 (@border-radius - 1px) (@border-radius - 1px) 0;
+  }
+}
