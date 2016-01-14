@@ -2,7 +2,7 @@
 
 Package.describe({
   name: 'jasny:bootstrap',  // http://atmospherejs.com/jasny/bootstrap
-  version: '3.1.3',
+  version: '3.2.0-beta.1',
   summary: 'Jasny Bootstrap (official): The missing components for your favorite front-end framework.',
   git: 'https://github.com/jasny/bootstrap.git',
   documentation: 'README.md'
