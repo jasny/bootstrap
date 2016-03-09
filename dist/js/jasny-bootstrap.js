@@ -970,13 +970,13 @@ if (typeof jQuery === 'undefined') { throw new Error('Jasny Bootstrap\'s JavaScr
 
         // if parent has max-height, using `(max-)height: 100%` on child doesn't take padding and border into account
         if (preview.css('max-height') != 'none') {
-          var mh = parseInt(preview.css('max-height'), 10) || 0;
-          var pt = parseInt(preview.css('padding-top'), 10) || 0;
-          var pb = parseInt(preview.css('padding-bottom'), 10) || 0;
-          var bt = parseInt(preview.css('border-top'), 10) || 0;
-          var bb = parseInt(preview.css('border-bottom'), 10) || 0;
+          var mh = parseInt(preview.css('max-height'), 10) || 0
+          var pt = parseInt(preview.css('padding-top'), 10) || 0
+          var pb = parseInt(preview.css('padding-bottom'), 10) || 0
+          var bt = parseInt(preview.css('border-top'), 10) || 0
+          var bb = parseInt(preview.css('border-bottom'), 10) || 0
 
-          $img.css('max-height', mh - pt - pb - bt - bb);
+          $img.css('max-height', mh - pt - pb - bt - bb)
         }
 
         preview.html($img)
