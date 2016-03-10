@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "0.10"
+  - "0.10.43"
 before_install:
   - sudo pip install -r test-infra/requirements.txt
   - rvm use 1.9.3 --fuzzy
