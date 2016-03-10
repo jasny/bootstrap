@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "0.10"
 before_install:
-  - sudo pip install --use-mirrors -r test-infra/requirements.txt
+  - pip install -r test-infra/requirements.txt
   - rvm use 1.9.3 --fuzzy
 install:
   - npm install -g grunt-cli
