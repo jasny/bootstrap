@@ -189,11 +189,12 @@
     }
 
     elements.addClass('canvas-sliding').each(function() {
-      if ($(this).data('offcanvas-style') === undefined) $(this).data('offcanvas-style', $(this).attr('style') || '')
-      if ($(this).css('position') === 'static') $(this).css('position', 'relative')
-      if (($(this).css(placement) === 'auto' || $(this).css(placement) === '0px') &&
-          ($(this).css(opposite) === 'auto' || $(this).css(opposite) === '0px')) {
-        $(this).css(placement, 0)
+      var $this = $(this)
+      if ($this.data('offcanvas-style') === undefined) $this.data('offcanvas-style', $this.attr('style') || '')
+      if ($this.css('position') === 'static') $this.css('position', 'relative')
+      if (($this.css(placement) === 'auto' || $this.css(placement) === '0px') &&
+          ($this.css(opposite) === 'auto' || $this.css(opposite) === '0px')) {
+        $this.css(placement, 0)
       }
     })
 
