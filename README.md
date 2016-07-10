@@ -148,9 +148,10 @@ __The major version will follow Bootstrap's major version. This means backward c
 
 **Arnold Daniels**
 
-+ [http://twitter.com/ArnoldDaniels](http://twitter.com/ArnoldDaniels)
-+ [http://github.com/jasny](http://github.com/jasny)
-+ [http://jasny.net](http://jasny.net)
++ [twitter.com/ArnoldDaniels](https://twitter.com/ArnoldDaniels)
++ [github.com/jasny](https://github.com/jasny)
++ [jasny.net](http://jasny.net)
++ [fiestainfo.com](https://wwww.fiestainfo.com)
 
 
 ## Copyright and license
