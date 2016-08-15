@@ -1,4 +1,4 @@
-# [Jasny Bootstrap](http://jasny.github.io/bootstrap/) ![Bower](https://img.shields.io/bower/v/jasny-bootstrap.svg) [![Build Status](https://secure.travis-ci.org/jasny/bootstrap.png)](http://travis-ci.org/jasny/bootstrap) [![Join the chat at https://gitter.im/jasny/bootstrap](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/jasny/bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# [Jasny Bootstrap](http://jasny.github.io/bootstrap/)
 
 Jasny Bootstrap is an extension of the famous [Bootstrap](http://getbootstrap.com/), adding the following components:
 
@@ -151,7 +151,7 @@ __The major version will follow Bootstrap's major version. This means backward c
 + [twitter.com/ArnoldDaniels](https://twitter.com/ArnoldDaniels)
 + [github.com/jasny](https://github.com/jasny)
 + [jasny.net](http://jasny.net)
-+ [fiestainfo.com](https://wwww.fiestainfo.com)
++ [fiestainfo.com](https://www.fiestainfo.com)
 
 
 ## Copyright and license
