@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-  - "0.10"
+  - "4"
 before_install:
-  - sudo pip install --use-mirrors -r test-infra/requirements.txt
   - rvm use 1.9.3 --fuzzy
 install:
   - npm install -g grunt-cli
@@ -13,5 +12,5 @@ env:
     - TWBS_TEST=validate-html
     - TWBS_TEST=sauce-js-unit
 matrix:
-  fast_finish: true
+  fast_finish: true 
 
