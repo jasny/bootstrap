@@ -1,8 +1,6 @@
 language: node_js
 node_js:
   - "4"
-before_install:
-  - rvm use 1.9.3 --fuzzy
 install:
   - npm install -g grunt-cli
   - npm install
@@ -12,5 +10,4 @@ env:
     - TWBS_TEST=validate-html
     - TWBS_TEST=sauce-js-unit
 matrix:
-  fast_finish: true 
-
+  fast_finish: true
