@@ -1,12 +1,13 @@
 language: node_js
 node_js:
   - "4"
-  - "6"
 before_install:
-  - rvm install 2.2
-  - rvm use 2.2 --fuzzy
+  - rvm install 1.9.3
+  - rvm use 1.9.3 --fuzzy
 install:
   - npm install -g grunt-cli
+  - grunt install
+  - sudo gem install jekyll
   - npm install
 env:
   matrix:
@@ -15,8 +16,3 @@ env:
     - TWBS_TEST=sauce-js-unit
 matrix:
   fast_finish: true
-  exclude:
-    - node_js: "4"
-      env: TWBS_TEST=validate-html
-    - node_js: "4"
-      env: TWBS_TEST=sauce-js-unit
