@@ -6,7 +6,6 @@ before_install:
   - rvm use 1.9.3 --fuzzy
 install:
   - npm install -g grunt-cli
-  - grunt install
   - sudo gem install jekyll
   - npm install
 env:
