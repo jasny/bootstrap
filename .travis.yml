@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - "4"
 before_install:
-  - rvm install 1.9.3
-  - rvm use 1.9.3 --fuzzy
+  - rvm install 2.1
+  - rvm use 2.1 --fuzzy
 install:
   - npm install -g grunt-cli
   - npm install
