@@ -47,7 +47,8 @@
     "grunt-saucelabs": "~8.6.0",
     "grunt-text-replace": "~0.4.0",
     "load-grunt-tasks": "~3.2",
-    "markdown": "~0.5.0"
+    "markdown": "~0.5.0",
+    "phantomjs": "~1.9.7-15"
   },
   "jspm": {
     "main": "js/jasny-bootstrap",

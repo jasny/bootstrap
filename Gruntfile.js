@@ -237,15 +237,6 @@ module.exports = function (grunt) {
       files: 'js/tests/index.html'
     },
 
-    connect: {
-      server: {
-        options: {
-          port: 3000,
-          base: '.'
-        }
-      }
-    },
-
     jekyll: {
       docs: {}
     },
@@ -314,17 +305,6 @@ module.exports = function (grunt) {
       }
     },
 
-    'saucelabs-qunit': {
-      all: {
-        options: {
-          build: process.env.TRAVIS_JOB_ID,
-          concurrency: 10,
-          urls: ['http://127.0.0.1:3000/js/tests/index.html'],
-          browsers: grunt.file.readYAML('test-infra/sauce_browsers.yml')
-        }
-      }
-    },
-
     exec: {
       npmUpdate: {
         command: 'npm update --silent'
@@ -352,13 +332,7 @@ module.exports = function (grunt) {
   if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'validate-html') {
     testSubtasks.push('validate-html');
   }
-  // Only run Sauce Labs tests if there's a Sauce access key
-  if (typeof process.env.SAUCE_ACCESS_KEY !== 'undefined' &&
-      // Skip Sauce if running a different subset of the test suite
-      (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'sauce-js-unit')) {
-    testSubtasks.push('connect');
-    testSubtasks.push('saucelabs-qunit');
-  }
+
   grunt.registerTask('test', testSubtasks);
 
   // JS distribution task.
