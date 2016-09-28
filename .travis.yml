@@ -5,6 +5,7 @@ before_install:
   - rvm install 2.1
   - rvm use 2.1 --fuzzy
 install:
+  - gem install jekyll html-proofer
   - npm install -g grunt-cli
   - npm install
 env:
