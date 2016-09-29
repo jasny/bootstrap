@@ -85,7 +85,7 @@ module.exports = function (grunt) {
         csslintrc: 'less/.csslintrc'
       },
       src: [
-        'docs/dist/css/<%= pkg.name %>.css',
+        'dist/css/<%= pkg.name %>.css',
         'docs/assets/css/docs.css',
         'docs/examples/**/*.css'
       ]
@@ -104,7 +104,7 @@ module.exports = function (grunt) {
           'js/inputmask.js',
           'js/fileinput.js'
         ],
-        dest: 'docs/dist/js/<%= pkg.name %>.js'
+        dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
 
@@ -117,7 +117,7 @@ module.exports = function (grunt) {
           banner: '<%= banner %>'
         },
         src: '<%= concat.bootstrap.dest %>',
-        dest: 'docs/dist/js/<%= pkg.name %>.min.js'
+        dest: 'dist/js/<%= pkg.name %>.min.js'
       },
       customize: {
         options: {
@@ -153,10 +153,10 @@ module.exports = function (grunt) {
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'docs/dist/css/<%= pkg.name %>.css.map'
+          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
         },
         files: {
-          'docs/dist/css/<%= pkg.name %>.css': 'docs/less/build/<%= pkg.name %>.less'
+          'dist/css/<%= pkg.name %>.css': 'less/build/<%= pkg.name %>.less'
         }
       },
       minify: {
@@ -165,7 +165,7 @@ module.exports = function (grunt) {
           report: 'min'
         },
         files: {
-          'docs/dist/css/<%= pkg.name %>.min.css': 'docs/dist/css/<%= pkg.name %>.css'
+          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css'
         }
       }
     },
@@ -194,8 +194,8 @@ module.exports = function (grunt) {
         },
         files: {
           src: [
-            'docs/dist/css/<%= pkg.name %>.css',
-            'docs/dist/css/<%= pkg.name %>.min.css'
+            'dist/css/<%= pkg.name %>.css',
+            'dist/css/<%= pkg.name %>.min.css'
           ]
         }
       }
@@ -207,7 +207,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'docs/dist/css/<%= pkg.name %>.css': 'docs/dist/css/<%= pkg.name %>.css'
+          'dist/css/<%= pkg.name %>.css': 'dist/css/<%= pkg.name %>.css'
         }
       },
       examples: {
@@ -218,11 +218,32 @@ module.exports = function (grunt) {
       }
     },
 
+    copy: {
+      docs: {
+        expand: true,
+        cwd: './dist',
+        src: [
+          '{css,js}/*.min.*',
+          'css/*.map'
+        ],
+        dest: 'docs/dist'
+      }
+    },
+
     qunit: {
       options: {
         inject: 'js/tests/unit/phantom.js'
       },
       files: 'js/tests/index.html'
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 3000,
+          base: '.'
+        }
+      }
     },
 
     jekyll: {
@@ -293,6 +314,17 @@ module.exports = function (grunt) {
       }
     },
 
+    'saucelabs-qunit': {
+      all: {
+        options: {
+          build: process.env.TRAVIS_JOB_ID,
+          concurrency: 10,
+          urls: ['http://127.0.0.1:3000/js/tests/index.html'],
+          browsers: grunt.file.readYAML('test-infra/sauce_browsers.yml')
+        }
+      }
+    },
+
     exec: {
       npmUpdate: {
         command: 'npm update --silent'
@@ -320,7 +352,13 @@ module.exports = function (grunt) {
   if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'validate-html') {
     testSubtasks.push('validate-html');
   }
-
+  // Only run Sauce Labs tests if there's a Sauce access key
+  if (typeof process.env.SAUCE_ACCESS_KEY !== 'undefined' &&
+      // Skip Sauce if running a different subset of the test suite
+      (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'sauce-js-unit')) {
+    testSubtasks.push('connect');
+    testSubtasks.push('saucelabs-qunit');
+  }
   grunt.registerTask('test', testSubtasks);
 
   // JS distribution task.
@@ -328,6 +366,9 @@ module.exports = function (grunt) {
 
   // CSS distribution task.
   grunt.registerTask('dist-css', ['less', 'cssmin', 'csscomb', 'usebanner']);
+
+  // Docs distribution task.
+  grunt.registerTask('dist-docs', 'copy:docs');
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-docs']);
