@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "4"
+
 before_install:
   - rvm install 2.2.2
   - rvm use 2.2.2 --fuzzy
@@ -14,3 +15,11 @@ env:
     - TWBS_TEST=validate-html
 matrix:
   fast_finish: true
+deploy:
+  provider: releases
+  api_key: d95eaa851ebb191f692362a51687a91f448771b2
+  file: /docs/dist/*
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: andrew-issues
