@@ -85,7 +85,7 @@ module.exports = function (grunt) {
         csslintrc: 'less/.csslintrc'
       },
       src: [
-        'dist/css/<%= pkg.name %>.css',
+        'docs/dist/css/<%= pkg.name %>.css',
         'docs/assets/css/docs.css',
         'docs/examples/**/*.css'
       ]
@@ -104,7 +104,7 @@ module.exports = function (grunt) {
           'js/inputmask.js',
           'js/fileinput.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'docs/dist/js/<%= pkg.name %>.js'
       }
     },
 
@@ -117,7 +117,7 @@ module.exports = function (grunt) {
           banner: '<%= banner %>'
         },
         src: '<%= concat.bootstrap.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'docs/dist/js/<%= pkg.name %>.min.js'
       },
       customize: {
         options: {
@@ -153,10 +153,10 @@ module.exports = function (grunt) {
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+          sourceMapFilename: 'docs/dist/css/<%= pkg.name %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': 'less/build/<%= pkg.name %>.less'
+          'docs/dist/css/<%= pkg.name %>.css': 'docs/less/build/<%= pkg.name %>.less'
         }
       },
       minify: {
@@ -165,7 +165,7 @@ module.exports = function (grunt) {
           report: 'min'
         },
         files: {
-          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css'
+          'docs/dist/css/<%= pkg.name %>.min.css': 'docs/dist/css/<%= pkg.name %>.css'
         }
       }
     },
@@ -194,8 +194,8 @@ module.exports = function (grunt) {
         },
         files: {
           src: [
-            'dist/css/<%= pkg.name %>.css',
-            'dist/css/<%= pkg.name %>.min.css'
+            'docs/dist/css/<%= pkg.name %>.css',
+            'docs/dist/css/<%= pkg.name %>.min.css'
           ]
         }
       }
@@ -207,7 +207,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'dist/css/<%= pkg.name %>.css': 'dist/css/<%= pkg.name %>.css'
+          'docs/dist/css/<%= pkg.name %>.css': 'docs/dist/css/<%= pkg.name %>.css'
         }
       },
       examples: {
@@ -215,18 +215,6 @@ module.exports = function (grunt) {
         cwd: 'docs/examples/',
         src: ['**/*.css'],
         dest: 'docs/examples/'
-      }
-    },
-
-    copy: {
-      docs: {
-        expand: true,
-        cwd: './dist',
-        src: [
-          '{css,js}/*.min.*',
-          'css/*.map'
-        ],
-        dest: 'docs/dist'
       }
     },
 
@@ -340,9 +328,6 @@ module.exports = function (grunt) {
 
   // CSS distribution task.
   grunt.registerTask('dist-css', ['less', 'cssmin', 'csscomb', 'usebanner']);
-
-  // Docs distribution task.
-  grunt.registerTask('dist-docs', 'copy:docs');
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-docs']);
