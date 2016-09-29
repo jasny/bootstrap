@@ -15,8 +15,8 @@ env:
 matrix:
   fast_finish: true
 after_success:
-  - sudo zip -r jasny-bootstrap-${TRAVIS_TAG}.zip dist
-  - sudo tar -zcvf jasny-bootstrap-${TRAVIS_TAG}.tar.gz dist
+  - zip -r jasny-bootstrap-${TRAVIS_TAG}.zip dist
+  - tar -zcvf jasny-bootstrap-${TRAVIS_TAG}.tar.gz dist
 deploy:
   provider: releases
   api_key:
