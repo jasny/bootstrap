@@ -8,21 +8,22 @@ install:
 - gem install jekyll html-proofer
 - npm install -g grunt-cli
 - npm install 
+env:
   matrix:
   - TWBS_TEST=core
   - TWBS_TEST=validate-html
 matrix:
   fast_finish: true
 after_success:
-  - sudo zip -r jasny-bootstrap-TRAVIS_TAG.zip dist
-  - sudo tar -zcvf jasny-bootstrap-TRAVIS_TAG.tar.gz dist
+  - sudo zip -r jasny-bootstrap-${TRAVIS_TAG}.zip dist
+  - sudo tar -zcvf jasny-bootstrap-${TRAVIS_TAG}.tar.gz dist
 deploy:
   provider: releases
   api_key:
     secure: aQNPWNaAg4TaDJrYqtubvyFKFBIoRe08WLhusetTUIGlpmlRm9y+uzp1DzslKVQdoRg6frsvEClMMd4Rh6AMoY+XaTlCu7gKn8tfDfRNJg4BaEklOeZZO/nbSuzh9JRxtWsfZatpzFafgPqpxLCyj4THPu/iD3VquZjNnwnOaXBO9yGuEyGB6CKeBPMeWl2jYHqhROhXmDR5HkI1Kyu6wDXNCcWGkU5PPud1KFRa0HgDW/Ir01lc4wvxt/F3fcfbt6ZbfC4Dc9VkOSV6qJig5qFBDfyBSgcTa/vKsO3n71x1At+EpkUw4HGBqNqAE339ap4fTqR+nIM8b9fFUTtnUf5JngSsaAnWGaLmqK0QhIaeAe7tWny6T9K85pbyp68qJC7EXYswwlg+CIxNR0bQJ7LGJWphHk8TRVtCoGMNX6EZjSZr4E4tXA9BmlQUzRwF9ShABAPgbQq2SgnY7fEiif1xLSkL9sjsZSzjuRY5bkeStkxg3GaKebpvzqOnk1ml9zkDxZCvYoYaGBk+6oKfBrmX8Yef3E61FwpV9h19ZaUr9tv9vzWOiD88SCYDmU3nxIQ2CjZVDX3dg6NiuYeGzdjpwxI8g04jHp2pnwZqxL2Ci23yAX6fbBo+HgjwmNx3hyjDGWIdG0ZzOV86PCBLSO5YtHzag4LmaObu+0Gih+A=
   file: 
-  - jasny-bootstrap-TRAVIS_TAG.zip
-  - jasny-bootstrap-TRAVIS_TAG.tar.gz
+  - jasny-bootstrap-${TRAVIS_TAG}.zip
+  - jasny-bootstrap-${TRAVIS_TAG}.tar.gz
   skip_cleanup: true
   on:
     branch: andrew-issues
