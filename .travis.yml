@@ -15,7 +15,7 @@ env:
 matrix:
   fast_finish: true
 after_success:
-- npm version ${TRAVIS_TAG}
+- npm --no-git-tag-version version ${TRAVIS_TAG}
 - zip -r jasny-bootstrap-${TRAVIS_TAG}.zip dist
 - tar -zcvf jasny-bootstrap-${TRAVIS_TAG}.tar.gz dist
 deploy:
