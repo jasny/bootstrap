@@ -227,14 +227,6 @@ module.exports = function (grunt) {
           'css/*.map'
         ],
         dest: 'docs/dist'
-      },
-      zip: {
-        expand: true,
-        cwd: './dist',
-        src: [
-          '{css,js}/*'
-        ],
-        dest: './dist/jasny-bootstrap'
       }
     },
 
@@ -380,9 +372,6 @@ module.exports = function (grunt) {
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-docs']);
-
-  // Zip file copy.
-  grunt.registerTask('dist-zip', ['clean:dist', 'dist-css', 'dist-js', 'copy:zip']);
 
   // Default task.
   grunt.registerTask('default', ['dist', 'build-customizer']);
