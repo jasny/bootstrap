@@ -33,14 +33,6 @@ module.exports = function (grunt) {
             ' */\n',
     jqueryCheck: 'if (typeof jQuery === \'undefined\') { throw new Error(\'Jasny Bootstrap\\\'s JavaScript requires jQuery\') }\n\n',
 
-    // Task configuration.
-    clean: {
-      dist: ['dist', 'docs/dist'],
-      jekyll: ['_gh_pages'],
-      assets: ['assets/css/*.min.css', 'assets/js/*.min.js'],
-      jade: ['jade/*.jade']
-    },
-
     jshint: {
       options: {
         jshintrc: 'js/.jshintrc'
@@ -371,7 +363,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-docs', 'copy:docs');
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-docs']);
+  grunt.registerTask('dist', ['dist-css', 'dist-js', 'dist-docs']);
 
   // Default task.
   grunt.registerTask('default', ['dist', 'build-customizer']);
