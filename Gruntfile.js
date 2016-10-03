@@ -346,7 +346,7 @@ module.exports = function (grunt) {
   var testSubtasks = [];
   // Skip core tests if running a different subset of the test suite
   if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'core') {
-    testSubtasks = testSubtasks.concat(['dist-css', 'csslint', 'jshint', 'jscs', 'qunit', 'build-customizer-html']);
+    testSubtasks = testSubtasks.concat(['dist-css', 'csslint', 'jshint', 'qunit', 'build-customizer-html']);
   }
   // Skip HTML validation if running a different subset of the test suite
   if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'validate-html') {
