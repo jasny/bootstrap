@@ -154,7 +154,7 @@
     if (this.original.exists) this.$element.addClass('fileinput-exists').removeClass('fileinput-new')
      else this.$element.addClass('fileinput-new').removeClass('fileinput-exists')
 
-    this.$element.trigger('reseted.bs.fileinput')
+    this.$element.trigger('reset.bs.fileinput')
   },
 
   Fileinput.prototype.trigger = function(e) {
