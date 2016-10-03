@@ -6,124 +6,130 @@
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
 
-window.onload = function () { // wait for load in a dumb way because B-0
-  var cw = '/*!\n' +
-           ' * Jasny Bootstrap v3.1.0 (http://jasny.github.com/bootstrap)\n' +
-           ' * Copyright 2011-2014 Arnold Daniels.\n' +
-           ' * Licensed under Apache-2.0 (https://github.com/jasny/bootstrap/blob/master/LICENSE)\n' +
-           ' */\n\n'
+window.onload = function ()
+{
+  // wait for load in a dumb way because B-0
+  var cw = '/*!\n' + ' * Jasny Bootstrap v3.1.0 (http://jasny.github.com/bootstrap)\n' + ' * Copyright 2011-2014 Arnold Daniels.\n' + ' * Licensed under Apache-2.0 (https://github.com/jasny/bootstrap/blob/master/LICENSE)\n' + ' */\n\n'
 
-  function showError(msg, err) {
-    $('<div id="bsCustomizerAlert" class="bs-customizer-alert">' +
-        '<div class="container">' +
-          '<a href="#bsCustomizerAlert" data-dismiss="alert" class="close pull-right">&times;</a>' +
-          '<p class="bs-customizer-alert-text"><span class="glyphicon glyphicon-warning-sign"></span>' + msg + '</p>' +
-          (err.extract ? '<pre class="bs-customizer-alert-extract">' + err.extract.join('\n') + '</pre>' : '') +
-        '</div>' +
-      '</div>').appendTo('body').alert()
+  function showError(msg, err)
+  {
+    $('<div id="bsCustomizerAlert" class="bs-customizer-alert">' + '<div class="container">' + '<a href="#bsCustomizerAlert" data-dismiss="alert" class="close pull-right">&times;</a>' + '<p class="bs-customizer-alert-text"><span class="glyphicon glyphicon-warning-sign"></span>' + msg + '</p>' + (err.extract ? '<pre class="bs-customizer-alert-extract">' + err.extract.join('\n') + '</pre>' : '') + '</div>' + '</div>').appendTo('body').alert()
     throw err
   }
 
-  function showCallout(msg, showUpTop) {
-    var callout = $('<div class="bs-callout bs-callout-danger">' +
-       '<h4>Attention!</h4>' +
-      '<p>' + msg + '</p>' +
-    '</div>')
+  function showCallout(msg, showUpTop)
+  {
+    var $callout = $('<div class="bs-callout bs-callout-danger">' + '<h4>Attention!</h4>' + '<p>' + msg + '</p>' + '</div>')
 
     if (showUpTop) {
-      callout.appendTo('.bs-docs-container')
-    } else {
-      callout.insertAfter('.bs-customize-download')
+      $callout.appendTo('.bs-docs-container')
+    }
+    else {
+      $callout.insertAfter('.bs-customize-download')
     }
   }
 
-  function getQueryParam(key) {
-    key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, '\\$&') // escape RegEx meta chars
-    var match = location.search.match(new RegExp('[?&]' + key + '=([^&]+)(&|$)'))
+  function getQueryParam(key)
+  {
+    key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, '\\$&')// escape RegEx meta chars
+    var match = location.search.match(new RegExp ('[?&]' + key + '=([^&]+)(&|$)'))
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '))
   }
 
-  function createGist(configJson) {
+  function createGist(configJson)
+  {
     var data = {
-      'description': 'Bootstrap Customizer Config',
-      'public': true,
-      'files': {
-        'config.json': {
-          'content': configJson
+      'description' : 'Bootstrap Customizer Config',
+      'public' : true,
+      'files' : {
+        'config.json' : {
+          'content' : configJson
         }
       }
     }
     $.ajax({
-      url: 'https://api.github.com/gists',
-      type: 'POST',
-      dataType: 'json',
-      data: JSON.stringify(data)
-    })
-    .success(function (result) {
+      url : 'https://api.github.com/gists',
+      type : 'POST',
+      dataType : 'json',
+      data : JSON.stringify(data)
+    }).success(function (result)
+    {
       var origin = window.location.protocol + '//' + window.location.host
       history.replaceState(false, document.title, origin + window.location.pathname + '?id=' + result.id)
-    })
-    .error(function (err) {
+    }).error(function (err)
+    {
       showError('<strong>Ruh roh!</strong> Could not save gist file, configuration not saved.', err)
     })
   }
 
-  function getCustomizerData() {
+  function getCustomizerData()
+  {
     var vars = {}
 
-    $('#less-variables-section input')
-        .each(function () {
-          $(this).val() && (vars[$(this).prev().text()] = $(this).val())
-        })
-
+    $('#less-variables-section input').each(function ()
+    {
+      $(this).val() && (vars[$(this).prev().text()] = $(this).val())
+    })
     var data = {
-      vars: vars,
-      css: $('#less-section input:checked')  .map(function () { return this.value }).toArray(),
-      js:  $('#plugin-section input:checked').map(function () { return this.value }).toArray()
+      vars : vars,
+      css : $('#less-section input:checked').map(function ()
+      {
+        return this.value
+      }).toArray(),
+      js : $('#plugin-section input:checked').map(function ()
+      {
+        return this.value
+      }).toArray()
     }
 
-    if ($.isEmptyObject(data.vars) && !data.css.length && !data.js.length) return
+    if ($.isEmptyObject(data.vars) && !data.css.length && !data.js.length)
+      return
 
     return data
   }
 
-  function parseUrl() {
+  function parseUrl()
+  {
     var id = getQueryParam('id')
 
     if (!id) return
 
     $.ajax({
-      url: 'https://api.github.com/gists/' + id,
-      type: 'GET',
-      dataType: 'json'
-    })
-    .success(function (result) {
-      var data = JSON.parse(result.files['config.json'].content)
-      if (data.js) {
-        $('#plugin-section input').each(function () {
-          $(this).prop('checked', ~$.inArray(this.value, data.js))
-        })
-      }
-      if (data.css) {
-        $('#less-section input').each(function () {
-          $(this).prop('checked', ~$.inArray(this.value, data.css))
-        })
-      }
-      if (data.vars) {
-        for (var i in data.vars) {
-          $('input[data-var="' + i + '"]').val(data.vars[i])
+        url : 'https://api.github.com/gists/' + id,
+        type : 'GET',
+        dataType : 'json'
+      }).success(function (result)
+      {
+        var data = JSON.parse(result.files['config.json'].content)
+        if (data.js) {
+          $('#plugin-section input').each(function ()
+          {
+            $(this).prop('checked', ~$.inArray(this.value, data.js))
+          })
         }
-      }
-    })
-    .error(function (err) {
-      showError('Error fetching bootstrap config file', err)
-    })
+        if (data.css) {
+          $('#less-section input').each(function ()
+          {
+            $(this).prop('checked', ~$.inArray(this.value, data.css))
+          })
+        }
+        if (data.vars) {
+          for (var i in data.vars) {
+            $('input[data-var="' + i + '"]').val(data.vars[i])
+          }
+        }
+      }).error(function (err)
+      {
+        showError('Error fetching bootstrap config file', err)
+      })
   }
 
-  function generateZip(css, js, fonts, config, complete) {
-    if (!css && !js) return showError('<strong>Ruh roh!</strong> No Bootstrap files selected.', new Error('no Bootstrap'))
+  function generateZip(css, js, fonts, config, complete)
+  {
+    if (!css && !js)
+      return showError('<strong>Ruh roh!</strong> No Bootstrap files selected.', new Error ('no Bootstrap'))
 
-    var zip = new JSZip()
+    var zip = new JSZip ()
 
     if (css) {
       var cssFolder = zip.folder('css')
@@ -142,7 +148,9 @@ window.onload = function () { // wait for load in a dumb way because B-0
     if (fonts) {
       var fontsFolder = zip.folder('fonts')
       for (var fontsFileName in fonts) {
-        fontsFolder.file(fontsFileName, fonts[fontsFileName], {base64: true})
+        fontsFolder.file(fontsFileName, fonts[fontsFileName], {
+          base64 : true
+        })
       }
     }
 
@@ -150,12 +158,15 @@ window.onload = function () { // wait for load in a dumb way because B-0
       zip.file('config.json', config)
     }
 
-    var content = zip.generate({ type: 'blob' })
+    var content = zip.generate({
+      type : 'blob'
+    })
 
     complete(content)
   }
 
-  function generateCustomCSS(vars) {
+  function generateCustomCSS(vars)
+  {
     var result = ''
 
     for (var key in vars) {
@@ -165,151 +176,171 @@ window.onload = function () { // wait for load in a dumb way because B-0
     return result + '\n\n'
   }
 
-  function generateFonts() {
+  function generateFonts()
+  {
     return false;
   }
 
   // Returns an Array of @import'd filenames in the order
   // in which they appear in the file.
-  function includedLessFilenames(lessFilename) {
+  function includedLessFilenames(lessFilename)
+  {
     var IMPORT_REGEX = /^@import \"(.*?)\";$/
     var lessLines = __less[lessFilename].split('\n')
 
     for (var i = 0, imports = []; i < lessLines.length; i++) {
       var match = IMPORT_REGEX.exec(lessLines[i])
-      if (match) imports.push(match[1])
+      if (match)
+        imports.push(match[1])
     }
 
     return imports
   }
 
-  function generateLESS(lessFilename, lessFileIncludes, vars, additionalLessFiles) {
+  function generateLESS(lessFilename, lessFileIncludes, vars, additionalLessFiles)
+  {
     var lessSource = __less[lessFilename]
 
     // Additional imports files, not present in less file, but required to build
-    $.each(additionalLessFiles || [], function(index, filename) {
+    $.each(additionalLessFiles || [], function (index, filename)
+    {
       lessSource += __less[filename]
     })
 
-    $.each(includedLessFilenames(lessFilename), function(index, filename) {
+    $.each(includedLessFilenames(lessFilename), function (index, filename)
+    {
       var fileInclude = lessFileIncludes[filename]
 
       // Files not explicitly unchecked are compiled into the final stylesheet.
       // Core stylesheets like 'normalize.less' are not included in the form
       // since disabling them would wreck everything, and so their 'fileInclude'
       // will be 'undefined'.
-      if (fileInclude || (fileInclude == null))    lessSource += __less[filename]
+      if (fileInclude || (fileInclude == null))
+        lessSource += __less[filename]
 
       // Custom variables are added after Bootstrap variables so the custom
       // ones take precedence.
-      if (('variables.less' === filename) && vars) lessSource += generateCustomCSS(vars)
+      if (('variables.less' === filename) && vars)
+        lessSource += generateCustomCSS(vars)
     })
-
-    lessSource = lessSource.replace(/@import[^\n]*/gi, '') //strip any imports
+    lessSource = lessSource.replace(/@import[^\n]*/gi, '')// strip any imports
     return lessSource
   }
 
-  function compileLESS(lessSource, baseFilename, intoResult) {
-    var parser = new less.Parser({
-        optimization: 0,
-        filename: baseFilename + '.css'
-    }).parse(lessSource, function (err, tree) {
+  function compileLESS(lessSource, baseFilename, intoResult)
+  {
+    var parser = new less.Parser ({
+      optimization : 0,
+      filename : baseFilename + '.css'
+    }).parse(lessSource, function (err, tree)
+    {
       if (err) {
         return showError('<strong>Ruh roh!</strong> Could not parse less files.', err)
       }
-      intoResult[baseFilename + '.css']     = cw + tree.toCSS()
-      intoResult[baseFilename + '.min.css'] = cw + tree.toCSS({ compress: true })
+      intoResult[baseFilename + '.css'] = cw + tree.toCSS()
+      intoResult[baseFilename + '.min.css'] = cw + tree.toCSS({
+        compress : true
+      })
     })
   }
 
-  function generateCSS() {
+  function generateCSS()
+  {
     var oneChecked = false
     var lessFileIncludes = {}
-    $('#less-section input').each(function() {
+    $('#less-section input').each(function ()
+    {
       var $this = $(this)
       var checked = $this.is(':checked')
       lessFileIncludes[$this.val()] = checked
 
       oneChecked = oneChecked || checked
     })
-
-    if (!oneChecked) return false
+    if (!oneChecked)
+      return false
 
     var result = {}
     var vars = {}
 
-    $('#less-variables-section input')
-        .each(function () {
-          $(this).val() && (vars[$(this).prev().text()] = $(this).val())
-        })
-
-    var bsLessSource    = generateLESS('jasny-bootstrap.less', lessFileIncludes, vars,
-        ['build/variables.less', 'build/mixins.less'])
+    $('#less-variables-section input').each(function ()
+    {
+      $(this).val() && (vars[$(this).prev().text()] = $(this).val())
+    })
+    var bsLessSource = generateLESS('jasny-bootstrap.less', lessFileIncludes, vars, ['build/variables.less', 'build/mixins.less'])
 
     try {
       compileLESS(bsLessSource, 'jasny-bootstrap', result)
-    } catch (err) {
+    }
+    catch (err) {
       return showError('<strong>Ruh roh!</strong> Could not parse less files.', err)
     }
 
     return result
   }
 
-  function generateJavascript() {
+  function generateJavascript()
+  {
     var $checked = $('#plugin-section input:checked')
-    if (!$checked.length) return false
+    if (!$checked.length)
+      return false
 
-    var js = $checked
-      .map(function () { return __js[this.value] })
-      .toArray()
-      .join('\n')
+    var js = $checked.map(function ()
+    {
+      return __js[this.value]
+    }).toArray().join('\n')
 
     return {
-      'jasny-bootstrap.js': js,
-      'jasny-bootstrap.min.js': cw + uglify(js)
+      'jasny-bootstrap.js' : js,
+      'jasny-bootstrap.min.js' : cw + uglify(js)
     }
   }
 
-  var inputsComponent = $('#less-section input')
-  var inputsPlugin    = $('#plugin-section input')
-  var inputsVariables = $('#less-variables-section input')
+  var $inputsComponent = $('#less-section input')
+  var $inputsPlugin = $('#plugin-section input')
+  var $inputsVariables = $('#less-variables-section input')
 
-  $('#less-section .toggle').on('click', function (e) {
+  $('#less-section .toggle').on('click', function (e)
+  {
     e.preventDefault()
-    inputsComponent.prop('checked', !inputsComponent.is(':checked'))
+    $inputsComponent.prop('checked', !$inputsComponent.is(':checked'))
   })
 
-  $('#plugin-section .toggle').on('click', function (e) {
+  $('#plugin-section .toggle').on('click', function (e)
+  {
     e.preventDefault()
-    inputsPlugin.prop('checked', !inputsPlugin.is(':checked'))
+    $inputsPlugin.prop('checked', !$inputsPlugin.is(':checked'))
   })
 
-  $('[data-dependencies]').on('click', function () {
-    if (!$(this).is(':checked')) return
+  $('[data-dependencies]').on('click', function ()
+  {
+    if (!$(this).is(':checked'))
+      return
     var dependencies = this.getAttribute('data-dependencies')
     if (!dependencies) return
     dependencies = dependencies.split(',')
     for (var i = 0; i < dependencies.length; i++) {
-      var dependency = $('[value="' + dependencies[i] + '"]')
-      dependency && dependency.prop('checked', true)
+      var $dependency = $('[value="' + dependencies[i] + '"]')
+      $dependency && $dependency.prop('checked', true)
     }
   })
 
-  $('[data-dependents]').on('click', function () {
-    if ($(this).is(':checked')) return
+  $('[data-dependents]').on('click', function ()
+  {
+    if ($(this).is(':checked'))
+      return
     var dependents = this.getAttribute('data-dependents')
     if (!dependents) return
     dependents = dependents.split(',')
     for (var i = 0; i < dependents.length; i++) {
-      var dependent = $('[value="' + dependents[i] + '"]')
-      dependent && dependent.prop('checked', false)
+      var $dependent = $('[value="' + dependents[i] + '"]')
+      $dependent && $dependent.prop('checked', false)
     }
   })
-
   var $compileBtn = $('#btn-compile')
   var $downloadBtn = $('#btn-download')
 
-  $compileBtn.on('click', function (e) {
+  $compileBtn.on('click', function (e)
+  {
     var configData = getCustomizerData()
     var configJson = JSON.stringify(configData, null, 2)
 
@@ -317,24 +348,22 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
     $compileBtn.attr('disabled', 'disabled')
 
-    generateZip(generateCSS(), generateJavascript(), generateFonts(), configJson, function (blob) {
+    generateZip(generateCSS(), generateJavascript(), generateFonts(), configJson, function (blob)
+    {
       $compileBtn.removeAttr('disabled')
       saveAs(blob, 'jasny-bootstrap.zip')
       createGist(configJson)
     })
   })
-
   // browser support alerts
   if (!window.URL && navigator.userAgent.toLowerCase().indexOf('safari') != -1) {
-    showCallout('Looks like you\'re using safari, which sadly doesn\'t have the best support' +
-                 'for HTML5 blobs. Because of this your file will be downloaded with the name <code>"untitled"</code>.' +
-                 'However, if you check your downloads folder, just rename this <code>"untitled"</code> file' +
-                 'to <code>"jasny-bootstrap.zip"</code> and you should be good to go!')
-  } else if (!window.URL && !window.webkitURL) {
+    showCallout('Looks like you\'re using safari, which sadly doesn\'t have the best support' + 'for HTML5 blobs. Because of this your file will be downloaded with the name <code>"untitled"</code>.' + 'However, if you check your downloads folder, just rename this <code>"untitled"</code> file' + 'to <code>"jasny-bootstrap.zip"</code> and you should be good to go!')
+  }
+  else
+  if (!window.URL && !window.webkitURL) {
     $('.bs-docs-section, .bs-docs-sidebar').css('display', 'none')
 
-    showCallout('Looks like your current browser doesn\'t support the Bootstrap Customizer. Please take a second' +
-                 'to <a href="https://www.google.com/intl/en/chrome/browser/">upgrade to a more modern browser</a>.', true)
+    showCallout('Looks like your current browser doesn\'t support the Bootstrap Customizer. Please take a second' + 'to <a href="https://www.google.com/intl/en/chrome/browser/">upgrade to a more modern browser</a>.', true)
   }
 
   parseUrl()
