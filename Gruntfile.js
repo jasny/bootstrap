@@ -156,7 +156,7 @@ module.exports = function (grunt) {
           sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': 'less/build/jasny-bootstrap.less'
+          'dist/css/<%= pkg.name %>.css': 'less/build/<%= pkg.name %>.less'
         }
       },
       minify: {

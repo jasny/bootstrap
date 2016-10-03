@@ -1,5 +1,5 @@
 {
-  "name": "andrew-test-boot",
+  "name": "jasny-bootstrap",
   "description": "Additional features and components for Bootstrap",
   "version": "3.2.0",
   "main": "dist/js/jasny-bootstrap.js",
