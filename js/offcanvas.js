@@ -191,13 +191,12 @@
 
   OffCanvas.prototype.show = function ()
   {
-    if (this.state)
-      return
+    if (this.state) return
 
     var startEvent = $.Event('show.bs.offcanvas')
     this.$element.trigger(startEvent)
-    if (startEvent.isDefaultPrevented())
-      return this.state = 'slide-in'
+    if (startEvent.isDefaultPrevented()) return
+    this.state = 'slide-in'
     this.calcPlacement();
 
     var elements = this.getCanvasElements()
@@ -231,8 +230,8 @@
 
     var complete = function ()
     {
-      if (this.state != 'slide-in')
-        return this.state = 'slid'
+      if (this.state != 'slide-in') return
+      this.state = 'slid'
 
       elements.removeClass('canvas-sliding').addClass('canvas-slid')
       this.$element.trigger('shown.bs.offcanvas')
@@ -246,8 +245,7 @@
 
   OffCanvas.prototype.hide = function (fast)
   {
-    if (this.state !== 'slid')
-      return
+    if (this.state !== 'slid') return
 
     var startEvent = $.Event('hide.bs.offcanvas')
     this.$element.trigger(startEvent)
@@ -260,8 +258,8 @@
 
     var complete = function ()
     {
-      if (this.state != 'slide-out')
-        return this.state = null
+      if (this.state != 'slide-out') return
+      this.state = null
       this.placement = null
 
       this.$element.removeClass('in')
@@ -342,8 +340,9 @@
 
   OffCanvas.prototype.recalc = function ()
   {
-    if (this.$calcClone.css('display') === 'none' || (this.state !== 'slid' && this.state !== 'slide-in'))
-      return this.state = null
+    if (this.$calcClone.css('display') === 'none' || (this.state !== 'slid' && this.state !== 'slide-in')) return
+
+    this.state = null
     this.placement = null
     var elements = this.getCanvasElements()
 

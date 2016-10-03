@@ -92,8 +92,9 @@ window.onload = function ()
   {
     var id = getQueryParam('id')
 
-    if (!id)
-      return $.ajax({
+    if (!id) return
+
+    $.ajax({
         url : 'https://api.github.com/gists/' + id,
         type : 'GET',
         dataType : 'json'
@@ -315,8 +316,8 @@ window.onload = function ()
     if (!$(this).is(':checked'))
       return
     var dependencies = this.getAttribute('data-dependencies')
-    if (!dependencies)
-      return dependencies = dependencies.split(',')
+    if (!dependencies) return
+    dependencies = dependencies.split(',')
     for (var i = 0; i < dependencies.length; i++) {
       var $dependency = $('[value="' + dependencies[i] + '"]')
       $dependency && $dependency.prop('checked', true)
@@ -328,8 +329,8 @@ window.onload = function ()
     if ($(this).is(':checked'))
       return
     var dependents = this.getAttribute('data-dependents')
-    if (!dependents)
-      return dependents = dependents.split(',')
+    if (!dependents) return
+    dependents = dependents.split(',')
     for (var i = 0; i < dependents.length; i++) {
       var $dependent = $('[value="' + dependents[i] + '"]')
       $dependent && $dependent.prop('checked', false)

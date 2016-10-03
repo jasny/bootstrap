@@ -100,18 +100,22 @@
 
   Inputmask.prototype.listen = function ()
   {
-    if (this.$element.attr('readonly'))
-      return
+    if (this.$element.attr('readonly')) return
 
     var pasteEventName = (isIE ? 'paste' : 'input') + '.bs.inputmask'
 
-    this.$element.on('unmask.bs.inputmask', $.proxy(this.unmask, this)).on('focus.bs.inputmask', $.proxy(this.focusEvent, this)).on('blur.bs.inputmask', $.proxy(this.blurEvent, this)).on('keydown.bs.inputmask', $.proxy(this.keydownEvent, this)).on('keypress.bs.inputmask', $.proxy(this.keypressEvent, this)).on(pasteEventName, $.proxy(this.pasteEvent, this))
+    this.$element
+      .on('unmask.bs.inputmask', $.proxy(this.unmask, this))
+      .on('focus.bs.inputmask', $.proxy(this.focusEvent, this))
+      .on('blur.bs.inputmask', $.proxy(this.blurEvent, this))
+      .on('keydown.bs.inputmask', $.proxy(this.keydownEvent, this))
+      .on('keypress.bs.inputmask', $.proxy(this.keypressEvent, this))
+      .on(pasteEventName, $.proxy(this.pasteEvent, this))
   }
   // Helper Function for Caret positioning
   Inputmask.prototype.caret = function (begin, end)
   {
-    if (this.$element.length === 0)
-      return
+    if (this.$element.length === 0) return
     if (typeof begin == 'number') {
       end = (typeof end == 'number') ? end : begin
       return this.$element.each(function ()
@@ -166,8 +170,7 @@
   {
     var len = this.mask.length
 
-    if (begin < 0)
-      return
+    if (begin < 0) return
 
     for (var i = begin, j = this.seekNext(end); i < len; i++) {
       if (this.tests[i]) {
@@ -386,7 +389,7 @@
   $(document).on('focus.bs.inputmask.data-api', '[data-mask]', function (e)
   {
     var $this = $(this)
-    if ($this.data('bs.inputmask'))
-      return $this.inputmask($this.data())
+    if ($this.data('bs.inputmask')) return
+    $this.inputmask($this.data())
   })
 }(window.jQuery);

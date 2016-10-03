@@ -30,8 +30,8 @@
     this.$element = $(element)
 
     this.$input = this.$element.find(':file')
-    if (this.$input.length === 0)
-      return this.name = this.$input.attr('name') || options.name
+    if (this.$input.length === 0) return
+    this.name = this.$input.attr('name') || options.name
 
     this.$hidden = this.$element.find('input[type=hidden][name="' + this.name + '"]')
     if (this.$hidden.length === 0) {
@@ -203,8 +203,8 @@
   $(document).on('click.fileinput.data-api', '[data-provides="fileinput"]', function (e)
   {
     var $this = $(this)
-    if ($this.data('bs.fileinput'))
-      return $this.fileinput($this.data())
+    if ($this.data('bs.fileinput')) return
+    $this.fileinput($this.data())
 
     var $target = $(e.target).closest('[data-dismiss="fileinput"],[data-trigger="fileinput"]');
     if ($target.length > 0) {

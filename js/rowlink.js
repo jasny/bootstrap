@@ -35,8 +35,9 @@
   Rowlink.prototype.click = function (e)
   {
     var target = $(e.currentTarget).closest('tr').find(this.options.target)[0]
-    if ($(e.target)[0] === target)
-      return e.preventDefault();
+    if ($(e.target)[0] === target) return
+
+    e.preventDefault();
 
     if (target.click) {
       target.click()
@@ -79,12 +80,12 @@
 
   $(document).on('click.bs.rowlink.data-api', '[data-link="row"]', function (e)
   {
-    if ($(e.target).closest('.rowlink-skip').length !== 0)
-      return
+    if ($(e.target).closest('.rowlink-skip').length !== 0) return
 
     var $this = $(this)
-    if ($this.data('bs.rowlink'))
-      return $this.rowlink($this.data())
+    if ($this.data('bs.rowlink')) return
+
+    $this.rowlink($this.data())
     $(e.target).trigger('click.bs.rowlink')
   })
 }(window.jQuery);
