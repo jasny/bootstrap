@@ -27,6 +27,7 @@
     this.options  = $.extend({}, OffCanvas.DEFAULTS, options)
     this.state    = null
     this.placement = null
+    this.$calcClone = null
 
     if (this.options.recalc) {
       this.calcClone()
@@ -301,10 +302,16 @@
   }
 
   OffCanvas.prototype.calcClone = function() {
-    this.$calcClone = this.$element.clone()
-      .html('')
-      .addClass('offcanvas-clone').removeClass('in')
-      .appendTo($('body'))
+    this.$calcClone = $('.offcanvas-clone')
+
+    if (!this.$calcClone.length) {
+      this.$calcClone = this.$element.clone()
+        .addClass('offcanvas-clone')
+        .appendTo($('body'))
+        .html('')
+    }
+
+    this.$calcClone.removeClass('in')
   }
 
   OffCanvas.prototype.recalc = function () {
