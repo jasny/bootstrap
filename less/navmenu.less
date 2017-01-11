@@ -16,6 +16,14 @@
   border-radius: @border-radius-base;
 }
 
+// Fix the bug for bootstrap 3.2.0 (https://github.com/jasny/bootstrap/issues/355)
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  -webkit-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
 .navmenu-fixed-left,
 .navmenu-fixed-right,
 .navbar-offcanvas {
