@@ -38,6 +38,12 @@
       $(document).on('click touchstart', $.proxy(this.autohide, this))
     }
 
+    // Backdrop is added to dropdown on it's open, if device is touchable (or desctop FF, https://github.com/twbs/bootstrap/issues/13748)
+    // and dropdown is not inside .navbar-nav. So we remove it
+    $(this.$element).on('shown.bs.dropdown', $.proxy(function(e) {
+        $(this.$element).find('.dropdown .dropdown-backdrop').remove()
+    }, this))
+
     if (this.options.toggle) this.toggle()
 
     if (this.options.disablescrolling) {
