@@ -36,14 +36,14 @@
     if (this.options.autohide && !this.options.modal) {
       var eventName = (navigator.userAgent.match(/(iPad|iPhone)/i) === null) ? 'click' : 'touchstart'
       $(document).on('click touchstart', $.proxy(this.autohide, this))
-    }
-
-    if (this.options.toggle) this.toggle()
+    }   
 
     if (typeof(this.options.disablescrolling) === "boolean") {
         this.options.disableScrolling = this.options.disablescrolling
         delete this.options.disablescrolling
     }
+    
+    if (this.options.toggle) this.toggle()
   }
 
   OffCanvas.DEFAULTS = {
