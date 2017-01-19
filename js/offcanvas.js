@@ -314,12 +314,15 @@
     this.placement = null
     var elements = this.getCanvasElements()
 
+    this.$element.trigger('hide.bs.offcanvas')
     this.$element.removeClass('in')
 
     elements.removeClass('canvas-slid')
     elements.add(this.$element).add('body').each(function() {
       $(this).attr('style', $(this).data('offcanvas-style')).removeData('offcanvas-style')
     })
+
+    this.$element.trigger('hidden.bs.offcanvas')
   }
 
   OffCanvas.prototype.autohide = function (e) {
