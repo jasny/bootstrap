@@ -56,6 +56,14 @@
     modal: false
   }
 
+  OffCanvas.prototype.setWidth = function () {
+    var size = this.$element.outerWidth()
+    var max = $(window).width()
+    max -= 68 //Minimum space between menu and screen edge
+
+    this.$element.css('width', size > max ? max : size)
+  }
+
   OffCanvas.prototype.offset = function () {
     switch (this.placement) {
       case 'left':
@@ -176,7 +184,9 @@
     if (startEvent.isDefaultPrevented()) return
 
     this.state = 'slide-in'
-    this.calcPlacement();
+    this.$element.css('width', '')
+    this.calcPlacement()
+    this.setWidth()
 
     var elements = this.getCanvasElements()
     var placement = this.placement
