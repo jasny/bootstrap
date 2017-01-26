@@ -47,10 +47,12 @@
 
     if (this.options.toggle) this.toggle()
 
-    if (this.options.disablescrolling) {
+    if (typeof(this.options.disablescrolling) === "boolean") {
         this.options.disableScrolling = this.options.disablescrolling
         delete this.options.disablescrolling
     }
+    
+    if (this.options.toggle) this.toggle()
   }
 
   OffCanvas.DEFAULTS = {
