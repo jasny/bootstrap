@@ -27,6 +27,7 @@
     this.options  = $.extend({}, OffCanvas.DEFAULTS, options)
     this.state    = null
     this.placement = null
+    this.$calcClone = null
 
     if (this.options.recalc) {
       this.calcClone()
@@ -36,7 +37,15 @@
     if (this.options.autohide && !this.options.modal) {
       var eventName = (navigator.userAgent.match(/(iPad|iPhone)/i) === null) ? 'click' : 'touchstart'
       $(document).on('click touchstart', $.proxy(this.autohide, this))
-    }   
+    }
+
+    // Backdrop is added to dropdown on it's open, if device is touchable (or desctop FF, https://github.com/twbs/bootstrap/issues/13748)
+    // and dropdown is not inside .navbar-nav. So we remove it
+    $(this.$element).on('shown.bs.dropdown', $.proxy(function(e) {
+        $(this.$element).find('.dropdown .dropdown-backdrop').remove()
+    }, this))
+
+    if (this.options.toggle) this.toggle()
 
     if (typeof(this.options.disablescrolling) === "boolean") {
         this.options.disableScrolling = this.options.disablescrolling
@@ -53,6 +62,14 @@
     recalc: true,
     disableScrolling: true,
     modal: false
+  }
+
+  OffCanvas.prototype.setWidth = function () {
+    var size = this.$element.outerWidth()
+    var max = $(window).width()
+    max -= 68 //Minimum space between menu and screen edge
+
+    this.$element.css('width', size > max ? max : size)
   }
 
   OffCanvas.prototype.offset = function () {
@@ -175,7 +192,9 @@
     if (startEvent.isDefaultPrevented()) return
 
     this.state = 'slide-in'
-    this.calcPlacement();
+    this.$element.css('width', '')
+    this.calcPlacement()
+    this.setWidth()
 
     var elements = this.getCanvasElements()
     var placement = this.placement
@@ -199,7 +218,7 @@
     })
 
     if (this.options.disableScrolling) this.disableScrolling()
-    if (this.options.modal) this.toggleBackdrop()
+    if (this.options.modal || this.options.backdrop) this.toggleBackdrop()
 
     var complete = function () {
       if (this.state != 'slide-in') return
@@ -246,7 +265,7 @@
     }
 
     if (this.options.disableScrolling) this.enableScrolling()
-    if (this.options.modal) this.toggleBackdrop()
+    if (this.options.modal || this.options.backdrop) this.toggleBackdrop()
 
     elements.removeClass('canvas-slid').addClass('canvas-sliding')
 
@@ -261,12 +280,25 @@
   }
 
   OffCanvas.prototype.toggleBackdrop = function (callback) {
-    callback = callback || $.noop;
+    callback = callback || $.noop
+    var time = 150
+
     if (this.state == 'slide-in') {
-      var doAnimate = $.support.transition;
+      var doAnimate = $.support.transition
 
       this.$backdrop = $('<div class="modal-backdrop fade" />')
-      .insertAfter(this.$element);
+      if (this.options.backdrop) {
+        this.$backdrop.addClass('allow-navbar')
+
+        if (this.options.canvas && $(this.options.canvas)[0] !== $('body')[0]) {
+          $(this.options.canvas).addClass('limit-backdrop')
+          this.$backdrop.appendTo(this.options.canvas)
+        } else {
+          this.$backdrop.insertAfter(this.$element)
+        }
+      } else {
+        this.$backdrop.insertAfter(this.$element)
+      }
 
       if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
@@ -276,7 +308,7 @@
       doAnimate ?
         this.$backdrop
         .one($.support.transition.end, callback)
-        .emulateTransitionEnd(150) :
+        .emulateTransitionEnd(time) :
         callback()
     } else if (this.state == 'slide-out' && this.$backdrop) {
       this.$backdrop.removeClass('in');
@@ -289,11 +321,18 @@
             callback()
             self.$backdrop = null;
           })
-        .emulateTransitionEnd(150);
+        .emulateTransitionEnd(time);
       } else {
         this.$backdrop.remove();
         this.$backdrop = null;
         callback();
+      }
+
+      if (this.options.canvas && $(this.options.canvas)[0] !== $('body')[0]) {
+        var canvas = this.options.canvas
+        setTimeout(function() {
+          $(canvas).removeClass('limit-backdrop')
+        }, time)
       }
     } else if (callback) {
       callback()
@@ -301,10 +340,16 @@
   }
 
   OffCanvas.prototype.calcClone = function() {
-    this.$calcClone = this.$element.clone()
-      .html('')
-      .addClass('offcanvas-clone').removeClass('in')
-      .appendTo($('body'))
+    this.$calcClone = $('.offcanvas-clone')
+
+    if (!this.$calcClone.length) {
+      this.$calcClone = this.$element.clone()
+        .addClass('offcanvas-clone')
+        .appendTo($('body'))
+        .html('')
+    }
+
+    this.$calcClone.removeClass('in')
   }
 
   OffCanvas.prototype.recalc = function () {
@@ -314,12 +359,15 @@
     this.placement = null
     var elements = this.getCanvasElements()
 
+    this.$element.trigger('hide.bs.offcanvas')
     this.$element.removeClass('in')
 
     elements.removeClass('canvas-slid')
     elements.add(this.$element).add('body').each(function() {
       $(this).attr('style', $(this).data('offcanvas-style')).removeData('offcanvas-style')
     })
+
+    this.$element.trigger('hidden.bs.offcanvas')
   }
 
   OffCanvas.prototype.autohide = function (e) {

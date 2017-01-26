@@ -23,24 +23,27 @@
     this.$element = $(element)
     this.options = $.extend({}, Rowlink.DEFAULTS, options)
 
-    this.$element.on('click.bs.rowlink', 'td:not(.rowlink-skip)', $.proxy(this.click, this))
+    this.$element.on('click.bs.rowlink mouseup.bs.rowlink', 'td:not(.rowlink-skip)', $.proxy(this.click, this))
   }
 
   Rowlink.DEFAULTS = {
     target: "a"
   }
 
-  Rowlink.prototype.click = function(e) {
+  Rowlink.prototype.click = function(e, ctrlKey) {
     var target = $(e.currentTarget).closest('tr').find(this.options.target)[0]
+
     if ($(e.target)[0] === target) return
+    if (e.type === 'mouseup' && e.which !== 2) return
 
     e.preventDefault();
+    ctrlKey = ctrlKey || e.ctrlKey || (e.type === 'mouseup' && e.which === 2)
 
-    if (target.click) {
+    if (!ctrlKey && target.click) {
       target.click()
     } else if (document.createEvent) {
       var evt = document.createEvent("MouseEvents");
-      evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+      evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, ctrlKey, false, false, false, 0, null);
       target.dispatchEvent(evt);
     }
   }
@@ -74,13 +77,16 @@
   // ROWLINK DATA-API
   // ==================
 
-  $(document).on('click.bs.rowlink.data-api', '[data-link="row"]', function (e) {
+  $(document).on('click.bs.rowlink.data-api mouseup.bs.rowlink.data-api', '[data-link="row"]', function (e) {
+    if (e.type === 'mouseup' && e.which !== 2) return
     if ($(e.target).closest('.rowlink-skip').length !== 0) return
 
     var $this = $(this)
     if ($this.data('bs.rowlink')) return
     $this.rowlink($this.data())
-    $(e.target).trigger('click.bs.rowlink')
+
+    var ctrlKey = e.ctrlKey || e.which === 2
+    $(e.target).trigger('click.bs.rowlink', [ctrlKey])
   })
 
 }(window.jQuery);
