@@ -45,8 +45,6 @@
         $(this.$element).find('.dropdown .dropdown-backdrop').remove()
     }, this))
 
-    if (this.options.toggle) this.toggle()
-
     if (typeof(this.options.disablescrolling) === "boolean") {
         this.options.disableScrolling = this.options.disablescrolling
         delete this.options.disablescrolling
