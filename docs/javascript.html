@@ -17,7 +17,7 @@ base_url: "../"
     <h3 id="js-individual-compiled">Individual or compiled</h3>
     <p>Plugins can be included individually (using Jasny Bootstrap's individual <code>*.js</code> files), or all at once (using <code>jasny-bootstrap.js</code> or the minified <code>jasny-bootstrap.min.js</code>).</p>
     <p>The Jasny Bootstrap plugins work with or without loading vanilla Bootstrap's <code>bootstrap.js</code>.</p>
-    
+
     <div class="bs-callout bs-callout-danger">
       <h4>Do not attempt to include both.</h4>
       <p>Both <code>jasny-bootstrap.js</code> and <code>jasny-bootstrap.min.js</code> contain all plugins in a single file.</p>
@@ -69,7 +69,7 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
 {% endhighlight %}
   </div>
 
-  
+
   <!-- Off canvas
   ================================================== -->
   <div class="bs-docs-section">
@@ -128,7 +128,7 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
     <p>Add <code>.offcanvas</code> to hide an element. Alternatively add <code>.offcanvas-*</code> to hide an element up to a specific viewport width. Adding the <code>.offcanvas</code> class is not required. You may also hide an element by any other means.</p>
     <p>The effect works best for elements positioned to the top, bottom, left or right of the window, either with absolute or fixed positioning.</p>
     <p>When shown, the plugin adds <code>.canvas-slid</code> to the element that has slid.</p>
-    
+
     <h3>Via data attributes</h3>
     <p>Add <code>data-toggle="offcanvas"</code> and a <code>data-target</code> to control, assigning it to show and hide the target element. The <code>data-target</code> attribute accepts a CSS selector to apply the collapse to.</p>
     <p>Optionally add a <code>data-canvas</code> attribute to slide a canvas instead of only the target element. For a push menu set <code>data-canvas="body"</code>.
@@ -188,12 +188,12 @@ $('.navmenu').offcanvas()
         </tr>
       </tbody>
     </table>
-    
+
     <div class="bs-callout bs-callout-danger">
       <h4>Graceful degradation</h4>
       <p>For browsers that don't support transform (mainly IE8), the <code>target</code> option is ignored. In that case, the plugin will always slide the target element. In that case <code>.canvas-slid</code> will be added to the target element instead.</p>
     </div>
-    
+
 
     <h3>Methods</h3>
     <h4>.offcanvas(options)</h4>
@@ -204,7 +204,7 @@ $('.navmenu').offcanvas()
     <p>Shows an off canvas element.</p>
     <h4>.offcanvas('hide')</h4>
     <p>Hides an off canvas element.</p>
-    
+
     <h3>Events</h3>
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
@@ -332,7 +332,7 @@ $('tbody.rowlink').rowlink()
 
     <h2 id="inputmask-examples">Example</h2>
     <p>Input masks can be used to force the user to enter data conform a specific format. Unlike validation, the user can't enter any other key than the ones specified by the mask.</p>
-    
+
     <div class="bs-example">
       <input type="text" class="form-control" data-mask="999-99-999-9999-9" placeholder="ISBN">
     </div>
@@ -387,7 +387,7 @@ $('.inputmask').inputmask({
 
     <h3>Format</h3>
     <p>Each typed character needs to match exactly one character in the <code>mask</code> option.</p>
-    
+
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
         <thead>
@@ -404,13 +404,13 @@ $('.inputmask').inputmask({
     </div>
 
     <h3>Methods</h3>
-    
+
     <h4>.inputmask(options)</h4>
     <p>Initializes an input element with an input mask.</p>
   </div>
 
-  
-  
+
+
   <!-- File input
   ================================================== -->
   <div class="bs-docs-section bs-jasny">
@@ -425,28 +425,28 @@ $('.inputmask').inputmask({
     <div class="bs-example">
       <div class="fileinput fileinput-new input-group" data-provides="fileinput">
         <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-        <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file"></span>
+        <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" multiple></span>
         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
       </div>
     </div>
 {% highlight html %}
 <div class="fileinput fileinput-new input-group" data-provides="fileinput">
   <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-  <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+  <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..." multiple></span>
   <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 </div>
 {% endhighlight %}
 
     <div class="bs-example">
       <div class="fileinput fileinput-new" data-provides="fileinput">
-        <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file"></span>
+        <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" multiple></span>
         <span class="fileinput-filename"></span>
         <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
       </div>
     </div>
 {% highlight html %}
 <div class="fileinput fileinput-new" data-provides="fileinput">
-  <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+  <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..." multiple></span>
   <span class="fileinput-filename"></span>
   <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
 </div>
@@ -507,8 +507,11 @@ $('.inputmask').inputmask({
 
     <h2 id="fileinput-usage">Usage</h2>
     <p>Add <code>.fileinput</code> to the container. Elements inside the container with <code>.fileinput-new</code> and <code>.fileinput-exists</code> are shown or hidden based on the current state. A preview of the selected file is placed in <code>.fileinput-preview</code>. The text of <code>.fileinput-filename</code> gets set to the name of the selected file.</p>
+
+    <p>Multiple file uploads can be handled by adding <code>multiple</code> attribute to file input element. Names of files are shown in name preview, joined by comma. In image preview only the first image is shown.</p>
+
     <p>The file input widget should be placed in a regular <code>&lt;form&gt;</code> replacing a standard <code>&lt;input type="file"&gt;</code>. The server side code should handle the file upload as normal.</p>
-    
+
     <h3>Via data attributes</h3>
     <p>Add <code>data-provides="fileinput"</code> to the <code>.fileinput</code> element. Implement a button to clear the file with <code>data-dismiss="fileinput"</code>. Add <code>data-trigger="fileinput"</code> to any element within the <code>.fileinput</code> widget to trigger the file dialog.</p>
 
@@ -537,7 +540,7 @@ $('.inputmask').inputmask({
         </tbody>
       </table>
     </div>
-    
+
     <h3>Methods</h3>
     <h4>.fileinput(options)</h4>
     <p>Initializes a file upload widget.</p>
@@ -545,7 +548,7 @@ $('.inputmask').inputmask({
     <p>Clear the selected file.</p>
     <h4>.fileinput('reset')</h4>
     <p>Reset the form element to the original value.</p>
-    
+
     <h3>Events</h3>
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
@@ -576,4 +579,4 @@ $('.inputmask').inputmask({
       </table>
     </div><!-- ./bs-table-responsive -->
   </div>
-  
+

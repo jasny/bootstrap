@@ -108,11 +108,18 @@
 
       reader.readAsDataURL(file)
     } else {
-      this.$element.find('.fileinput-filename').text(file.name)
+      var text = file.name
+      var $nameView = this.$element.find('.fileinput-filename')
+
+      if (files.length > 1) {
+        text = $.map(files, function(file) {
+          return file.name;
+        }).join(', ')
+      }
+
+      $nameView.text(text)
       this.$preview.text(file.name)
-
       this.$element.addClass('fileinput-exists').removeClass('fileinput-new')
-
       this.$element.trigger('change.bs.fileinput')
     }
   },
