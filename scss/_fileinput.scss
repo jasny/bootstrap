@@ -28,6 +28,7 @@
 .fileinput {
   margin-bottom: 9px;
   display: inline-block;
+  max-width: 100vw;
   .form-control {
     padding-top: 7px;
     padding-bottom: 5px;
@@ -68,17 +69,18 @@
   display: inline-block;
   overflow: hidden;
   vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 65%;
+}
+
+.form-control .fileinput-filename {
+  vertical-align: bottom;
   width: 100%;
+  max-width: 100%;
   position: absolute;
   left: 0;
   padding-left: 30px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
-
-}
-.form-control .fileinput-filename {
-  vertical-align: bottom;
 }
 
 .fileinput.input-group {
