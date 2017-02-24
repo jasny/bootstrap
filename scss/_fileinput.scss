@@ -18,6 +18,10 @@
     width: 100%;
     direction: ltr;
     cursor: pointer;
+
+    &::-webkit-file-upload-button {
+      cursor: pointer;
+    }
   }
 }
 
