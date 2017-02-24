@@ -259,6 +259,7 @@
         $(this).attr('style', $(this).data('offcanvas-style')).removeData('offcanvas-style')
       })
 
+      this.$element.css('width', '')
       this.$element.trigger('hidden.bs.offcanvas')
     }
 
