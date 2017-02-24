@@ -50,6 +50,10 @@
     border: none;
     @include box-shadow(none);
     border-radius: 0;
+
+    li > a {
+      white-space: normal;
+    }
   }
 }
 
