@@ -1,25 +1,13 @@
-// Mixins
+//
+// These mixins are used when Jasny Bootstrap is
+// built without importing vanilla Bootstrap@mixin 
 // --------------------------------------------------
 
 
-// Vendor Prefixes
-//
-// All vendor mixins are deprecated as of v3.2.0 due to the introduction of
-// Autoprefixer in our Gruntfile. They have been removed in v4.
-
-// Drop shadows
-//
-// Note: Deprecated `.box-shadow()` as of v3.1.0 since all of Bootstrap's
-// supported browsers that have box shadow capabilities now support it.
-
-@mixin box-shadow($shadow...) {
-  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
-          box-shadow: $shadow;
-}
-
+// CSS3 PROPERTIES
+// --------------------------------------------------
 
 // Single side border-radius
-
 @mixin border-top-radius($radius) {
   border-top-right-radius: $radius;
    border-top-left-radius: $radius;
@@ -37,3 +25,37 @@
      border-top-left-radius: $radius;
 }
 
+// Drop shadows
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow; // iOS <4@mixin 3 & Android <4@mixin 1
+          box-shadow: $shadow;
+}
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+// Transition
+@mixin transition-property($transition-property) {
+  -webkit-transition-property: $transition-property;
+          transition-property: $transition-property;
+}
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+@mixin transition-duration($transition-duration) {
+  -webkit-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
+@mixin transition-timing-function($timing-function) {
+  -webkit-transition-timing-function: $timing-function;
+          transition-timing-function: $timing-function;
+}
+@mixin transition-transform($transition) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
