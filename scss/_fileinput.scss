@@ -76,6 +76,7 @@
 
 .form-control .fileinput-filename {
   vertical-align: bottom;
+  white-space: nowrap;
   width: 100%;
   max-width: 100%;
   position: absolute;
@@ -85,6 +86,14 @@
 
 .fileinput.input-group {
     display: table;
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+    > .btn-file {
+        z-index: 1;
+    }
 }
 
 // Not 100% correct, but helps in typical use case
