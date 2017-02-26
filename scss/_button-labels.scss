@@ -36,7 +36,12 @@
 .btn-xs .btn-label {
   @include button-label-size(1px, 5px, $border-radius-small);
 }
-.btn-group > .btn:last-child:not(:first-child) .btn-label, .btn-group > .dropdown-toggle:not(:first-child) .btn-label {
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
+//Fix bootstrap grouped buttons
+.btn-group {
+    .btn-labeled:not(:first-child) .btn-label:not(.btn-label-right) {
+      @include border-left-radius(0px);
+    }   
+    .btn-labeled:not(:last-child) .btn-label.btn-label-right {
+      @include border-right-radius(0px);
+    } 
 }
