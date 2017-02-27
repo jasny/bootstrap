@@ -10,10 +10,18 @@
 .navmenu,
 .navbar-offcanvas {
   width: $navmenu-width;
-  height: 100%;
+  height: auto;
   border-width: 1px;
   border-style: solid;
   border-radius: $border-radius-base;
+}
+
+// Fix the bug for bootstrap 3.2.0 (https://github.com/jasny/bootstrap/issues/355)
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  -webkit-transform: none;
+  -o-transform: none;
+  transform: none;
 }
 
 .navmenu-fixed-left,
@@ -22,15 +30,15 @@
   position: fixed;
   z-index: $zindex-navmenu-fixed;
   top: 0;
-  border-radius: 0;
+  bottom: 0;
   overflow-y: auto;
+  border-radius: 0;
 }
 .navmenu-fixed-left,
 .navbar-offcanvas.navmenu-fixed-left {
   left: 0;
   right: auto;
   border-width: 0 1px 0 0;
-  bottom: 0;
 }
 .navmenu-fixed-right,
 .navbar-offcanvas {
