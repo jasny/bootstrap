@@ -15,7 +15,13 @@
   border-style: solid;
   border-radius: @border-radius-base;
 }
-
+// Fixed iphone with disableScrolling
+.lockIphone {
+  position: fixed;
+  overflow:hidden;
+  height:100%;
+  -webkit-overflow-scrolling: auto;
+}
 // Fix the bug for bootstrap 3.2.0 (https://github.com/jasny/bootstrap/issues/355)
 .navbar-fixed-top,
 .navbar-fixed-bottom {
