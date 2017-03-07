@@ -124,7 +124,7 @@
     var canvas = this.options.canvas ? $(this.options.canvas) : this.$element
 
     var fixed_elements = canvas.find('*').filter(function() {
-      return $(this).css('position') === 'fixed'
+      return getComputedStyle(this).getPropertyValue('position') === 'fixed'
     }).not(this.options.exclude)
 
     return canvas.add(fixed_elements)
