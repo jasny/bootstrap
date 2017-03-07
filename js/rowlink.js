@@ -33,7 +33,7 @@
   Rowlink.prototype.click = function(e, ctrlKey) {
     var target = $(e.currentTarget).closest('tr').find(this.options.target)[0]
 
-    if (typeof target == 'undefined' || $(e.target)[0] === target) return
+    if (typeof target === 'undefined' || $(e.target)[0] === target) return
     if (e.type === 'mouseup' && e.which !== 2) return
 
     e.preventDefault();
