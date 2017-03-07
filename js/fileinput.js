@@ -194,7 +194,7 @@
       canvas.width = width;
       canvas.height = height;
     }
-    console.log(transform);
+    
     // transform context before drawing image
     switch (transform) {
       case 2: ctx.transform(-1, 0, 0, 1, width, 0); break;
