@@ -1,7 +1,7 @@
 {
   "name": "andrew-test-boot",
   "description": "Additional features and components for Bootstrap",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "main": "dist/js/jasny-bootstrap.js",
   "keywords": [
     "bootstrap",

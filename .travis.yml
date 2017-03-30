@@ -17,16 +17,16 @@ matrix:
 after_success:
 - grunt dist
 - cd dist;
-- zip -r jasny-bootstrap-${TRAVIS_TAG}.zip *
-- tar -zcvf jasny-bootstrap-${TRAVIS_TAG}.tar.gz *
+- zip -r andrew-test-boot-${TRAVIS_TAG}.zip *
+- tar -zcvf andrew-test-boot-${TRAVIS_TAG}.tar.gz *
 - cd ..
 deploy:
   - provider: releases
     api_key:
       secure: dAtvdTPcNwUoeyjlqxYIJsG2YkzeLZ6QEAIMBIZc0hV4cQsF4RmYG6nRkIYbSX40MKHGh81TU6oRHoA70UC58pWjuEgOZvo+ynPv3LROOg26m9pxb7Uz+m4c01q6XQgmyDvQRSHY3XPKwpk8CvuDUHcF5jpFpCuj5dXo1pW8Rv2PEhp5QuK+XUpTen/iidy+WGYpNWF1l04v+9Eqo00QLih4jn/NT0qyw21CPucwOL7ChTVCK5gV+kDt2cy56DVC4YCibzxyXTppPhHZ5kxBlvW1r/2wDrcdqH23tbx52N+Dt2jMfWAiyEP7USrcgEopEyD1F+GlWI5/UHJE7MbTR1JYjK+oQ86mIJ+ofdQcVs2xfKchCtCL4dXL2bjFZiYmwVUXvp/1BvmBb1hI5kHSPn1dAo/U2+0gwYSpXyHwWG5TUzom+u0dNOVQguGJM5pH1liUX6IqY4PrapAK9KnnAKuKVTrXni0gLqS4BJTvZ/rNhDPlR+ymekBXcvtErirYWqfnTDm7pSzghfR6rqnzhYZ1Lj1/CWsWDE1KVeGgcmVZ1PzFb/klJU+ss8jSHLVn3MmnCvC6cbNqOgO2r90Ly/ixp4yqh9OjUB5aWGUDa+38UK3bwC6Ex6rlz4UZdS1cFxEBlmVaNi/LWUhWG1kn4NjpcHLUeD7nMhlKoicRYcM=
     file: 
-    - dist/jasny-bootstrap-${TRAVIS_TAG}.zip
-    - dist/jasny-bootstrap-${TRAVIS_TAG}.tar.gz
+    - dist/andrew-test-boot-${TRAVIS_TAG}.zip
+    - dist/andrew-test-boot-${TRAVIS_TAG}.tar.gz
     skip_cleanup: true
     on:
       branch: travis-build
