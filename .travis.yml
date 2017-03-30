@@ -21,7 +21,7 @@ after_success:
 - tar -zcvf andrew-test-boot-${TRAVIS_TAG}.tar.gz *
 - cd ..
 - git reset --hard
-- npm version ${TRAVIS_TAG}
+- npm version ${TRAVIS_TAG} --no-git-tag-version
 deploy:
   - provider: releases
     api_key:
