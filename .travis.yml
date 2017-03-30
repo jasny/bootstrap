@@ -19,6 +19,7 @@ after_success:
 - cd dist;
 - zip -r jasny-bootstrap-${TRAVIS_TAG}.zip *
 - tar -zcvf jasny-bootstrap-${TRAVIS_TAG}.tar.gz *
+- cd ..
 deploy:
   - provider: releases
     api_key:
