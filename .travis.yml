@@ -20,6 +20,7 @@ after_success:
 - zip -r andrew-test-boot-${TRAVIS_TAG}.zip *
 - tar -zcvf andrew-test-boot-${TRAVIS_TAG}.tar.gz *
 - cd ..
+- npm version ${TRAVIS_TAG}
 deploy:
   - provider: releases
     api_key:
