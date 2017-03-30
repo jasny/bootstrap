@@ -15,8 +15,6 @@ env:
 matrix:
   fast_finish: true
 after_success:
-- npm config set git-tag-version=false
-- npm --no-git-tag-version version ${TRAVIS_TAG}
 - grunt dist
 - cd dist;
 - zip -r jasny-bootstrap-${TRAVIS_TAG}.zip *
