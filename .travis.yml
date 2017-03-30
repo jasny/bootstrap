@@ -32,3 +32,12 @@ deploy:
       branch: travis-build
       repo: poratuk/bootstrap
       tags: true
+  - provider: npm 
+    email: poratuk@gmail.com
+    api_key:
+      secure: tWiECN/fFRu6yb13l6jB96QfSDrNap6DcRJ6yx8y5oMypEQ6yljsDXhTWshSal2oj+QWNIvQ0skhY1tHv/EmRdkEUFZk1+b3ZjgQZJf4GgEvZwB3q+9DaWYD0pdYTwrlDqXkR6Q8302lYKeAtSkj4IzFPaJx27T064OYO5CUFaYYlcdWT67NUkJxSXpYgp9KDSE/VI26jmEnPmoJwTd85zH3tP/vXv6ZhsWKHJl4iPBJf93Kr/N18Kx2obvTSUE8hu/JrTAAuJfAUQlLPxp/Fh9/zzqh9FdzB2I8oz6gRP/5tWUY28zvWEt+Nls2rdIy8CnYS+MJqDPo9x/IpPSlCglEafh+XizKBmTA8MmGVga5xKgZQwaz1nMI/gaIz0W9fih9INc/2PVQtIYj/K8f2EO/38aLUCaHNhGqanQuy2760BSfpvfdWKrp1YiRR/c33LzrTLCiSOlXZDmmBVWvE6+o0fwA4rEnybm9kB0t+jjEn2l3ikyBIGevWDrjYgM7B3583OO9eBt86vhw0ZD8xL/iTdDKl6rWt/CtNwdbgnOCv1q/wa/micGKl7iQYm5o9VMSFkKqmceSDm3mCWeetnB2PXDMfbW4TdQNk2V/81sRv/XLUg3gubVeZF6B0x6KKUseHQ9BOhCRpHZXO9UuB3p6jPSIE89xC54/bj8bzr8=
+    skip_cleanup: true
+    on: 
+      branch: travis-build
+      repo: poratuk/bootstrap
+      tags: true
