@@ -23,7 +23,6 @@ after_success:
 - tar -zcvf jasny-bootstrap-${TRAVIS_TAG}.tar.gz *
 - ls
 - cd ..
-- git reset --hard
 deploy:
   - provider: releases
     api_key:
