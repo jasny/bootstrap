@@ -26,21 +26,21 @@ after_success:
 deploy:
   - provider: releases
     api_key:
-      secure: dAtvdTPcNwUoeyjlqxYIJsG2YkzeLZ6QEAIMBIZc0hV4cQsF4RmYG6nRkIYbSX40MKHGh81TU6oRHoA70UC58pWjuEgOZvo+ynPv3LROOg26m9pxb7Uz+m4c01q6XQgmyDvQRSHY3XPKwpk8CvuDUHcF5jpFpCuj5dXo1pW8Rv2PEhp5QuK+XUpTen/iidy+WGYpNWF1l04v+9Eqo00QLih4jn/NT0qyw21CPucwOL7ChTVCK5gV+kDt2cy56DVC4YCibzxyXTppPhHZ5kxBlvW1r/2wDrcdqH23tbx52N+Dt2jMfWAiyEP7USrcgEopEyD1F+GlWI5/UHJE7MbTR1JYjK+oQ86mIJ+ofdQcVs2xfKchCtCL4dXL2bjFZiYmwVUXvp/1BvmBb1hI5kHSPn1dAo/U2+0gwYSpXyHwWG5TUzom+u0dNOVQguGJM5pH1liUX6IqY4PrapAK9KnnAKuKVTrXni0gLqS4BJTvZ/rNhDPlR+ymekBXcvtErirYWqfnTDm7pSzghfR6rqnzhYZ1Lj1/CWsWDE1KVeGgcmVZ1PzFb/klJU+ss8jSHLVn3MmnCvC6cbNqOgO2r90Ly/ixp4yqh9OjUB5aWGUDa+38UK3bwC6Ex6rlz4UZdS1cFxEBlmVaNi/LWUhWG1kn4NjpcHLUeD7nMhlKoicRYcM=
+      secure: aQNPWNaAg4TaDJrYqtubvyFKFBIoRe08WLhusetTUIGlpmlRm9y+uzp1DzslKVQdoRg6frsvEClMMd4Rh6AMoY+XaTlCu7gKn8tfDfRNJg4BaEklOeZZO/nbSuzh9JRxtWsfZatpzFafgPqpxLCyj4THPu/iD3VquZjNnwnOaXBO9yGuEyGB6CKeBPMeWl2jYHqhROhXmDR5HkI1Kyu6wDXNCcWGkU5PPud1KFRa0HgDW/Ir01lc4wvxt/F3fcfbt6ZbfC4Dc9VkOSV6qJig5qFBDfyBSgcTa/vKsO3n71x1At+EpkUw4HGBqNqAE339ap4fTqR+nIM8b9fFUTtnUf5JngSsaAnWGaLmqK0QhIaeAe7tWny6T9K85pbyp68qJC7EXYswwlg+CIxNR0bQJ7LGJWphHk8TRVtCoGMNX6EZjSZr4E4tXA9BmlQUzRwF9ShABAPgbQq2SgnY7fEiif1xLSkL9sjsZSzjuRY5bkeStkxg3GaKebpvzqOnk1ml9zkDxZCvYoYaGBk+6oKfBrmX8Yef3E61FwpV9h19ZaUr9tv9vzWOiD88SCYDmU3nxIQ2CjZVDX3dg6NiuYeGzdjpwxI8g04jHp2pnwZqxL2Ci23yAX6fbBo+HgjwmNx3hyjDGWIdG0ZzOV86PCBLSO5YtHzag4LmaObu+0Gih+A=
     file: 
     - dist/jasny-bootstrap-${TRAVIS_TAG}.zip
     - dist/jasny-bootstrap-${TRAVIS_TAG}.tar.gz
     skip_cleanup: true
     on:
-      branch: travis-build
-      repo: poratuk/bootstrap
+      branch: master
+      repo: jasny/bootstrap
       tags: true
   - provider: npm
-    email: poratuk@gmail.com
+    email: arnold@jasny.net
     api_key:
-      secure: tWiECN/fFRu6yb13l6jB96QfSDrNap6DcRJ6yx8y5oMypEQ6yljsDXhTWshSal2oj+QWNIvQ0skhY1tHv/EmRdkEUFZk1+b3ZjgQZJf4GgEvZwB3q+9DaWYD0pdYTwrlDqXkR6Q8302lYKeAtSkj4IzFPaJx27T064OYO5CUFaYYlcdWT67NUkJxSXpYgp9KDSE/VI26jmEnPmoJwTd85zH3tP/vXv6ZhsWKHJl4iPBJf93Kr/N18Kx2obvTSUE8hu/JrTAAuJfAUQlLPxp/Fh9/zzqh9FdzB2I8oz6gRP/5tWUY28zvWEt+Nls2rdIy8CnYS+MJqDPo9x/IpPSlCglEafh+XizKBmTA8MmGVga5xKgZQwaz1nMI/gaIz0W9fih9INc/2PVQtIYj/K8f2EO/38aLUCaHNhGqanQuy2760BSfpvfdWKrp1YiRR/c33LzrTLCiSOlXZDmmBVWvE6+o0fwA4rEnybm9kB0t+jjEn2l3ikyBIGevWDrjYgM7B3583OO9eBt86vhw0ZD8xL/iTdDKl6rWt/CtNwdbgnOCv1q/wa/micGKl7iQYm5o9VMSFkKqmceSDm3mCWeetnB2PXDMfbW4TdQNk2V/81sRv/XLUg3gubVeZF6B0x6KKUseHQ9BOhCRpHZXO9UuB3p6jPSIE89xC54/bj8bzr8=
+      secure: putYoursNPMApiKeyHere
     skip_cleanup: true
     on: 
-      branch: travis-build
-      repo: poratuk/bootstrap
+      branch: master
+      repo: jasny/bootstrap
       tags: true
