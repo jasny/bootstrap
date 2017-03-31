@@ -19,7 +19,7 @@ after_success:
 - cd dist;
 - zip -r andrew-test-boot-${TRAVIS_TAG}.zip *
 - tar -zcvf andrew-test-boot-${TRAVIS_TAG}.tar.gz *
-- cd ..
+- cd .. 
 - git reset --hard
 - npm version ${TRAVIS_TAG} --no-git-tag-version
 deploy:
