@@ -43,10 +43,10 @@
       target.click()
     } else if (document.createEvent) {
       var evt = new MouseEvent("click", {
-       evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, ctrlKey, false, false, false, 0, null);     +          view: window,
-           bubbles: true,
-           cancelable: true,
-           ctrlKey: ctrlKey
+          view: window,
+          bubbles: true,
+          cancelable: true,
+          ctrlKey: ctrlKey
        });
       target.dispatchEvent(evt);
     }
