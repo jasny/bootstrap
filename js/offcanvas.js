@@ -59,7 +59,8 @@
     autohide: true,
     recalc: true,
     disableScrolling: true,
-    modal: false
+    modal: false,
+    animateSpeed: 350
   }
 
   OffCanvas.prototype.setWidth = function () {
@@ -135,7 +136,7 @@
     if (!$.support.transition) {
       var anim = {}
       anim[this.placement] = "+=" + offset
-      return elements.animate(anim, 350, callback)
+      return elements.animate(anim, this.options.animateSpeed , callback)
     }
 
     var placement = this.placement
@@ -151,7 +152,7 @@
 
     this.$element
       .one($.support.transition.end, callback)
-      .emulateTransitionEnd(350)
+      .emulateTransitionEnd(this.options.animateSpeed)
   }
 
   OffCanvas.prototype.disableScrolling = function() {
@@ -285,7 +286,6 @@
 
   OffCanvas.prototype.toggleBackdrop = function (callback) {
     callback = callback || $.noop
-    var time = 150
 
     if (this.state == 'slide-in') {
       var doAnimate = $.support.transition
@@ -312,7 +312,7 @@
       doAnimate ?
         this.$backdrop
         .one($.support.transition.end, callback)
-        .emulateTransitionEnd(time) :
+        .emulateTransitionEnd(this.options.animateSpeed) :
         callback()
     } else if (this.state == 'slide-out' && this.$backdrop) {
       this.$backdrop.removeClass('in');
@@ -325,7 +325,7 @@
             callback()
             self.$backdrop = null;
           })
-        .emulateTransitionEnd(time);
+        .emulateTransitionEnd(this.options.animateSpeed);
       } else {
         this.$backdrop.remove();
         this.$backdrop = null;
@@ -336,7 +336,7 @@
         var canvas = this.options.canvas
         setTimeout(function() {
           $(canvas).removeClass('limit-backdrop')
-        }, time)
+        }, this.options.animateSpeed)
       }
     } else if (callback) {
       callback()
