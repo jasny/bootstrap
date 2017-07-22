@@ -51,6 +51,7 @@
     }
 
     this.listen()
+    this.reset()
   }
 
   Fileinput.prototype.listen = function() {
