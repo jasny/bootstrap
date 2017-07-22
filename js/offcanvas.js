@@ -89,8 +89,8 @@
       this.$element.css('visiblity', 'hidden !important').addClass('in')
     }
 
-    var horizontal = $(window).width() / this.$element.width()
-    var vertical = $(window).height() / this.$element.height()
+    var horizontal = $(window).width() / this.$element.outerWidth()
+    var vertical = $(window).height() / this.$element.outerHeight()
 
     var element = this.$element
     function ab(a, b) {
@@ -103,7 +103,7 @@
       return size_a > size_b ? b : a
     }
 
-    this.placement = horizontal >= vertical ? ab('left', 'right') : ab('top', 'bottom')
+    this.placement = horizontal > vertical ? ab('left', 'right') : ab('top', 'bottom')
 
     if (this.$element.css('visibility') === 'hidden !important') {
       this.$element.removeClass('in').css('visiblity', '')
@@ -142,11 +142,13 @@
     var opposite = this.opposite(placement)
 
     elements.each(function() {
-      if ($(this).css(placement) !== 'auto')
+      if ($(this).css(placement) !== 'auto') {
         $(this).css(placement, (parseInt($(this).css(placement), 10) || 0) + offset)
+      }
 
-      if ($(this).css(opposite) !== 'auto')
+      if ($(this).css(opposite) !== 'auto') {
         $(this).css(opposite, (parseInt($(this).css(opposite), 10) || 0) - offset)
+      }
     })
 
     this.$element
