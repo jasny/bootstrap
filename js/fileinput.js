@@ -64,7 +64,7 @@
   Fileinput.prototype.verifySizes = function(files) {
     if (typeof this.options.maxSize === 'undefined') return true
 
-    var max = parseInt(this.options.maxSize)
+    var max = parseFloat(this.options.maxSize)
     if (max !== this.options.maxSize) return true
 
     for (var i = 0; i < files.length; i++) {
