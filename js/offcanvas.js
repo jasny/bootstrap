@@ -135,6 +135,8 @@
     if (!$.support.transition) {
       var anim = {}
       anim[this.placement] = "+=" + offset
+      anim[this.opposite(this.placement)] = "-=" + offset
+
       return elements.animate(anim, 350, callback)
     }
 
