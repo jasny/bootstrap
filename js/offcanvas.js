@@ -49,7 +49,7 @@
         this.options.disableScrolling = this.options.disablescrolling
         delete this.options.disablescrolling
     }
-    
+
     if (this.options.toggle) this.toggle()
   }
 
@@ -86,7 +86,7 @@
     }
 
     if (!this.$element.hasClass('in')) {
-      this.$element.css('visiblity', 'hidden !important').addClass('in')
+      this.$element.addClass('in')
     }
 
     var horizontal = $(window).width() / this.$element.width()
@@ -104,10 +104,7 @@
     }
 
     this.placement = horizontal >= vertical ? ab('left', 'right') : ab('top', 'bottom')
-
-    if (this.$element.css('visibility') === 'hidden !important') {
-      this.$element.removeClass('in').css('visiblity', '')
-    }
+    this.$element.removeClass('in')
   }
 
   OffCanvas.prototype.opposite = function (placement) {
@@ -140,18 +137,46 @@
 
     var placement = this.placement
     var opposite = this.opposite(placement)
+    var setPlacement = [];
 
+    // Determine needed changes in position
+    // This should be done before adding class 'in', otherwise we won't detect 'auto' position in Chrome
     elements.each(function() {
-      if ($(this).css(placement) !== 'auto')
-        $(this).css(placement, (parseInt($(this).css(placement), 10) || 0) + offset)
+      var item = {element: this, set: {}}
 
-      if ($(this).css(opposite) !== 'auto')
-        $(this).css(opposite, (parseInt($(this).css(opposite), 10) || 0) - offset)
+      var posName = 'offcanvas-auto-' + placement
+      var isAuto = $(this).css(placement) === 'auto' || $(this).data(posName)
+
+      isAuto ?
+        $(this).data(posName, true) :
+        item.set[placement] = (parseInt($(this).css(placement), 10) || 0) + offset
+
+      posName = 'offcanvas-auto-' + opposite
+      isAuto = $(this).css(opposite) === 'auto' || $(this).data(posName)
+
+      isAuto ?
+        $(this).data(posName, true) :
+        item.set[opposite] = (parseInt($(this).css(opposite), 10) || 0) - offset
+
+      setPlacement.push(item)
     })
 
-    this.$element
-      .one($.support.transition.end, callback)
-      .emulateTransitionEnd(350)
+    this.$element.addClass('in')
+
+    // Apply changes in position
+    setTimeout($.proxy(function() {
+        for (var i = 0; i < setPlacement.length; i++) {
+          var data = setPlacement[i]
+
+          for (var name in data.set) {
+            $(data.element).css(name, data.set[name])
+          }
+        }
+
+        this.$element
+          .one($.support.transition.end, callback)
+          .emulateTransitionEnd(350)
+    }, this), 10)
   }
 
   OffCanvas.prototype.disableScrolling = function() {
@@ -232,10 +257,7 @@
       this.$element.trigger('shown.bs.offcanvas')
     }
 
-    setTimeout($.proxy(function() {
-      this.$element.addClass('in')
-      this.slide(elements, offset, $.proxy(complete, this))
-    }, this), 1)
+    this.slide(elements, offset, $.proxy(complete, this))
   }
 
   OffCanvas.prototype.hide = function (fast) {
@@ -273,9 +295,7 @@
 
     elements.removeClass('canvas-slid').addClass('canvas-sliding')
 
-    setTimeout($.proxy(function() {
-      this.slide(elements, offset, $.proxy(complete, this))
-    }, this), 1)
+    this.slide(elements, offset, $.proxy(complete, this))
   }
 
   OffCanvas.prototype.toggle = function () {
