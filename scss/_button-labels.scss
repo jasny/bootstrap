@@ -36,10 +36,10 @@
   display: inline-block;
   @include button-label-size($padding-base-vertical, $padding-base-horizontal, $border-radius-base);
 }
-.ltr .btn-label {
+html[dir='ltr'] .btn-label {
   @include button-label-size-ltr($padding-base-horizontal);
 }
-.rtl .btn-label {
+html[dir='rtl'] .btn-label {
   @include button-label-size-rtl($padding-base-horizontal);
 }
 
