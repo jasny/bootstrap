@@ -29,7 +29,6 @@
   // =================================
 
   var Inputmask = function (element, options) {
-    if (isAndroid) return // No support because caret positioning doesn't work on Android
 
     this.$element = $(element)
     this.options = $.extend({}, Inputmask.DEFAULTS, options)
