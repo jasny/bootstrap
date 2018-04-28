@@ -27,7 +27,7 @@
   var Fileinput = function (element, options) {
     this.$element = $(element)
 
-    this.options = options;
+    this.options = $.extend({}, Fileinput.DEFAULTS, options)
     this.$input = this.$element.find(':file')
     if (this.$input.length === 0) return
 
@@ -52,6 +52,10 @@
 
     this.listen()
     this.reset()
+  }
+
+  Fileinput.DEFAULTS = {
+    clearName: true
   }
 
   Fileinput.prototype.listen = function() {
@@ -248,7 +252,7 @@
 
     this.$hidden.val('')
     this.$hidden.attr('name', this.name)
-    this.$input.attr('name', '')
+    if (this.options.clearName) this.$input.attr('name', '')
 
     //ie8+ doesn't support changing the value of input with type=file so clone instead
     if (isIE) {
