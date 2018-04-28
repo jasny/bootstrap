@@ -2,8 +2,8 @@ language: node_js
 node_js:
 - '4'
 before_install:
-- rvm install 2.2.2
-- rvm use 2.2.2 --fuzzy
+#- rvm install 2.2.2
+#- rvm use 2.2.2 --fuzzy
 install:
 - gem install jekyll html-proofer
 - npm install -g grunt-cli
@@ -38,7 +38,7 @@ deploy:
   - provider: npm
     email: arnold@jasny.net
     api_key:
-      secure: putYoursNPMApiKeyHere
+      secure: AguJesgWKARxL9bSfIYGCgAc7Itu8BL2HC/6TVQT7HpX+LexyvyEfkJYILGlzwnqw1KdmDC08NVt0gzIqn2PbN3TcPMnJywz9lZZqxSUdnrXj2L+cHEiMsnmV6E30R1eGPG76lRkCchzqLXjONZ6lQx8fWVAIbyeMx2+HiN74RQ=
     skip_cleanup: true
     on: 
       branch: master
