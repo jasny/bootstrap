@@ -13,10 +13,35 @@
   }
 }
 
-
 .btn-labeled {
   padding-top: 0;
   padding-bottom: 0;
+
+  &.btn-block {
+    text-indent: -12px;
+    line-height: 32px;
+
+    &.btn-lg {
+      line-height: 42px;
+      text-indent: -16px;
+    }
+
+    &.btn-sm {
+      line-height: 30px;
+      text-indent: -10px;
+    }
+
+    &.btn-xs {
+      line-height: 22px;
+      text-indent: -5px;
+    }
+
+    .btn-label {
+      float: left;
+      line-height: 20px;
+      text-indent: 0;
+    }
+  }
 }
 
 .btn-label {
@@ -40,8 +65,8 @@
 .btn-group {
     .btn-labeled:not(:first-child) .btn-label:not(.btn-label-right) {
       .border-left-radius(0px);
-    }   
+    }
     .btn-labeled:not(:last-child) .btn-label.btn-label-right {
       .border-right-radius(0px);
-    } 
+    }
 }
