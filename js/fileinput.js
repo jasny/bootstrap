@@ -51,6 +51,7 @@
     }
 
     this.listen()
+    this.reset()
   }
 
   Fileinput.DEFAULTS = {
@@ -65,12 +66,37 @@
     this.$element.find('[data-dismiss="fileinput"]').on('click.bs.fileinput', $.proxy(this.clear, this))
   },
 
+  Fileinput.prototype.verifySizes = function(files) {
+    if (typeof this.options.maxSize === 'undefined') return true
+
+    var max = parseFloat(this.options.maxSize)
+    if (max !== this.options.maxSize) return true
+
+    for (var i = 0; i < files.length; i++) {
+      var size = typeof files[i].size !== 'undefined' ? files[i].size : null
+      if (size === null) continue
+
+      size = size / 1000 / 1000 /* convert from bytes to MB */
+      if (size > max) return false
+    }
+
+    return true
+  }
+
   Fileinput.prototype.change = function(e) {
     var files = e.target.files === undefined ? (e.target && e.target.value ? [{ name: e.target.value.replace(/^.+\\/, '')}] : []) : e.target.files
 
     e.stopPropagation()
 
     if (files.length === 0) {
+      this.clear()
+      this.$element.trigger('clear.bs.fileinput')
+      return
+    }
+
+    if (!this.verifySizes(files)) {
+      this.$element.trigger('max_size.bs.fileinput')
+
       this.clear()
       this.$element.trigger('clear.bs.fileinput')
       return

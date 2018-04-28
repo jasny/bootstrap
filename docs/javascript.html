@@ -542,6 +542,11 @@ $('.inputmask').inputmask({
             <td>boolean</td>
             <td>Sets if file input name should be cleared when input is cleared. It's <code>true</code> by default, to tell the server the difference between pressing clear and submit without a change in a normal form.</td>
           </tr>
+          <tr>
+            <td>maxSize</td>
+            <td>float</td>
+            <td>Use this option if you want to limit file upload size. It's in <code>MB</code> and should be set for <code>.fileinput</code> element. For ex. <code>data-max-size="3"</code> allows upload only for files with size <= 3MB. If several files are selected, and only one of them is greater then this option value, all files will be discarded. Event <code>max_size.bs.fileinput</code> is triggered on discard.</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -579,6 +584,10 @@ $('.inputmask').inputmask({
           <tr>
             <td>reseted.bs.fileinput</td>
             <td>This event is fired after the file input is reset.</td>
+          </tr>
+          <tr>
+            <td>max_size.bs.fileinput</td>
+            <td>This event is fired, if at least one of selected files has size greater then <code>maxSize</code> option, before input is cleared.</td>
           </tr>
         </tbody>
       </table>
