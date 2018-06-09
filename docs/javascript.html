@@ -181,6 +181,12 @@ $('.navmenu').offcanvas()
           <td>Calculate if off canvas should be disabled for this viewport width on window resize. If your elements always gets hidden on window resize, try setting this to false.</td>
         </tr>
         <tr>
+          <td>exclude</td>
+          <td>string</td>
+          <td>null</td>
+          <td>Set css selectors for elements, that have fixed positioning and that should not be moved when showing\hiding menu.</td>
+        </tr>
+        <tr>
           <td>disableScrolling</td>
           <td>boolean</td>
           <td>true</td>
@@ -194,6 +200,9 @@ $('.navmenu').offcanvas()
       <p>For browsers that don't support transform (mainly IE8), the <code>target</code> option is ignored. In that case, the plugin will always slide the target element. In that case <code>.canvas-slid</code> will be added to the target element instead.</p>
     </div>
 
+    <h3>Two menus on the page</h3>
+
+    <p>If there are two (or more) menus on the page, there can be only one opened at a time. When menu attempts to be opened, already opened one will be closed first. It's almost fully automated, accept that <code>data-exclude</code> option should be set for each menu, holding references to other menus. For example, if we have two menus <code>#menu-left</code> and <code>#menu-right</code>, then they should have the following option set, correspondingly: <code>data-exclude="#menu-right"</code> and <code>data-exclude="#menu-left"</code>.</p>
 
     <h3>Methods</h3>
     <h4>.offcanvas(options)</h4>
