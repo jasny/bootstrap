@@ -37,7 +37,7 @@
     vertical-align: middle;
     cursor: text;
   }
-  .thumbnail {
+  .img-thumbnail {
     overflow: hidden;
     display: inline-block;
     margin-bottom: 5px;
@@ -45,6 +45,11 @@
     text-align: center;
     > img {
       max-height: 100%;
+      max-width: 100%;
+      height: auto;
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
     }
   }
   .btn {
@@ -92,7 +97,7 @@
 }
 
 .fileinput.input-group {
-    display: table;
+    display: flex;
 
     > * {
         position: relative;
@@ -103,25 +108,16 @@
     }
 }
 
-// Not 100% correct, but helps in typical use case
-.fileinput-new.input-group .btn-file,
-.fileinput-new .input-group .btn-file {
-  border-radius: 0 @border-radius-base @border-radius-base 0;
-
-  &.btn-xs,
-  &.btn-sm {
-    border-radius: 0 @border-radius-small @border-radius-small 0;
-  }
-  &.btn-lg {
-    border-radius: 0 @border-radius-large @border-radius-large 0;
-  }
+.fileinput .input-group-append .input-group-text:hover {
+  background: #d9dcdf;
+  cursor: pointer;
 }
 
 .form-group.has-warning .fileinput {
   .fileinput-preview {
     color: @state-warning-text;
   }
-  .thumbnail {
+  .img-thumbnail {
     border-color: @state-warning-border;
   }
 }
@@ -129,7 +125,7 @@
   .fileinput-preview {
     color: @state-danger-text;
   }
-  .thumbnail {
+  .img-thumbnail {
     border-color: @state-danger-border;
   }
 }
@@ -137,7 +133,7 @@
   .fileinput-preview {
     color: @state-success-text;
   }
-  .thumbnail {
+  .img-thumbnail {
     border-color: @state-success-border;
   }
 }
