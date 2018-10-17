@@ -439,32 +439,81 @@ $('.inputmask').inputmask({
     <h2 id="fileinput-examples">Examples</h2>
     <p>The file input plugin allows you to create a visually appealing file or image input widgets.</p>
 
+    <p>
+      In first of the following examples one can easily add support for file icon, how it previously was, untill Bootstrap dropped Glyphicons. Include the link to iconic font on the page, and replace the following line
+    </p>
+
+    {% highlight html %}
+      <span class="fileinput-filename"></span>
+    {% endhighlight %}
+
+    <p>with the following (<code>glyphicon</code> classes should be changed to the ones that you use):</p>
+
+    {% highlight html %}
+      <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename with-icon"></span>
+    {% endhighlight %}
+
     <h3>File input widgets</h3>
+
     <div class="bs-example">
+
       <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-        <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-        <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" multiple></span>
-        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+        <div class="form-control" data-trigger="fileinput">
+          <span class="fileinput-filename"></span>
+        </div>
+        <span class="input-group-append">
+          <span class="input-group-text fileinput-exists" data-dismiss="fileinput">
+            Remove
+          </span>
+
+          <span class="input-group-text btn-file">
+            <span class="fileinput-new">Select file</span>
+            <span class="fileinput-exists">Change</span>
+            <input type="file" multiple>
+          </span>
+        </span>
       </div>
+
     </div>
 {% highlight html %}
 <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-  <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-  <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..." multiple></span>
-  <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+  <div class="form-control" data-trigger="fileinput">
+    <span class="fileinput-filename"></span>
+  </div>
+  <span class="input-group-append">
+    <span class="input-group-text fileinput-exists" data-dismiss="fileinput">
+      Remove
+    </span>
+
+    <span class="input-group-text btn-file">
+      <span class="fileinput-new">Select file</span>
+      <span class="fileinput-exists">Change</span>
+      <input type="file" name="..." multiple>
+    </span>
+  </span>
 </div>
 {% endhighlight %}
 
     <div class="bs-example">
+
       <div class="fileinput fileinput-new" data-provides="fileinput">
-        <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" multiple></span>
+        <span class="btn btn-outline-secondary btn-file">
+          <span class="fileinput-new">Select file</span>
+          <span class="fileinput-exists">Change</span>
+          <input type="file" multiple>
+        </span>
         <span class="fileinput-filename"></span>
         <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
       </div>
+
     </div>
 {% highlight html %}
 <div class="fileinput fileinput-new" data-provides="fileinput">
-  <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..." multiple></span>
+  <span class="btn btn-outline-secondary btn-file">
+    <span class="fileinput-new">Select file</span>
+    <span class="fileinput-exists">Change</span>
+    <input type="file" name="..." multiple>
+  </span>
   <span class="fileinput-filename"></span>
   <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
 </div>
@@ -473,45 +522,57 @@ $('.inputmask').inputmask({
     <h3>Image upload widgets</h3>
     <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
     <div class="bs-example">
+
       <div class="fileinput fileinput-new" data-provides="fileinput">
-        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+        <div class="fileinput-preview img-thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
         <div>
-          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file"></span>
-          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+          <span class="btn btn-outline-secondary btn-file">
+            <span class="fileinput-new">Select image</span>
+            <span class="fileinput-exists">Change</span>
+            <input type="file">
+          </span>
+          <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
         </div>
       </div>
+
     </div>
 {% highlight html %}
 <div class="fileinput fileinput-new" data-provides="fileinput">
-  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+  <div class="fileinput-preview img-thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
   <div>
-    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
-    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+    <span class="btn btn-outline-secondary btn-file">
+      <span class="fileinput-new">Select image</span>
+      <span class="fileinput-exists">Change</span>
+      <input type="file" name="...">
+    </span>
+    <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
   </div>
 </div>
 {% endhighlight %}
 
     <div class="bs-example">
+
       <div class="fileinput fileinput-new" data-provides="fileinput">
-        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-          <img data-src="holder.js/100%x100%" alt="Generic placeholder thumbnail" src="data:image/png;base64,">
+        <div class="fileinput-new img-thumbnail" style="width: 200px; height: 150px;">
+          <img data-src="holder.js/100%x100%"  alt="Generic placeholder thumbnail" src="data:image/png;base64,">
         </div>
-        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+        <div class="fileinput-preview fileinput-exists img-thumbnail" style="max-width: 200px; max-height: 150px;"></div>
         <div>
-          <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file"></span>
-          <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+          <span class="btn btn-outline-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file"></span>
+          <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
         </div>
       </div>
+
     </div>
 {% highlight html %}
 <div class="fileinput fileinput-new" data-provides="fileinput">
-  <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-    <img data-src="holder.js/100%x100%" alt="...">
+  <div class="fileinput-new img-thumbnail" style="width: 200px; height: 150px;">
+    <img data-src="holder.js/100%x100%"  alt="...">
   </div>
-  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  <div class="fileinput-preview fileinput-exists img-thumbnail" style="max-width: 200px; max-height: 150px;"></div>
   <div>
-    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
-    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+    <span class="btn btn-outline-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+    <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
   </div>
 </div>
 {% endhighlight %}
