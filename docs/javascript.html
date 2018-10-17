@@ -138,7 +138,7 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
     <p>Optionally add a <code>data-canvas</code> attribute to slide a canvas instead of only the target element. For a push menu set <code>data-canvas="body"</code>.
 
     <h3>Via JavaScript</h3>
-    <p>Call the input mask via javascript:</p>
+    <p>Call the offcanvas via javascript:</p>
 {% highlight js %}
 $('.navmenu').offcanvas()
 {% endhighlight %}
@@ -274,7 +274,7 @@ $('.navmenu').offcanvas()
           <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
         </thead>
         <tbody data-link="row" class="rowlink">
-          <tr><td><a href="#inputmask">Input mask</a></td><td>Input masks can be used to force the user to enter data conform a specific format.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
+          <tr><td><a href="#fileinput">File input</a></td><td>The file input plugin allows you to create a visually appealing file widgets.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
           <tr><td><a href="http://www.jasny.net/" target="_blank">jasny.net</a></td><td>Shared knowledge of Arnold Daniels aka Jasny.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
           <tr><td><a href="#rowlinkModal" data-toggle="modal">Launch modal</a></td><td>Toggle a modal via JavaScript by clicking this row.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
         </tbody>
@@ -299,7 +299,7 @@ $('.navmenu').offcanvas()
     <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
   </thead>
   <tbody data-link="row" class="rowlink">
-    <tr><td><a href="#inputmask">Input mask</a></td><td>Input masks can be used to force the user to enter data conform a specific format.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
+    <tr><td><a href="#fileinput">File input</a></td><td>The file input plugin allows you to create a visually appealing file widgets.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
     <tr><td><a href="http://www.jasny.net/" target="_blank">jasny.net</a></td><td>Shared knowledge of Arnold Daniels aka Jasny.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
     <tr><td><a href="#rowlinkModal" data-toggle="modal">Launch modal</a></td><td>Toggle a modal via JavaScript by clicking this row.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
   </tbody>
@@ -314,7 +314,7 @@ $('.navmenu').offcanvas()
     <p>Add class <code>.rowlink</code> and attribute <code>data-link="row"</code> to a <code>&lt;table&gt;</code> or <code>&lt;tbody&gt;</code> element. For other options append the name to <code>data-</code>, as in <code>data-target="a.mainlink"</code> A cell can be excluded by adding the <code>.rowlink-skip</code> class to the <code>&lt;td&gt;</code>.</p>
 
     <h3>Via JavaScript</h3>
-    <p>Call the input mask via javascript:</p>
+    <p>Call the row link via javascript:</p>
 {% highlight js %}
 $('tbody.rowlink').rowlink()
 {% endhighlight %}
@@ -343,94 +343,6 @@ $('tbody.rowlink').rowlink()
     <h4>.rowlink(options)</h4>
     <p>Makes the rows of a table or tbody clickable.</p>
   </div>
-
-
-  <!-- Input mask
-  ================================================== -->
-  <div class="bs-docs-section bs-jasny">
-    <div class="page-header">
-      <h1 id="inputmask">Input mask <small>inputmask.js</small></h1>
-    </div>
-
-    <h2 id="inputmask-examples">Example</h2>
-    <p>Input masks can be used to force the user to enter data conform a specific format. Unlike validation, the user can't enter any other key than the ones specified by the mask.</p>
-
-    <div class="bs-example">
-      <input type="text" class="form-control" data-mask="999-99-999-9999-9" placeholder="ISBN">
-    </div>
-{% highlight html %}
-<input type="text" class="form-control" data-mask="999-99-999-9999-9" placeholder="ISBN">
-{% endhighlight %}
-
-    <hr class="bs-docs-separator">
-
-    <h2 id="inputmask-usage">Usage</h2>
-
-    <h3>Via data attributes</h3>
-    <p>Add data attributes to register an element with inputmask functionality as shown in the example above.</p>
-
-    <h3>Via JavaScript</h3>
-    <p>Call the input mask via javascript:</p>
-{% highlight js %}
-$('.inputmask').inputmask({
-  mask: '999-99-999-9999-9'
-})
-{% endhighlight %}
-
-    <h3>Options</h3>
-    <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-mask="999-99-999-9999-9"</code>.</p>
-
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th style="width: 100px;">Name</th>
-            <th style="width: 50px;">type</th>
-            <th style="width: 100px;">default</th>
-            <th>description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>mask</td>
-            <td>string</td>
-            <td>''</td>
-            <td>A string of formatting and literal characters, defining the input mask (see below).</td>
-          </tr>
-          <tr>
-            <td>placeholder</td>
-            <td>string</td>
-            <td>'_'</td>
-            <td>The character that is displayed where something needs to be typed.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>Format</h3>
-    <p>Each typed character needs to match exactly one character in the <code>mask</code> option.</p>
-
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr><th>Character</th><th>Description</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>9</td><td>Number</td></tr>
-          <tr><td>a</td><td>Letter</td></tr>
-          <tr><td>w</td><td>Alphanumeric</td></tr>
-          <tr><td>*</td><td>Any character</td></tr>
-          <tr><td>?</td><td>Optional - any characters following will become optional</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>Methods</h3>
-
-    <h4>.inputmask(options)</h4>
-    <p>Initializes an input element with an input mask.</p>
-  </div>
-
 
 
   <!-- File input
