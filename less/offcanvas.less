@@ -6,6 +6,20 @@
   &.in {
     display: block;
   }
+
+  .dropdown .dropdown-menu {
+    position: static !important;
+    float: none;
+    transform: none !important;
+    background: rgba(0, 0, 0, .02);
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+
+    .nav-link {
+      padding: .35rem 1rem .35rem 1.3rem;
+    }
+  }
 }
 
 @media (max-width: @screen-xs-max) {
