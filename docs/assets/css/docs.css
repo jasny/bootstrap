@@ -580,6 +580,10 @@ span.hidden-sm {
  */
 
 /* By default it's not affixed in mobile views, so undo that */
+.bs-sidebar {
+  width: 255px;
+}
+
 .bs-sidebar.affix {
   position: static;
 }
