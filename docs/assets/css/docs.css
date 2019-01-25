@@ -581,7 +581,8 @@ span.hidden-sm {
 
 /* By default it's not affixed in mobile views, so undo that */
 .bs-sidebar {
-  width: 255px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .bs-sidebar.affix {
@@ -590,8 +591,6 @@ span.hidden-sm {
 
 /* First level of nav */
 .bs-sidenav {
-  margin-top: 30px;
-  margin-bottom: 30px;
   padding-top:    10px;
   padding-bottom: 10px;
   text-shadow: 0 1px 0 #fff;
@@ -611,9 +610,9 @@ span.hidden-sm {
   background-color: #e5e3e9;
   border-right: 1px solid #dbd8e0;
 }
-.bs-sidebar .nav > .active > a,
-.bs-sidebar .nav > .active:hover > a,
-.bs-sidebar .nav > .active:focus > a {
+.bs-sidebar .nav > li > a.active,
+.bs-sidebar .nav > li > a.active:hover,
+.bs-sidebar .nav > li > a.active:focus {
   font-weight: bold;
   color: #563d7c;
   background-color: transparent;
@@ -634,7 +633,7 @@ span.hidden-sm {
 
 /* Show and affix the side nav when space allows it */
 @media (min-width: 992px) {
-  .bs-sidebar .nav > .active > ul {
+  .bs-sidebar .nav > li > .active + ul {
     display: block;
   }
   /* Widen the fixed sidebar */

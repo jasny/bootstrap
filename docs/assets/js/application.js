@@ -48,41 +48,10 @@
       e.preventDefault()
     })
 
-    var $sideBar = $('.bs-sidebar')
-
-    $(window).on('scroll', function(event) {
-      var scrollValue = $(window).scrollTop()
-      console.log('Scroll value: ', scrollValue);
-
-      var fix = scrollValue > 200;
-      var styles = fix ? {position: 'fixed', top: 60} : {position: '', top: ''}
-
-      $sideBar.css(styles);
+    $('.bs-sidebar').stick_in_parent({
+      offset_top: 56,
+      spacer: false
     });
-
-    // back to top
-    // setTimeout(function () {
-    //   var $sideBar = $('.bs-sidebar')
-
-    //   $sideBar.affix({
-    //     offset: {
-    //       top: function () {
-    //         var offsetTop      = $sideBar.offset().top
-    //         var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
-    //         var navOuterHeight = $('.bs-docs-nav').height()
-
-    //         return (this.top = offsetTop - navOuterHeight - sideBarMargin)
-    //       },
-    //       bottom: function () {
-    //         return (this.bottom = $('.bs-footer').outerHeight(true))
-    //       }
-    //     }
-    //   })
-    // }, 100)
-
-    // setTimeout(function () {
-    //   $('.bs-top').affix()
-    // }, 100)
   })
 
 }(jQuery)
