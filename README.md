@@ -2,12 +2,11 @@
 
 Jasny Bootstrap is an extension of the famous [Bootstrap](http://getbootstrap.com/), adding the following components:
 
-* [Button labels](http://jasny.github.io/bootstrap/css/#buttons-labels)
+* [Button labels](http://jasny.github.io/bootstrap/components/#buttons-labels)
 * [Off canvas navmenu](http://jasny.github.io/bootstrap/components/#navmenu)
 * [Fixed alerts](http://jasny.github.io/bootstrap/components/#alerts-fixed)
-* [Row link](http://jasny.github.io/bootstrap/javascript/#rowlink)
-* [Input mask](http://jasny.github.io/bootstrap/javascript/#inputmask)
-* [File input widget](http://jasny.github.io/bootstrap/javascript/#fileinput)
+* [Row link](http://jasny.github.io/bootstrap/components/#rowlink)
+* [File input widget](http://jasny.github.io/bootstrap/components/#fileinput)
 
 To get started, check out <http://jasny.github.io/bootstrap>!
 
