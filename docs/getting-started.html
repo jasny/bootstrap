@@ -263,16 +263,39 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
     </div>
   </div>
 
-
-  <!-- Migration
+  <!-- Migration from 3.x to 4.0
   ================================================== -->
   <div class="bs-docs-section">
     <div class="pb-2 mt-4 mb-2 border-bottom">
-      <h1 id="migration">Migrating from 2.x to 3.0</h1>
+      <h1 id="migration-v4">Migrating from 3.x to 4.0</h1>
+    </div>
+    <p class="lead">There are not many changes in this migration, as it mostly deals with moving to Bootstrap 4 support.</p>
+
+    <h2 id="migration-classes-v4">Major class changes</h2>
+    <p>Bootsrtap 4 release introduced some new classes, so we also switched to using them. There're no other new classes in this version of Jasny Bootstrap.</p>
+    <ul>
+      <li>Introduced <code>.nav-item</code>, <code>.nav-link</code>, <code>.flex-column</code> classes, that are used in nav-menu.</li>
+      <li><code>.navbar-fixed-top</code> is changed to <code>.fixed-top</code>.</li>
+    </ul>
+
+    <h2 id="migration-dropped-v4">What's removed</h2>
+    <ul>
+      <li>Inputmask plugin has been removed.</li>
+      <li>Removed variables customization page in documentation.</li>
+      <li>By default file icon is removed from file input, though it can be easily added. See <a href="../components#fileinput-examples">Fielinput examples</a>.</li>
+      <li>As Glyphicons were excluded from Bootstrap 4 bundle, icons now should be explicitly loaded to be used. For button labels we switched to <a href="https://fontawesome.com/">Font Awasome icons</a>. For them to work, you should include the link to them on the page, like the following: <code>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</code></li>
+    </ul>
+  </div>
+
+  <!-- Migration from 2.x to 3.0
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+      <h1 id="migration-v3">Migrating from 2.x to 3.0</h1>
     </div>
     <p class="lead">Folks looking to upgrade to v3 should use this section as a general upgrade guide. We've outlined some of the major changes and provided tables that highlight key changes.</p>
 
-    <h2 id="migration-classes">Major class changes</h2>
+    <h2 id="migration-classes-v3">Major class changes</h2>
     <p>This table shows the style changes between v2.x and v3.0.</p>
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
@@ -295,7 +318,7 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
       </table>
     </div><!-- /.table-responsive -->
 
-    <h2 id="migration-new">What's new</h2>
+    <h2 id="migration-new-v3">What's new</h2>
     <p>We've added new elements and changed some existing ones. Here are the new or updated styles.</p>
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
@@ -323,7 +346,7 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
     </div><!-- /.table-responsive -->
 
 
-    <h2 id="migration-dropped">What's removed</h2>
+    <h2 id="migration-dropped-v3">What's removed</h2>
     <p>The following elements have been dropped or changed in v3.0.</p>
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
@@ -375,7 +398,7 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
     </div><!-- /.table-responsive -->
 
 
-    <h2 id="migration-notes">Additional notes</h2>
+    <h2 id="migration-notes-v3">Additional notes</h2>
     <p>Other changes in v3.0 are not immediately apparent. Base classes, key styles, and behaviors have been adjusted for flexibility and our <em>mobile first</em> approach. Here's a partial list:</p>
     <ul>
       <li>The fileupload plugin has been renamed to fileinput. File upload was poorly chosen, since the plugin allows the creation of a styled file input element. It has nothing to do with how the file is uploaded.</li>
