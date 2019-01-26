@@ -18,7 +18,6 @@ Four quick start options are available:
 
 * [Download the latest release](https://github.com/jasny/bootstrap/releases/download/v3.1.3/jasny-bootstrap-3.1.3-dist.zip).
 * Clone the repo: `git clone git://github.com/jasny/bootstrap.git`.
-* Install with [Bower](http://bower.io): `bower install jasny-bootstrap`.
 * Use [cdnjs](http://cdnjs.com/libraries/jasny-bootstrap).
 * Install with [Meteor](https://meteor.com): `meteor add jasny:bootstrap`.
 

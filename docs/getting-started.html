@@ -43,11 +43,6 @@ base_url: "../"
         <a href="{{ site.repo }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'GitHub project']);">Clone or fork via GitHub</a>
       </h4>
       <p>Visit us on GitHub to clone or fork the Jasny Bootstrap project.</p>
-      <h4>
-        Install with <a href="http://bower.io">Bower</a>
-      </h4>
-      <p>Install and manage the original files for all CSS and JavaScript, along with a local copy of the docs, using <a href="http://bower.io">Bower</a>.</p>
-      {% highlight bash %}$ bower install jasny-bootstrap{% endhighlight %}
     </div>
 
     <h3 id="download-cdn">Jasny Bootstrap @ cdnjs</h3>
@@ -95,7 +90,7 @@ jasny-bootstrap/
 
     <div class="bs-callout bs-callout-danger" id="jquery-required">
       <h4>jQuery required</h4>
-      <p>Please note that <strong>all JavaScript plugins require jQuery</strong> to be included, as shown in the <a href="#template">starter template</a>. <a href="{{ site.repo }}/blob/v{{ site.current_version }}/bower.json">Consult our <code>bower.json</code></a> to see which versions of jQuery are supported.</p>
+      <p>Please note that <strong>all JavaScript plugins require jQuery</strong> to be included, as shown in the <a href="#template">starter template</a>.
     </div>
   </div>
 
@@ -280,6 +275,7 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
 
     <h2 id="migration-dropped-v4">What's removed</h2>
     <ul>
+      <li>Starting from this version Jasny Bootstrap is no longer published on Bower.</li>
       <li>Inputmask plugin has been removed.</li>
       <li>Removed variables customization page in documentation.</li>
       <li>By default file icon is removed from file input, though it can be easily added. See <a href="../components#fileinput-examples">Fielinput examples</a>.</li>
