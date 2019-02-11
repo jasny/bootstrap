@@ -1,12 +1,185 @@
----
-layout: default
-title: Getting started
-slug: getting-started
-lead: "An overview of Jasny Bootstrap, how to download and use, basic templates and examples, and more."
-base_url: "../"
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
-  <!-- Getting started
+<title>
+  
+    Getting started &middot; Jasny Bootstrap
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="../dist/css/jasny-bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Documentation extras -->
+<link href="../assets/css/docs.css" rel="stylesheet">
+<link href="../assets/css/pygments-manni.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+                               <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32388850-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */</script>
+
+  </head>
+  <body>
+    <script type="text/javascript">
+      if (localStorage && localStorage.hide_twbs === 'no') document.body.setAttribute('class', 'bs-twbs-show')
+    </script>
+
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-dark navbar-expand-lg navbar-inverse fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand">Jasny Bootstrap</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavmenu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <nav class="collapse navbar-collapse" role="navigation" id="mainNavmenu">
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="../getting-started">Getting started</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="../components">Components</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li>
+          <a href="http://www.jasny.net"><span class="hidden-sm">More by</span> Jasny</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>Getting started</h1>
+        <p>An overview of Jasny Bootstrap, how to download and use, basic templates and examples, and more.</p>
+        <!-- <div id="aboutme-container">
+  <a href="mailto:arnold@jasny.net" class="aboutme">
+    <img class="img-circle" src="http://0.gravatar.com/avatar/0bba82e8b2a9d2cf9645cb07ea54766f?s=100&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&amp;r=G" alt="Arnold Daniels">
+    <div class="aboutme-text">
+      <span class="aboutme-title">Looking for a developer?</span>
+      I'm available for freelance work, I want to hear about your projects.
+      <span class="aboutme-name">- Arnold Daniels</span>
+    </div>
+  </a>
+</div> -->
+
+
+<div id="carbonads-container">
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=jansy" id="_carbonads_js"></script>
+</div>
+
+
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav flex-column">
+              
+                <li class="nav-item">
+  <a class="nav-link" href="#jasny-bootstrap">Jasny Bootstrap</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#download">Download Jasny Bootstrap</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#download-compiled">Compiled CSS, JS, and fonts</a></li>
+    <li class="nav-item"><a class="nav-link" href="#download-additional">Additional downloads</a></li>
+    <li class="nav-item"><a class="nav-link" href="#download-cdn">Bootstrap CDN</a></li>
+  </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#whats-included">What's included</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#template">Basic template</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#js-overview">Plugins</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#js-individual-compiled">Individual or compiled</a></li>
+    <li class="nav-item"><a class="nav-link" href="#js-data-attrs">Data attributes</a></li>
+    <li class="nav-item"><a class="nav-link" href="#js-programmatic-api">Programmatic API</a></li>
+    <li class="nav-item"><a class="nav-link" href="#js-noconflict">No conflict</a></li>
+    <li class="nav-item"><a class="nav-link" href="#js-events">Events</a></li>
+  </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#containers">Containers</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#examples">Examples</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#migration-v4">Migrating from 3.x to 4.0</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#migration-classes-v4">Major class changes</a></li>
+    <li class="nav-item"><a class="nav-link" href="#migration-dropped-v4">What's removed</a></li>
+  </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#migration-v3">Migrating from 2.x to 3.0</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#migration-classes-v3">Major class changes</a></li>
+    <li class="nav-item"><a class="nav-link" href="#migration-new-v3">What's new</a></li>
+    <li class="nav-item"><a class="nav-link" href="#migration-dropped-v3">What's removed</a></li>
+    <li class="nav-item"><a class="nav-link" href="#migration-notes-v3">Additional notes</a></li>
+  </ul>
+</li>
+
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9" role="main">
+            <!-- Getting started
   ================================================== -->
   <div class="bs-docs-section">
     <div class="pb-2 mt-4 mb-2 border-bottom">
@@ -31,29 +204,27 @@ base_url: "../"
 
     <h3 id="download-compiled">Compiled CSS and JS</h3>
     <p>The fastest way to get Jasny Bootstrap is to download the compiled and minified versions of our CSS and JavaScript. No documentation or original source files are included.</p>
-    <p><a class="btn btn-lg btn-primary" href="{{ site.download.dist }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled']);">Download Jasny Bootstrap</a></p>
+    <p><a class="btn btn-lg btn-primary" href="https://github.com/jasny/bootstrap/releases/download/v4.0.0/jasny-bootstrap-4.0.0-dist.zip" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled']);">Download Jasny Bootstrap</a></p>
 
     <h3 id="download-additional">Additional downloads</h3>
     <div class="bs-docs-dl-options">
       <h4>
-        <a href="{{ site.download.source }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download source']);">Download source code</a>
+        <a href="https://github.com/jasny/bootstrap/archive/v4.0.0.zip" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download source']);">Download source code</a>
       </h4>
       <p>Get the latest Jasny Bootstrap LESS and JavaScript source code by downloading it directly from GitHub.</p>
       <h4>
-        <a href="{{ site.repo }}" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'GitHub project']);">Clone or fork via GitHub</a>
+        <a href="https://github.com/jasny/bootstrap" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'GitHub project']);">Clone or fork via GitHub</a>
       </h4>
       <p>Visit us on GitHub to clone or fork the Jasny Bootstrap project.</p>
     </div>
 
     <h3 id="download-cdn">Jasny Bootstrap @ cdnjs</h3>
     <p><a href="http://cdnjs.com" target="_blank">CDNJS</a> is a community driven CDN hosted by CloudFlare, supporting over a hundred projects. To use this CDN, swap your local instances for the CDN links listed below.</p>
-{% highlight html %}
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="{{ site.cdn.css }}">
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;!-- Latest compiled and minified CSS --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/css/jasny-bootstrap.min.css&quot;&gt;
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="{{ site.cdn.js }}"></script>
-{% endhighlight %}
+&lt;!-- Latest compiled and minified JavaScript --&gt;
+&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></pre></figure>
 
     <div class="bs-callout bs-callout-warning" id="callout-less-compilation">
       <h4>Compiling Jasny Bootstrap's LESS files</h4>
@@ -73,16 +244,13 @@ base_url: "../"
 
 <!-- NOTE: This info is intentionally duplicated in the README.
 Copy any changes made here over to the README too. -->
-{% highlight bash %}
-jasny-bootstrap/
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">jasny-bootstrap/
 ├── css/
 │   ├── jasny-bootstrap.css
 │   ├── jasny-bootstrap.min.css
 └── js/
     ├── jasny-bootstrap.js
-    └── jasny-bootstrap.min.js
-
-{% endhighlight %}
+    └── jasny-bootstrap.min.js</code></pre></figure>
 
     <p>This is the most basic form of Jasny Bootstrap. We provide compiled CSS and JS (<code>jasny-bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>jasny-bootstrap.min.*</code>).</p>
 
@@ -104,34 +272,32 @@ jasny-bootstrap/
     <p class="lead">Start with this basic HTML template, or modify <a href="../getting-started#examples">these examples</a>. We hope you'll customize our templates and examples, adapting them to suit your needs.</p>
 
     <p>Copy the HTML below to begin working with a minimal Bootstrap document.</p>
-{% highlight html %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Bootstrap 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen">
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; media=&quot;screen&quot;&gt;
+    &lt;link href=&quot;css/jasny-bootstrap.min.css&quot; rel=&quot;stylesheet&quot; media=&quot;screen&quot;&gt;
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+    &lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;
+    &lt;!-- WARNING: Respond.js doesn&#39;t work if you view the page via file:// --&gt;
+    &lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jasny-bootstrap.min.js"></script>
-  </body>
-</html>
-{% endhighlight %}
+    &lt;!-- jQuery (necessary for Bootstrap&#39;s JavaScript plugins) --&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;
+    &lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/jasny-bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
   </div>
 
 
@@ -155,46 +321,34 @@ jasny-bootstrap/
     <p>You can use all Jasny Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.</p>
 
     <p>That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with <code>data-api</code>. This looks like this:
-{% highlight js %}
-$(document).off('.data-api')
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-js" data-lang="js">$(document).off(&#39;.data-api&#39;)</code></pre></figure>
 
     <p>Alternatively, to target a specific plugin, just include the plugin's name as a namespace along with the data-api namespace like this:</p>
-{% highlight js %}
-$(document).off('.alert.data-api')
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-js" data-lang="js">$(document).off(&#39;.alert.data-api&#39;)</code></pre></figure>
 
     <h3 id="js-programmatic-api">Programmatic API</h3>
     <p>We also believe you should be able to use all Bootstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
-{% highlight js %}
-$(".fileinput").fileinput().addClass("fat")
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-js" data-lang="js">$(&quot;.fileinput&quot;).fileinput().addClass(&quot;fat&quot;)</code></pre></figure>
 
     <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
-{% highlight js %}
-$("#myMenu").offcanvas()                      // initialized with defaults
-$("#myMenu").offcanvas({ autohide: false })   // initialized with no autohide
-$("#myMenu").offcanvas('show')                // initializes and invokes show immediately</p>
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-js" data-lang="js">$(&quot;#myMenu&quot;).offcanvas()                      // initialized with defaults
+$(&quot;#myMenu&quot;).offcanvas({ autohide: false })   // initialized with no autohide
+$(&quot;#myMenu&quot;).offcanvas(&#39;show&#39;)                // initializes and invokes show immediately&lt;/p&gt;</code></pre></figure>
 
     <p>Each plugin also exposes its raw constructor on a <code>Constructor</code> property: <code>$.fn.popover.Offcanvas</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element: <code>$('.navmenu').data('offcanvas')</code>.</p>
 
     <h3 id="js-noconflict">No conflict</h3>
     <p>Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
-{% highlight js %}
-var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
-$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Bootstrap functionality
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-js" data-lang="js">var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Bootstrap functionality</code></pre></figure>
 
     <h3 id="js-events">Events</h3>
     <p>Bootstrap provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
     <p>As of 3.1.2, all Bootstrap events are namespaced.</p>
     <p>All infinitive events provide <code>preventDefault</code> functionality. This provides the ability to stop the execution of an action before it starts.</p>
-{% highlight js %}
-$('#myMenu').on('show.bs.offcanvas', function (e) {
+<figure class="highlight"><pre><code class="language-js" data-lang="js">$(&#39;#myMenu&#39;).on(&#39;show.bs.offcanvas&#39;, function (e) {
   if (!data) return e.preventDefault() // stops menu from being shown
-})
-{% endhighlight %}
+})</code></pre></figure>
   </div>
 
 
@@ -404,3 +558,66 @@ $('#myMenu').on('show.bs.offcanvas', function (e) {
     </ul>
     <p>For more information on upgrading to v3.0, and code snippets from the community, see <a href="http://bootply.com/">Bootply</a>.</p>
   </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <div class="container">
+        <div class="bs-social">
+  <ul class="bs-social-buttons">
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&amp;repo=bootstrap&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe>
+    </li>
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&amp;repo=bootstrap&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
+    </li>
+    <li class="follow-btn">
+      <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @ArnoldDaniels</a>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.io/bootstrap" data-count="horizontal" data-via="ArnoldDaniels">Tweet</a>
+    </li>
+    <li>
+      <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://github.com/jasny/bootstrap">Flattr</a>
+    </li>
+  </ul>
+</div>
+
+
+        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">vanilla Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li>Currently v4.0.0</li>
+          <li class="muted">&middot;</li>
+          <li><a href="../2.3.1/">Bootstrap 2.3.1 docs</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="http://www.jasny.net">Jasny.net</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/jasny/bootstrap/issues?state=open">Issues</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/jasny/bootstrap/releases">Releases</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../dist/js/jasny-bootstrap.min.js"></script>
+
+<script src="http://platform.twitter.com/widgets.js"></script>
+<script src="../assets/js/docs.min.js"></script>
+
+
+  </body>
+</html>
