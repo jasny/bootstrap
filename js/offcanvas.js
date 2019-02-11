@@ -17,7 +17,7 @@
  * limitations under the License.
  * ======================================================================== */
 
-+function ($) { "use strict";
++function ($) { "use strict"
 
   // OFFCANVAS PUBLIC CLASS DEFINITION
   // =================================
@@ -172,7 +172,7 @@
     $('body').css('overflow', 'hidden')
     //Fix iPhone scrolling
     if (isIphone) {
-      $('body').addClass('lockIphone');
+      $('body').addClass('lockIphone')
     }
 
     if ($('body').width() > bodyWidth) {
@@ -185,13 +185,13 @@
     //disable scrolling on mobiles (they ignore overflow:hidden)
     $('body').on('touchmove.bs', function(e) {
       if (!$(event.target).closest('.offcanvas').length)
-        e.preventDefault();
-    });
+        e.preventDefault()
+    })
   }
 
   OffCanvas.prototype.enableScrolling = function() {
-    $('body').off('touchmove.bs');
-    $('body').removeClass('lockIphone');
+    $('body').off('touchmove.bs')
+    $('body').removeClass('lockIphone')
   }
 
   OffCanvas.prototype.show = function () {
@@ -215,7 +215,7 @@
       if (elements.index(this.$element) !== -1) {
         $(this.$element).data('offcanvas-style', $(this.$element).attr('style') || '')
         this.$element.css(placement, -1 * offset)
-        this.$element.css(placement); // Workaround: Need to get the CSS property for it to be applied before the next line of code
+        this.$element.css(placement) // Workaround: Need to get the CSS property for it to be applied before the next line of code
       }
 
       elements.addClass('canvas-sliding').each(function() {
@@ -244,7 +244,7 @@
         this.$element.addClass('in')
         this.slide(elements, offset, $.proxy(complete, this))
       }, this), 1)
-    }, this));
+    }, this))
   }
 
   //Hide other opened offcanvas menus, and then open this one
@@ -319,13 +319,14 @@
     var time = 150
 
     if (this.state == 'slide-in') {
+      var $body = $('body')
       var doAnimate = $.support.transition
 
       this.$backdrop = $('<div class="modal-backdrop fade" />')
       if (this.options.backdrop) {
         this.$backdrop.addClass('allow-navbar')
 
-        if (this.options.canvas && $(this.options.canvas)[0] !== $('body')[0]) {
+        if (this.options.canvas && $(this.options.canvas)[0] !== $body[0]) {
           $(this.options.canvas).addClass('limit-backdrop')
           this.$backdrop.appendTo(this.options.canvas)
         } else {
@@ -337,7 +338,8 @@
 
       if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
-      this.$backdrop.addClass('in')
+      $body.addClass('modal-open')
+      this.$backdrop.addClass('show').show()
       this.$backdrop.on('click.bs', $.proxy(this.autohide, this))
 
       doAnimate ?
@@ -346,21 +348,23 @@
         .emulateTransitionEnd(time) :
         callback()
     } else if (this.state == 'slide-out' && this.$backdrop) {
-      this.$backdrop.removeClass('in');
-      $('body').off('touchmove.bs');
-      var self = this;
+      var self = this
+
+      this.$backdrop.hide().removeClass('show')
+      $('body').removeClass('modal-open').off('touchmove.bs')
+
       if ($.support.transition) {
         this.$backdrop
           .one($.support.transition.end, function() {
-            self.$backdrop.remove();
+            self.$backdrop.remove()
             callback()
-            self.$backdrop = null;
+            self.$backdrop = null
           })
-        .emulateTransitionEnd(time);
+        .emulateTransitionEnd(time)
       } else {
-        this.$backdrop.remove();
-        this.$backdrop = null;
-        callback();
+        this.$backdrop.remove()
+        this.$backdrop = null
+        callback()
       }
 
       if (this.options.canvas && $(this.options.canvas)[0] !== $('body')[0]) {
@@ -409,8 +413,8 @@
   }
 
   OffCanvas.prototype.autohide = function (e) {
-    var $target = $(e.target);
-    var doHide = !$target.hasClass('dropdown-backdrop') && $target.closest(this.$element).length === 0;
+    var $target = $(e.target)
+    var doHide = !$target.hasClass('dropdown-backdrop') && $target.closest(this.$element).length === 0
 
     if (doHide) this.hide()
   }
@@ -458,11 +462,11 @@
     var data    = $canvas.data('bs.offcanvas')
     var option = data ? 'toggle' : $.extend($this.data(), $canvas.data())
 
-    e.preventDefault();
+    e.preventDefault()
     e.stopPropagation()
 
     if (data) data.toggle()
       else $canvas.offcanvas(option)
   })
 
-}(window.jQuery);
+}(window.jQuery)
