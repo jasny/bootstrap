@@ -1,0 +1,744 @@
+---
+layout: default
+title: Components
+slug: components
+lead: "Reusable components to built the user interface."
+base_url: "../"
+---
+
+
+  <!-- Navmenu
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+      <h1 id="navmenu">Navmenu</h1>
+    </div>
+    <p>Navmenu is a vertical navigation component. By default it shares it look and feel with the navmenu component.</p>
+
+    <div class="bs-callout bs-callout-info">
+      <h4>Custom width</h4>
+      <p>The navmenu is 300px wide by default. You can change this by customizing the <code>@navmenu-width</code> variable or by setting the width of <code>.navmenu</code> in your CSS.</p>
+    </div>
+
+    <h2 id="navmenu-default">Default navmenu</h2>
+
+    <div class="bs-example">
+      <nav class="navmenu navmenu-default" role="navigation">
+        <a class="navmenu-brand" href="#">Brand</a>
+
+        <ul class="nav navmenu-nav flex-column">
+          <li class="nav-item active"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu navmenu-nav" role="menu">
+              <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Another action</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Something else here</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Separated link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+{% highlight html %}
+<nav class="navmenu navmenu-default" role="navigation">
+  <a class="navmenu-brand" href="#">Brand</a>
+
+  <ul class="nav navmenu-nav flex-column">
+    <li class="nav-item active"><a class="nav-link" href="#">Link</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+      <ul class="dropdown-menu navmenu-nav" role="menu">
+        <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Another action</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Something else here</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Separated link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">One more separated link</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+{% endhighlight %}
+
+    <div class="bs-callout bs-callout-warning">
+      <h4>Make navmenus accessible</h4>
+      <p>Be sure to add a <code>role="navigation"</code> to every navmenu to help with accessibility.</p>
+    </div>
+
+
+    <h2 id="navmenu-fixed">Fixed to left or right</h2>
+    <p>Add either <code>.navmenu-fixed-left</code> or <code>.navmenu-fixed-right</code>.</p>
+    <div class="bs-example bs-navmenu-fixed-example">
+      <nav class="navmenu navmenu-default navmenu-fixed-left" role="navigation">
+        <a class="navmenu-brand" href="#">Brand</a>
+        <ul class="nav navmenu-nav list-group">
+          <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        </ul>
+      </nav>
+    </div><!-- /example -->
+{% highlight html %}
+<nav class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation">
+  ...
+</nav>
+{% endhighlight %}
+
+    <div class="bs-callout bs-callout-danger">
+      <h4>Body padding required</h4>
+      <p>The fixed navmenu will overlay your other content, unless you add <code>padding</code> to the left or right of the <code>&lt;body&gt;</code>. Try out your own values or use our snippet below. Tip: By default, the navmenu is 300px wide.</p>
+{% highlight css %}
+@media (min-width: 992px) {
+  body {
+    padding-left: 300px;
+  }
+}
+{% endhighlight %}
+      <p>Make sure to include this <strong>after</strong> the Jasny Bootstrap CSS.</p>
+    </div>
+
+
+    <h2 id="navmenu-offcanvas">Off canvas</h2>
+    <p>With the <a href="../components/#offcanvas">offcanvas plugin</a>, you can hide the navmenu off canvas. This is especially useful for screens with a small viewport.</p>
+
+    <div class="bs-example bs-navmenu-offcanvas-example">
+      <div id="myNavmenuCanvas">
+
+        <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+          <a class="navmenu-brand" href="#">Brand</a>
+
+          <ul class="nav navmenu-nav list-group">
+            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          </ul>
+        </nav>
+
+        <header class="navbar navbar-light bg-light fixed-top">
+          <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="#myNavmenuCanvas" data-placement="left">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </header>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
+      </div>
+    </div><!-- /example -->
+
+{% highlight html %}
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+...
+</nav>
+
+<header class="navbar navbar-light bg-light fixed-top">
+  <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</header>
+{% endhighlight %}
+
+    <div class="bs-callout bs-callout-info">
+      <h4>Examples</h4>
+      <p>There is a full example for an <a href="../examples/navmenu-push/">off canvas push menu</a> as well as examples for an off canvas navmenu with an <a href="../examples/navmenu/">slide in</a> and <a href="../examples/navmenu-reveal/">reveal</a> effect.</p>
+    </div>
+
+    <h2 id="navmenu-inverted">Inverted navmenu</h2>
+    <p>Modify the look of the navmenu by adding <code>.navmenu-inverse</code>.</p>
+
+    <div class="bs-example">
+      <nav class="navmenu navmenu-inverse" role="navigation">
+        <a class="navmenu-brand" href="#">Brand</a>
+        <ul class="nav navmenu-nav list-group">
+          <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        </ul>
+      </nav>
+    </div><!-- /example -->
+{% highlight html %}
+<nav class="navmenu navmenu-inverse" role="navigation">
+  ...
+</nav>
+{% endhighlight %}
+
+  </div>
+
+
+  <!-- Alerts
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+      <h1 id="alerts">Alerts</h1>
+    </div>
+
+    <h2 id="alerts-fixed">Fixed to top / bottom</h2>
+    <p>Add <code>.alert-fixed-top</code> top stick the alert on top of your page. Use <code>.alert-fixed-bottom</code> for the bottom.</p>
+    <div class="bs-example">
+      <div class="alert alert-success alert-fixed-top">
+        <strong>Success!</strong> Your action has been completed successfully.
+      </div>
+    </div>
+{% highlight html %}
+<div class="alert alert-success alert-fixed-top">
+  <strong>Success!</strong> Your action has been completed successfully.
+</div>
+{% endhighlight %}
+
+  </div>
+
+    <!-- Buttons
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+      <h1 id="buttons">Buttons</h1>
+    </div>
+
+    <div>
+      <h2 id="buttons-labels">Labels</h2>
+      <p>Give a button some extra style by adding a label. Add <code>.btn-labeled</code> to any button with a label.</p>
+      <div class="bs-example">
+        <button type="button" class="btn btn-labeled btn-secondary"><span class="btn-label"><i class="fa fa-arrow-left"></i></span>Left</button>
+        <button type="button" class="btn btn-labeled btn-secondary">Right<span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i></span></button>
+        <button type="button" class="btn btn-labeled btn-success"><span class="btn-label"><i class="fa fa-check"></i></span>Success</button>
+        <button type="button" class="btn btn-labeled btn-danger"><span class="btn-label"><i class="fa fa-times"></i></span>Danger</button>
+      </div>
+{% highlight html %}
+<!-- Standard button with label -->
+<button type="button" class="btn btn-labeled btn-secondary"><span class="btn-label"><i class="fa fa-arrow-left"></i></span>Left</button>
+
+<!-- Standard button with label on the right side -->
+<button type="button" class="btn btn-labeled btn-secondary">Right<span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i></span></button>
+
+<!-- Success button with label -->
+<button type="button" class="btn btn-labeled btn-success"><span class="btn-label"><i class="fa fa-check"></i></span>Success</button>
+
+<!-- Danger button with label -->
+<button type="button" class="btn btn-labeled btn-danger"><span class="btn-label"><i class="fa fa-times"></i></span>Danger</button>
+{% endhighlight %}
+    </div>
+  </div>
+
+
+
+  <!-- Off canvas
+  ================================================== -->
+  <div class="bs-docs-section">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+      <h1 id="offcanvas">Off canvas <small>offcanvas.js</small></h1>
+    </div>
+
+    <h2 id="offcanvas-examples">Example</h2>
+    <p>The offcanvas plugin allows you to hide an element from sight and than show it by moving either that or any other element. It's intended to be used for off canvas navigation, like push menus.</p>
+
+    <div class="bs-example bs-navmenu-offcanvas-example">
+      <div id="myNavmenuCanvas2">
+
+        <nav id="myNavmenu2" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+          <a class="navmenu-brand" href="#">Brand</a>
+
+          <ul class="nav navmenu-nav flex-column">
+            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          </ul>
+        </nav>
+
+        <header class="navbar navbar-light bg-light fixed-top">
+          <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#myNavmenu2" data-canvas="#myNavmenuCanvas2" data-placement="left">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </header>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
+      </div>
+    </div><!-- /example -->
+
+{% highlight html %}
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+  <a class="navmenu-brand" href="#">Brand</a>
+
+  <ul class="nav navmenu-nav flex-column">
+    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+  </ul>
+</nav>
+
+<header class="navbar navbar-light bg-light fixed-top">
+  <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</header>
+{% endhighlight %}
+
+    <div class="bs-callout bs-callout-info">
+      <h4>Examples</h4>
+      <p>For better understanding, have a look at the <a href="../examples/navmenu/">off canvas slide in menu</a>, <a href="../examples/navmenu-push/">off canvas push menu</a> and <a href="../examples/navmenu-reveal/">off canvas reveal menu</a> examples.</p>
+    </div>
+
+    <hr class="bs-docs-separator">
+
+    <h2 id="offcanvas-usage">Usage</h2>
+    <p>Add <code>.offcanvas</code> to hide an element. Alternatively add <code>.offcanvas-*</code> to hide an element up to a specific viewport width. Adding the <code>.offcanvas</code> class is not required. You may also hide an element by any other means.</p>
+    <p>The effect works best for elements positioned to the top, bottom, left or right of the window, either with absolute or fixed positioning.</p>
+    <p>When shown, the plugin adds <code>.canvas-slid</code> to the element that has slid.</p>
+
+    <h3>Via data attributes</h3>
+    <p>Add <code>data-toggle="offcanvas"</code> and a <code>data-target</code> to control, assigning it to show and hide the target element. The <code>data-target</code> attribute accepts a CSS selector to apply the collapse to.</p>
+    <p>Optionally add a <code>data-canvas</code> attribute to slide a canvas instead of only the target element. For a push menu set <code>data-canvas="body"</code>.
+
+    <h3>Via JavaScript</h3>
+    <p>Call the offcanvas via javascript:</p>
+{% highlight js %}
+$('.navmenu').offcanvas()
+{% endhighlight %}
+
+    <h3>Options</h3>
+
+    <p>Options can be placed both on control and on target menu element.</p>
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 100px;">Name</th>
+          <th style="width: 50px;">type</th>
+          <th style="width: 100px;">default</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>canvas</td>
+          <td>string</td>
+          <td>false</td>
+          <td>If set, the canvas will be moved on show and hide instead of the target element. This creates alternative effects.</td>
+        </tr>
+        <tr>
+          <td>toggle</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td>Toggles the off canvas element on invocation</td>
+        </tr>
+        <tr>
+          <td>placement</td>
+          <td>string</td>
+          <td>'auto'</td>
+          <td>Where to position the element at the start of the animation. For example, if placement is "left", the element will slide from left to right. The default option "auto" guesses the placement based on position and dimension.</td>
+        </tr>
+        <tr>
+          <td>autohide</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td>Hide the off canvas element if clicked anywhere other that the element.</td>
+        </tr>
+        <tr>
+          <td>recalc</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td>Calculate if off canvas should be disabled for this viewport width on window resize. If your elements always gets hidden on window resize, try setting this to false.</td>
+        </tr>
+        <tr>
+          <td>exclude</td>
+          <td>string</td>
+          <td>null</td>
+          <td>Set css selectors for elements, that have fixed positioning and that should not be moved when showing\hiding menu.</td>
+        </tr>
+        <tr>
+          <td>disableScrolling</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td>Disable scrolling when the off canvas element is shown, by setting overflow to hidden for the body.</td>
+        </tr>
+        <tr>
+          <td>backdrop</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>If backdrop should be shown when menu is opened, in modal-like style.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="bs-callout bs-callout-danger">
+      <h4>Graceful degradation</h4>
+      <p>For browsers that don't support transform (mainly IE8), the <code>target</code> option is ignored. In that case, the plugin will always slide the target element. In that case <code>.canvas-slid</code> will be added to the target element instead.</p>
+    </div>
+
+    <h3>Two menus on the page</h3>
+
+    <p>If there are two (or more) menus on the page, there can be only one opened at a time. When menu attempts to be opened, already opened one will be closed first. It's almost fully automated, accept that <code>data-exclude</code> option should be set for each menu, holding references to other menus. For example, if we have two menus <code>#menu-left</code> and <code>#menu-right</code>, then they should have the following option set, correspondingly: <code>data-exclude="#menu-right"</code> and <code>data-exclude="#menu-left"</code>.</p>
+
+    <h3>Methods</h3>
+    <h4>.offcanvas(options)</h4>
+    <p>Initializes the off canvas element with an optional options.</p>
+    <h4>.offcanvas('toggle')</h4>
+    <p>Toggles an off canvas element to shown or hidden.</p>
+    <h4>.offcanvas('show')</h4>
+    <p>Shows an off canvas element.</p>
+    <h4>.offcanvas('hide')</h4>
+    <p>Hides an off canvas element.</p>
+
+    <h3>Events</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="width: 150px;">Event Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>show.bs.offcanvas</td>
+            <td>This event fires immediately when the show instance method is called.</td>
+          </tr>
+          <tr>
+            <td>shown.bs.offcanvas</td>
+            <td>This event is fired when the target has been made visible to the user (will wait for CSS transitions to complete).</td>
+          </tr>
+          <tr>
+            <td>hide.bs.offcanvas</td>
+            <td>This event is fired immediately when the hide instance method has been called.</td>
+          </tr>
+          <tr>
+            <td>hidden.bs.offcanvas</td>
+            <td>This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions to complete).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- ./bs-table-responsive -->
+  </div>
+
+
+  <!-- Row link
+  ================================================== -->
+  <div class="bs-docs-section bs-jasny">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+      <h1 id="rowlink">Row link <small>rowlink.js</small></h1>
+    </div>
+
+    <h2 id="rowlink-examples">Example</h2>
+    <p>This plugin turns a table row into a clickable link.</p>
+    <div class="bs-example">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
+        </thead>
+        <tbody data-link="row" class="rowlink">
+          <tr><td><a href="#fileinput">File input</a></td><td>The file input plugin allows you to create a visually appealing file widgets.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
+          <tr><td><a href="http://www.jasny.net/" target="_blank">jasny.net</a></td><td>Shared knowledge of Arnold Daniels aka Jasny.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
+          <tr><td><a href="#rowlinkModal" data-toggle="modal">Launch modal</a></td><td>Toggle a modal via JavaScript by clicking this row.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="rowlinkModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="rowlinkModalTitle" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="rowlinkModalTitle">Rowlink Modal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>This modal proves that JavaScript events are triggered correctly by rowlink.</p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+{% highlight html %}
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
+  </thead>
+  <tbody data-link="row" class="rowlink">
+    <tr><td><a href="#fileinput">File input</a></td><td>The file input plugin allows you to create a visually appealing file widgets.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
+    <tr><td><a href="http://www.jasny.net/" target="_blank">jasny.net</a></td><td>Shared knowledge of Arnold Daniels aka Jasny.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
+    <tr><td><a href="#rowlinkModal" data-toggle="modal">Launch modal</a></td><td>Toggle a modal via JavaScript by clicking this row.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
+  </tbody>
+</table>
+{% endhighlight %}
+
+    <hr class="bs-docs-separator">
+
+    <h2 id="rowlink-usage">Usage</h2>
+
+    <h3>Via data attributes</h3>
+    <p>Add class <code>.rowlink</code> and attribute <code>data-link="row"</code> to a <code>&lt;table&gt;</code> or <code>&lt;tbody&gt;</code> element. For other options append the name to <code>data-</code>, as in <code>data-target="a.mainlink"</code> A cell can be excluded by adding the <code>.rowlink-skip</code> class to the <code>&lt;td&gt;</code>.</p>
+
+    <h3>Via JavaScript</h3>
+    <p>Call the row link via javascript:</p>
+{% highlight js %}
+$('tbody.rowlink').rowlink()
+{% endhighlight %}
+
+    <h3>Options</h3>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 100px;">Name</th>
+          <th style="width: 50px;">type</th>
+          <th style="width: 100px;">default</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>target</td>
+          <td>string</td>
+          <td>'a'</td>
+          <td>A jquery selector string, to select the link element within each row.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Methods</h3>
+    <h4>.rowlink(options)</h4>
+    <p>Makes the rows of a table or tbody clickable.</p>
+  </div>
+
+
+  <!-- File input
+  ================================================== -->
+  <div class="bs-docs-section bs-jasny">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+      <h1 id="fileinput">File input <small>fileinput.js</small></h1>
+    </div>
+
+    <h2 id="fileinput-examples">Examples</h2>
+    <p>The file input plugin allows you to create a visually appealing file or image input widgets.</p>
+
+    <p>
+      In first of the following examples one can easily add support for file icon, how it previously was, untill Bootstrap dropped Glyphicons. Include the link to iconic font on the page, and replace the following line
+    </p>
+
+    {% highlight html %}
+      <span class="fileinput-filename"></span>
+    {% endhighlight %}
+
+    <p>with the following (<code>glyphicon</code> classes should be changed to the ones that you use):</p>
+
+    {% highlight html %}
+      <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename with-icon"></span>
+    {% endhighlight %}
+
+    <h3>File input widgets</h3>
+
+    <div class="bs-example">
+
+      <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+        <div class="form-control" data-trigger="fileinput">
+          <span class="fileinput-filename"></span>
+        </div>
+        <span class="input-group-append">
+          <span class="input-group-text fileinput-exists" data-dismiss="fileinput">
+            Remove
+          </span>
+
+          <span class="input-group-text btn-file">
+            <span class="fileinput-new">Select file</span>
+            <span class="fileinput-exists">Change</span>
+            <input type="file" multiple>
+          </span>
+        </span>
+      </div>
+
+    </div>
+{% highlight html %}
+<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+  <div class="form-control" data-trigger="fileinput">
+    <span class="fileinput-filename"></span>
+  </div>
+  <span class="input-group-append">
+    <span class="input-group-text fileinput-exists" data-dismiss="fileinput">
+      Remove
+    </span>
+
+    <span class="input-group-text btn-file">
+      <span class="fileinput-new">Select file</span>
+      <span class="fileinput-exists">Change</span>
+      <input type="file" name="..." multiple>
+    </span>
+  </span>
+</div>
+{% endhighlight %}
+
+    <div class="bs-example">
+
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <span class="btn btn-outline-secondary btn-file">
+          <span class="fileinput-new">Select file</span>
+          <span class="fileinput-exists">Change</span>
+          <input type="file" multiple>
+        </span>
+        <span class="fileinput-filename"></span>
+        <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+      </div>
+
+    </div>
+{% highlight html %}
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <span class="btn btn-outline-secondary btn-file">
+    <span class="fileinput-new">Select file</span>
+    <span class="fileinput-exists">Change</span>
+    <input type="file" name="..." multiple>
+  </span>
+  <span class="fileinput-filename"></span>
+  <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+</div>
+{% endhighlight %}
+
+    <h3>Image upload widgets</h3>
+    <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
+    <div class="bs-example">
+
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="fileinput-preview img-thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+        <div>
+          <span class="btn btn-outline-secondary btn-file">
+            <span class="fileinput-new">Select image</span>
+            <span class="fileinput-exists">Change</span>
+            <input type="file">
+          </span>
+          <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
+        </div>
+      </div>
+
+    </div>
+{% highlight html %}
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="fileinput-preview img-thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+  <div>
+    <span class="btn btn-outline-secondary btn-file">
+      <span class="fileinput-new">Select image</span>
+      <span class="fileinput-exists">Change</span>
+      <input type="file" name="...">
+    </span>
+    <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
+  </div>
+</div>
+{% endhighlight %}
+
+    <div class="bs-example">
+
+      <div class="fileinput fileinput-new" data-provides="fileinput">
+        <div class="fileinput-new img-thumbnail" style="width: 200px; height: 150px;">
+          <img data-src="holder.js/100%x100%"  alt="Generic placeholder thumbnail" src="data:image/png;base64,">
+        </div>
+        <div class="fileinput-preview fileinput-exists img-thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+        <div>
+          <span class="btn btn-outline-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file"></span>
+          <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
+        </div>
+      </div>
+
+    </div>
+{% highlight html %}
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="fileinput-new img-thumbnail" style="width: 200px; height: 150px;">
+    <img data-src="holder.js/100%x100%"  alt="...">
+  </div>
+  <div class="fileinput-preview fileinput-exists img-thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  <div>
+    <span class="btn btn-outline-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+    <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
+  </div>
+</div>
+{% endhighlight %}
+
+    <div class="bs-callout bs-callout-warning">
+      <p>Image preview only works in IE10+, FF3.6+, Safari6.0+, Chrome6.0+ and Opera11.1+. In older browsers the filename is shown instead.</p>
+    </div>
+
+    <hr class="bs-docs-separator">
+
+
+    <h2 id="fileinput-usage">Usage</h2>
+    <p>Add <code>.fileinput</code> to the container. Elements inside the container with <code>.fileinput-new</code> and <code>.fileinput-exists</code> are shown or hidden based on the current state. A preview of the selected file is placed in <code>.fileinput-preview</code>. The text of <code>.fileinput-filename</code> gets set to the name of the selected file.</p>
+
+    <p>Multiple file uploads can be handled by adding <code>multiple</code> attribute to file input element. Names of files are shown in name preview, joined by comma. In image preview only the first image is shown.</p>
+
+    <p>The file input widget should be placed in a regular <code>&lt;form&gt;</code> replacing a standard <code>&lt;input type="file"&gt;</code>. The server side code should handle the file upload as normal.</p>
+
+    <h3>Via data attributes</h3>
+    <p>Add <code>data-provides="fileinput"</code> to the <code>.fileinput</code> element. Implement a button to clear the file with <code>data-dismiss="fileinput"</code>. Add <code>data-trigger="fileinput"</code> to any element within the <code>.fileinput</code> widget to trigger the file dialog.</p>
+
+    <h3>Via JavaScript</h3>
+    <pre class="prettyprint linenums">$('.fileinput').fileinput()</pre>
+
+    <h3>Layout</h3>
+    <p>Using the given elements, you can layout the upload widget the way you want, either with a fixed <code>width</code> and <code>height</code> or with <code>max-width</code> and <code>max-height</code>.</p>
+
+    <h3>Options</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="width: 100px;">Name</th>
+            <th style="width: 50px;">type</th>
+            <th>description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>Use this option instead of setting the <code>name</code> attribute on the <code>&lt;input&gt;</code> element to prevent it from being part of the post data when not changed.</td>
+          </tr>
+          <tr>
+            <td>clearName</td>
+            <td>boolean</td>
+            <td>Sets if file input name should be cleared when input is cleared. It's <code>true</code> by default, to tell the server the difference between pressing clear and submit without a change in a normal form.</td>
+          </tr>
+          <tr>
+            <td>maxSize</td>
+            <td>float</td>
+            <td>Use this option if you want to limit file upload size. It's in <code>MB</code> and should be set for <code>.fileinput</code> element. For ex. <code>data-max-size="3"</code> allows upload only for files with size <= 3MB. If several files are selected, and only one of them is greater then this option value, all files will be discarded. Event <code>max_size.bs.fileinput</code> is triggered on discard.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Methods</h3>
+    <h4>.fileinput(options)</h4>
+    <p>Initializes a file upload widget.</p>
+    <h4>.fileinput('clear')</h4>
+    <p>Clear the selected file.</p>
+    <h4>.fileinput('reset')</h4>
+    <p>Reset the form element to the original value.</p>
+
+    <h3>Events</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th style="width: 150px;">Event Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>change.bs.fileinput</td>
+            <td>This event is fired after a file is selected.</td>
+          </tr>
+          <tr>
+            <td>clear.bs.fileinput</td>
+            <td>This event is fired when the file input is cleared.</td>
+          </tr>
+          <tr>
+            <td>reset.bs.fileinput</td>
+            <td>This event is fired before the file input is reset.</td>
+          </tr>
+          <tr>
+            <td>reseted.bs.fileinput</td>
+            <td>This event is fired after the file input is reset.</td>
+          </tr>
+          <tr>
+            <td>max_size.bs.fileinput</td>
+            <td>This event is fired, if at least one of selected files has size greater then <code>maxSize</code> option, before input is cleared.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- ./bs-table-responsive -->
+  </div>

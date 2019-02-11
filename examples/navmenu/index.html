@@ -7,17 +7,17 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Navmenu Template for Bootstrap</title>
+    <title>Off Canvas Slide-in Menu Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link href="../../dist/css/jasny-bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="navmenu.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,55 +28,53 @@
 
   <body>
     <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-      <a class="navmenu-brand visible-md visible-lg" href="#">Project name</a>
-      <ul class="nav navmenu-nav">
-        <li class="active"><a href="./">Slide in</a></li>
-        <li><a href="../navmenu-push/">Push</a></li>
-        <li><a href="../navmenu-reveal/">Reveal</a></li>
-        <li><a href="../navbar-offcanvas/">Off canvas navbar</a></li>
+      <ul class="nav navmenu-nav flex-column">
+        <li class="nav-item active"><a class="nav-link" href="../navmenu/">Slide in</a></li>
+        <li class="nav-item"><a class="nav-link" href="../navmenu-push/">Push</a></li>
+        <li class="nav-item"><a class="nav-link" href="../navmenu-reveal/">Reveal</a></li>
+        <li class="nav-item"><a class="nav-link" href="../navbar-offcanvas/">Off canvas navbar</a></li>
       </ul>
-      <ul class="nav navmenu-nav">
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+      <ul class="nav navmenu-nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
           <ul class="dropdown-menu navmenu-nav">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
+            <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Something else here</a></li>
+            <li class="dropdown-divider"></li>
             <li class="dropdown-header">Nav header</li>
-            <li><a href="#">Separated link</a></li>
-            <li><a href="#">One more separated link</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Separated link</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">One more separated link</a></li>
           </ul>
         </li>
       </ul>
     </div>
 
-    <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
-      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+    <header class="navbar navbar-light bg-light fixed-top hidden-md hidden-lg">
+      <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="#">Project name</a>
-    </div>
+    </header>
 
     <div class="container">
       <div class="page-header">
-        <h1>Navmenu Template</h1>
+        <h1>Off Canvas Slide-in Menu Template</h1>
       </div>
       <p class="lead">This example shows the navmenu element. If the viewport is <b>less than 992px</b> the menu will be placed the off canvas and will be shown with a slide in effect.</p>
       <p>Also take a look at the examples for a navmenu with <a href="../navmenu-push">push effect</a> and <a href="../navmenu-reveal">reveal effect</a>.</p>
     </div><!-- /.container -->
-    
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="../../dist/js/jasny-bootstrap.min.js"></script>
   </body>
 </html>
