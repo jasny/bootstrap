@@ -1,0 +1,26 @@
+<header class="navbar navbar-dark navbar-expand-lg navbar-inverse fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="{{ page.base_url }}" class="navbar-brand">Jasny Bootstrap</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavmenu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <nav class="collapse navbar-collapse" role="navigation" id="mainNavmenu">
+      <ul class="nav navbar-nav">
+        <li class="nav-item {% if page.slug == 'getting-started' %}active{% endif %}">
+          <a class="nav-link" href="{{ page.base_url }}getting-started">Getting started</a>
+        </li>
+        <li class="nav-item {% if page.slug == 'components' %}active{% endif %}">
+          <a class="nav-link" href="{{ page.base_url }}components">Components</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li>
+          <a href="http://www.jasny.net"><span class="hidden-sm">More by</span> Jasny</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

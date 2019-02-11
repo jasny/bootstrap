@@ -1,7 +1,7 @@
 /* Blob.js
  * A Blob implementation.
  * 2013-12-27
- * 
+ *
  * By Eli Grey, http://eligrey.com
  * By Devin Samarin, https://github.com/eboyjr
  * License: X11/MIT
@@ -50,7 +50,7 @@ else var Blob = (function (view) {
 			, URL = real_URL
 			, btoa = view.btoa
 			, atob = view.atob
-			
+
 			, ArrayBuffer = view.ArrayBuffer
 			, Uint8Array = view.Uint8Array
 		;
