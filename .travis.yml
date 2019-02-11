@@ -35,7 +35,7 @@ deploy:
   - provider: npm
     email: arnold@jasny.net
     api_key:
-      secure: "lMOzY4guWRBgsrhO9nWoBoDJkeKR3FZ8auT8W3pIUe3r6oBK1cegqDpBZZpVI23deWrQqIS0BiL7bmZ3miRyWMW3D2TQ3mJmzKZGV7vzzH7G+f6/pZwTCOXz2M4O24HQsjaQJ8gDoyScwoY/cV77Fh7mk3MLpVug4tG/Fro6O3U="
+      secure: "JG2WD24x0TVSVcG5psFUAgdnWiGDdHeZS9PF+f9WuPzWHiwvMj5JePkPKQEbWuPFZWzpV7y6UGOkjxd87or5WmqVDWcQEn+94OzH1LBIUvlHJJtmyD4BxymEXhy6ftmJyeufTwhbDfNnuh5cDn9J0H5aRl1SZTzwKedGlCrjgiE="
     skip_cleanup: true
     on: 
       branch: master
