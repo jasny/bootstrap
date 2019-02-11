@@ -2,7 +2,7 @@
 // --------------------------------------------------
 
 .button-label-size(@padding-vertical; @padding-horizontal; @border-radius) {
-  padding: @padding-vertical @padding-horizontal;
+  padding: (@padding-vertical - 1px) @padding-horizontal (@padding-vertical + 1px) @padding-horizontal;
   left: (-1 * @padding-horizontal);
   border-radius: (@border-radius - 1px) 0 0 (@border-radius - 1px);
 

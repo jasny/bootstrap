@@ -1,11 +1,11 @@
 body {
+  left: auto!important;
   padding-top: 80px;
   padding-bottom: 20px;
-  left: auto!important;
-}
+  }
 
 @media (min-width: 992px) {
   .navbar {
     padding-right: 15px;
+    }
   }
-}

@@ -1,5 +1,5 @@
 /* ===========================================================
- * Bootstrap: fileinput.js v3.1.3
+ * Bootstrap: fileinput.js v4.0.0
  * http://jasny.github.com/bootstrap/javascript/#fileinput
  * ===========================================================
  * Copyright 2012-2014 Arnold Daniels
@@ -176,15 +176,15 @@
   }
 
   Fileinput.prototype.getImageExif = function(view) {
-    if (view.getUint16(0, false) != 0xFFD8) { 
+    if (view.getUint16(0, false) != 0xFFD8) {
       return -2;
-    }    
+    }
     var length = view.byteLength, offset = 2;
     while (offset < length) {
       var marker = view.getUint16(offset, false);
           offset += 2;
       if (marker == 0xFFE1) {
-        if (view.getUint32(offset += 2, false) != 0x45786966) { 
+        if (view.getUint32(offset += 2, false) != 0x45786966) {
           return -1;
         }
         var little = view.getUint16(offset += 6, false) == 0x4949;
@@ -193,7 +193,7 @@
             offset += 2;
         for (var i = 0; i < tags; i++)   {
           if (view.getUint16(offset + (i * 12), little) == 0x0112) {
-            return view.getUint16(offset + (i * 12) + 8, little); 
+            return view.getUint16(offset + (i * 12) + 8, little);
           }
         }
       }
@@ -201,15 +201,15 @@
          break;
       } else {
         offset += view.getUint16(offset, false);
-      } 
+      }
     }
 
     return -1;
   }
 
   Fileinput.prototype.resetOrientation = function($img, transform) {
-  var img = new Image();    
-  
+  var img = new Image();
+
   img.onload = function() {
     var width = img.width,
         height = img.height,
@@ -224,7 +224,7 @@
       canvas.width = width;
       canvas.height = height;
     }
-    
+
     // transform context before drawing image
     switch (transform) {
       case 2: ctx.transform(-1, 0, 0, 1, width, 0); break;

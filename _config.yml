@@ -19,13 +19,13 @@ exclude:
   - "vendor"
 
 # Custom vars
-current_version:  3.1.3
+current_version:  4.0.0
 repo:             https://github.com/jasny/bootstrap
 
 download:
-  source:         https://github.com/jasny/bootstrap/archive/v3.1.3.zip
-  dist:           https://github.com/jasny/bootstrap/releases/download/v3.1.3/jasny-bootstrap-3.1.3-dist.zip
+  source:         https://github.com/jasny/bootstrap/archive/v4.0.0.zip
+  dist:           https://github.com/jasny/bootstrap/releases/download/v4.0.0/jasny-bootstrap-4.0.0-dist.zip
 
 cdn:
-  css:            //cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css
-  js:             //cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js
+  css:            //cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/css/jasny-bootstrap.min.css
+  js:             //cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js
