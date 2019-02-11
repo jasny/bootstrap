@@ -1,13 +1,179 @@
----
-layout: default
-title: Components
-slug: components
-lead: "Reusable components to built the user interface."
-base_url: "../"
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>
+  
+    Components &middot; Jasny Bootstrap
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="../dist/css/jasny-bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Documentation extras -->
+<link href="../assets/css/docs.css" rel="stylesheet">
+<link href="../assets/css/pygments-manni.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+                               <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32388850-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */</script>
+
+  </head>
+  <body>
+    <script type="text/javascript">
+      if (localStorage && localStorage.hide_twbs === 'no') document.body.setAttribute('class', 'bs-twbs-show')
+    </script>
+
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-dark navbar-expand-lg navbar-inverse fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand">Jasny Bootstrap</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavmenu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <nav class="collapse navbar-collapse" role="navigation" id="mainNavmenu">
+      <ul class="nav navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link" href="../getting-started">Getting started</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../components">Components</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li>
+          <a href="http://www.jasny.net"><span class="hidden-sm">More by</span> Jasny</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
 
-  <!-- Navmenu
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>Components</h1>
+        <p>Reusable components to built the user interface.</p>
+        <!-- <div id="aboutme-container">
+  <a href="mailto:arnold@jasny.net" class="aboutme">
+    <img class="img-circle" src="http://0.gravatar.com/avatar/0bba82e8b2a9d2cf9645cb07ea54766f?s=100&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&amp;r=G" alt="Arnold Daniels">
+    <div class="aboutme-text">
+      <span class="aboutme-title">Looking for a developer?</span>
+      I'm available for freelance work, I want to hear about your projects.
+      <span class="aboutme-name">- Arnold Daniels</span>
+    </div>
+  </a>
+</div> -->
+
+
+<div id="carbonads-container">
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=jansy" id="_carbonads_js"></script>
+</div>
+
+
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav flex-column">
+              
+                <li class="nav-item">
+  <a class="nav-link" href="#navmenu">Navmenu</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#navmenu-default">Default navmenu</a></li>
+    <li class="nav-item"><a class="nav-link" href="#navmenu-fixed">Fixed to left or right</a></li>
+    <li class="nav-item"><a class="nav-link" href="#navmenu-offcanvas">Off canvas</a></li>
+    <li class="nav-item"><a class="nav-link" href="#navmenu-inverted">Inverted navmenu</a></li>
+  </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#alerts">Alerts</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#alerts-fixed">Fixed to top / bottom</a></li>
+  </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#buttons">Buttons</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#buttons-labels">Labels</a></li>
+  </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#offcanvas">Off canvas</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#offcanvas-examples">Examples</a></li>
+    <li class="nav-item"><a class="nav-link" href="#offcanvas-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#rowlink">Row link</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#rowlink-examples">Examples</a></li>
+    <li class="nav-item"><a class="nav-link" href="#rowlink-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="#fileinput">File input</a>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link" href="#fileinput-examples">Examples</a></li>
+    <li class="nav-item"><a class="nav-link" href="#fileinput-usage">Usage</a></li>
+  </ul>
+</li>
+
+
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9" role="main">
+            <!-- Navmenu
   ================================================== -->
   <div class="bs-docs-section">
     <div class="pb-2 mt-4 mb-2 border-bottom">
@@ -42,26 +208,24 @@ base_url: "../"
         </ul>
       </nav>
     </div>
-{% highlight html %}
-<nav class="navmenu navmenu-default" role="navigation">
-  <a class="navmenu-brand" href="#">Brand</a>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;nav class=&quot;navmenu navmenu-default&quot; role=&quot;navigation&quot;&gt;
+  &lt;a class=&quot;navmenu-brand&quot; href=&quot;#&quot;&gt;Brand&lt;/a&gt;
 
-  <ul class="nav navmenu-nav flex-column">
-    <li class="nav-item active"><a class="nav-link" href="#">Link</a></li>
-    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-    <li class="nav-item dropdown">
-      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-      <ul class="dropdown-menu navmenu-nav" role="menu">
-        <li class="nav-item"><a class="nav-link" href="#">Action</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Another action</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Something else here</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Separated link</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">One more separated link</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-{% endhighlight %}
+  &lt;ul class=&quot;nav navmenu-nav flex-column&quot;&gt;
+    &lt;li class=&quot;nav-item active&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;nav-item dropdown&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;nav-link dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+      &lt;ul class=&quot;dropdown-menu navmenu-nav&quot; role=&quot;menu&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;One more separated link&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre></figure>
 
     <div class="bs-callout bs-callout-warning">
       <h4>Make navmenus accessible</h4>
@@ -81,22 +245,18 @@ base_url: "../"
         </ul>
       </nav>
     </div><!-- /example -->
-{% highlight html %}
-<nav class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation">
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;nav class=&quot;navmenu navmenu-default navmenu-fixed-left offcanvas-sm&quot; role=&quot;navigation&quot;&gt;
   ...
-</nav>
-{% endhighlight %}
+&lt;/nav&gt;</code></pre></figure>
 
     <div class="bs-callout bs-callout-danger">
       <h4>Body padding required</h4>
       <p>The fixed navmenu will overlay your other content, unless you add <code>padding</code> to the left or right of the <code>&lt;body&gt;</code>. Try out your own values or use our snippet below. Tip: By default, the navmenu is 300px wide.</p>
-{% highlight css %}
-@media (min-width: 992px) {
+<figure class="highlight"><pre><code class="language-css" data-lang="css">@media (min-width: 992px) {
   body {
     padding-left: 300px;
   }
-}
-{% endhighlight %}
+}</code></pre></figure>
       <p>Make sure to include this <strong>after</strong> the Jasny Bootstrap CSS.</p>
     </div>
 
@@ -127,17 +287,15 @@ base_url: "../"
       </div>
     </div><!-- /example -->
 
-{% highlight html %}
-<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;nav id=&quot;myNavmenu&quot; class=&quot;navmenu navmenu-default navmenu-fixed-left offcanvas&quot; role=&quot;navigation&quot;&gt;
 ...
-</nav>
+&lt;/nav&gt;
 
-<header class="navbar navbar-light bg-light fixed-top">
-  <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-</header>
-{% endhighlight %}
+&lt;header class=&quot;navbar navbar-light bg-light fixed-top&quot;&gt;
+  &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-toggle=&quot;offcanvas&quot; data-target=&quot;#myNavmenu&quot; data-canvas=&quot;body&quot;&gt;
+    &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/header&gt;</code></pre></figure>
 
     <div class="bs-callout bs-callout-info">
       <h4>Examples</h4>
@@ -157,11 +315,9 @@ base_url: "../"
         </ul>
       </nav>
     </div><!-- /example -->
-{% highlight html %}
-<nav class="navmenu navmenu-inverse" role="navigation">
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;nav class=&quot;navmenu navmenu-inverse&quot; role=&quot;navigation&quot;&gt;
   ...
-</nav>
-{% endhighlight %}
+&lt;/nav&gt;</code></pre></figure>
 
   </div>
 
@@ -180,11 +336,9 @@ base_url: "../"
         <strong>Success!</strong> Your action has been completed successfully.
       </div>
     </div>
-{% highlight html %}
-<div class="alert alert-success alert-fixed-top">
-  <strong>Success!</strong> Your action has been completed successfully.
-</div>
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;alert alert-success alert-fixed-top&quot;&gt;
+  &lt;strong&gt;Success!&lt;/strong&gt; Your action has been completed successfully.
+&lt;/div&gt;</code></pre></figure>
 
   </div>
 
@@ -204,19 +358,17 @@ base_url: "../"
         <button type="button" class="btn btn-labeled btn-success"><span class="btn-label"><i class="fa fa-check"></i></span>Success</button>
         <button type="button" class="btn btn-labeled btn-danger"><span class="btn-label"><i class="fa fa-times"></i></span>Danger</button>
       </div>
-{% highlight html %}
-<!-- Standard button with label -->
-<button type="button" class="btn btn-labeled btn-secondary"><span class="btn-label"><i class="fa fa-arrow-left"></i></span>Left</button>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;!-- Standard button with label --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-labeled btn-secondary&quot;&gt;&lt;span class=&quot;btn-label&quot;&gt;&lt;i class=&quot;fa fa-arrow-left&quot;&gt;&lt;/i&gt;&lt;/span&gt;Left&lt;/button&gt;
 
-<!-- Standard button with label on the right side -->
-<button type="button" class="btn btn-labeled btn-secondary">Right<span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i></span></button>
+&lt;!-- Standard button with label on the right side --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-labeled btn-secondary&quot;&gt;Right&lt;span class=&quot;btn-label btn-label-right&quot;&gt;&lt;i class=&quot;fa fa-arrow-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
 
-<!-- Success button with label -->
-<button type="button" class="btn btn-labeled btn-success"><span class="btn-label"><i class="fa fa-check"></i></span>Success</button>
+&lt;!-- Success button with label --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-labeled btn-success&quot;&gt;&lt;span class=&quot;btn-label&quot;&gt;&lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt;&lt;/span&gt;Success&lt;/button&gt;
 
-<!-- Danger button with label -->
-<button type="button" class="btn btn-labeled btn-danger"><span class="btn-label"><i class="fa fa-times"></i></span>Danger</button>
-{% endhighlight %}
+&lt;!-- Danger button with label --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-labeled btn-danger&quot;&gt;&lt;span class=&quot;btn-label&quot;&gt;&lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&lt;/span&gt;Danger&lt;/button&gt;</code></pre></figure>
     </div>
   </div>
 
@@ -255,23 +407,21 @@ base_url: "../"
       </div>
     </div><!-- /example -->
 
-{% highlight html %}
-<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-  <a class="navmenu-brand" href="#">Brand</a>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;nav id=&quot;myNavmenu&quot; class=&quot;navmenu navmenu-default navmenu-fixed-left offcanvas&quot; role=&quot;navigation&quot;&gt;
+  &lt;a class=&quot;navmenu-brand&quot; href=&quot;#&quot;&gt;Brand&lt;/a&gt;
 
-  <ul class="nav navmenu-nav flex-column">
-    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-  </ul>
-</nav>
+  &lt;ul class=&quot;nav navmenu-nav flex-column&quot;&gt;
+    &lt;li class=&quot;nav-item active&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
 
-<header class="navbar navbar-light bg-light fixed-top">
-  <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-</header>
-{% endhighlight %}
+&lt;header class=&quot;navbar navbar-light bg-light fixed-top&quot;&gt;
+  &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-toggle=&quot;offcanvas&quot; data-target=&quot;#myNavmenu&quot; data-canvas=&quot;body&quot;&gt;
+    &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/header&gt;</code></pre></figure>
 
     <div class="bs-callout bs-callout-info">
       <h4>Examples</h4>
@@ -291,9 +441,7 @@ base_url: "../"
 
     <h3>Via JavaScript</h3>
     <p>Call the offcanvas via javascript:</p>
-{% highlight js %}
-$('.navmenu').offcanvas()
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-js" data-lang="js">$(&#39;.navmenu&#39;).offcanvas()</code></pre></figure>
 
     <h3>Options</h3>
 
@@ -447,18 +595,16 @@ $('.navmenu').offcanvas()
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-{% highlight html %}
-<table class="table table-striped table-bordered table-hover">
-  <thead>
-    <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
-  </thead>
-  <tbody data-link="row" class="rowlink">
-    <tr><td><a href="#fileinput">File input</a></td><td>The file input plugin allows you to create a visually appealing file widgets.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
-    <tr><td><a href="http://www.jasny.net/" target="_blank">jasny.net</a></td><td>Shared knowledge of Arnold Daniels aka Jasny.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
-    <tr><td><a href="#rowlinkModal" data-toggle="modal">Launch modal</a></td><td>Toggle a modal via JavaScript by clicking this row.</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
-  </tbody>
-</table>
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;table class=&quot;table table-striped table-bordered table-hover&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody data-link=&quot;row&quot; class=&quot;rowlink&quot;&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#fileinput&quot;&gt;File input&lt;/a&gt;&lt;/td&gt;&lt;td&gt;The file input plugin allows you to create a visually appealing file widgets.&lt;/td&gt;&lt;td class=&quot;rowlink-skip&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://www.jasny.net/&quot; target=&quot;_blank&quot;&gt;jasny.net&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Shared knowledge of Arnold Daniels aka Jasny.&lt;/td&gt;&lt;td class=&quot;rowlink-skip&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;a href=&quot;#rowlinkModal&quot; data-toggle=&quot;modal&quot;&gt;Launch modal&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Toggle a modal via JavaScript by clicking this row.&lt;/td&gt;&lt;td class=&quot;rowlink-skip&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre></figure>
 
     <hr class="bs-docs-separator">
 
@@ -469,9 +615,7 @@ $('.navmenu').offcanvas()
 
     <h3>Via JavaScript</h3>
     <p>Call the row link via javascript:</p>
-{% highlight js %}
-$('tbody.rowlink').rowlink()
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-js" data-lang="js">$(&#39;tbody.rowlink&#39;).rowlink()</code></pre></figure>
 
     <h3>Options</h3>
     <table class="table table-bordered table-striped">
@@ -513,15 +657,11 @@ $('tbody.rowlink').rowlink()
       In first of the following examples one can easily add support for file icon, how it previously was, untill Bootstrap dropped Glyphicons. Include the link to iconic font on the page, and replace the following line
     </p>
 
-    {% highlight html %}
-      <span class="fileinput-filename"></span>
-    {% endhighlight %}
+    <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;span class=&quot;fileinput-filename&quot;&gt;&lt;/span&gt;</code></pre></figure>
 
     <p>with the following (<code>glyphicon</code> classes should be changed to the ones that you use):</p>
 
-    {% highlight html %}
-      <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename with-icon"></span>
-    {% endhighlight %}
+    <figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;i class=&quot;glyphicon glyphicon-file fileinput-exists&quot;&gt;&lt;/i&gt; &lt;span class=&quot;fileinput-filename with-icon&quot;&gt;&lt;/span&gt;</code></pre></figure>
 
     <h3>File input widgets</h3>
 
@@ -545,24 +685,22 @@ $('tbody.rowlink').rowlink()
       </div>
 
     </div>
-{% highlight html %}
-<div class="fileinput fileinput-new input-group" data-provides="fileinput">
-  <div class="form-control" data-trigger="fileinput">
-    <span class="fileinput-filename"></span>
-  </div>
-  <span class="input-group-append">
-    <span class="input-group-text fileinput-exists" data-dismiss="fileinput">
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;fileinput fileinput-new input-group&quot; data-provides=&quot;fileinput&quot;&gt;
+  &lt;div class=&quot;form-control&quot; data-trigger=&quot;fileinput&quot;&gt;
+    &lt;span class=&quot;fileinput-filename&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;span class=&quot;input-group-append&quot;&gt;
+    &lt;span class=&quot;input-group-text fileinput-exists&quot; data-dismiss=&quot;fileinput&quot;&gt;
       Remove
-    </span>
+    &lt;/span&gt;
 
-    <span class="input-group-text btn-file">
-      <span class="fileinput-new">Select file</span>
-      <span class="fileinput-exists">Change</span>
-      <input type="file" name="..." multiple>
-    </span>
-  </span>
-</div>
-{% endhighlight %}
+    &lt;span class=&quot;input-group-text btn-file&quot;&gt;
+      &lt;span class=&quot;fileinput-new&quot;&gt;Select file&lt;/span&gt;
+      &lt;span class=&quot;fileinput-exists&quot;&gt;Change&lt;/span&gt;
+      &lt;input type=&quot;file&quot; name=&quot;...&quot; multiple&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre></figure>
 
     <div class="bs-example">
 
@@ -577,17 +715,15 @@ $('tbody.rowlink').rowlink()
       </div>
 
     </div>
-{% highlight html %}
-<div class="fileinput fileinput-new" data-provides="fileinput">
-  <span class="btn btn-outline-secondary btn-file">
-    <span class="fileinput-new">Select file</span>
-    <span class="fileinput-exists">Change</span>
-    <input type="file" name="..." multiple>
-  </span>
-  <span class="fileinput-filename"></span>
-  <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
-</div>
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;fileinput fileinput-new&quot; data-provides=&quot;fileinput&quot;&gt;
+  &lt;span class=&quot;btn btn-outline-secondary btn-file&quot;&gt;
+    &lt;span class=&quot;fileinput-new&quot;&gt;Select file&lt;/span&gt;
+    &lt;span class=&quot;fileinput-exists&quot;&gt;Change&lt;/span&gt;
+    &lt;input type=&quot;file&quot; name=&quot;...&quot; multiple&gt;
+  &lt;/span&gt;
+  &lt;span class=&quot;fileinput-filename&quot;&gt;&lt;/span&gt;
+  &lt;a href=&quot;#&quot; class=&quot;close fileinput-exists&quot; data-dismiss=&quot;fileinput&quot; style=&quot;float: none&quot;&gt;&amp;times;&lt;/a&gt;
+&lt;/div&gt;</code></pre></figure>
 
     <h3>Image upload widgets</h3>
     <p>When uploading an image, it's possible to show a thumbnail instead of the filename.</p>
@@ -606,19 +742,17 @@ $('tbody.rowlink').rowlink()
       </div>
 
     </div>
-{% highlight html %}
-<div class="fileinput fileinput-new" data-provides="fileinput">
-  <div class="fileinput-preview img-thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-  <div>
-    <span class="btn btn-outline-secondary btn-file">
-      <span class="fileinput-new">Select image</span>
-      <span class="fileinput-exists">Change</span>
-      <input type="file" name="...">
-    </span>
-    <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
-  </div>
-</div>
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;fileinput fileinput-new&quot; data-provides=&quot;fileinput&quot;&gt;
+  &lt;div class=&quot;fileinput-preview img-thumbnail&quot; data-trigger=&quot;fileinput&quot; style=&quot;width: 200px; height: 150px;&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;
+    &lt;span class=&quot;btn btn-outline-secondary btn-file&quot;&gt;
+      &lt;span class=&quot;fileinput-new&quot;&gt;Select image&lt;/span&gt;
+      &lt;span class=&quot;fileinput-exists&quot;&gt;Change&lt;/span&gt;
+      &lt;input type=&quot;file&quot; name=&quot;...&quot;&gt;
+    &lt;/span&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn-outline-secondary fileinput-exists&quot; data-dismiss=&quot;fileinput&quot;&gt;Remove&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></figure>
 
     <div class="bs-example">
 
@@ -634,18 +768,16 @@ $('tbody.rowlink').rowlink()
       </div>
 
     </div>
-{% highlight html %}
-<div class="fileinput fileinput-new" data-provides="fileinput">
-  <div class="fileinput-new img-thumbnail" style="width: 200px; height: 150px;">
-    <img data-src="holder.js/100%x100%"  alt="...">
-  </div>
-  <div class="fileinput-preview fileinput-exists img-thumbnail" style="max-width: 200px; max-height: 150px;"></div>
-  <div>
-    <span class="btn btn-outline-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
-    <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
-  </div>
-</div>
-{% endhighlight %}
+<figure class="highlight"><pre><code class="language-html" data-lang="html">&lt;div class=&quot;fileinput fileinput-new&quot; data-provides=&quot;fileinput&quot;&gt;
+  &lt;div class=&quot;fileinput-new img-thumbnail&quot; style=&quot;width: 200px; height: 150px;&quot;&gt;
+    &lt;img data-src=&quot;holder.js/100%x100%&quot;  alt=&quot;...&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;fileinput-preview fileinput-exists img-thumbnail&quot; style=&quot;max-width: 200px; max-height: 150px;&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;
+    &lt;span class=&quot;btn btn-outline-secondary btn-file&quot;&gt;&lt;span class=&quot;fileinput-new&quot;&gt;Select image&lt;/span&gt;&lt;span class=&quot;fileinput-exists&quot;&gt;Change&lt;/span&gt;&lt;input type=&quot;file&quot; name=&quot;...&quot;&gt;&lt;/span&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn-outline-secondary fileinput-exists&quot; data-dismiss=&quot;fileinput&quot;&gt;Remove&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></figure>
 
     <div class="bs-callout bs-callout-warning">
       <p>Image preview only works in IE10+, FF3.6+, Safari6.0+, Chrome6.0+ and Opera11.1+. In older browsers the filename is shown instead.</p>
@@ -742,3 +874,66 @@ $('tbody.rowlink').rowlink()
       </table>
     </div><!-- ./bs-table-responsive -->
   </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <div class="container">
+        <div class="bs-social">
+  <ul class="bs-social-buttons">
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&amp;repo=bootstrap&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe>
+    </li>
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=jasny&amp;repo=bootstrap&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
+    </li>
+    <li class="follow-btn">
+      <a href="https://twitter.com/ArnoldDaniels" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @ArnoldDaniels</a>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jasny.github.io/bootstrap" data-count="horizontal" data-via="ArnoldDaniels">Tweet</a>
+    </li>
+    <li>
+      <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://github.com/jasny/bootstrap">Flattr</a>
+    </li>
+  </ul>
+</div>
+
+
+        <p>Jasny Bootstrap is a fork of <a href="http://getbootstrap.com/" target="_blank">vanilla Bootstrap</a>. This fork is developed and maintained by <a href="http://twitter.com/ArnoldDaniels" target="_blank">Arnold Daniels</a>.</p>
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li>Currently v4.0.0</li>
+          <li class="muted">&middot;</li>
+          <li><a href="../2.3.1/">Bootstrap 2.3.1 docs</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="http://www.jasny.net">Jasny.net</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/jasny/bootstrap/issues?state=open">Issues</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/jasny/bootstrap/releases">Releases</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../dist/js/jasny-bootstrap.min.js"></script>
+
+<script src="http://platform.twitter.com/widgets.js"></script>
+<script src="../assets/js/docs.min.js"></script>
+
+
+  </body>
+</html>
