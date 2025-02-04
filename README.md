@@ -1,3 +1,6 @@
+> This extension is for **Bootstrap 4**. Almost all of the components of this extension have been added to Bootstrap 5, making this library redundant.
+> Because Bootstrap 4 has reached its end of life, Jasny Bootstrap will no longer be updated.
+
 # [Jasny Bootstrap](http://jasny.github.io/bootstrap/)
 
 Jasny Bootstrap is an extension of the famous [Bootstrap](http://getbootstrap.com/), adding the following components:
